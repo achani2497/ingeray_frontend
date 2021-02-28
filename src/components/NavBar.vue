@@ -1,23 +1,26 @@
 <template>
-    <nav v-if="this.showNavbar">
-        <ul>
-            <router-link to="/">Seccion 1</router-link>
-            <router-link to="/">Seccion 2</router-link>
-            <router-link to="/">Seccion 3</router-link>
-            <router-link to="/">Seccion 4</router-link>
+    <nav class="fixed -top-0 h-20 max-h-24 flex flex-row w-screen bg-gray-300">
+        <a href="/" class="w-1/6 flex justify-center items-center"> 
+            <span class="text-5xl text-black">Logo</span>
+        </a>
+        <ul class="w-5/6 flex justify-around items-center">
+            <router-link to="/" class="text-black">Inicio</router-link>
+            <router-link to="/" class="text-black">Servicios</router-link>
+            <router-link to="/" class="text-black">¿Quiénes somos?</router-link>
+            <router-link to="/" class="text-black">Contacto</router-link>
         </ul>
     </nav>
 </template>
 
-<style>
+<style scoped>
     nav{
-        height: 100px;
         background-color: var(--main-color);
-        position: fixed;
-        top: 0;
+        box-shadow: 0px 5px 20px 1px rgba(255,255,255,.5);
     }
-    a{
-        color: white;
+    @media screen and (max-width:414px) {
+        nav{
+            display: none;
+        }
     }
 </style>
 
@@ -31,7 +34,7 @@
             }
         },
         methods:{
-            onScroll () {
+            onScroll(){
                 // Get the current scroll position
                 var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
                 
@@ -55,10 +58,10 @@
             }
         },
         mounted(){
-            window.addEventListener('scroll', this.onScroll)
+            // window.addEventListener('scroll', this.onScroll)
         },
         destroyed(){
-            window.removeEventListener('scroll', this.onScroll)
+            // window.removeEventListener('scroll', this.onScroll)
         }
     }
 </script>

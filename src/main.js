@@ -6,7 +6,8 @@ import '@/assets/css/main.css'
 
 Vue.config.productionTip = false
 
-Vue.component('nav-bar',                   require('./components/NavBar.vue').default);
+Vue.component('nav-bar', require('./components/NavBar.vue').default);
+Vue.component('resp-nav-bar', require('./components/ResponsiveNavBar.vue').default);
 
 new Vue({
   router,
