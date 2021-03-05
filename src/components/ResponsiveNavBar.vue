@@ -1,40 +1,37 @@
 <template>
-    <div class="nav bg-gray-300 fixed bottom-0 " :class="{'active': isActive}" @click.prevent="toggle">
-        <div class="menu-header flex justify-center">
-            <button class="burger flex flex-col justify-center items-center" >
-                <span class="line line-1"></span>
-                <span class="line line-2"></span>
-                <span class="line line-3"></span>
-            </button>
-        </div>
-        <ul class="w-screen">
-            <li v-for="(option, index) in options" :key="index" class="flex items-center">
-                <router-link :to="option.sectionUrl" class="text-black ml-2">{{option.sectionName}}</router-link>
-            </li>
-        </ul>
-    </div>
+    <ul class="hidden flex flex-row w-full justify-evenly fixed bottom-0">
+        <li v-for="(option, index) in options" class="w-full" :key="index">
+            <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center" exact>
+                <img :src="getImg(option.icon)"/>
+                {{option.sectionName}}
+            </router-link>
+        </li>
+    </ul>
 </template>
-<script>
+<script>    
 export default {
     data(){
         return{
-            isActive: false,
             options:[
                 {
                     sectionName: 'Inicio',
-                    sectionUrl: '/'
+                    sectionUrl: '/',
+                    icon: 'home'
                 },
                 {
-                    sectionName: 'Seccion1',
-                    sectionUrl: '/seccion'
+                    sectionName: 'Servicios',
+                    sectionUrl: '/servicios',
+                    icon: 'services'
                 },
                 {
-                    sectionName: 'Seccion2',
-                    sectionUrl: '/seccion'
+                    sectionName: 'Productos',
+                    sectionUrl: '/productos',
+                    icon: 'products'
                 },
                 {
-                    sectionName: 'Seccion3',
-                    sectionUrl: '/seccion'
+                    sectionName: 'Contacto',
+                    sectionUrl: '/contacto',
+                    icon: 'contact'
                 },
             ]
         }
@@ -42,84 +39,57 @@ export default {
     methods:{
         toggle(){
             this.isActive = !this.isActive
+        },
+        getImg(imgName){
+            return require('@/assets/images/'+imgName+'.svg')
         }
     }
 }
 </script>
 <style scoped>
     .hidden{
-        visibility: hidden;
-    }
-    button{
-        cursor: pointer;
-    }
-    button:focus{
-        outline: none;
+        display:none
     }
     @media screen and (max-width:414px) {
-        .menu-header{
-            position: relative;
-        }
-        .nav{
-            height: auto;
-            width: 100vw;
-            transition: all 1s cubic-bezier(.165, .84, .44, 1);
-            transform: translateY(calc(100% - 7vh));
-        }
-        .burger{
-            width: 8vh;
-            height: 50px;
-            padding: 0 3px;
-        }   
-        .burger .line{
-            background-color: #130f40;
-            height: 2px;
-            width: 100%;
-            margin-top: -1px;
-            transition: transform 1s cubic-bezier(.165, .84, .44, 1)
-        }
-        .nav.active{
-            transform: translateY(0)
-        }
-        .nav.active .burger{
+        .hidden{
             display: flex;
-            justify-content: center;
-            align-items: center;
         }
-        .line-1{
-            transform: translateY(-6px);
-            -webkit-transform: translateY(-6px);
+        .router-link-exact-active,
+        .router-link-active {
+            background-color: #395669;
+            color: white;
         }
-        .line-2{
-            transform-origin: 100% 100%;
-            transform: scaleX(.8);
+
+        .router-link-exact-active img,
+        .router-link-active img{
+            filter: brightness(0) invert(1);
         }
-        .burger:hover .line-2{
-            transform: scaleX(1);
+
+        a{
+            transition: all .5s ease-in-out;
+            padding-top: 5px;
         }
-        .line-3{
-            transform: translateY(6px);
+
+        ul{
+            width: 100%;
+            height: auto;
+            box-shadow: 0px -5px 10px 2px rgba(0,0,0,.5);
+            height: auto;
+            background: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(10px);
+            z-index: 9;
         }
-        .nav.active .burger{
-            transform: rotate(-180deg);
-        }
-        .nav.active .line{
-            background-color: black;
-        }
-        .nav.active .line-1{
-            transform: rotate(45deg);
-        }
-        .nav.active .line-2{
-            opacity: 0;
-        }
-        .nav.active .line-3{
-            transform: rotate(-45deg);
-        }
+                           
         li{
-            height: 7vh;
+            border-right: 1px solid rgba(0,0,0,.3);
         }
-        .menu-header, li{
-            border-bottom: 1px solid rgba(0,0,0,.1);
+
+        img{
+            transition: all .5s ease-in-out;
+        }
+        li img{
+            height: 20px;
+            width: 20px;
         }
     }
 </style>

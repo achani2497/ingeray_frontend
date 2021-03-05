@@ -1,22 +1,57 @@
 <template>
-    <nav class="fixed -top-0 h-20 max-h-24 flex flex-row w-screen bg-gray-300">
-        <a href="/" class="w-1/6 flex justify-center items-center"> 
+    <nav class="fixed top-0 h-20 max-h-24 flex flex-row w-screen">
+        <a href="/" class="w-1/6 w flex justify-center items-center py-1"> 
             <span class="text-5xl text-black">Logo</span>
         </a>
         <ul class="w-5/6 flex justify-around items-center">
-            <router-link to="/" class="text-black">Inicio</router-link>
-            <router-link to="/" class="text-black">Servicios</router-link>
-            <router-link to="/" class="text-black">¿Quiénes somos?</router-link>
-            <router-link to="/" class="text-black">Contacto</router-link>
+            <li v-for="(option, index) in options" :key="index">
+                <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center" exact>{{option.sectionName}}</router-link>
+            </li>
         </ul>
     </nav>
 </template>
 
 <style scoped>
     nav{
-        background-color: var(--main-color);
-        box-shadow: 0px 5px 20px 1px rgba(255,255,255,.5);
+        box-shadow: 0px 5px 10px 2px rgba(0,0,0,.5);
+        height: auto;
+        background: rgba(255, 255, 255, .7);
+        backdrop-filter: blur(10px);
+        z-index: 9;
     }
+    li{
+        height: 100%;
+        width: 100%;
+    }
+    a{
+        transition: all .5s ease-in-out;
+    }
+    .router-link-exact-active,
+    .router-link-active {
+        transition: all .5s ease-in-out;
+        background-color: rgba(57, 86, 105, .7);
+        color: white;
+    }
+    li a:hover:not(.router-link-exact-active){
+        background-color: rgba(96, 126, 146, .7);
+        color: white;        
+    }
+    @media screen and (max-width:650px){
+        nav a{
+            width: 25%;
+        }
+        nav ul{
+            width: 75%;
+        }
+        nav ul li{
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li a{
+            width: 100%;
+        }
+    }
+
     @media screen and (max-width:414px) {
         nav{
             display: none;
@@ -30,7 +65,29 @@
         data(){
             return{
                 showNavbar: false,
-                lastScrollPosition: 0
+                lastScrollPosition: 0,
+                options:[
+                    {
+                        sectionName: 'Inicio',
+                        sectionUrl: '/',
+                        icon: 'home'
+                    },
+                    {
+                        sectionName: 'Servicios',
+                        sectionUrl: '/servicios',
+                        icon: 'services'
+                    },
+                    {
+                        sectionName: 'Productos',
+                        sectionUrl: '/productos',
+                        icon: 'products'
+                    },
+                    {
+                        sectionName: 'Contacto',
+                        sectionUrl: '/contacto',
+                        icon: 'contact'
+                    },
+                ]
             }
         },
         methods:{

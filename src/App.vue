@@ -2,20 +2,28 @@
   <div id="app">
     <nav-bar></nav-bar>
     <resp-nav-bar></resp-nav-bar>
-    <div class="a"></div>
     <router-view/>
   </div>
 </template>
 
 <style>
 :root{
-  --main-color: rgb(12, 45, 62);
+  --main-color: #0c2d3e;
   --secondary-color: red;
 }
 #app{
-  background-color: var(--main-color);
+  background: var(--main-color);
+  background: -webkit-linear-gradient(to right, #77A1D3, #7993cb, #84609b);  
+  background: linear-gradient(to right, #77A1D3, #7993cb, #84609b);
+
+  height: auto;
+  padding-top: 3rem;
+  padding-bottom: 2vh;
 }
-.a{
-  height: 100vh;
+@media screen and (max-width: 414px){
+  #app{
+    padding-top: 0;
+    padding-bottom: 7vh;
+  }
 }
 </style>
