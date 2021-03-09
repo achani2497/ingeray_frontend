@@ -1,18 +1,18 @@
 <template>
     <div class="important-info flex justify-around items-center h-12 w-full">
         <h3 class="flex items-center ubicacion">
-            <img src="@/assets/images/map.svg" alt="ubicacion" class="mr-2 big-icon white-icon">
+            <img src="@/assets/images/icons/map.svg" alt="ubicacion" class="mr-2 big-icon white-icon">
             Campillo 2586, Capital Federal, Argentina
         </h3>
         <h3 class="flex items-center whatsapp">
-            <img src="@/assets/images/whatsapp.svg" alt="whatsapp" class="mr-2 big-icon">
+            <img src="@/assets/images/icons/whatsapp.svg" alt="whatsapp" class="mr-2 big-icon">
             <div class="flex flex-col">
                 <p>Gabriel Fandini | ventas@ingeray.com.ar | +54 9 11 5976-7596</p>
                 <p>Dalina López | ingerayventas@gmail.com | +54 9 11 3851-0695</p>
             </div>
         </h3>
         <!-- <h3 class="flex items-center">
-            <img src="@/assets/images/hora.svg" alt="horario" class="mr-2 big-icon white-icon">
+            <img src="@/assets/images/icons/hora.svg" alt="horario" class="mr-2 big-icon white-icon">
             <div class="flex flex-col">
                 <p>Lunes a Viernes de 8 a 17hs.</p>
                 <p>Lunes a Viernes de 9 a 18hs.</p>
@@ -22,7 +22,7 @@
 </template>
 <style scoped>
 .important-info{
-    background-color: var(--main-color);
+    background-color: var(--eshop-color);
     color: white;
 }
 .ubicacion{
@@ -30,7 +30,6 @@
 }
 .white-icon{
     filter: brightness(0) invert(1);
-    stroke-width: 50px;
 }
 img{
     height: 20px;

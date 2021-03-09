@@ -139,7 +139,7 @@
                 this.lastScrollPosition = currentScrollPosition
             },
             getImg(imgName){
-                return require('@/assets/images/'+imgName+'.svg')
+                return require('@/assets/images/icons/'+imgName+'.svg')
             }
         },
         mounted(){

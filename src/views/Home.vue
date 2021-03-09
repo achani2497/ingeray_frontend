@@ -4,7 +4,7 @@
       
       <div class="card">
         <div class="card-image bg-no-repeat">
-          <img loading="lazy" src="https://picsum.photos/400/200" alt="image">
+          <img loading="lazy" src="@/assets/images/template.png" alt="image">
         </div>
         <div class="card-body p-3">
           <div class="card-title">
@@ -17,7 +17,7 @@
       
       <div class="card">
         <div class="card-image bg-cover bg-no-repeat">
-          <img loading="lazy" src="https://picsum.photos/400/200" alt="image">
+          <img loading="lazy" src="@/assets/images/template.png" alt="image">
         </div>
         <div class="card-body p-3">
           <div class="card-title">
@@ -32,7 +32,7 @@
 
       <div class="card">
         <div class="card-image bg-cover bg-no-repeat">
-          <img loading="lazy" src="https://picsum.photos/400/200" alt="image">
+          <img loading="lazy" src="@/assets/images/template.png" alt="image">
         </div>
         <div class="card-body p-3">
           <div class="card-title">
@@ -44,7 +44,7 @@
 
       <div class="card">
         <div class="card-image bg-cover bg-no-repeat">
-          <img loading="lazy" src="https://picsum.photos/400/200" alt="image">
+          <img loading="lazy" src="@/assets/images/template.png" alt="image">
         </div>
         <div class="card-body p-3">
           <div class="card-title">
@@ -56,7 +56,7 @@
 
       <div class="card">
         <div class="card-image bg-cover bg-no-repeat">
-          <img loading="lazy" src="https://picsum.photos/400/200" alt="image">
+          <img loading="lazy" src="@/assets/images/template.png" alt="image">
         </div>
         <div class="card-body p-3">
           <div class="card-title">
@@ -68,7 +68,7 @@
 
       <div class="card">
         <div class="card-image bg-cover bg-no-repeat">
-          <img src="https://picsum.photos/400/200" alt="image" class="">
+          <img src="@/assets/images/template.png" alt="image" class="">
         </div>
         <div class="card-body p-3">
           <div class="card-title">
@@ -80,7 +80,7 @@
 
       <div class="card">
         <div class="card-image bg-cover bg-no-repeat">
-          <img src="https://picsum.photos/400/200" alt="image" class="">
+          <img src="@/assets/images/template.png" alt="image" class="">
         </div>
         <div class="card-body p-3">
           <div class="card-title">
@@ -92,7 +92,7 @@
 
       <div class="card">
         <div class="card-image bg-cover bg-no-repeat">
-          <img src="https://picsum.photos/400/200" alt="image" class="">
+          <img src="@/assets/images/template.png" alt="image" class="">
         </div>
         <div class="card-body p-3">
           <div class="card-title">
