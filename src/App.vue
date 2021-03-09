@@ -15,9 +15,9 @@
   background: var(--main-color);
   background: -webkit-linear-gradient(to right, #77A1D3, #7993cb, #84609b);  
   background: linear-gradient(to right, #77A1D3, #7993cb, #84609b);
-
+  background-size: cover;
   height: auto;
-  padding-top: 3rem;
+  padding-top: 6.5rem;
   padding-bottom: 2vh;
 }
 @media screen and (max-width: 414px){

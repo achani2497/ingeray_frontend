@@ -3,7 +3,7 @@
     <div class="cards w-full flex flex-wrap justify-around">
       
       <div class="card">
-        <div class="card-image bg-cover bg-no-repeat">
+        <div class="card-image bg-no-repeat">
           <img loading="lazy" src="https://picsum.photos/400/200" alt="image">
         </div>
         <div class="card-body p-3">
@@ -24,6 +24,9 @@
             <h2 class="text-2xl">Gran variedad de equipamiento de Radiologia Convencional y Digital</h2>
           </div>
           Equipos con Fuente de Alta Frecuencia, Media Frecuencia y Aparatologíade Industrial. Periféricos de Sala: Mesas Fijas y de Plano Flotante, Potter Mural, Columnas Portatubo, Espinógrafos. Equipos Rodantes, Arcos en C, Mamógrafos.
+        </div>
+        <div class="card-footer">
+          <button class="inge-button">Ver Productos</button>
         </div>
       </div>
 
@@ -120,7 +123,7 @@ export default {
     column-gap: 1rem;
   }
   .card{
-    width: 20%;
+    width: 30%;
     box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
     background: rgba(255, 255, 255, .3);
     backdrop-filter: blur(10px);
@@ -129,14 +132,21 @@ export default {
     overflow: hidden;
   }
   .card-title{
-    border-bottom: 2px solid rgba(0,0,0,.5);
+    border-bottom: 2px solid rgb(255, 255, 255);
     padding-bottom: 5px;
     margin-bottom: 5px;
   }
-  @media screen and (max-width: 1370px){
-    .card{
-      width: 30%;
-    }
+  .card-image{
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+  .card-footer{
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1vh;
+    padding-bottom: 3vh;
   }
 
   @media screen and (max-width: 900px){
@@ -165,6 +175,7 @@ export default {
   @media screen and (max-width: 414px){
     .card{
       width: 100%;
+      height: fit-content;
     }
   }
 

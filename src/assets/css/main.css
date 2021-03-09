@@ -10,3 +10,35 @@
     box-sizing: border-box;
     font-family: 'Questrial', sans-serif;
 }
+.inge-button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 3px 5px 2px rgba(0,0,0,.4);
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    height: 4vh;
+    width: 70%;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+.inge-button::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: -1;
+    background-color: rgba(57, 86, 105, .7);
+    transition: all .4s ease-in-out;
+}
+.inge-button:hover{
+    color: white;
+}
+.inge-button:hover::before{
+    transform: translateX(0)
+}

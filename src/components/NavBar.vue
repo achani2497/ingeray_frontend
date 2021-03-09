@@ -1,13 +1,21 @@
 <template>
-    <nav class="fixed top-0 h-20 max-h-24 flex flex-row w-screen">
-        <a href="/" class="w-1/6 w flex justify-center items-center py-1"> 
-            <span class="text-5xl text-black">Logo</span>
-        </a>
-        <ul class="w-5/6 flex justify-around items-center">
-            <li v-for="(option, index) in options" :key="index">
-                <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center" exact>{{option.sectionName}}</router-link>
-            </li>
-        </ul>
+    <nav class="fixed top-0 h-20 max-h-24 flex flex-col w-screen">
+        <!-- Menu -->
+        <div class="menu flex flex-row">
+            <a href="/" class="w-1/6 w flex justify-center items-center py-1"> 
+                <span class="text-5xl text-black">Logo</span>
+            </a>
+            <ul class="w-5/6 flex justify-around items-center">
+                <li v-for="(option, index) in options" :key="index">
+                    <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center" exact>
+                        <img :src="getImg(option.icon)"/>
+                        {{option.sectionName}}
+                    </router-link>
+                </li>
+            </ul>
+        </div>
+        <!-- Info importante -->
+        <important-info></important-info>
     </nav>
 </template>
 
@@ -15,12 +23,22 @@
     nav{
         box-shadow: 0px 5px 10px 2px rgba(0,0,0,.5);
         height: auto;
-        background: rgba(255, 255, 255, .7);
+        background: rgba(255, 255, 255, .5);
         backdrop-filter: blur(10px);
         z-index: 9;
     }
     li{
         height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    img{
+        height: 20px;
+        width: 20px;
+        transition: all .5s ease-in-out;    
+    }
+    li a{
         width: 100%;
     }
     a{
@@ -32,9 +50,16 @@
         background-color: rgba(57, 86, 105, .7);
         color: white;
     }
+    .router-link-exact-active img,
+    .router-link-active img{
+        filter: brightness(0) invert(1);
+    }
     li a:hover:not(.router-link-exact-active){
         background-color: rgba(96, 126, 146, .7);
         color: white;        
+    }
+    li a:hover img{
+        filter: brightness(0) invert(1);       
     }
     @media screen and (max-width:650px){
         nav a{
@@ -112,6 +137,9 @@
                 
                 // Set the current scroll position as the last scroll position
                 this.lastScrollPosition = currentScrollPosition
+            },
+            getImg(imgName){
+                return require('@/assets/images/'+imgName+'.svg')
             }
         },
         mounted(){
