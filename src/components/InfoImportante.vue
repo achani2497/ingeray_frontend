@@ -1,5 +1,5 @@
 <template>
-    <div class="important-info flex justify-around items-center h-12 w-full">
+    <div class="important-info flex justify-around items-center h-12 w-full" id="importantInfo">
         <h3 class="flex items-center ubicacion">
             <img src="@/assets/images/icons/map.svg" alt="ubicacion" class="mr-2 big-icon white-icon">
             Campillo 2586, Capital Federal, Argentina
@@ -11,16 +11,9 @@
                 <p>Dalina López | ingerayventas@gmail.com | +54 9 11 3851-0695</p>
             </div>
         </h3>
-        <!-- <h3 class="flex items-center">
-            <img src="@/assets/images/icons/hora.svg" alt="horario" class="mr-2 big-icon white-icon">
-            <div class="flex flex-col">
-                <p>Lunes a Viernes de 8 a 17hs.</p>
-                <p>Lunes a Viernes de 9 a 18hs.</p>
-            </div>
-        </h3> -->
     </div>
 </template>
-<style scoped>
+<style>
 .important-info{
     background-color: var(--eshop-color);
     color: white;
@@ -31,9 +24,7 @@
 .white-icon{
     filter: brightness(0) invert(1);
 }
-img{
-    height: 20px;
-    width: 20px;
+.important-info > h3 > img{
     transition: all .5s ease-in-out;    
 }
 .whatsapp{

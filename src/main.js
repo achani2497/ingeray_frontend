@@ -12,7 +12,8 @@ Vue.mixin(titleMixin)
 Vue.component('nav-bar',        require('./components/NavBar.vue').default);
 Vue.component('resp-nav-bar',   require('./components/ResponsiveNavBar.vue').default);
 Vue.component('important-info', require('./components/InfoImportante.vue').default);
-Vue.component('e-shop-button',  require('./components/eShopButton.vue').default)
+Vue.component('e-shop-button',  require('./components/eShopButton.vue').default);
+Vue.component('contact',        require('./components/ContactForm.vue').default);
 
 new Vue({
   router,
