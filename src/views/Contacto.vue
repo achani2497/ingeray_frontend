@@ -23,14 +23,16 @@
             </div>
         </div>
         <div class="map glass">
-            asd
+            <Map/>
         </div>
         <contact class="mt-6"></contact>
     </div>
 </template>
 <script>
+import Map from '../components/Map'
 export default {
-    title: 'Contacto'
+    components: {Map},
+    title: 'Contacto',
 }
 </script>
 <style scoped>
@@ -65,4 +67,5 @@ export default {
     .info-contacto h3{
         font-weight: 600;
     }
+    //TODO: HACER LOS MEDIA QUERIES
 </style>

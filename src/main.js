@@ -4,8 +4,29 @@ import router from './router'
 import store from './store'
 import '@/assets/css/main.css'
 import titleMixin from './assets/js/titleMixin'
+import VueGeolocation from 'vue-browser-geolocation';
+import emailjs from 'emailjs-com'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
+
+//* EmailJs Stuff init
+    emailjs.init("user_eeVYemHTnHjSJqpAxC8wh")
+    Vue.use(emailjs)
+//* End
+
+//* Google Maps Stuff init
+    Vue.use(VueGeolocation);
+    import * as VueGoogleMaps from 'vue2-google-maps';
+    Vue.use(VueGoogleMaps, {
+      load:{
+        key:'AIzaSyBDBIfFH7yfpNwPyzARzx0K-4D7bg-ZMK0',
+        libraries: 'places'
+      },
+      installComponents: false
+    })
+    Vue.component('g-map', VueGoogleMaps.Map);
+    Vue.component('g-marker', VueGoogleMaps.Marker);
+//* End
 
 Vue.mixin(titleMixin)
 

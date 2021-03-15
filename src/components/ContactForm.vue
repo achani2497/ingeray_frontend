@@ -1,44 +1,75 @@
 <template>
-    <form action="#">
+    <form action="#" @submit.prevent="sendMail">
         <div class="input-group">
             <label for="name">Nombre</label>
-            <input type="text" id="name" name="name" v-model="nombre">
+            <input type="text" id="name" name="name" v-model="mail.nombre">
         </div>
         <div class="input-group">
             <label for="institutionName">Nombre de la Institución</label>
-            <input type="text" id="institutionName" name="institutionName" v-model="nombreInstitucion">
+            <input type="text" id="institutionName" name="institutionName" v-model="mail.nombreInstitucion">
         </div>
         <div class="input-group h-24">
             <label for="unitName">Unidad</label>
             <p><small>(Corresponde si la institución tiene mas de un edificio)</small></p>
-            <input type="text" id="unitName" name="unitName" v-model="nombreUnidad" >
+            <input type="text" id="unitName" name="unitName" v-model="mail.nombreUnidad" >
         </div>
         <div class="input-group">
             <label for="telefono">Teléfono de contacto</label>
-            <input type="text" id="telefono" name="telefono" v-model="telefonoContacto">
+            <input type="text" id="telefono" name="telefono" v-model="mail.telefonoContacto">
         </div>
         <div class="input-group">
             <label for="mail">Mail de contacto</label>
-            <input type="text" id="mail" name="mail" v-model="mailContacto">
+            <input type="text" id="mail" name="mail" v-model="mail.mailContacto">
         </div>
         <div class="input-group">
             <label for="consulta">Consulta</label>
-            <textarea name="consulta" id="consulta" cols="30" rows="5"></textarea>
+            <textarea name="consulta" id="consulta" cols="30" rows="5" v-model="mail.consulta"></textarea>
         </div>
-        <button class="flex justify-center items-center h-10 w-full bg-green-400 font-bold text-xl border-2 rounded-3xl p-2">
-            <span>Enviar consulta</span>
+        <button type="submit" class="flex justify-center items-center h-10 w-full bg-green-400 font-bold text-xl border-2 rounded-3xl p-2">
+            <span id="sendEmail">Enviar consulta</span>
         </button>
     </form>
 </template>
 <script>
+import emailjs from 'emailjs-com'
 export default {
     data: function(){
         return{
-            nombre:'',
-            nombreInstitucion:'',
-            nombreUnidad:'',
-            telefonoContacto:'',
-            mailContacto:''
+            mail: {
+                nombre:'',
+                nombreInstitucion:'',
+                nombreUnidad:'-',
+                telefonoContacto:'',
+                mailContacto:'',
+                consulta:''
+            },
+            mail_service_id: "service_gqsxkkh",
+            mail_template_id: "template_s4nr60e",
+            mail_user_id: "user_eeVYemHTnHjSJqpAxC8wh"
+        }
+    },
+    methods: {
+        sendMail: function(){
+            let submitButton = document.getElementById('sendEmail')
+            submitButton.innerHTML = 'Enviando...'
+            
+            emailjs.send(this.mail_service_id, this.mail_template_id,{
+                client_name: this.mail.nombre,
+                institution_name: this.mail.nombreInstitucion,
+                unit_name: this.mail.nombreUnidad,
+                contact_email: this.mail.mailContacto,
+                contact_phone: this.mail.telefonoContacto,
+                message: this.mail.consulta
+            })
+            .then(response => {
+                submitButton.innerHTML = 'Enviar consulta'
+                alert('Mail Enviado correctamente!')
+            })
+            .catch(err => {
+                submitButton.innerHTML = 'Enviar consulta'
+                console.log(err)
+                alert(err)
+            })
         }
     }
 }
@@ -89,6 +120,9 @@ export default {
     button span{
         transition: all .4s ease-in-out;
         z-index: 1;
+    }
+    button:focus{
+        outline: none;
     }
     button::before{
         content: '';
