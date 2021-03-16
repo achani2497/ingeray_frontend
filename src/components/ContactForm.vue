@@ -25,6 +25,9 @@
             <label for="consulta">Consulta</label>
             <textarea name="consulta" id="consulta" cols="30" rows="5" v-model="mail.consulta"></textarea>
         </div>
+        <div class="input-group recaptcha">
+            <vue-recaptcha sitekey="6Le1uYEaAAAAAGpxz8n1J7jaawzTnbIdSkAvFYAX" :loadRecaptchaScript="true"></vue-recaptcha>
+        </div>
         <button type="submit" class="flex justify-center items-center h-10 w-full bg-green-400 font-bold text-xl border-2 rounded-3xl p-2">
             <span id="sendEmail">Enviar consulta</span>
         </button>
@@ -32,7 +35,10 @@
 </template>
 <script>
 import emailjs from 'emailjs-com'
+import VueRecaptcha from 'vue-recaptcha'
+
 export default {
+    components:{VueRecaptcha},
     data: function(){
         return{
             mail: {
@@ -76,7 +82,7 @@ export default {
 </script>
 <style scoped>
     form{
-        width: 30%;
+        width: 40%;
         box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
         background: rgba(255, 255, 255, .3);
         backdrop-filter: blur(10px);
@@ -111,6 +117,9 @@ export default {
         outline: none;
         box-shadow: 0 0 10px 2px rgba(255, 255, 255, 1);
     }
+    .recaptcha{
+        align-items: center
+    }
     button{
         position: relative;
         width: 100%;
@@ -136,5 +145,20 @@ export default {
     }
     button:hover::before{
         width: 100%;
+    }
+    @media screen and (max-width:900px){
+        form{
+            width: 50%;
+        }
+    }
+    @media screen and (max-width:650px){
+        form{
+            width: 70%;
+        }
+    }
+    @media screen and (max-width:500px){
+        form{
+            width: 95%;
+        }
     }
 </style>

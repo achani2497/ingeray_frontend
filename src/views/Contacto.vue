@@ -1,6 +1,7 @@
 <template>
-    <div class="form-container flex flex-wrap justify-around items-center">
+    <div class="form-container flex flex-wrap justify-around ">
         <div class="info glass">
+            <h3 class="text-3xl text-center text-underline mb-3">Información de contacto</h3>
             <div class="info-contacto">
                 <h3 class="text-xl">Gabriel Fandini</h3>
                 <p>+54 9 11 5976-7596</p>
@@ -25,7 +26,7 @@
         <div class="map glass">
             <Map/>
         </div>
-        <contact class="mt-6"></contact>
+        <contact class="contact-form mt-6"></contact>
     </div>
 </template>
 <script>
@@ -54,7 +55,7 @@ export default {
     }
     .map{
         width: 63%;
-        height: 50vh;
+        height: 56vh;
     }
     .info-contacto{
         letter-spacing: 2px;
@@ -67,5 +68,35 @@ export default {
     .info-contacto h3{
         font-weight: 600;
     }
-    //TODO: HACER LOS MEDIA QUERIES
+@media screen and (max-width: 900px){
+    .form-container{
+        gap: 1rem;
+    }
+    .info{
+        width: 50%;
+    }
+    .map{
+        width: 95%;
+    }
+    .contact-form{
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 700px) {
+    .info{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .info{
+        width: 95%;
+    }
+}
+@media screen and (max-width: 414px) {
+    .form-container{
+        margin-bottom: 3vh;
+        margin-top: 0;
+        padding-top: 3vh;
+    }
+}
 </style>

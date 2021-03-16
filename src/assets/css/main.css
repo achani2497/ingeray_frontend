@@ -42,3 +42,6 @@
 .inge-button:hover::before{
     transform: translateX(0)
 }
+.text-underline{
+    text-decoration: underline;
+}

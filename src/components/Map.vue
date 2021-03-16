@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h3 class="text-xl">Nuestra ubicacion</h3>
+        <h3 class="text-3xl text-center text-underline mb-3">Nuestra ubicación</h3>
         <g-map
             :center="coordinates"
             :zoom="zoom"
-            style="width: 100%; height:350px"
+            style="width: 100%; height:370px"
             ref="mapRef"
             @dragend="handleDrag">
             <g-marker

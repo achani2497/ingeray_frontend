@@ -5,13 +5,12 @@ import store from './store'
 import '@/assets/css/main.css'
 import titleMixin from './assets/js/titleMixin'
 import VueGeolocation from 'vue-browser-geolocation';
-import emailjs from 'emailjs-com'
+import{ init } from 'emailjs-com';
 
 Vue.config.productionTip = true
 
 //* EmailJs Stuff init
-    emailjs.init("user_eeVYemHTnHjSJqpAxC8wh")
-    Vue.use(emailjs)
+    init("user_eeVYemHTnHjSJqpAxC8wh")
 //* End
 
 //* Google Maps Stuff init
