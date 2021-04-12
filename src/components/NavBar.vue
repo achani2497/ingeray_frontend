@@ -2,12 +2,12 @@
     <nav class="fixed top-0 h-20 max-h-24 flex flex-col w-screen">
         <!-- Menu -->
         <div class="menu flex flex-row">
-            <a href="/" class="w-1/6 w flex justify-center items-center py-1"> 
-                <span class="text-5xl text-black">Logo</span>
-            </a>
+            <!-- Logo -->
+            <a href="/" class=" logo"></a>
+            <!-- Secciones -->
             <ul class="w-5/6 flex justify-around items-center">
                 <li v-for="(option, index) in options" :key="index">
-                    <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center" exact>
+                    <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center py-1" exact>
                         <img :src="getImg(option.icon)"/>
                         {{option.sectionName}}
                     </router-link>
@@ -15,7 +15,7 @@
             </ul>
         </div>
         <!-- Info importante -->
-        <important-info></important-info>
+        <important-info v-if="showLocationInfo" :class="{'hide':showNavbar}"></important-info>
     </nav>
 </template>
 
@@ -43,6 +43,19 @@
     }
     a{
         transition: all .5s ease-in-out;
+    }
+    .logo{
+        padding: 10px;
+        height: auto;
+        width: 18rem;
+        background-size: 80%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-image: url('../assets/images/logoTemplate.svg');
+    }
+    .hide{
+        transition: all .3s ease-in-out;
+        opacity: 0;
     }
     .router-link-exact-active,
     .router-link-active {
@@ -86,6 +99,7 @@
 
 <script>
     export default {
+        props:['showLocationInfo'],
         name:'nav-bar',
         data(){
             return{
@@ -127,13 +141,13 @@
 
                 // Stop executing this function if the difference between
                 // current scroll position and last scroll position is less than some offset
-                // if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-                //     return
-                // }
+                if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+                    return
+                }
 
                 // Here we determine whether we need to show or hide the navbar
                 // this.showNavbar = currentScrollPosition < this.lastScrollPosition
-                this.showNavbar = currentScrollPosition > 600
+                this.showNavbar = currentScrollPosition > 300
                 
                 // Set the current scroll position as the last scroll position
                 this.lastScrollPosition = currentScrollPosition

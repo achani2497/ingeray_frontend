@@ -1,5 +1,6 @@
 <template>
-    <div class="form-container flex flex-wrap justify-around ">
+    <div class="form-container flex flex-wrap justify-around">
+        <nav-bar :showLocationInfo="false"></nav-bar>
         <div class="info glass">
             <h3 class="text-3xl text-center text-underline mb-3">Información de contacto</h3>
             <div class="info-contacto">
@@ -48,7 +49,7 @@ export default {
     }
     .form-container{
         height: auto;
-        margin-top: 1rem;
+        margin-top: -1rem;
     }
     .info{
         width: 33%;
