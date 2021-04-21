@@ -41,7 +41,7 @@ export default {
             this.isActive = !this.isActive
         },
         getImg(imgName){
-            return require('@/assets/images/icons/'+imgName+'.svg')
+            return require('@/assets/images/icons/NavIcons/'+imgName+'.svg')
         }
     }
 }
@@ -50,6 +50,90 @@ export default {
     .hidden{
         display:none
     }
+    @media screen and (max-width:650px) {
+        .hidden{
+            display: flex;
+        }
+        .router-link-exact-active,
+        .router-link-active {
+            background-color: #395669;
+            color: white;
+        }
+
+        .router-link-exact-active img,
+        .router-link-active img{
+            filter: brightness(0) invert(1);
+        }
+
+        a{
+            transition: all .5s ease-in-out;
+            padding-top: 5px;
+        }
+
+        ul{
+            width: 100%;
+            height: auto;
+            box-shadow: 0px -5px 10px 2px rgba(0,0,0,.5);
+            height: auto;
+            background: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(10px);
+            z-index: 9;
+        }
+                           
+        li{
+            border-right: 1px solid rgba(0,0,0,.3);
+        }
+
+        img{
+            transition: all .5s ease-in-out;
+        }
+        li img{
+            height: 20px;
+            width: 20px;
+        }
+    }
+    /* @media screen and (max-width:414px) {
+        .hidden{
+            display: flex;
+        }
+        .router-link-exact-active,
+        .router-link-active {
+            background-color: #395669;
+            color: white;
+        }
+
+        .router-link-exact-active img,
+        .router-link-active img{
+            filter: brightness(0) invert(1);
+        }
+
+        a{
+            transition: all .5s ease-in-out;
+            padding-top: 5px;
+        }
+
+        ul{
+            width: 100%;
+            height: auto;
+            box-shadow: 0px -5px 10px 2px rgba(0,0,0,.5);
+            height: auto;
+            background: rgba(255, 255, 255, .7);
+            backdrop-filter: blur(10px);
+            z-index: 9;
+        }
+                           
+        li{
+            border-right: 1px solid rgba(0,0,0,.3);
+        }
+
+        img{
+            transition: all .5s ease-in-out;
+        }
+        li img{
+            height: 20px;
+            width: 20px;
+        }
+    } */
     @media screen and (max-width:414px) {
         .hidden{
             display: flex;

@@ -51,7 +51,7 @@
         background-size: 80%;
         background-position: center center;
         background-repeat: no-repeat;
-        background-image: url('../assets/images/logoTemplate.svg');
+        /* background-image: url('../assets/images/logoTemplate.svg'); */
     }
     .hide{
         transition: all .3s ease-in-out;
@@ -75,6 +75,12 @@
         filter: brightness(0) invert(1);       
     }
     @media screen and (max-width:650px){
+        nav{
+            display: none;
+        }
+        /* .logo{
+            width: 10rem;
+        }
         nav a{
             width: 25%;
         }
@@ -87,7 +93,7 @@
         }
         nav ul li a{
             width: 100%;
-        }
+        } */
     }
 
     @media screen and (max-width:414px) {
@@ -153,7 +159,7 @@
                 this.lastScrollPosition = currentScrollPosition
             },
             getImg(imgName){
-                return require('@/assets/images/icons/'+imgName+'.svg')
+                return require('@/assets/images/icons/NavIcons/'+imgName+'.svg')
             }
         },
         mounted(){
