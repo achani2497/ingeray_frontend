@@ -10,7 +10,7 @@
 <style>
 :root{
   --main-color: #0c2d3e;
-  --eshop-color: #091E7A;
+  --eshop-color: #102476;
 }
 #app{
   background-size: cover;

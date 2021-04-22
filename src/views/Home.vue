@@ -6,28 +6,28 @@
 			<!-- Banner Principal con imagen de la empresa -->
 			<div class="presentation-image"></div>
 			<div class="presentation-text simple-text">
-				<h1 class="title light-blue">Somos proveedores de Tecnología Médica</h1>
-				<h2 class="sub-title blue">Comprometido con la Salud</h2>
-				<p class="mt-12">
+				<h1 class="title light-blue text-3xl xl:text-4xl sm:text-3xl">Somos proveedores de Tecnología Médica</h1>
+				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-10 sm:mt-4">Comprometido con la Salud</h2>
+				<p class="text-xl mt-10">
 					Inge Ray SRL es una empresa argentina creada en 1992 y desde entonces nos comprometimos y dedicamos a brindar Soluciones Tecnológicas para la Salud que permitan a nuestros clientes ofrecer una medicina de calidad. Nos especializamos en Equipamiento Médico para Diagnóstico por Imágenes tanto para Medicina Humana como para Medicina Veterinaria. Fabricamos, comercializamos y alquilamos una amplia gama de equipos y periféricos de radiología convencional y digital, de mamografía y de ultrasonografía de producción nacional e internacional.
 				</p>
 			</div>      
 		</div>
 		<!-- PRODUCTOS -->
 		<div class="prods-services">
-			<div class="title blue">Vea nuestra lista de </div>
-			<div class="sub-title blue">Productos</div>
+			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
+			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-10 sm:mt-2">Productos</div>
 			<product-carousel></product-carousel>
 		</div>
 		<!-- SERVICIOS -->
 		<div class="prods-services -mt-24">
-			<div class="title blue">Vea nuestra lista de </div>
-			<div class="sub-title blue"> Servicios</div>
+			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
+			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 sm:mt-2"> Servicios</div>
 			<service-carousel></service-carousel>
 		</div>
 		<!-- EQUIPOS DE RADIOLOGIA -->
 		<div class="prods-services -mt-24 w-full">
-			<div class="title blue">Radiologia Convencional</div>
+			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Radiologia Convencional</div>
 			<div class="equipos flex justify-between items-center mt-8">
 				<div class="equipo">
 					<span class="simple-text blue">Arcos en C</span>
@@ -46,9 +46,9 @@
 		<!-- TEXTO AMISTOSO -->
 		<div class="friendly-text">
 			<div class="presentation-text simple-text">
-				<div class="title blue">Mejorando la Experiencia del Paciente</div>
-				<p class="mt-12">
-					Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los peque- ños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyec- tos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribu- yan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.
+				<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Mejorando la Experiencia del Paciente</div>
+				<p class="text-xl mt-6">
+					Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los pequeños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyectos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribuyan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.
 				</p>
 			</div>
 		</div>
@@ -104,6 +104,8 @@ export default {
 		text-align: justify;
 		width: 100vw;
 		padding: 1rem 6rem 4rem 6rem;
+		display: flex;
+		flex-direction: column;
 	}
 	.presentation-image{
 		height: 430px;
@@ -117,6 +119,7 @@ export default {
 		overflow: hidden;
 		padding: 3rem 6rem;
 		background-color: #D2DDEB;
+		width: 100%;
 	}
 
 /* Equipos */ 
@@ -164,41 +167,24 @@ export default {
 
 /* Media Queries */
 @media screen and (max-width: 900px){
-	.cards{
-		gap: 0;
-	}
-	.card{
-		width: 45%;
-		margin: .5rem 0;
-	}
 	.presentation-text{
-		font-size: 3.5vw;
+		padding: 1rem 2rem 4rem 2rem;
+	}
+	.prods-services{
+		padding: 2rem 2rem;
 	}
 }
 @media screen and (max-width: 650px){
-	.cards{
-		gap: 0;
-	}
-	.card{
-		width: 45%;
-	}
 	.presentation-text{
-		font-size: 4.5vw;
+		padding: 1rem 3rem 4rem 3rem;
+	}
+	.prods-services{
+		padding: 2rem 3rem;
 	}
 }
 @media screen and (max-width: 615px){
-	.card{
-		width: 80%;
-	}
-	.presentation-text{
-		font-size: 5vw;
-	}
 }
 @media screen and (max-width: 414px){
-	.card{
-	width: 100%;
-	height: fit-content;
-	}
 }
 
 </style>

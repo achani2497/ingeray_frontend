@@ -1,8 +1,8 @@
 <template>
     <footer>
         <!-- Medios de pago -->
-        <div class="medios-de-pago flex flex-col p-6 text-center">
-            <span class="mb-4"> Conocé nuestros medios de pago </span>
+        <div class="medios-de-pago flex flex-col text-center">
+            <span class="my-4"> Conocé nuestros medios de pago </span>
             <div class="medios-de-pago flex justify-center items-center gap-12">
                 <div class="medio-de-pago" v-for="(pago, index) in mediosDePago" :key="index">
                     <img :src='pago.img' alt="">
@@ -10,13 +10,13 @@
             </div>
         </div>
         <!-- Divisiones -->
-        <div class="divisiones h-16 flex items-center gap-10">
+        <div class="divisiones h-16 flex justify-center items-center lg:justify-start gap-10">
             <span class="active">Diágnostico por Imágenes</span>
             <span>División veterinaria</span>
         </div>
         <!-- Redes sociales -->
-        <div class="redes-sociales flex justify-around">
-            <div class="redes text-center flex flex-col items-center justify-center text-white">
+        <div class="redes-sociales flex justify-between">
+            <div class="redes text-center flex flex-col items-center text-white">
                 <span>Seguinos en Redes Sociales</span>
                 <div class="iconos flex justify-center gap-4">
                     <div class="icon facebook-icon"></div>
@@ -24,11 +24,11 @@
                     <div class="icon youtube-icon"></div>
                 </div>
             </div>
-            <div class="newsletter flex flex-col justify-center items-center text-white">
+            <div class="newsletter flex flex-col items-center text-white">
                 <span>Suscribete a nuestro Newsletter</span>
                 <div class="big-icon ingeray-icon"></div>
             </div>
-            <div class="pais-region flex flex-col justify-center items-center gap-4 text-white">
+            <div class="pais-region flex flex-col items-center gap-4 text-white">
                 <span>Pais - Idioma</span>
                 <span>Argentina - Español</span>
             </div>
@@ -37,6 +37,9 @@
     </footer>
 </template>
 <style scoped>
+.medios-de-pago{
+  padding: .5rem 1.5rem;
+}
 .medio-de-pago > img{
   width: 50px;
   height: 40px;
@@ -55,7 +58,7 @@
 }
 .redes-sociales{
   background-color: var(--eshop-color);
-  padding: 0 6rem;
+  padding: 0 2rem;
   height: 150px;
 }
 .redes{
@@ -92,6 +95,29 @@
 }
 .ingeray-icon{
   background-image: url('../assets/images/icons/footerIcons/ingeray.svg');
+}
+@media screen and (max-width: 900px){
+	.divisiones, .redes-sociales{
+		padding: 0 0;
+	}
+	.prods-services{
+		padding: 2rem 2rem;
+	}
+  .redes, .newsletter, .pais-region{
+    width: 33.33%;
+  }
+}
+@media screen and (max-width: 650px){
+	.presentation-text{
+		padding: 1rem 3rem 4rem 3rem;
+	}
+	.prods-services{
+		padding: 2rem 3rem;
+	}
+}
+@media screen and (max-width: 615px){
+}
+@media screen and (max-width: 414px){
 }
 </style>
 <script>

@@ -3,7 +3,7 @@
         <!-- Menu -->
         <div class="menu flex flex-row">
             <!-- Logo -->
-            <a href="/" class=" logo"></a>
+            <a href="/" class="logo"></a>
             <!-- Secciones -->
             <ul class="w-5/6 flex justify-around items-center">
                 <li v-for="(option, index) in options" :key="index">
@@ -23,8 +23,7 @@
     nav{
         box-shadow: 0px 5px 10px 2px rgba(0,0,0,.5);
         height: auto;
-        background: rgba(255, 255, 255, .5);
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 1);
         z-index: 9;
     }
     li{
@@ -45,13 +44,11 @@
         transition: all .5s ease-in-out;
     }
     .logo{
-        padding: 10px;
-        height: auto;
-        width: 18rem;
-        background-size: 80%;
+        background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        /* background-image: url('../assets/images/logoTemplate.svg'); */
+        background-image: url('../assets/images/icons/NavIcons/logo-ingeray.svg');
+        width: 18rem;
     }
     .hide{
         transition: all .3s ease-in-out;

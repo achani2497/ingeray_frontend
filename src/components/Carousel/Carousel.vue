@@ -1,9 +1,9 @@
 <template>
-    <div class="carousel-container">
+    <div class="carousel-container -mt-10">
         <splide :options="options">
             <splide-slide v-for="(elemento, index) in elementos" :key="index" class="carousel-splide">
                 <div class="carousel-card">
-                    <div class="carousel-image" :class={}></div>
+                    <div class="carousel-image"></div>
                     <div class="carousel-text">
                         {{elemento.descripcion}}
                     </div>
@@ -15,9 +15,10 @@
 <style scoped>
     .carousel-container{
 		height: 600px;
-		width: 93vw;
-		margin-left: -3rem;
-		margin-top: -2rem
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
 	}
 	.carousel-splide{
 		padding: 25px;
@@ -40,6 +41,7 @@
 		border-bottom-left-radius: 25px;
 		background-size: cover;
 		background-repeat: no-repeat;
+		background-image: url('https://picsum.photos/200/300');
 	}
 	.carousel-text{
 		width: 70%;
@@ -47,6 +49,12 @@
 		text-align: justify;
 		border-top-right-radius: 25px;
 		border-bottom-right-radius: 25px;
+	}
+	@media screen and (max-width: 900px){
+		.carousel-container{
+			width: 100%;
+			margin: 0;
+		}
 	}
 </style>
 <script>
