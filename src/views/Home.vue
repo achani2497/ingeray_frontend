@@ -1,101 +1,72 @@
 <template>
   	<div class="row">
 		<nav-bar :showLocationInfo="true"></nav-bar>
+		<!-- PRESENTACION -->
 		<div class="presentation">
-			<div class="presentation-image flex justify-center items-center">
-				Acá va el logo de la empresa 
-			</div>
-			<div class="presentation-text text-3xl">
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem harum in nisi ipsa voluptate repellendus assumenda qui! Aperiam autem, nam assumenda quia saepe dolorum est alias aspernatur nulla. Saepe similique impedit unde voluptatum illo aut iusto rem distinctio neque eos! Nemo at voluptate cumque, nihil distinctio vitae labore beatae magni numquam enim! Dicta, incidunt at ipsam qui consectetur neque assumenda.
+			<!-- Banner Principal con imagen de la empresa -->
+			<div class="presentation-image"></div>
+			<div class="presentation-text simple-text">
+				<h1 class="title light-blue">Somos proveedores de Tecnología Médica</h1>
+				<h2 class="sub-title blue">Comprometido con la Salud</h2>
+				<p class="mt-12">
+					Inge Ray SRL es una empresa argentina creada en 1992 y desde entonces nos comprometimos y dedicamos a brindar Soluciones Tecnológicas para la Salud que permitan a nuestros clientes ofrecer una medicina de calidad. Nos especializamos en Equipamiento Médico para Diagnóstico por Imágenes tanto para Medicina Humana como para Medicina Veterinaria. Fabricamos, comercializamos y alquilamos una amplia gama de equipos y periféricos de radiología convencional y digital, de mamografía y de ultrasonografía de producción nacional e internacional.
+				</p>
 			</div>      
 		</div>
-		<h1 class="text-3xl mt-6 text-center ml-8">Productos que ofrecemos</h1>
-		<div class="cards w-full flex flex-wrap justify-around">
-			<div v-for="(producto, index) in productos" :key="index" class="card fade-in">
-				<div class="card-image bg-no-repeat">
-					<img loading="lazy" :src="producto.imagen" alt="image">
+		<!-- PRODUCTOS -->
+		<div class="prods-services">
+			<div class="title blue">Vea nuestra lista de </div>
+			<div class="sub-title blue">Productos</div>
+			<product-carousel></product-carousel>
+		</div>
+		<!-- SERVICIOS -->
+		<div class="prods-services -mt-24">
+			<div class="title blue">Vea nuestra lista de </div>
+			<div class="sub-title blue"> Servicios</div>
+			<service-carousel></service-carousel>
+		</div>
+		<!-- EQUIPOS DE RADIOLOGIA -->
+		<div class="prods-services -mt-24 w-full">
+			<div class="title blue">Radiologia Convencional</div>
+			<div class="equipos flex justify-between items-center mt-8">
+				<div class="equipo">
+					<span class="simple-text blue">Arcos en C</span>
+					<div class="img-equipo"></div>
 				</div>
-				<div class="card-body p-3">
-					<div class="card-title">
-						<h2 class="text-2xl">{{producto.titulo}}</h2>
-					</div>
-					<p class="text-lg">{{producto.descripcion}}</p>
+				<div class="equipo">
+					<span class="simple-text blue">Equipos Móviles</span>
+					<div class="img-equipo"></div>
+				</div>
+				<div class="equipo">
+					<span class="simple-text blue">Equipos de Sala</span>
+					<div class="img-equipo"></div>
 				</div>
 			</div>
 		</div>
-		<h1 class="text-3xl mt-6 text-center ml-8">Servicios que ofrecemos</h1>
-		<div class="cards w-full flex flex-wrap justify-around">
-			<div v-for="(producto, index) in productos" :key="index" class="card fade-in">
-				<div class="card-image bg-no-repeat">
-					<img loading="lazy" :src="producto.imagen" alt="image">
-				</div>
-				<div class="card-body p-3">
-					<div class="card-title">
-						<h2 class="text-2xl">{{producto.titulo}}</h2>
-					</div>
-					<p class="text-lg">{{producto.descripcion}}</p>
-				</div>
+		<!-- TEXTO AMISTOSO -->
+		<div class="friendly-text">
+			<div class="presentation-text simple-text">
+				<div class="title blue">Mejorando la Experiencia del Paciente</div>
+				<p class="mt-12">
+					Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los peque- ños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyec- tos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribu- yan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.
+				</p>
 			</div>
 		</div>
+		<!-- ESHOP -->
 		<div class="eshop-section flex justify-center items-center">
 			<h1>Acá va un banner promocional del eshop</h1>
-		</div>
-		<div class="footer flex justify-center items-center">
-			Acá van las imagenes de las tarjetas con las que trabajamos
 		</div>
   	</div>
 </template>
 
 <script>
+import ServiceCarousel from '../components/Carousel/ServiceCarousel.vue'
 export default {
+  components: { ServiceCarousel },
 	title: 'Ingeray - Home',
 	data: function(){
 		return {
-			fadeInElements:[],
-			productos:[
-				{
-				titulo:'Asistencia y Servicio Técnico de Equipamiento de Diagnóstico Médico',
-				descripcion:`
-				<p><b>PRIMERA VISITA DE EVALUACIÓN Y DIAGNÓSTICO SIN COSTO.</b></p>
-				Contamos con un amplio plantel de técnicos e ingenieros especializados en marcas nacionales e importadas.`,
-				imagen:require('../assets/images/template.png')
-				},
-				{
-				titulo:'Gran variedad de equipamiento de Radiologia Convencional y Digital',
-				descripcion:'Equipos con Fuente de Alta Frecuencia, Media Frecuencia y Aparatologíade Industrial. Periféricos de Sala: Mesas Fijas y de Plano Flotante, Potter Mural, Columnas Portatubo, Espinógrafos. Equipos Rodantes, Arcos en C, Mamógrafos.',
-				imagen:require('../assets/images/template.png')
-				},
-				{
-				titulo:'Servicio de Asistencia Remota de Equipos Digitalizados',
-				descripcion:'Equipamiento de Radiología Convencional y Digital, Equipos de Sala y Rodantes, Arcos en C y Mamógrafos.',
-				imagen:require('../assets/images/template.png')
-				},
-			]
-			// {
-			//   titulo:'Abonos por Servicio de Mantenimiento preventivo y correctivo',
-			//   descripcion:'Servicio a Demanda o Visitas Periódicas a Progamar. Visitas mensuales, trimestrales o semestrales.',
-			//   imagen:require('../assets/images/template.png')
-			// },
-			// {
-			//   titulo:'Calculo y Obra Blindaje de Sala de Radiología',
-			//   descripcion:'Confección de planos, presentación y seguimiento trámites ante el Ministerio de Salud de la Nación ante todas las jurisdicciones Nacionales.',
-			//   imagen:require('../assets/images/template.png')
-			// },
-			// {
-			//   titulo:'Puesta en valor y Restauración de Salas y Equipos de Radiología',
-			//   descripcion:'Equipamiento de Radiología Convencional y Digital, Equipos de Sala y Rodantes, Arcos en C y Mamógrafos.',
-			//   imagen:require('../assets/images/template.png')
-			// },
-			// {
-			//   titulo:'Diseño y Realizacion de Sistemas de Integración de Tecnologías de Diagnóstico',
-			//   descripcion:'Digitalización de Equipos con Panel de Detección Directa sin partes móviles. Sistemas de Radiología Digital Directa.',
-			//   imagen:require('../assets/images/template.png')
-			// },
-			// {
-			//   titulo:'Contratos de Alquiler de Equipos Radiológicos',
-			//   descripcion:'Equipamiento de Radiología Convencional y Digital, Equipos de Sala y Rodantes, Arcos en C y Mamógrafos.',
-			//   imagen:require('../assets/images/template.png')
-			// }
+			
 		}
 	},
 	mounted: function(){
@@ -124,83 +95,65 @@ export default {
 		display: flex;
 		flex-wrap: wrap;
 	}
-	.cards{
-		padding: 1rem 1rem;
-		row-gap: 1rem;
-		column-gap: 1rem;
-	}
-	.card{
-		width: 30%;
-		box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-		background: rgba(255, 255, 255, .3);
-		backdrop-filter: blur(10px);
-		border-radius: 30px;
-		border: 1px solid rgba(255, 255, 255, .3);
-		overflow: hidden;
-	}
-	.card-title{
-		border-bottom: 2px solid rgb(255, 255, 255);
-		padding-bottom: 5px;
-		margin-bottom: 5px;
-	}
-	.card-image{
-		object-fit: cover;
-		object-position: 50% 50%;
-	}
-	.card-footer{
-		height: 4vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-top: 1vh;
-		padding-bottom: 3vh;
-	}
-	.fade-in {
-		opacity: 0;
-		-webkit-transition: .6s;
-		-o-transition: .6s;
-		transition: .6s;
-		opacity: 0;
-		box-sizing: border-box;
-		padding: 20px;
-		display: inline-block;
-		transform: translateY(-100px);
-	}
-	.fade-in:nth-child(2){
-		-webkit-transition: 1s;
-		-o-transition: 1s;
-		transition: 1s;		
-	}
-	.fade-in:nth-child(3){
-		-webkit-transition: 1.4s;
-		-o-transition: 1.4s;
-		transition: 1.4s;		
-	}
-	.inView {
-		opacity: 1;
-		-webkit-transform: translateY(0px) rotate(0deg) translateZ(0);
-		transform: translateY(0px) rotate(0deg) translateZ(0);
+
+/* Presentacion */
+	.presentation{
+		box-shadow: 0px 2px 10px 5px rgba(0,0,0,.3);
 	}
 	.presentation-text{
+		text-align: justify;
 		width: 100vw;
-		padding: 2rem;
-		/* box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2); */
-		background: rgba(255, 255, 255, .3);
-		backdrop-filter: blur(3px);
+		padding: 1rem 6rem 4rem 6rem;
 	}
 	.presentation-image{
-		height: 300px;
+		height: 430px;
 		width: 100vw;
 		background-repeat: no-repeat;
-		background-size: cover;
-		/* background-image: url('../assets/images/template.svg'); */
+		background-image: url('../assets/images/Banners/banner-principal.svg');
 	}
+
+/* Productos */
+	.prods-services{
+		overflow: hidden;
+		padding: 3rem 6rem;
+		background-color: #D2DDEB;
+	}
+
+/* Equipos */ 
+	.equipo{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 300px;
+		width: 30%;
+		border-radius: 25px;
+		background: rgb(228, 240, 255);
+		box-shadow:  9px 9px 20px #b7c0cc, 
+					-9px -9px 20px rgba(237, 250, 255, .5);
+		padding: .5rem 1rem 1rem 1rem;
+	}
+	.img-equipo{
+		height: 90%;
+		width: 100%;
+		background-image: url('https://picsum.photos/200/300');
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+/* Texto Amistoso */
+	.friendly-text{
+		background-color: #D2DDEB;
+	}
+
+/* E-shop */
 	.eshop-section{
 		height: 300px;
 		width: 100vw;
 		background: #091E7A;
 		color: white;
 	}
+
+/* Footer */
 	.footer{
 		height: 50px;
 		width: 100%;
@@ -208,33 +161,44 @@ export default {
 		background: rgba(255, 255, 255, .3);
 		backdrop-filter: blur(10px);
 	}
-	@media screen and (max-width: 900px){
-		.cards{
+
+/* Media Queries */
+@media screen and (max-width: 900px){
+	.cards{
 		gap: 0;
-		}
-		.card{
+	}
+	.card{
 		width: 45%;
 		margin: .5rem 0;
-		}
 	}
-	@media screen and (max-width: 650px){
-		.cards{
+	.presentation-text{
+		font-size: 3.5vw;
+	}
+}
+@media screen and (max-width: 650px){
+	.cards{
 		gap: 0;
-		}
-		.card{
+	}
+	.card{
 		width: 45%;
-		}
 	}
-	@media screen and (max-width: 615px){
-		.card{
+	.presentation-text{
+		font-size: 4.5vw;
+	}
+}
+@media screen and (max-width: 615px){
+	.card{
 		width: 80%;
-		}
 	}
-	@media screen and (max-width: 414px){
-		.card{
-		width: 100%;
-		height: fit-content;
-		}
+	.presentation-text{
+		font-size: 5vw;
 	}
+}
+@media screen and (max-width: 414px){
+	.card{
+	width: 100%;
+	height: fit-content;
+	}
+}
 
 </style>

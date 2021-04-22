@@ -109,42 +109,50 @@ export default {
                 {
                     nombreProducto:'Servicio#1',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
                 },
                 {
                     nombreProducto:'Servicio#2',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
                 },
                 {
                     nombreProducto:'Servicio#3',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
                 },
                 {
                     nombreProducto:'Servicio#4',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
                 },
                 {
                     nombreProducto:'Servicio#5',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
                 },
                 {
                     nombreProducto:'Servicio#6',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
                 },
                 {
                     nombreProducto:'Servicio#7',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
                 },
                 {
                     nombreProducto:'Servicio#8',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
                 }
             ],
         }

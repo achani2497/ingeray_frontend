@@ -31,7 +31,7 @@
     </div>
 </template>
 <script>
-import Map from '../components/Map'
+import Map from '../components/ContactSection/Map'
 export default {
     components: {Map},
     title: 'Contacto',
@@ -81,11 +81,18 @@ export default {
     }
     .contact-form{
         margin-top: 0;
+        margin-bottom: 1rem;
     }
 }
 @media screen and (max-width: 700px) {
     .info{
         width: 70%;
+    }
+}
+@media screen and (max-width: 650px){
+    .form-container{
+        margin-top: 0;
+        padding-top: 1rem;
     }
 }
 @media screen and (max-width: 500px) {

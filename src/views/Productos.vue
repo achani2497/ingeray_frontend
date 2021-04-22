@@ -43,49 +43,57 @@ export default {
                 {
                     nombreProducto:'Producto#1',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    imagen:'',
                     categoria:['humanos','portatil']
                 },
                 {
                     nombreProducto:'Producto#2',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    imagen:'',
                     categoria:['animal','portatil']
                 },
                 {
                     nombreProducto:'Producto#3',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    imagen:'',
                     categoria:['humanos','fijo']
                 },
                 {
                     nombreProducto:'Producto#4',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    imagen:'',
                     categoria:['humanos','portatil']
                 },
                 {
                     nombreProducto:'Producto#5',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    imagen:'',
                     categoria:['humanos','fijo']
                 },
                 {
                     nombreProducto:'Producto#6',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    imagen:'',
                     categoria:['animal','humanos','fijo']
                 },
                 {
                     nombreProducto:'Producto#7',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    imagen:'',
                     categoria:['humanos','portatil']
                 },
                 {
                     nombreProducto:'Producto#8',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
+                    imagen:'',
                     categoria:['animal','portatil']
                 }
             ],
@@ -109,13 +117,16 @@ export default {
             }
         },
         onScroll(){
+            let width = window.innerWidth
+            if(width > 650){
                 var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop                
                 if (currentScrollPosition < 0) {
                     return
                 }
-
+    
                 this.showNavbar = currentScrollPosition > 300
                 this.lastScrollPosition = currentScrollPosition
+            }
         }
     },
     mounted(){
@@ -214,6 +225,9 @@ select:hover{
     }
     .card{
         width: 45%;
+    }
+    .filter-box{
+        top: 0;
     }
 }
 @media screen and (max-width: 615px){

@@ -6,6 +6,10 @@ import '@/assets/css/main.css'
 import titleMixin from './assets/js/titleMixin'
 import VueGeolocation from 'vue-browser-geolocation';
 import{ init } from 'emailjs-com';
+import VueSplide from '@splidejs/vue-splide';
+import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
+
+Vue.use(VueSplide)
 
 Vue.config.productionTip = true
 
@@ -29,11 +33,15 @@ Vue.config.productionTip = true
 
 Vue.mixin(titleMixin)
 
-Vue.component('nav-bar',        require('./components/NavBar.vue').default);
-Vue.component('resp-nav-bar',   require('./components/ResponsiveNavBar.vue').default);
-Vue.component('important-info', require('./components/InfoImportante.vue').default);
-Vue.component('e-shop-button',  require('./components/eShopButton.vue').default);
-Vue.component('contact',        require('./components/ContactForm.vue').default);
+Vue.component('nav-bar',          require('./components/NavBar.vue').default);
+Vue.component('resp-nav-bar',     require('./components/ResponsiveNavBar.vue').default);
+Vue.component('important-info',   require('./components/InfoImportante.vue').default);
+Vue.component('e-shop-button',    require('./components/eShopButton.vue').default);
+Vue.component('contact',          require('./components/ContactSection/ContactForm.vue').default);
+Vue.component('footer-content',   require('./components/Footer.vue').default);
+Vue.component('carousel',         require('./components/Carousel/Carousel.vue').default);
+Vue.component('product-carousel', require('./components/Carousel/ProductCarousel.vue').default);
+Vue.component('service-carousel', require('./components/Carousel/ServiceCarousel.vue').default);
 
 new Vue({
   router,
