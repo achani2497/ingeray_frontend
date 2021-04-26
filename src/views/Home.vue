@@ -25,8 +25,17 @@
 			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 sm:mt-2"> Servicios</div>
 			<service-carousel></service-carousel>
 		</div>
+		<!-- TEXTO AMISTOSO -->
+		<div class="friendly-text -mt-14 pb-20">
+			<div class="presentation-text simple-text">
+				<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Mejorando la Experiencia del Paciente</div>
+				<p class="text-xl mt-6">
+					Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los pequeños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyectos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribuyan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.
+				</p>
+			</div>
+		</div>
 		<!-- EQUIPOS DE RADIOLOGIA -->
-		<div class="prods-services -mt-24 w-full">
+		<div class="prods-services radiologia -mt-24 w-full">
 			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Radiologia Convencional</div>
 			<div class="equipos flex justify-between items-center mt-8">
 				<div class="equipo">
@@ -43,18 +52,9 @@
 				</div>
 			</div>
 		</div>
-		<!-- TEXTO AMISTOSO -->
-		<div class="friendly-text">
-			<div class="presentation-text simple-text">
-				<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Mejorando la Experiencia del Paciente</div>
-				<p class="text-xl mt-6">
-					Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los pequeños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyectos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribuyan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.
-				</p>
-			</div>
-		</div>
 		<!-- ESHOP -->
-		<div class="eshop-section flex justify-center items-center">
-			<h1>Acá va un banner promocional del eshop</h1>
+		<div class="medicina-veterinaria flex justify-center items-center">
+			<div class="banner-prods-veterinaria flex justify-center items-center">Banner de equipos de veterinaria</div>
 		</div>
   	</div>
 </template>
@@ -98,7 +98,7 @@ export default {
 
 /* Presentacion */
 	.presentation{
-		box-shadow: 0px 2px 10px 5px rgba(0,0,0,.3);
+		background-color: #e1e1e1;
 	}
 	.presentation-text{
 		text-align: justify;
@@ -108,9 +108,11 @@ export default {
 		flex-direction: column;
 	}
 	.presentation-image{
-		height: 430px;
-		width: 100vw;
+		position: relative;
+		height: 500px;
 		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
 		background-image: url('../assets/images/Banners/banner-principal.svg');
 	}
 
@@ -122,7 +124,7 @@ export default {
 		width: 100%;
 	}
 
-/* Equipos */ 
+/* Equipos de Radiologia */ 
 	.equipo{
 		display: flex;
 		flex-direction: column;
@@ -130,9 +132,9 @@ export default {
 		height: 300px;
 		width: 30%;
 		border-radius: 25px;
-		background: rgb(228, 240, 255);
-		box-shadow:  9px 9px 20px #b7c0cc, 
-					-9px -9px 20px rgba(237, 250, 255, .5);
+		background: #e1e1e1;
+		box-shadow:  20px 20px 40px #bfbfbf,
+					-20px -20px 40px #ffffff;
 		padding: .5rem 1rem 1rem 1rem;
 	}
 	.img-equipo{
@@ -142,6 +144,10 @@ export default {
 		background-size: cover;
 		background-repeat: no-repeat;
 	}
+	.radiologia{
+		background-color: #e1e1e1;
+		padding-bottom: 4rem;
+	}
 
 /* Texto Amistoso */
 	.friendly-text{
@@ -149,24 +155,41 @@ export default {
 	}
 
 /* E-shop */
-	.eshop-section{
-		height: 300px;
+	.medicina-veterinaria{
+		height: 500px;
 		width: 100vw;
-		background: #091E7A;
-		color: white;
+		background: #e1e1e1;
+		padding: 0 6rem 4rem 6rem;
 	}
-
-/* Footer */
-	.footer{
-		height: 50px;
+	.banner-prods-veterinaria{
+		height: 100%;
 		width: 100%;
-		box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-		background: rgba(255, 255, 255, .3);
-		backdrop-filter: blur(10px);
+		border-radius: 25px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+		/* background-image: url('https://picsum.photos/1500/1000'); */
+		box-shadow:  20px 20px 20px #bfbfbf,
+					-20px -20px 20px #ffffff;
 	}
 
 /* Media Queries */
+@media screen and (max-width: 1000px){
+	.presentation-image{
+		height: 440px;
+	}
+	.-mt-24{
+		margin-top: -3rem;
+		margin-bottom: 3rem;
+	}
+	.friendly-text{
+		padding-bottom: 2rem;
+	}
+}
 @media screen and (max-width: 900px){
+	.presentation-image{
+		height: 270px;
+	}
 	.presentation-text{
 		padding: 1rem 2rem 4rem 2rem;
 	}
@@ -177,6 +200,9 @@ export default {
 @media screen and (max-width: 650px){
 	.presentation-text{
 		padding: 1rem 3rem 4rem 3rem;
+	}
+	.presentation-image{
+		height: 25vh;
 	}
 	.prods-services{
 		padding: 2rem 3rem;

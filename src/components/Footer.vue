@@ -3,7 +3,7 @@
         <!-- Medios de pago -->
         <div class="medios-de-pago flex flex-col text-center">
             <span class="my-4"> Conocé nuestros medios de pago </span>
-            <div class="medios-de-pago flex justify-center items-center gap-12">
+            <div class="medios-de-pago flex justify-center items-center gap-1">
                 <div class="medio-de-pago" v-for="(pago, index) in mediosDePago" :key="index">
                     <img :src='pago.img' alt="">
                 </div>
@@ -39,12 +39,13 @@
 <style scoped>
 .medios-de-pago{
   padding: .5rem 1.5rem;
+  background-color: #e1e1e1;
 }
 .medio-de-pago > img{
-  width: 50px;
-  height: 40px;
+  width: 80px;
+  height: 60px;
   /* background-image: url('../assets/images/medios-de-pago/visa.svg'); */
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .divisiones{

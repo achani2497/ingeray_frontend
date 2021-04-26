@@ -17,12 +17,6 @@
   height: auto;
   padding-top: 6.5rem;
 }
-/* @media screen and (max-width: 414px){
-  #app{
-    padding-top: 0;
-    padding-bottom: 7vh;
-  }
-} */
 @media screen and (max-width: 650px){
   #app{
     padding-top: 0;

@@ -33,6 +33,9 @@
     .light-blue{
         color: #9EB3E3;
     }
+    .gray{
+        color: #677A8B;
+    }
     h1,h2,.title,.sub-title{
         max-height: 45px;
     }
