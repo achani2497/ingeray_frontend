@@ -12,3 +12,5 @@ git add -A
 git commit -m 'deploy'
 git push -f git@github.com:achani2497/ingeray_frontend.git master:gh-pages
 cd -
+clear
+echo "Live on: https://achani2497.github.io/ingeray_frontend/"
