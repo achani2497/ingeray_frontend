@@ -29,18 +29,13 @@
 	.carousel-card{
 		width: 100%;
 		height: 400px;
-		border-radius: 25px;
 		background: #D2DDEB;
-		box-shadow:  9px 9px 20px #b7c0cc, 
-					-9px -9px 20px rgba(237, 250, 255, .8);
-		padding: 1rem;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
 		display: flex;
 		gap: 1rem;
 	}
 	.carousel-image{
 		width: 60%;
-		border-top-left-radius: 25px;
-		border-bottom-left-radius: 25px;
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-image: url('https://picsum.photos/200/300');
@@ -74,6 +69,22 @@
 		}
 		.carousel-text{
 			margin-top: -1rem;
+		}
+	}
+	@media screen and (max-width: 650px){
+		.carousel-container{
+			width: 100%;
+			margin-bottom: 3rem;
+		}
+		.carousel-text{
+			padding: .5rem;
+		}
+		.carousel-card{
+			margin-left: 10%;
+			width: 80vw;
+		}
+		.splide{
+			padding: 48px 0px;
 		}
 	}
 </style>

@@ -81,3 +81,32 @@
         background-size: cover;
         background-position: center center;
     }
+
+/* CAROUSEL */
+/*? Pongo estos estilos acá porque sino no me deja pisar los originales */
+    .splide__pagination{
+        gap: 1rem!important;
+    }
+    .splide__pagination__page{
+        width: 20px!important;
+        height: 20px!important;
+        border-radius: 100%!important;
+    }
+    .splide__pagination__page.is-active{
+        /* background-color: #0C7F7E!important; */
+    }
+
+@media screen and (max-width: 650px){
+    .splide{
+        padding-top: 0!important;
+    }
+    .splide__slide{
+        padding: 25px 0!important;
+    }
+    .splide__arrow--prev{
+        left: 0!important;
+    }
+    .splide__arrow--next{
+        right: 0!important;
+    }
+}
