@@ -5,9 +5,9 @@
 		<div class="presentation">
 			<!-- Banner Principal con imagen de la empresa -->
 			<div class="presentation-image"></div>
-			<div class="presentation-text simple-text">
+			<div class="presentation-text simple-text mt-6">
 				<h1 class="title light-blue text-3xl xl:text-4xl sm:text-3xl">Somos proveedores de Tecnología Médica</h1>
-				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-10 sm:mt-4">Comprometido con la Salud</h2>
+				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 xl:mt-0 sm:mt-4">Comprometido con la Salud</h2>
 				<p class="text-xl mt-10">
 					Inge Ray SRL es una empresa argentina creada en 1992 y desde entonces nos comprometimos y dedicamos a brindar Soluciones Tecnológicas para la Salud que permitan a nuestros clientes ofrecer una medicina de calidad. Nos especializamos en Equipamiento Médico para Diagnóstico por Imágenes tanto para Medicina Humana como para Medicina Veterinaria. Fabricamos, comercializamos y alquilamos una amplia gama de equipos y periféricos de radiología convencional y digital, de mamografía y de ultrasonografía de producción nacional e internacional.
 				</p>
@@ -16,20 +16,20 @@
 		<!-- PRODUCTOS -->
 		<div class="prods-services">
 			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
-			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-10 sm:mt-2">Productos</div>
+			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2">Productos</div>
 			<product-carousel></product-carousel>
 		</div>
 		<!-- SERVICIOS -->
 		<div class="prods-services -mt-24">
 			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
-			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 sm:mt-2"> Servicios</div>
+			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2"> Servicios</div>
 			<service-carousel></service-carousel>
 		</div>
 		<!-- TEXTO AMISTOSO -->
-		<div class="friendly-text -mt-14 pb-20">
+		<div class="friendly-text -mt-20 xl:-mt-10 pb-20">
 			<div class="presentation-text simple-text">
 				<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Mejorando la Experiencia del Paciente</div>
-				<p class="text-xl mt-6">
+				<p class="text-xl mt-16 xl:mt-4">
 					Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los pequeños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyectos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribuyan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.
 				</p>
 			</div>
@@ -37,7 +37,7 @@
 		<!-- EQUIPOS DE RADIOLOGIA -->
 		<div class="prods-services radiologia -mt-24 w-full">
 			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Radiologia Convencional</div>
-			<div class="equipos flex justify-between items-center mt-8">
+			<div class="equipos mt-8">
 				<div class="equipo">
 					<span class="simple-text blue">Arcos en C</span>
 					<div class="img-equipo"></div>
@@ -125,16 +125,25 @@ export default {
 	}
 
 /* Equipos de Radiologia */ 
+	.radiologia{
+		background-color: #e1e1e1;
+		padding-bottom: 4rem;
+	}
+	.equipos{
+		flex-wrap: wrap;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 2rem;
+	}
 	.equipo{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		height: 300px;
 		width: 30%;
-		border-radius: 25px;
 		background: #e1e1e1;
-		box-shadow:  20px 20px 40px #bfbfbf,
-					-20px -20px 40px #ffffff;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
 		padding: .5rem 1rem 1rem 1rem;
 	}
 	.img-equipo{
@@ -143,10 +152,6 @@ export default {
 		background-image: url('https://picsum.photos/200/300');
 		background-size: cover;
 		background-repeat: no-repeat;
-	}
-	.radiologia{
-		background-color: #e1e1e1;
-		padding-bottom: 4rem;
 	}
 
 /* Texto Amistoso */
@@ -164,13 +169,11 @@ export default {
 	.banner-prods-veterinaria{
 		height: 100%;
 		width: 100%;
-		border-radius: 25px;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
 		/* background-image: url('https://picsum.photos/1500/1000'); */
-		box-shadow:  20px 20px 20px #bfbfbf,
-					-20px -20px 20px #ffffff;
+		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
 	}
 
 /* Media Queries */
@@ -194,23 +197,34 @@ export default {
 		padding: 1rem 2rem 4rem 2rem;
 	}
 	.prods-services{
-		padding: 2rem 2rem;
+		padding: 2rem;
+	}
+	.equipos{
+		gap: 1rem;
+	}
+	.equipo{
+		width: 48%;
 	}
 }
 @media screen and (max-width: 650px){
 	.presentation-text{
-		padding: 1rem 3rem 4rem 3rem;
+		padding: 1rem 1rem 4rem 1rem;
+	}
+	.prods-services .title, .prods-services .sub-title{
+		padding-left: 1rem;
 	}
 	.presentation-image{
 		height: 25vh;
 	}
 	.prods-services{
-		padding: 2rem 3rem;
+		padding: 1rem 0rem;
+	}
+	.equipos{
+		display: flex;
+		justify-content: center;
+	}
+	.equipo{
+		width: 90%;
 	}
 }
-@media screen and (max-width: 615px){
-}
-@media screen and (max-width: 414px){
-}
-
 </style>

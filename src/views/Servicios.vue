@@ -8,56 +8,48 @@
                 </div>
                 <div class="card-body p-3">
                     <div class="card-title">
-                        <h2 class="text-2xl">{{servicio.nombreProducto}}</h2>
+                        <h2 class="text-2xl">{{servicio.nombreServicio}}</h2>
                     </div>
-                    <p class="text-lg">
-                        {{servicio.descripcion}}
-                    </p>
+                    <div v-if="servicio.titulo">
+                        <div class="title">{{servicio.titulo}}</div>
+                        <div class="sub-title">{{servicio.subtitulo}}</div>
+                    </div>
+                    <p class="text-lg">{{servicio.descripcion}}</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
 <style>
-    .glass{
-        box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-        background: rgba(255, 255, 255, .3);
-        backdrop-filter: blur(10px);
-    }
-    .glass-dark{
-        box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-        background: rgba(235, 235, 235, 0.8);
-        backdrop-filter: blur(10px);
-    }
-    .shadow{
-        box-shadow: 0px 10px 10px 2px rgba(0,0,0,.5);
-    }
     .row{
         display: flex;
         flex-wrap: wrap;
+        background-color: #e1e1e1;
     }
     .cards{
         padding: 1rem 1rem;
-        row-gap: 1rem;
+        row-gap: 3rem;
         column-gap: 1rem;
     }
     .card{
         width: 30%;
         box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-        background: rgba(255, 255, 255, .3);
-        backdrop-filter: blur(10px);
-        border-radius: 30px;
-        border: 1px solid rgba(255, 255, 255, .3);
+        border-radius: 25px;
+        background: #e1e1e1;
+		box-shadow:  20px 20px 40px #bfbfbf,
+					-20px -20px 40px #ffffff;
         overflow: hidden;
     }
     .card-title{
         border-bottom: 2px solid rgb(255, 255, 255);
         padding-bottom: 5px;
         margin-bottom: 5px;
+        overflow: hidden;
     }
     .card-image{
-        object-fit: cover;
-        object-position: 50% 50%;
+        object-fit: contain;
+        height: 200px;
+        background-image: url('https://picsum.photos/200/300');
     }
     .card-footer{
         height: 4vh;
@@ -107,50 +99,52 @@ export default {
             showNavbar: false,
             servicios:[
                 {
-                    nombreProducto:'Servicio#1',
+                    nombreServicio:'Servicio Técnico a Demanda',
+                    titulo: 'Evaluación y Diagnóstico',
+                    subtitulo: 'PRIMER VISITA SIN COSTO',
+                    descripcion: 'Contamos con un amplio plantel de técnicos e ingenieros especializados en marcas nacionales e internacionales. Si aún no eres cliente, solicitá tu primer visita de evaluación y diagnóstico técnico escribiéndonos por correo a serviciotecnico@ingeray.com.ar o si preferís también podrás contactarte por whatsapp al +54 9 11 5504-4427',
+                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
+                    imagen:''
+                },
+                {
+                    nombreServicio:'Servicios de Post-Venta',
                     descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
                     // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
                     imagen:''
                 },
                 {
-                    nombreProducto:'Servicio#2',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
+                    nombreServicio:'Abonos de Mantenimiento',
+                    descripcion: 'Conocé las ventajas de estar permanentemente asistido por profesionales técnicos en tus servicios de diágnostico. Optá por el Servicio a Demanda o por Visitas periódicas a programar. Diseñamos cada propuesta a la medida del cliente para brindar el mejor y más efectivo Servicio de Mantenimiento Correctivo y Preventivo.',
                     // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
                     imagen:''
                 },
                 {
-                    nombreProducto:'Servicio#3',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
+                    nombreServicio:'Asistencia Técnica Remota',
+                    descripcion: 'Ahorrá tiempo y dinero de visitas técnicas contratando el Servicio de Asistencia Remota de Equipos Digitalizados. Tanto para equipamiento de radiología convencional como digital, equipos de sala, rodantes, arcos en C y mamógrafos. Accedé a el mejor equipo técnico en línea.',
                     // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
                     imagen:''
                 },
                 {
-                    nombreProducto:'Servicio#4',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
+                    nombreServicio:'Cálculo de Blindaje, Planos, Obra de Blindaje y Tramites para la obtención de Certificaciones Homologadas',
+                    descripcion: 'Desarrollamos Proyectos Completos para Servicios de Diagnóstico por Imágenes. Cálculo, Planimetría y Gestión del Blindaje Radiosanitario, nos encargamos de todo por vos, tanto de la confección de planos, presentación y seguimiento de Trámites ante el Ministerio de Salud de la Nación de todas las jurisdicciones nacionales. Contamos con todas las soluciones a las necesidades de Blindajes y Habilitaciones. Gestión y Obtención de las Certificaciones Aprobadas por Radiofísica Sanitaria. Obra completa de Blindaje materiales homologados. Relevamientos de Blindajes e Informes Técnicos para su adecuación.',
                     // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
                     imagen:''
                 },
                 {
-                    nombreProducto:'Servicio#5',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
+                    nombreServicio:'Digitalización e Integración de Tecnologías de Diagnostico Medido',
+                    descripcion: 'Ofrecemos a nuestros clientes el Servicio de Digitalización e Integración de Tecno-logías de Diágnostico. Tanto Digitalizacion de Equipos con Panel de Detección Directa sin partes móviles como Sistemas de Radiología Digital Directa. Evaluamos el estado de situacion del equipamiento existente y brindamos soluciones acordes a cada caso, generamos plan de acción e incorporación de nueva tecnología y brindamos asesoramiento y soporte en la puesta en marcha.',
                     // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
                     imagen:''
                 },
                 {
-                    nombreProducto:'Servicio#6',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
+                    nombreServicio:'Puesta en Valor y Restauración de Equipos Clásicos',
+                    descripcion: 'Los equipos clásicos han demostrado ser durables, funcionales y seguros. No te deshagas de tu equipamiento de diágnostico, podés modernizar tus equipos clásicos con la mejor tecnología. Comunicate con nosotros para solicitar tanto asesoramiento como un presupuesto a medida para la Puesta en Valor y Restauración de tus equipos de diagnóstico por imágenes.',
                     // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
                     imagen:''
                 },
                 {
-                    nombreProducto:'Servicio#7',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
-                    imagen:''
-                },
-                {
-                    nombreProducto:'Servicio#8',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
+                    nombreServicio:'Proyectos de diseño de ambientación de equipos y salas de pediatría',
+                    descripcion: 'Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los pequeños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyectos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribuyan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.',
                     // imagen:require('../assets/images/equipo-rayos-x-digital.jpg')
                     imagen:''
                 }

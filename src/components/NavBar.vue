@@ -1,14 +1,15 @@
 <template>
     <nav class="fixed top-0 h-20 max-h-24 flex flex-col w-screen">
         <!-- Menu -->
-        <div class="menu flex flex-row">
+        <div class="menu flex justify-end flex-row">
             <!-- Logo -->
-            <a href="/" class="logo"></a>
+            <!-- <a href="/" class="logo"></a> -->
+            <a href="/"></a>
             <!-- Secciones -->
-            <ul class="w-5/6 flex justify-around items-center">
+            <ul class="w-4/6 flex justify-between items-center">
                 <li v-for="(option, index) in options" :key="index">
                     <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center py-1" exact>
-                        <img :src="getImg(option.icon)"/>
+                        <!-- <img :src="getImg(option.icon)"/> -->
                         {{option.sectionName}}
                     </router-link>
                 </li>
@@ -22,15 +23,18 @@
 <style scoped>
     nav{
         box-shadow: 0px 5px 10px 2px rgba(0,0,0,.5);
-        height: auto;
         background: rgba(255, 255, 255, 1);
         z-index: 9;
+    }
+    .menu > ul{
+        height: 3rem;
     }
     li{
         height: 100%;
         width: 100%;
         display: flex;
         flex-direction: row;
+        background-color: #999999;
     }
     img{
         height: 20px;
@@ -75,22 +79,6 @@
         nav{
             display: none;
         }
-        /* .logo{
-            width: 10rem;
-        }
-        nav a{
-            width: 25%;
-        }
-        nav ul{
-            width: 75%;
-        }
-        nav ul li{
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li a{
-            width: 100%;
-        } */
     }
 
     @media screen and (max-width:414px) {

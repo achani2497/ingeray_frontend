@@ -2,13 +2,17 @@
     <div class="important-info flex justify-around items-center h-12 w-full" id="importantInfo">
         <h3 class="flex items-center ubicacion text-sm md:text-base">
             <div class="icon nav-icon"></div>
-            Campillo 2586, Capital Federal, Argentina
+            <div class="direccion flex flex-col">
+                <span>Campillo 2585 | C1427DCC | CABA</span>
+                <span>Buenos Aires | Argentina</span>
+            </div>
         </h3>
-        <h3 class="flex items-center whatsapp">
+        <h3 class="flex items-center gap-4 whatsapp">
             <div class="icon whatsapp-icon"></div>
-            <div class="flex flex-col text-xs gap-1 md:text-sm md:gap-0">
-                <p>Gabriel Fandini | ventas@ingeray.com.ar | +54 9 11 5976-7596</p>
-                <p>Dalina López | ingerayventas@gmail.com | +54 9 11 3851-0695</p>
+            <div class="flex text-xs gap-4 md:text-sm">
+                <span>Diagnóstico por Imágenes</span>
+                <span>Atención Comercial</span>
+                <span>División Veterinaria</span>
             </div>
         </h3>
     </div>

@@ -1,31 +1,85 @@
 <template>
     <div class="row">
         <nav-bar :showLocationInfo="true"></nav-bar>
-        <div class="pl-8 flex text-xl w-full glass-dark shadow h-12 items-center fixed z-10 filter-box" :class="{'hide':showNavbar}">
-            <b> ¡Busca el equipo que necesitas! </b>
-            <select name="filtro" id="filtro" v-model="filtro" @change="filtrar()" class="ml-2">
-                <option value="">Todos</option>
-                <option value="animal">Para Animales</option>
-                <option value="humanos">Para Humanos</option>
-                <option value="fijo">Equipo Fijo</option>
-                <option value="portatil">Portatil</option>
-            </select>
-        </div>
-        <div class="cards w-full flex flex-wrap justify-around mt-12">
-            <div v-for="(equipo, index) in equiposFiltrados" :key="index" class="card">
-                <div class="card-image bg-cover bg-no-repeat">
-                    <img loading="lazy" :src="equipo.imagen" alt="image">
-                </div>
-                <div class="card-body p-3">
-                    <div class="card-title">
-                        <h2 class="text-2xl">{{equipo.nombreProducto}}</h2>
+        <div class="categories w-full flex flex-wrap mt-12">
+        <!-- DIAGNOSTICO POR IMAGENES -->
+            <div class="tabs">
+                <div class="sub-title">Diagnóstico por Imágenes</div>
+                <div class="tab">
+                    <input type="checkbox" id="chck1" v-model="radiologiaConvencional.show">
+                    <label class="tab-label" for="chck1">{{radiologiaConvencional.nombreProducto}}</label>
+                    <div class="tab-content">
+                        <div v-for="(equipo, index) in radiologiaConvencional.equipos" :key="index" class="card">
+                            {{equipo}}
+                        </div>
                     </div>
-                    <p class="text-lg">
-                        {{equipo.descripcion}}
-                    </p>
                 </div>
-                <div class="card-footer">
-                    <button class="inge-button"><b>Ver mas detalles del producto</b></button>
+                <div class="tab">
+                    <input type="checkbox" id="chck2" v-model="radiologiaDigital.show">
+                    <label class="tab-label" for="chck2">{{radiologiaDigital.nombreProducto}}</label>
+                    <div class="tab-content">
+                        <div v-for="(equipo, index2) in radiologiaDigital.equipos" :key="index2" class="card">
+                            {{equipo}}
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="checkbox" id="chck3" v-model="radiologiaIntervensionista.show">
+                    <label class="tab-label" for="chck3">{{radiologiaIntervensionista.nombreProducto}}</label>
+                    <div class="tab-content">
+                        <div v-for="(equipo, index2) in radiologiaIntervensionista.equipos" :key="index2" class="card">
+                            {{equipo}}
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="checkbox" id="chck4" v-model="sistemasDeDigitalizacion.show">
+                    <label class="tab-label" for="chck4">{{sistemasDeDigitalizacion.nombreProducto}}</label>
+                    <div class="tab-content">
+                        <div v-for="(equipo, index2) in sistemasDeDigitalizacion.equipos" :key="index2" class="card">
+                            {{equipo}}
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="checkbox" id="chck5" v-model="mamografia.show">
+                    <label class="tab-label" for="chck5">{{mamografia.nombreProducto}}</label>
+                    <div class="tab-content">
+                        <div v-for="(equipo, index2) in mamografia.equipos" :key="index2" class="card">
+                            {{equipo}}
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="checkbox" id="chck6" v-model="alquilerDeEquipamiento.show">
+                    <label class="tab-label" for="chck6">{{alquilerDeEquipamiento.nombreProducto}}</label>
+                    <div class="tab-content">
+                        <div v-for="(equipo, index) in accesorios.equipos" :key="index" class="card">
+                            {{equipo}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- DIVISION VETERINARIA -->
+            <div class="tabs">
+                <div class="sub-title">Diagnóstico por Imágenes</div>
+                <div class="tab">
+                    <input type="checkbox" id="chck7" v-model="ultrasonografia.show">
+                    <label class="tab-label" for="chck7">{{ultrasonografia.nombreProducto}}</label>
+                    <div class="tab-content">
+                        <div v-for="(equipo, index) in ultrasonografia.equipos" :key="index" class="card">
+                            {{equipo}}
+                        </div>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="checkbox" id="chck8" v-model="accesorios.show">
+                    <label class="tab-label" for="chck8">{{accesorios.nombreProducto}}</label>
+                    <div class="tab-content">
+                        <div v-for="(equipo, index2) in accesorios.equipos" :key="index2" class="card">
+                            {{equipo}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -39,83 +93,78 @@ export default {
             lastScrollPosition:0,
             filtro:'',
             showNavbar: false,
-            equipos:[
-                {
-                    nombreProducto:'Producto#1',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
-                    imagen:'',
-                    categoria:['humanos','portatil']
-                },
-                {
-                    nombreProducto:'Producto#2',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
-                    imagen:'',
-                    categoria:['animal','portatil']
-                },
-                {
-                    nombreProducto:'Producto#3',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
-                    imagen:'',
-                    categoria:['humanos','fijo']
-                },
-                {
-                    nombreProducto:'Producto#4',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
-                    imagen:'',
-                    categoria:['humanos','portatil']
-                },
-                {
-                    nombreProducto:'Producto#5',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
-                    imagen:'',
-                    categoria:['humanos','fijo']
-                },
-                {
-                    nombreProducto:'Producto#6',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
-                    imagen:'',
-                    categoria:['animal','humanos','fijo']
-                },
-                {
-                    nombreProducto:'Producto#7',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
-                    imagen:'',
-                    categoria:['humanos','portatil']
-                },
-                {
-                    nombreProducto:'Producto#8',
-                    descripcion: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, esse? Atque nam placeat aliquid totam obcaecati labore, dolor illo rerum eum consequuntur amet libero quo fugiat cum animi aperiam rem.',
-                    // imagen:require('../assets/images/equipo-rayos-x-digital.jpg'),
-                    imagen:'',
-                    categoria:['animal','portatil']
-                }
-            ],
-            equiposFiltrados:[]
+            // DIAGNOSTICO POR IMAGENES
+            radiologiaConvencional:{
+                nombreProducto:'Radiología Convencional',
+                show: true,
+                equipos: [
+                    'Equipos con Fuentes de Alta Frecuencia',
+                    'Equipos con Fuente de Frecuencia Industrial',
+                    'Equipos Móviles'
+                ]
+            },
+            radiologiaDigital: {
+                nombreProducto:'Radiólogia Dígital',
+                show: true,
+                equipos: [
+                    'Paneles de Adquisicion Digital Directa de Imágenes'
+                ]
+            },
+            radiologiaIntervensionista: {
+                nombreProducto:'Radiología Intervensionista',
+                show: true,
+                equipos: [
+                    'Arcos en C'
+                ]
+            },
+            sistemasDeDigitalizacion: {
+                nombreProducto:'Sistemas de Digitalización',
+                show: true,
+                equipos: []
+            },
+            mamografia: {
+                nombreProducto:'Mamografía',
+                show: true,
+                equipos:[]
+            },
+            alquilerDeEquipamiento: {
+                nombreProducto:'Alquiler de Equipamiento',
+                show: true,
+                equipos:[
+                    'Equipos de Sala',
+                    'Equipos Moviles',
+                    'Arcos en C',
+                    'Mamógrafos'
+                ]
+            },
+            // DIVISION VETERINARIA
+            ultrasonografia:{
+                nombreProducto: 'Ultrasonografia',
+                show: true,
+                equipos: [
+                    'INGE V6',
+                    'INGE V6 Plus',
+                    'INGE V9 HD',
+                    'Smart Scan',
+                    'RKU10',
+                    'KX5600',
+                    'KX5200',
+                    'MSU3',
+                    'DCU30'
+                ]
+            },
+            accesorios:{
+                nombreProducto: 'Accesorios',
+                show: true,
+                equipos: [
+                    'Sondas de Ultrasonido',
+                    'Mango Extensor para Sonda Transrectal',
+                    'Gafas de Video de Ultrasonido'
+                ]
+            }
         }
     },
-    created(){
-        this.equiposFiltrados = this.equipos
-    },
     methods:{
-        filtrar(){
-            if(this.filtro != ''){
-                this.equiposFiltrados = []
-                this.equipos.forEach(equipo => {
-                    if(equipo.categoria.includes(this.filtro)){
-                        this.equiposFiltrados.push(equipo)
-                    }
-                })
-            } else {
-                this.equiposFiltrados = this.equipos
-            }
-        },
         onScroll(){
             let width = window.innerWidth
             if(width > 650){
@@ -138,56 +187,149 @@ export default {
 }
 </script>
 <style scoped>
-.filter-box{
-    transition: all .3s ease-in-out;
-    top: 6.2rem;
+input {
+	 position: absolute;
+	 opacity: 0;
+	 z-index: -1;
 }
-.glass{
-    box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-    background: rgba(255, 255, 255, .3);
-    backdrop-filter: blur(10px);
+/* Accordion styles */
+ .tabs {
+     width: 100%;
+	 border-radius: 8px;
+	 overflow: hidden;
+	 box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
 }
-.glass-dark{
-    box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-    background: rgba(235, 235, 235, 0.8);
-    backdrop-filter: blur(10px);
+ .tab {
+	 width: 100%;
+	 color: white;
+	 overflow: hidden;
 }
-.shadow{
-    box-shadow: 0px 10px 10px 2px rgba(0,0,0,.5);
+ .tab-label {
+	 display: flex;
+	 justify-content: space-between;
+	 padding: 1em;
+	 background: #2c3e50;
+	 font-weight: bold;
+	 cursor: pointer;
+	/* Icon */
 }
-select{
-    background-color: rgba(57, 86, 105, .7);
-    border: 2px solid white;
-    box-shadow: 0px 2px 10px 2px rgba(0,0,0,.5);
-    color: white;
-    border-radius: 25px;
-    padding: 5px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
+ .tab-label:hover {
+	 background: #1a252f;
 }
-select:focus{
-    outline: none;
+ .tab-label::after {
+	 content: "\276F";
+	 width: 1em;
+	 height: 1em;
+	 text-align: center;
+	 transition: all 0.35s;
 }
-select:hover{
-    box-shadow: none;
+ .tab-content {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 3rem;
+     justify-content: space-between;
+	 max-height: 0;
+	 padding: 0 1em;
+	 color: #2c3e50;
+	 background: white;
+	 transition: all 0.35s;
 }
+ .tab-close {
+	 display: flex;
+	 justify-content: flex-end;
+	 padding: 1em;
+	 font-size: 0.75em;
+	 background: #2c3e50;
+	 cursor: pointer;
+}
+ .tab-close:hover {
+	 background: #1a252f;
+}
+ input:checked + .tab-label {
+	 background: #1a252f;
+}
+ input:checked + .tab-label::after {
+	 transform: rotate(90deg);
+}
+ input:checked ~ .tab-content {
+	 max-height: 100vh;
+	 padding: 1em;
+}
+
+
+
+
+/* ajsdhajkdhsakjdhsakdjashdkjashdjjak */
 .row{
     display: flex;
     flex-wrap: wrap;
 }
-.cards{
+.categories{
+    background-color: #e1e1e1;
     padding: 1rem 1rem;
-    row-gap: 1rem;
+    row-gap: 3rem;
     column-gap: 1rem;
 }
-.card{
-    width: 30%;
-    box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-    background: rgba(255, 255, 255, .3);
-    backdrop-filter: blur(10px);
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, .3);
+.category{
+    display: flex;
+    row-gap: 1rem;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 2rem;
     overflow: hidden;
+}
+.title-container{
+    display: flex;
+    column-gap: 1rem;
+}
+.arrow{
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+.rotate{
+    transform: rotate(-180deg);
+}
+input{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+input:checked ~ .equipos {
+    max-height: 100vh;
+    padding: 1em;
+}
+.equipos{
+    margin-top: 1rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 3rem;
+    row-gap: 3rem;
+    transition: all 1s ease-in-out;
+    max-height: 0;
+}
+.equipos::after{
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+.title-container{
+    z-index: 1;
+    background-color: #e1e1e1;
+}
+.hideEquipos{
+    transform: translateY(-100%);
+}
+.card{
+    background: #e1e1e1;
+    box-shadow: 0px 2px 10px 5px rgba(0,0,0,.1);
+    overflow: hidden;
+    flex-grow: 1;
+    max-width: 30%;
+    padding: 3rem;
+    border-radius: 0;
 }
 .card-title{
     border-bottom: 2px solid rgb(255, 255, 255);
@@ -211,7 +353,7 @@ select:hover{
 }
 
 @media screen and (max-width: 900px){
-    .cards{
+    .categories{
         gap: 0;
     }
     .card{
@@ -220,7 +362,7 @@ select:hover{
     }
 }
 @media screen and (max-width: 650px){
-    .cards{
+    .categories{
         gap: 0;
     }
     .card{
