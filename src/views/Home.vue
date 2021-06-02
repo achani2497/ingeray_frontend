@@ -98,7 +98,9 @@ export default {
 
 /* Presentacion */
 	.presentation{
-		background-color: #e1e1e1;
+		background-color: #ffffff;
+		box-shadow: 2px 2px 10px 4px rgba(0,0,0,.3);
+		z-index: 8;
 	}
 	.presentation-text{
 		text-align: justify;
@@ -126,7 +128,7 @@ export default {
 
 /* Equipos de Radiologia */ 
 	.radiologia{
-		background-color: #e1e1e1;
+		background-color: #ffffff;
 		padding-bottom: 4rem;
 	}
 	.equipos{
@@ -142,7 +144,7 @@ export default {
 		justify-content: center;
 		height: 300px;
 		width: 30%;
-		background: #e1e1e1;
+		background: transparent;
 		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
 		padding: .5rem 1rem 1rem 1rem;
 	}

@@ -1,15 +1,14 @@
 <template>
-    <nav class="fixed top-0 h-20 max-h-24 flex flex-col w-screen">
+    <nav class="fixed top-0 flex flex-col w-screen">
         <!-- Menu -->
         <div class="menu flex justify-end flex-row">
             <!-- Logo -->
             <!-- <a href="/" class="logo"></a> -->
             <a href="/"></a>
             <!-- Secciones -->
-            <ul class="w-4/6 flex justify-between items-center">
-                <li v-for="(option, index) in options" :key="index">
+            <ul class="flex justify-between items-center">
+                <li v-for="(option, index) in options" :key="index" :style="{width: option.width+'px'}">
                     <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center py-1" exact>
-                        <!-- <img :src="getImg(option.icon)"/> -->
                         {{option.sectionName}}
                     </router-link>
                 </li>
@@ -28,13 +27,14 @@
     }
     .menu > ul{
         height: 3rem;
+        background: linear-gradient(to right, #666666,#999999, #CCCCCC)
     }
     li{
         height: 100%;
-        width: 100%;
         display: flex;
         flex-direction: row;
-        background-color: #999999;
+        font-weight: bold;
+        font-size: 1.1rem;
     }
     img{
         height: 20px;
@@ -64,23 +64,26 @@
         background-color: rgba(57, 86, 105, .7);
         color: white;
     }
-    .router-link-exact-active img,
-    .router-link-active img{
-        filter: brightness(0) invert(1);
-    }
     li a:hover:not(.router-link-exact-active){
-        background-color: rgba(96, 126, 146, .7);
+        background-color: #666666;
         color: white;        
     }
-    li a:hover img{
-        filter: brightness(0) invert(1);       
+    @media screen and (max-width:1000px) {
+        li:nth-child(1), li:nth-child(2){
+            width: 250px!important;
+        }
+        li:nth-child(3), li:nth-child(4){
+            width: 150px!important;
+        }
+        ul{
+            width: 70%;
+        }
     }
     @media screen and (max-width:650px){
         nav{
             display: none;
         }
     }
-
     @media screen and (max-width:414px) {
         nav{
             display: none;
@@ -98,24 +101,24 @@
                 lastScrollPosition: 0,
                 options:[
                     {
-                        sectionName: 'Inicio',
-                        sectionUrl: '/',
-                        icon: 'home'
+                        sectionName: 'Productos',
+                        sectionUrl: '/productos',
+                        width:300
                     },
                     {
                         sectionName: 'Servicios',
                         sectionUrl: '/servicios',
-                        icon: 'services'
+                        width:300
                     },
                     {
-                        sectionName: 'Productos',
-                        sectionUrl: '/productos',
-                        icon: 'products'
+                        sectionName: 'Clientes',
+                        sectionUrl: '/clientes',
+                        width:150
                     },
                     {
                         sectionName: 'Contacto',
                         sectionUrl: '/contacto',
-                        icon: 'contact'
+                        width:150
                     },
                 ]
             }
