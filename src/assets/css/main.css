@@ -3,8 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 @font-face{
-    font-family: "IngeText";
-    src: local('../fonts/Questrial-Regular.ttf');
+    font-family: 'IngeText';
+    src: url('../fonts/WEB_QuestrialFont/Questrial-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'IngeTextBold';
+    src: url('../fonts/WEB_CentraleSans-Bold/CentraleSans-Bold.woff') format('woff');
 }
 *{
     margin: 0;
@@ -14,18 +18,23 @@
 }
 
 /* Textos */
-    .simple-text{
-        font-size: 25px;
-        line-height: 1.7;
-    }
     .title{
         height: auto;
         text-align: left;
+        margin-bottom: .5rem;
     }
     .sub-title{
-        font-weight: bold;
         height: auto;
         text-align: left;
+        font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
+    }
+    .simple-text{
+        font-size: 27px;
+        line-height: 1.6;
+    }
+    .carousel-description{
+        font-size: 22px;
+        line-height: 1.5;
     }
     .blue{
         color: #1E6595;
@@ -92,9 +101,6 @@
         height: 20px!important;
         border-radius: 100%!important;
     }
-    .splide__pagination__page.is-active{
-        /* background-color: #0C7F7E!important; */
-    }
 
 @media screen and (max-width: 650px){
     .splide{
@@ -108,5 +114,16 @@
     }
     .splide__arrow--next{
         right: 0!important;
+    }
+    .title{
+        font-size: 29px;
+        margin-bottom: .2rem;
+    }
+    .subtitle{
+        font-size: 24px;
+    }
+    .simple-text{
+        font-size: 22px;
+        text-align: justify;
     }
 }

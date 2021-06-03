@@ -5,10 +5,10 @@
 		<div class="presentation">
 			<!-- Banner Principal con imagen de la empresa -->
 			<div class="presentation-image"></div>
-			<div class="presentation-text simple-text mt-6">
-				<h1 class="title light-blue text-3xl xl:text-4xl sm:text-3xl">Somos proveedores de Tecnología Médica</h1>
-				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 xl:mt-0 sm:mt-4">Comprometido con la Salud</h2>
-				<p class="text-xl mt-10">
+			<div class="presentation-text mt-6">
+				<h1 class="title blue text-3xl xl:text-4xl sm:text-3xl">Somos proveedores de Tecnología Médica</h1>
+				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 xl:mt-0 sm:mt-0">Comprometido con la Salud</h2>
+				<p class="simple-text mt-10">
 					Inge Ray SRL es una empresa argentina creada en 1992 y desde entonces nos comprometimos y dedicamos a brindar Soluciones Tecnológicas para la Salud que permitan a nuestros clientes ofrecer una medicina de calidad. Nos especializamos en Equipamiento Médico para Diagnóstico por Imágenes tanto para Medicina Humana como para Medicina Veterinaria. Fabricamos, comercializamos y alquilamos una amplia gama de equipos y periféricos de radiología convencional y digital, de mamografía y de ultrasonografía de producción nacional e internacional.
 				</p>
 			</div>      
@@ -26,10 +26,10 @@
 			<service-carousel></service-carousel>
 		</div>
 		<!-- TEXTO AMISTOSO -->
-		<div class="friendly-text -mt-20 xl:-mt-10 pb-20">
+		<div class="friendly-text -mt-20 xl:-mt-10 sm:-mt-10 pb-20">
 			<div class="presentation-text simple-text">
 				<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Mejorando la Experiencia del Paciente</div>
-				<p class="text-xl mt-16 xl:mt-4">
+				<p class="simple-text mt-10 xl:mt-4 sm:mt-2">
 					Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los pequeños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyectos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribuyan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.
 				</p>
 			</div>
@@ -165,7 +165,7 @@ export default {
 	.medicina-veterinaria{
 		height: 500px;
 		width: 100vw;
-		background: #e1e1e1;
+		background: #ffffff;
 		padding: 0 6rem 4rem 6rem;
 	}
 	.banner-prods-veterinaria{

@@ -7,7 +7,7 @@
                     <div class="carousel-text">
                         <div class="title gray text-3xl xl:text-4xl sm:text-3xl">{{elemento.titulo}}</div>
 						<div class="sub-title gray text-3xl xl:text-4xl sm:text-3xl">{{elemento.subtitulo}}</div>
-						<p class="text-xl mt-4">{{elemento.descripcion}}</p>
+						<p class="carousel-description mt-4">{{elemento.descripcion}}</p>
                     </div>
                 </div>
             </splide-slide>
@@ -29,7 +29,7 @@
 	.carousel-card{
 		width: 100%;
 		height: 400px;
-		background: #D2DDEB;
+		background: #ffffff;
 		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
 		display: flex;
 		gap: 1rem;

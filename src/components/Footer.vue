@@ -11,7 +11,7 @@
         </div>
         <!-- Divisiones -->
         <div class="divisiones h-16 flex justify-start items-center gap-10">
-            <span class="active w-3/6 md:w-auto">Diágnostico por Imágenes</span>
+            <span class="active w-3/6 md:w-auto">Diagnóstico por Imágenes</span>
             <span class="w-3/6 md:w-auto">División veterinaria</span>
         </div>
         <!-- Redes sociales -->
