@@ -1,30 +1,56 @@
 <template>
     <div class="form-container flex flex-wrap justify-around">
         <nav-bar :showLocationInfo="false"></nav-bar>
-        <div class="info glass">
+        <div class="info">
             <h3 class="text-3xl text-center text-underline mb-3">Información de contacto</h3>
-            <div class="info-contacto">
-                <h3 class="text-xl">Gabriel Fandini</h3>
-                <p>+54 9 11 5976-7596</p>
-                <p>ventas@ingeray.com.ar</p>
+            <div class="contact-box">
+                <h3 class="text-xl">Ventas</h3>
+                <div class="contact">
+                    <p>ingerayventas@gmail.com</p>
+                    <p>+54 9 11 3851-0695</p>
+                    <p>8 a 17 h.</p>
+                </div>
+                <div class="contact">
+                    <p>ventas@ingeray.com.ar</p>
+                    <p>+54 9 11 5976-7596</p>
+                    <p>8 a 18 h.</p>
+                </div>
+                <div class="contact">
+                    <p>ventasonlineingeray@gmail.com</p>
+                    <p>+54 9 11 5504-4427</p>
+                    <p>9 a 18 h.</p>
+                </div>
             </div>
-            <div class="info-contacto">
-                <h3 class="text-xl">Dalina López</h3>
-                <p>+54 9 11 3851-0695</p>
-                <p>ingerayventas@gmail.com</p>
+            <div class="contact-box">
+                <h3 class="text-xl">Administración</h3>
+                <div class="contact">
+                    <p>administracion@ingeray.com.ar</p>
+                    <p>+54 9 11 3851-0695</p>
+                    <p>8 a 13 h.</p>
+                </div>
+                <div class="contact">
+                    <p>+54 9 11 5504 4427</p>
+                    <p>13 a 17 h.</p>
+                </div>
             </div>
-            <div class="info-contacto">
-                <h3 class="text-xl">Gabriel Fndini</h3>
-                <p>+54 9 11 4444 4444</p>
-                <p>ventas@ingeray.com.ar</p>
-            </div>
-            <div class="info-contacto">
-                <h3 class="text-xl">Gabriel Fndini</h3>
-                <p>+54 9 11 4444 4444</p>
-                <p>ventas@ingeray.com.ar</p>
+            <div class="contact-box">
+                <h3 class="text-xl">Comercial</h3>
+                <div class="contact">
+                    <!-- <p>DANIEL PENHOS</p> -->
+                    <p>ingeraysrl@gmail.com</p>
+                    <p>danielpenhos@ingeray.com.ar</p>
+                    <p>+54 9 11 4192-6163</p>
+                    <p>8 a 17 h.</p>
+                </div>
+                <div class="contact">
+                    <!-- <p>MATIAS PENHOS</p> -->
+                    <p>mpenhos@ingeray.com.ar</p>
+                    <p>+54 9 11 4192-6162</p>
+                    <p>8 a 17 h.</p>
+                </div>
             </div>
         </div>
-        <div class="map glass">
+        <div class="map">
             <Map/>
         </div>
         <contact class="contact-form mt-6"></contact>
@@ -38,36 +64,34 @@ export default {
 }
 </script>
 <style scoped>
-    .glass{
-        box-shadow: 10px 10px 60px -8px rgba(0,0,0,.2);
-        background: rgba(255, 255, 255, .3);
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 255, 255, .3);
-        overflow: hidden;
-        padding: 10px;
-    }
     .form-container{
         height: auto;
         margin-top: -1rem;
     }
     .info{
         width: 33%;
+        box-shadow: 0 5px 10px 4px rgba(0,0,0,.2);
+        padding: 0 1rem;
     }
     .map{
         width: 63%;
         height: 56vh;
+        box-shadow: 0 5px 10px 4px rgba(0,0,0,.2);
     }
-    .info-contacto{
+    .contact-box{
         letter-spacing: 2px;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
     }
-    .info-contacto:not(:last-child){
+    .contact-box:not(:last-child){
         border-bottom: 2px solid rgba(255, 255 ,255, .8);
     }
-    .info-contacto h3{
+    .contact-box h3{
         font-weight: 600;
+    }
+    .contact{
+        margin: .5rem 0;
+        border-bottom: 1px solid rgba(0,0,0,.4);
     }
 @media screen and (max-width: 900px){
     .form-container{

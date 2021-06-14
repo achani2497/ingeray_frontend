@@ -2,7 +2,6 @@
     <ul class="hidden flex flex-row w-full justify-evenly fixed bottom-0">
         <li v-for="(option, index) in options" class="w-full" :key="index">
             <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center" exact>
-                <!-- <img :src="getImg(option.icon)"/> -->
                 {{option.sectionName}}
             </router-link>
         </li>
@@ -73,7 +72,7 @@ export default {
             width: 100%;
             height: 5vh;
             box-shadow: 0px -5px 10px 2px rgba(0,0,0,.5);
-            background: #999999;
+            background: linear-gradient(to right, #666666,#999999, #CCCCCC);
             z-index: 9;
         }
                            

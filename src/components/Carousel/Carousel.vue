@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel-container -mt-10">
+    <div class="carousel-container">
         <splide :options="options">
             <splide-slide v-for="(elemento, index) in elementos" :key="index" class="carousel-splide">
                 <div class="carousel-card">
@@ -16,15 +16,20 @@
 </template>
 <style scoped>
     .carousel-container{
-		height: 600px;
+		max-height: 600px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+		background: #ffffff;
 	}
 	.carousel-splide{
-		padding: 25px;
 		overflow: visible;
+		height: auto;
+		padding: 3rem 3rem 0 3rem;
+	}
+	.splide__track{
+		height: 200px!important;
 	}
 	.carousel-card{
 		width: 100%;
@@ -33,6 +38,7 @@
 		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
 		display: flex;
 		gap: 1rem;
+		margin: .2rem 0 1rem 0;
 	}
 	.carousel-image{
 		width: 60%;
@@ -72,19 +78,27 @@
 		}
 	}
 	@media screen and (max-width: 650px){
+		.carousel-splide{
+			padding: 1rem 1rem 0 1rem;
+			display: flex;
+			justify-content: center;
+		}
 		.carousel-container{
 			width: 100%;
 			margin-bottom: 3rem;
+			max-height: 700px;
+		}
+		.carousel-card{
+			width: 70vw;
+			margin: 0;
 		}
 		.carousel-text{
 			padding: .5rem;
+			height: 65%;
+			overflow-y: scroll;
 		}
-		.carousel-card{
-			margin-left: 10%;
-			width: 80vw;
-		}
-		.splide{
-			padding: 48px 0px;
+		.carousel-image{
+			height: 35%;
 		}
 	}
 </style>

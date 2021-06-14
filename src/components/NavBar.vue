@@ -21,13 +21,12 @@
 
 <style scoped>
     nav{
-        box-shadow: 0px 5px 10px 2px rgba(0,0,0,.5);
         background: rgba(255, 255, 255, 1);
         z-index: 9;
     }
     .menu > ul{
         height: 3rem;
-        background: linear-gradient(to right, #666666,#999999, #CCCCCC)
+        background: linear-gradient(to right, #666666,#999999, #CCCCCC);
     }
     li{
         height: 100%;

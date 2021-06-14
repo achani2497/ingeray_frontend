@@ -5,7 +5,7 @@
 		<div class="presentation">
 			<!-- Banner Principal con imagen de la empresa -->
 			<div class="presentation-image"></div>
-			<div class="presentation-text mt-6">
+			<div class="presentation-text">
 				<h1 class="title blue text-3xl xl:text-4xl sm:text-3xl">Somos proveedores de Tecnología Médica</h1>
 				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 xl:mt-0 sm:mt-0">Comprometido con la Salud</h2>
 				<p class="simple-text mt-10">
@@ -13,29 +13,39 @@
 				</p>
 			</div>      
 		</div>
-		<!-- PRODUCTOS -->
-		<div class="prods-services">
-			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
-			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2">Productos</div>
-			<product-carousel></product-carousel>
+
+		<!-- PRODUCTOS Y SERVICIOS -->
+		<div class="prods-services-container">
+			<!-- PRODUCTOS -->
+			<div class="prods-services">
+				<div class="titles">
+					<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
+					<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2">Productos</div>
+				</div>
+				<product-carousel></product-carousel>
+			</div>
+			<!-- SERVICIOS -->
+			<div class="prods-services">
+				<div class="titles">
+					<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
+					<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2"> Servicios</div>
+				</div>
+				<service-carousel></service-carousel>
+			</div>
 		</div>
-		<!-- SERVICIOS -->
-		<div class="prods-services -mt-24">
-			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
-			<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2"> Servicios</div>
-			<service-carousel></service-carousel>
-		</div>
+
 		<!-- TEXTO AMISTOSO -->
-		<div class="friendly-text -mt-20 xl:-mt-10 sm:-mt-10 pb-20">
+		<div class="friendly-text">
 			<div class="presentation-text simple-text">
 				<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Mejorando la Experiencia del Paciente</div>
-				<p class="simple-text mt-10 xl:mt-4 sm:mt-2">
+				<p>
 					Adecuar la imagen del equipamiento de diagnóstico y las áreas pediátricas para que los pequeños se sientan a gusto cuando tengan que acudir al médico, es algo que viene preocupando hace bastante tiempo. Contamos con los mejores profesionales y diseñadores especializados Proyectos de Ambientación. Ponete en contacto para la generación ambientes amigables que contribuyan a reducir la ansiedad a través de la decoración y el color para crear un ambiente acogedor que ayude a reducir el estrés de los niños.
 				</p>
 			</div>
 		</div>
+
 		<!-- EQUIPOS DE RADIOLOGIA -->
-		<div class="prods-services radiologia -mt-24 w-full">
+		<div class="radiologia w-full">
 			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Radiologia Convencional</div>
 			<div class="equipos mt-8">
 				<div class="equipo">
@@ -52,6 +62,7 @@
 				</div>
 			</div>
 		</div>
+
 		<!-- ESHOP -->
 		<div class="medicina-veterinaria flex justify-center items-center">
 			<div class="banner-prods-veterinaria flex justify-center items-center">Banner de equipos de veterinaria</div>
@@ -98,20 +109,20 @@ export default {
 
 /* Presentacion */
 	.presentation{
+		padding-top: 1rem;
 		background-color: #ffffff;
 		box-shadow: 2px 2px 10px 4px rgba(0,0,0,.3);
 		z-index: 8;
 	}
 	.presentation-text{
-		text-align: justify;
 		width: 100vw;
-		padding: 1rem 6rem 4rem 6rem;
+		padding: 2.5rem 6rem;
 		display: flex;
 		flex-direction: column;
 	}
 	.presentation-image{
 		position: relative;
-		height: 500px;
+		height:400px;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
@@ -119,17 +130,24 @@ export default {
 	}
 
 /* Productos */
-	.prods-services{
-		overflow: hidden;
-		padding: 3rem 6rem;
-		background-color: #D2DDEB;
+	.prods-services-container{
 		width: 100%;
+		overflow: hidden;
+		background-color: #D2DDEB;
+	}
+	.titles{
+		padding: 5rem 6rem 1rem 6rem;
+	}
+
+/* Texto Amistoso */
+	.friendly-text{
+		background-color: #D2DDEB;
+		padding: 1rem 0;
 	}
 
 /* Equipos de Radiologia */ 
 	.radiologia{
-		background-color: #ffffff;
-		padding-bottom: 4rem;
+		padding:2rem 6rem 4rem 6rem;
 	}
 	.equipos{
 		flex-wrap: wrap;
@@ -145,8 +163,6 @@ export default {
 		height: 300px;
 		width: 30%;
 		background: transparent;
-		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
-		padding: .5rem 1rem 1rem 1rem;
 	}
 	.img-equipo{
 		height: 90%;
@@ -156,16 +172,10 @@ export default {
 		background-repeat: no-repeat;
 	}
 
-/* Texto Amistoso */
-	.friendly-text{
-		background-color: #D2DDEB;
-	}
-
 /* E-shop */
 	.medicina-veterinaria{
 		height: 500px;
 		width: 100vw;
-		background: #ffffff;
 		padding: 0 6rem 4rem 6rem;
 	}
 	.banner-prods-veterinaria{
@@ -183,10 +193,6 @@ export default {
 	.presentation-image{
 		height: 440px;
 	}
-	.-mt-24{
-		margin-top: -3rem;
-		margin-bottom: 3rem;
-	}
 	.friendly-text{
 		padding-bottom: 2rem;
 	}
@@ -196,10 +202,25 @@ export default {
 		height: 270px;
 	}
 	.presentation-text{
-		padding: 1rem 2rem 4rem 2rem;
+		padding: 1.5rem;
+	}
+	.prods-services-container{
+		padding-top: 0;
 	}
 	.prods-services{
-		padding: 2rem;
+		padding: 0;
+	}
+	.titles{
+		padding: 4rem 1.5rem 1rem 1.5rem;
+	}
+	.friendly-text{
+		padding-top: 2rem;
+	}
+	.friendly-text .presentation-text{
+		padding: 0 1.5rem;
+	}
+	.radiologia{
+		padding: 1.5rem;
 	}
 	.equipos{
 		gap: 1rem;
@@ -207,19 +228,37 @@ export default {
 	.equipo{
 		width: 48%;
 	}
+	.medicina-veterinaria{
+		padding: 1.5rem
+	}
 }
 @media screen and (max-width: 650px){
-	.presentation-text{
-		padding: 1rem 1rem 4rem 1rem;
-	}
-	.prods-services .title, .prods-services .sub-title{
-		padding-left: 1rem;
+	.presentation{
+		padding-top: 0;
 	}
 	.presentation-image{
 		height: 25vh;
 	}
-	.prods-services{
-		padding: 1rem 0rem;
+	.presentation-text{
+		padding: 1rem;
+	}
+	.prods-services-container{
+		padding-top: 3rem;
+	}
+	.titles{
+		padding: 0 3rem 1rem 3rem;
+	}
+	.friendly-text{
+		padding-top: 0;
+	}
+	.friendly-text .presentation-text{
+		padding: 0 1rem;
+	}	
+	.friendly-text p{
+		padding-top: 2rem;
+	}
+	.radiologia{
+		padding: 1rem;
 	}
 	.equipos{
 		display: flex;
@@ -227,6 +266,9 @@ export default {
 	}
 	.equipo{
 		width: 90%;
+	}
+	.medicina-veterinaria{
+		padding: 1rem;
 	}
 }
 </style>

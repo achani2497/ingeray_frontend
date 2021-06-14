@@ -95,6 +95,15 @@
 /*? Pongo estos estilos acá porque sino no me deja pisar los originales */
     .splide__pagination{
         gap: 1rem!important;
+        position: absolute!important;
+        top: 0!important;
+        height: 3rem!important;
+        padding-bottom: 1rem!important;
+        width: 100%!important;
+        background-color: #D2DDEB!important;
+    }
+    .splide{
+        padding: 2rem 3rem!important;
     }
     .splide__pagination__page{
         width: 20px!important;
@@ -104,7 +113,7 @@
 
 @media screen and (max-width: 650px){
     .splide{
-        padding-top: 0!important;
+        padding: 3rem 3rem 0 3rem!important;
     }
     .splide__slide{
         padding: 25px 0!important;
@@ -124,6 +133,6 @@
     }
     .simple-text{
         font-size: 22px;
-        text-align: justify;
+        text-align: center;
     }
 }
