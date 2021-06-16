@@ -10,23 +10,22 @@
             </div>
         </div>
         <!-- Divisiones -->
-        <div class="divisiones h-16 flex justify-start items-center gap-10">
-            <span class="active w-3/6 md:w-auto">Diagnóstico por Imágenes</span>
-            <span class="w-3/6 md:w-auto">División veterinaria</span>
+        <div class="divisiones h-16 flex justify-start items-center gap-10" :class="[mostrar==='humanos' ? 'bkg-dark-blue' : 'bkg-light-blue']">
+            <span class="active w-3/6 md:w-auto"><button @click="mostrar='humanos'" :class="{active: mostrar==='humanos'}">Diagnóstico por Imágenes</button></span>
+            <span class="w-3/6 md:w-auto"><button @click="mostrar='animales'" :class="{active: mostrar==='animales'}">División veterinaria</button></span>
         </div>
         <!-- Redes sociales -->
-        <div class="redes-sociales flex justify-between items-center text-white">
+        <div class="redes-sociales flex justify-between items-center text-white" :class="[mostrar==='humanos' ? 'bkg-light-blue' : 'bkg-blue']">
             <div class="redes flex flex-col">
                 <span>Seguinos en Redes Sociales</span>
                 <div class="iconos flex justify-between">
-                    <div class="icon facebook-icon-hum"></div>
-                    <div class="icon instagram-icon-hum"></div>
-                    <div class="icon youtube-icon-hum"></div>
+                    <div class="icon" :class="[mostrar === 'humanos' ? 'facebook-icon-hum' : 'facebook-icon-vet']"></div>
+                    <div class="icon" :class="[mostrar === 'humanos' ? 'instagram-icon-hum' : 'instagram-icon-vet']"></div>
+                    <div class="icon" :class="[mostrar === 'humanos' ? 'youtube-icon-hum' : 'youtube-icon-vet']"></div>
                 </div>
             </div>
             <div class="newsletter flex flex-col items-center">
                 <button class="contact">Suscribase a nuestro Newsletter</button>
-                <!-- <div class="big-icon ingeray-icon-hum"></div> -->
             </div>
             <div class="pais-region flex flex-col items-start gap-4">
                 <span>Pais - Idioma</span>
@@ -34,7 +33,7 @@
             </div>
         </div>
         <!-- Contacto -->
-        <div class="contacto flex justify-between">
+        <div class="contacto flex justify-between" :class="[mostrar==='humanos' ? 'bkg-dark-blue' : 'bkg-light-blue']">
           <div class="col1">
             <strong>Contacto</strong>
             <p>
@@ -45,6 +44,17 @@
             <button class="contact">
               Quiero que me contacten
             </button>
+          </div>
+          <div class="col3">
+            <div class="sub-col1">
+              <a href="/">Quiénes Somos</a> <div class="separador">|</div> <a href="/">Aviso Legal</a> <div class="separador">|</div> <a href="/">Políticas de Privacidad</a>  <div class="separador">|</div> <a href="/">Contacto</a>
+            </div>
+            <div class="sub-col2">
+              <p>© Inge Ray S.R.L., 2021. Todos los derechos reservados.</p>
+              <p>
+                <strong>Desarrollo Web</strong> Alejandro Chañi
+              </p>
+            </div>
           </div>
         </div>
     </footer>
@@ -64,16 +74,18 @@
 /* DIVISIONES */
   .divisiones{
     color: white;
-    background-color: #0A1F42;
     padding: 0 6rem;
   }
   .active{
-    font-weight: bold;
+    font-weight: bolder;
     text-decoration: underline;
+    outline: none;
+  }
+  .active:active{
+    background: none;
   }
 /* REDES SOCIALES */
   .redes-sociales{
-    background-color: #7A9AC7;
     padding: 0 6rem;
     height: 150px;
   }
@@ -96,7 +108,7 @@
     width: 60%;
   }
   .pais-region{
-    width: 20%;
+    width: 17%;
   }
   /* HUMANOS */
     .facebook-icon-hum{
@@ -127,10 +139,11 @@
 
 /* CONTACTO */
   .contacto{
-    background-color: #0A1F42;
     color: white;
     padding: 3rem 6rem;
     height: 300px;
+    display: flex;
+    flex-wrap: wrap;
   }
   .col1{
     width: 31%;
@@ -144,6 +157,26 @@
     border-radius: 5px;
     border: 2px solid gray
   }
+  .col3{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sub-col1{
+    display: flex;
+    font-size: 20px;
+  }
+  .separador{
+    padding: 0 10px
+  }
+  .sub-col2{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+    font-size: 15px;
+  }
+
 @media screen and (max-width: 900px){
   .prods-services{
     padding: 2rem 2rem;
@@ -205,6 +238,7 @@
   }
   .pais-region{
     gap: 0;
+    align-items: center;
   }
   .contacto{
     height: auto;
@@ -215,19 +249,35 @@
   .col1{
     width: 100%;
   }
-  .contact{
+  .col2{
     width: 100%;
+    padding: 0;
   }
-}
-@media screen and (max-width: 615px){
-}
-@media screen and (max-width: 414px){
+  .col3{
+    text-align: center;
+  }
+  .sub-col1{
+    font-size: 15px;
+    align-items: center;
+  }
+  .separador{
+    padding: 0 2px;
+  }
+  .sub-col1 a{
+    /* background: chocolate; */
+    padding: 0 5px;
+  }
+  .sub-col2{
+    flex-direction: column;
+    row-gap: 1rem;
+  }
 }
 </style>
 <script>
 export default{
     data: function(){
         return {
+            mostrar:'humanos',
             mediosDePago:[
             {
                 nombre: 'visa',
