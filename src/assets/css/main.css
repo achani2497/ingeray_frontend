@@ -19,14 +19,15 @@
 
 /* Textos */
     .title{
-        height: auto;
-        text-align: left;
         margin-bottom: .5rem;
     }
     .sub-title{
+        font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
+    }
+    .title, .sub-title{
         height: auto;
         text-align: left;
-        font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
+        font-size: 42px;
     }
     .simple-text{
         font-size: 27px;
@@ -45,7 +46,7 @@
     .gray{
         color: #677A8B;
     }
-    h1,h2,.title,.sub-title{
+    h1,h2{
         max-height: 45px;
     }
 /* Botones */
@@ -125,14 +126,15 @@
         right: 0!important;
     }
     .title{
-        font-size: 29px;
         margin-bottom: .2rem;
     }
-    .subtitle{
-        font-size: 24px;
+    .title, .sub-title{
+        font-size: 29px;
     }
-    .simple-text{
-        font-size: 22px;
+    /* .title, .sub-title{
         text-align: center;
+    } */
+    .simple-text{
+        font-size: 19px;
     }
 }

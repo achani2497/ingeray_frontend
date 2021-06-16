@@ -49,15 +49,15 @@
 			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Radiologia Convencional</div>
 			<div class="equipos mt-8">
 				<div class="equipo">
-					<span class="simple-text blue">Arcos en C</span>
+					<span class="sub-title blue">Arcos en C</span>
 					<div class="img-equipo"></div>
 				</div>
 				<div class="equipo">
-					<span class="simple-text blue">Equipos Móviles</span>
+					<span class="sub-title blue">Equipos Móviles</span>
 					<div class="img-equipo"></div>
 				</div>
 				<div class="equipo">
-					<span class="simple-text blue">Equipos de Sala</span>
+					<span class="sub-title blue">Equipos de Sala</span>
 					<div class="img-equipo"></div>
 				</div>
 			</div>
@@ -119,6 +119,7 @@ export default {
 		padding: 2.5rem 6rem;
 		display: flex;
 		flex-direction: column;
+		text-align: justify;
 	}
 	.presentation-image{
 		position: relative;
@@ -163,6 +164,9 @@ export default {
 		height: 300px;
 		width: 30%;
 		background: transparent;
+	}
+	.equipo .sub-title{
+		font-size: 24px;
 	}
 	.img-equipo{
 		height: 90%;
@@ -241,6 +245,8 @@ export default {
 	}
 	.presentation-text{
 		padding: 1rem;
+		text-align: justify;
+		/* text-align: center; */
 	}
 	.prods-services-container{
 		padding-top: 3rem;

@@ -51,9 +51,16 @@
 		padding: 1rem;
 		border-top-right-radius: 25px;
 		border-bottom-right-radius: 25px;
+		font-size: 27px;
 		display: flex;
 		flex-direction: column;
 		
+	}
+	.title{
+		font-size: 28px;
+	}
+	.sub-title{
+		font-size: 42px;
 	}
 	@media screen and (max-width: 1000px){
 		.carousel-container{
