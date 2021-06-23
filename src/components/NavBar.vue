@@ -100,6 +100,11 @@
                 lastScrollPosition: 0,
                 options:[
                     {
+                        sectionName: 'Inicio',
+                        sectionUrl: '/',
+                        width:150
+                    },
+                    {
                         sectionName: 'Productos',
                         sectionUrl: '/productos',
                         width:300

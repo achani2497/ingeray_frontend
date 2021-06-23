@@ -18,10 +18,16 @@
         <div class="redes-sociales flex justify-between items-center text-white" :class="[mostrar==='humanos' ? 'bkg-light-blue' : 'bkg-blue']">
             <div class="redes flex flex-col">
                 <span>Seguinos en Redes Sociales</span>
-                <div class="iconos flex justify-between">
-                    <div class="icon" :class="[mostrar === 'humanos' ? 'facebook-icon-hum' : 'facebook-icon-vet']"></div>
-                    <div class="icon" :class="[mostrar === 'humanos' ? 'instagram-icon-hum' : 'instagram-icon-vet']"></div>
-                    <div class="icon" :class="[mostrar === 'humanos' ? 'youtube-icon-hum' : 'youtube-icon-vet']"></div>
+                <div class="iconos flex justify-between" v-if="mostrar==='humanos'">
+                    <div class="icon facebook-icon-hum"></div>
+                    <div class="icon instagram-icon-hum"></div>
+                    <div class="icon youtube-icon-hum"></div>
+                </div>
+                <div class="iconos-vet flex justify-between" v-else>
+                    <div class="icon facebook-icon-vet"></div>
+                    <div class="icon instagram-icon-vet"></div>
+                    <div class="icon youtube-icon-vet"></div>
+                    <div class="icon shop-icon-vet"></div>
                 </div>
             </div>
             <div class="newsletter flex flex-col items-center">
@@ -91,11 +97,17 @@
   }
   .redes{
     width: 20%;
-    text-align: center;
+    min-width: 210px;
+    max-width: 210px;
+    text-align: left;
   } 
+  .iconos, .iconos-vet{
+    padding: 5px 10px 0 0px;
+  }
   .icon{
-    width: 70px!important;
-    height: 70px!important;
+    width: 50px!important;
+    height: 50px!important;
+    transform: scale(1.3);
   }
   .big-icon{
     width: 100px!important;
@@ -109,6 +121,8 @@
   }
   .pais-region{
     width: 17%;
+    min-width: 210px;
+    max-width: 210px;
   }
   /* HUMANOS */
     .facebook-icon-hum{
@@ -135,6 +149,9 @@
     }
     .ingeray-icon-vet{
       background-image: url('../assets/images/icons/footerIcons/veterinaria/ingeray.svg');
+    }
+    .shop-icon-vet{
+      background-image: url('../assets/images/icons/footerIcons/veterinaria/carrito.svg');
     }
 
 /* CONTACTO */
@@ -189,20 +206,27 @@
     justify-content: space-around;
     /* text-align: center; */
   }
+  .redes-sociales{
+    gap: 1rem;
+  }
   .redes, .newsletter{
-    width: 35%;
+    width: 40%;
   }
   .pais-region{
-    widows: 30%;
+    min-width: 150px;
   }
   .contacto{
-    height: 200px;
+    height: 230px;
+
   }
   .col1, .col2{
-    width: 50%;
+    width: 45%;
   }
   .col2{
     padding: 0 1rem;
+  }
+  .col3{
+    padding-top: 20px;
   }
   .contact{
     width: 100%;
@@ -234,7 +258,7 @@
   }
   .iconos{
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   .pais-region{
     gap: 0;
@@ -257,8 +281,9 @@
     text-align: center;
   }
   .sub-col1{
+    display: flex;
+    justify-content: center;
     font-size: 15px;
-    align-items: center;
   }
   .separador{
     padding: 0 2px;

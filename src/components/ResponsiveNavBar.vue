@@ -14,23 +14,23 @@ export default {
             options:[
                 {
                     sectionName: 'Inicio',
-                    sectionUrl: '/',
-                    icon: 'home'
-                },
-                {
-                    sectionName: 'Servicios',
-                    sectionUrl: '/servicios',
-                    icon: 'services'
+                    sectionUrl: '/'
                 },
                 {
                     sectionName: 'Productos',
-                    sectionUrl: '/productos',
-                    icon: 'products'
+                    sectionUrl: '/productos'
+                },
+                {
+                    sectionName: 'Servicios',
+                    sectionUrl: '/servicios'
+                },
+                {
+                    sectionName: 'Clientes',
+                    sectionUrl: '/clientes'
                 },
                 {
                     sectionName: 'Contacto',
-                    sectionUrl: '/contacto',
-                    icon: 'contact'
+                    sectionUrl: '/contacto'
                 },
             ]
         }
