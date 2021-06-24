@@ -42,6 +42,9 @@ Vue.component('footer-content',   require('./components/Footer.vue').default);
 Vue.component('carousel',         require('./components/Carousel/Carousel.vue').default);
 Vue.component('product-carousel', require('./components/Carousel/ProductCarousel.vue').default);
 Vue.component('service-carousel', require('./components/Carousel/ServiceCarousel.vue').default);
+Vue.component('modal',            require('./components/Modal/Modal.vue').default)
+Vue.component('newsletter-form',  require('./components/Modal/NewsletterSuscribe.vue').default)
+Vue.component('contact-form',     require('./components/Modal/Contact.vue').default)
 
 new Vue({
   router,

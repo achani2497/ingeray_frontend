@@ -31,12 +31,16 @@
                 </div>
             </div>
             <div class="newsletter flex flex-col items-center">
-                <button class="contact">Suscribase a nuestro Newsletter</button>
+                <button class="contact" @click="showModal = true ; showNewsletterForm = true">Suscribase a nuestro Newsletter</button>
             </div>
             <div class="pais-region flex flex-col items-start gap-4">
                 <span>Pais - Idioma</span>
                 <span>Argentina > Español</span>
             </div>
+            <modal v-if="showModal" @close="showModal = false">
+              <newsletter-form v-if="showNewsletterForm"></newsletter-form>
+              <contact-form v-if="!showNewsletterForm"></contact-form>
+            </modal>
         </div>
         <!-- Contacto -->
         <div class="contacto flex justify-between" :class="[mostrar==='humanos' ? 'bkg-dark-blue' : 'bkg-light-blue']">
@@ -47,9 +51,7 @@
             </p>
           </div>
           <div class="col2">
-            <button class="contact">
-              Quiero que me contacten
-            </button>
+            <button class="contact" @click="showModal = true ; showNewsletterForm = !showNewsletterForm"> Quiero que me contacten </button>
           </div>
           <div class="col3">
             <div class="sub-col1">
@@ -340,7 +342,9 @@ export default{
                 nombre: 'mercado-pago',
                 img:require('@/assets/images/medios-de-pago/mercado-pago.svg')
             },
-            ]
+            ],
+            showModal: false,
+            showNewsletterForm: true
         }
     }
 }

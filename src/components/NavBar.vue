@@ -1,10 +1,9 @@
 <template>
     <nav class="fixed top-0 flex flex-col w-screen">
         <!-- Menu -->
-        <div class="menu flex justify-end flex-row">
+        <div class="menu flex justify-between flex-row bkg-nav-blue">
             <!-- Logo -->
-            <!-- <a href="/" class="logo"></a> -->
-            <a href="/"></a>
+            <a href="/" class="logo bg-pink-300"></a>
             <!-- Secciones -->
             <ul class="flex justify-between items-center">
                 <li v-for="(option, index) in options" :key="index" :style="{width: option.width+'px'}">
@@ -21,12 +20,15 @@
 
 <style scoped>
     nav{
-        background: rgba(255, 255, 255, 1);
+        background-color: #7A9AC7;
         z-index: 9;
     }
     .menu > ul{
         height: 3rem;
         background: linear-gradient(to right, #666666,#999999, #CCCCCC);
+        border-top-left-radius: 25px;
+        overflow: hidden;
+        box-shadow: 0px -3px 10px 5px rgba(0,0,0,.2)
     }
     li{
         height: 100%;
@@ -50,8 +52,9 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        background-image: url('../assets/images/icons/NavIcons/logo-ingeray.svg');
-        width: 18rem;
+        background-image: url('../assets/images/icons/NavIcons/logo-ingeray1.svg');
+        width: 10rem;
+        margin-left: 5rem;
     }
     .hide{
         transition: all .3s ease-in-out;
@@ -60,7 +63,7 @@
     .router-link-exact-active,
     .router-link-active {
         transition: all .5s ease-in-out;
-        background-color: rgba(57, 86, 105, .7);
+        background-color: #9FB3E3;
         color: white;
     }
     li a:hover:not(.router-link-exact-active){
