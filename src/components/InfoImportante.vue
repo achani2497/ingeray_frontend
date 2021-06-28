@@ -12,7 +12,7 @@
         <div class="flex items-center gap-4 whatsapp">
             <div class="flex text-xs w-full md:text-sm items-center text-center">
                 <div class="span-max flex justify-center items-center gap-6">
-                    <div class="icon whatsapp-icon"></div>
+                    <router-link to="/contacto" class="icon whatsapp-icon"></router-link>
                     <span>Diagnóstico por Imágenes</span>
                 </div>
                 <span class="span-min">Atención Comercial</span>
