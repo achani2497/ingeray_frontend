@@ -3,7 +3,9 @@
         <!-- Menu -->
         <div class="menu flex justify-between flex-row bkg-nav-blue">
             <!-- Logo -->
-            <a href="/" class="logo bg-pink-300"></a>
+            <router-link to="/" class="logo-container" id="logo-container" exact>
+                <div class="logo"></div>
+            </router-link>
             <!-- Secciones -->
             <ul class="flex justify-between items-center">
                 <li v-for="(option, index) in options" :key="index" :style="{width: option.width+'px'}">
@@ -23,12 +25,16 @@
         background-color: #7A9AC7;
         z-index: 9;
     }
+    .menu{
+        height: 5rem;
+    }
     .menu > ul{
         height: 3rem;
         background: linear-gradient(to right, #666666,#999999, #CCCCCC);
         border-top-left-radius: 25px;
         overflow: hidden;
-        box-shadow: 0px -3px 10px 5px rgba(0,0,0,.2)
+        box-shadow: 0px -3px 10px 5px rgba(0,0,0,.2);
+        align-self: flex-end;
     }
     li{
         height: 100%;
@@ -48,13 +54,23 @@
     a{
         transition: all .5s ease-in-out;
     }
+    #logo-container{
+        background-color: transparent;
+        width: 30%;
+        padding: 0 2%;
+        max-width: 380px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .logo{
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+        width: 100%;
+        max-width: 240px;
+        height: 100%;
         background-image: url('../assets/images/icons/NavIcons/logo-ingeray1.svg');
-        width: 10rem;
-        margin-left: 5rem;
     }
     .hide{
         transition: all .3s ease-in-out;

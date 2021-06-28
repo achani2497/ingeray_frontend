@@ -15,7 +15,7 @@
 #app{
   background-size: cover;
   height: auto;
-  padding-top: 6rem;
+  padding-top: 8rem;
 }
 @media screen and (max-width: 650px){
   #app{
