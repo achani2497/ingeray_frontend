@@ -8,15 +8,30 @@
             </router-link>
             <!-- Secciones -->
             <ul class="flex justify-between items-center">
-                <li v-for="(option, index) in options" :key="index" :style="{width: option.width+'px'}">
-                    <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center py-1" exact>
-                        {{option.sectionName}}
-                    </router-link>
+                <li>
+                    <router-link to="/" class="router-cta li-content" exact>Home</router-link>
+                </li>
+                <li>
+                    <div class="cta productos li-content" @click="openMenu('productos')">
+                        Productos
+                    </div>
+                </li>
+                <li>
+                    <div class="cta servicios li-content" @click="openMenu('servicios')">
+                        Servicios
+                    </div>
+                </li>
+                <li>
+                    <router-link to="/clientes" class="router-cta li-content" exact>Clientes</router-link>
+                </li>
+                <li>
+                    <router-link to="/contacto" class="router-cta li-content" exact>Contacto</router-link>
                 </li>
             </ul>
         </div>
         <!-- Info importante -->
         <important-info v-if="showLocationInfo" :class="{'hide':showNavbar}"></important-info>
+        <sub-menu :show="this.showSubMenu" :option="this.subMenuOption" @closeSubMenu="showSubMenu = false"></sub-menu>
     </nav>
 </template>
 
@@ -35,24 +50,41 @@
         overflow: hidden;
         box-shadow: 0px -3px 10px 5px rgba(0,0,0,.2);
         align-self: flex-end;
+        width: auto
     }
-    li{
+    .menu > ul > li{
         height: 100%;
         display: flex;
         flex-direction: row;
         font-weight: bold;
         font-size: 1.1rem;
     }
+    .menu > ul > li .li-content{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: .25rem 0;
+    }
+    .menu > ul > li > label:hover{
+        cursor: pointer;
+    }
+    .menu > ul > li > a, .cta{
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+    }
+    .cta{
+        width: 300px;
+    }
+    .router-cta{
+        width: 150px;
+    }
     img{
         height: 20px;
         width: 20px;
         transition: all .5s ease-in-out;    
-    }
-    li a{
-        width: 100%;
-    }
-    a{
-        transition: all .5s ease-in-out;
     }
     #logo-container{
         background-color: transparent;
@@ -82,7 +114,8 @@
         background-color: #9FB3E3;
         color: white;
     }
-    li a:hover:not(.router-link-exact-active){
+    li a:hover:not(.router-link-exact-active), 
+    li .cta:hover:not(.router-link-exact-active){
         background-color: #666666;
         color: white;        
     }
@@ -94,7 +127,7 @@
             width: 150px!important;
         }
         ul{
-            width: 70%;
+            max-width: 60%;
         }
     }
     @media screen and (max-width:650px){
@@ -117,6 +150,8 @@
             return{
                 showNavbar: false,
                 lastScrollPosition: 0,
+                showSubMenu: false,
+                subMenuOption: '',
                 options:[
                     {
                         sectionName: 'Inicio',
@@ -171,6 +206,10 @@
             },
             getImg(imgName){
                 return require('@/assets/images/icons/NavIcons/'+imgName+'.svg')
+            },
+            openMenu(subMenuName){
+                this.subMenuOption = subMenuName
+                this.showSubMenu = true
             }
         },
         mounted(){

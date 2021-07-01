@@ -45,6 +45,7 @@ Vue.component('service-carousel', require('./components/Carousel/ServiceCarousel
 Vue.component('modal',            require('./components/Modal/Modal.vue').default)
 Vue.component('newsletter-form',  require('./components/Modal/NewsletterSuscribe.vue').default)
 Vue.component('contact-form',     require('./components/Modal/Contact.vue').default)
+Vue.component('sub-menu',         require('./components/NavBarSubMenu.vue').default);
 
 new Vue({
   router,
