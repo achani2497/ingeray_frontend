@@ -17,8 +17,8 @@
                             </ul>
                         </div>
                         <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box">
-                            <ul>
-                                <li v-for="(item, index) in equiposParaMostrar" :key="index">
+                            <ul class="flex flex-wrap">
+                                <li class="w-1/2" v-for="(item, index) in equiposParaMostrar" :key="index">
                                     {{item}}
                                 </li>
                             </ul>
@@ -33,7 +33,7 @@
     .container{
         position: absolute;
         top: 5rem;
-        transform: translateX(-100%);
+        transform: translateX(-105%);
         width: 80vw;
         min-width: 850px;
         height: 60vh;
@@ -174,68 +174,48 @@ export default {
                         {
                             subtitulo:'Radiología Convencional',
                             isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
+                            items:['Equipos con Fuentes de Alta Frecuencia', 'Equipos con Fuente de Frecuencia Industrial', 'Equipos Móviles']
                         },
                         {
                             subtitulo:'Radiología Digital',
                             isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3','Item un poco largo 4', 'Item un poco largo 5', 'Item un poco largo 6']
+                            items:['Paneles de Adquisición Digital Directa de Imágenes']
                         },
                         {
                             subtitulo:'Radiología Intervensionista',
                             isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
+                            items:['Arcos en C']
                         },
                         {
                             subtitulo:'Sistemas de Digitalización',
                             isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
+                            items:['Arcos en C', 'Mamógrafos', 'Radiología convencional', 'Radiología estudios contrastados']
                         },
                         {
                             subtitulo:'Mamografía',
                             isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
+                            items:['Mamógrafos analógicos y Digital directo']
                         },
                         {
                             subtitulo:'Alquiler de Equipamiento',
                             isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
+                            items:['Equipos de Sala', 'Equipos Móviles', 'Arcos en C', 'Mamógrafos']
                         }
                     ]
                 },
                 {
-                    titulo: 'Veterinaria',
+                    titulo: 'División Veterinaria',
                     show: false,
                     categorias:[
                         {
-                            subtitulo:'VET - Radiología Convencional',
+                            subtitulo:'Ultrasonografía',
                             isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
+                            items:['INGE V6', 'KX5200', 'INGE V9 HD', 'MSU1', 'Smart Scan', 'MSU3', 'RKU10', 'DCU12', 'KX5600', 'DCU30']
                         },
                         {
-                            subtitulo:'VET - Radiología Digital',
+                            subtitulo:'Accesorios',
                             isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3','Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
-                        },
-                        {
-                            subtitulo:'VET - Radiología Intervensionista',
-                            isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
-                        },
-                        {
-                            subtitulo:'VET - Sistemas de Digitalización',
-                            isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
-                        },
-                        {
-                            subtitulo:'VET - Mamografía',
-                            isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
-                        },
-                        {
-                            subtitulo:'VET - Alquiler de Equipamiento',
-                            isActive: false,
-                            items:['Item un poco largo 1', 'Item un poco largo 2', 'Item un poco largo 3']
+                            items:['Sondas de Ultrasonido', 'Mango Extensor para Sonda Transrectal', 'Gafas de Video de Ultrasonido']
                         }
                     ]
                 }
