@@ -5,24 +5,34 @@
                 <div class="close-container">
                     <div class="close-btn" @click="$emit('closeSubMenu')"></div>
                 </div>
-                <div class="tab" v-for="(equipo, index) in equipos" :key="index">
-                    <input type="checkbox" :id="equipo.titulo" @click="setEquipoActive(equipo)">
-                    <label class="tab-label" :class="{titleActive : equipo.show}" :for="equipo.titulo">{{equipo.titulo}}</label>
-                    <div class="tab-content" :class="{contentActive : equipo.show}">
-                        <div class="categorias card h-auto w-6/12 lg:w-4/12 option-box">
-                            <ul>
-                                <li v-for="(categoria, index) in equipo.categorias" :class="{active:categoria.isActive}" :key="index" @click="mostrarEquipos(categoria, equipo.categorias)">
-                                    {{categoria.subtitulo}}
-                                </li>
-                            </ul>
+                <div v-if="this.option === 'productos'">
+                    <div class="tab" v-for="(equipo, index) in equipos" :key="index">
+                        <input type="checkbox" :id="equipo.titulo" @click="setEquipoActive(equipo)">
+                        <label class="tab-label px-2" :class="{titleActive : equipo.show}" :for="equipo.titulo">{{equipo.titulo}}</label>
+                        <div class="tab-content" :class="{contentActive : equipo.show}">
+                            <div class="categorias card h-auto w-6/12 lg:w-4/12 option-box">
+                                <ul>
+                                    <li v-for="(categoria, index) in equipo.categorias" :class="{active:categoria.isActive}" class="py-1 px-2" :key="index" @click="mostrarEquipos(categoria, equipo.categorias)">
+                                        {{categoria.subtitulo}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box">
+                                <ul class="flex flex-wrap">
+                                    <li class="w-1/2 pl-4 py-1" v-for="(item, index) in equiposParaMostrar" :key="index">
+                                        {{item}}
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box">
-                            <ul class="flex flex-wrap">
-                                <li class="w-1/2" v-for="(item, index) in equiposParaMostrar" :key="index">
-                                    {{item}}
-                                </li>
-                            </ul>
-                        </div>
+                    </div>
+                </div>
+                <div v-else>
+                    <div class="tab">
+                        <div class="titleActive">Servicios</div>
+                        <ul class="servicios">
+                            <li class="equipos" v-for="(servicio, index) in servicios" :key="index">{{servicio}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -83,7 +93,6 @@
     .tab-label{
         display: flex;
         justify-content: space-between;
-        padding: 0 1rem;
         cursor: pointer;
         color: #4f4f4f;
         font-size: 26px;
@@ -116,13 +125,12 @@
         background-color: transparent;
     }
     .option-box{
-        padding-left: 1rem;
         color: white;
         font-family: 'IngeText', Arial, Helvetica, sans-serif;
         font-size: 18px;
     }
     .option-box ul li{
-        padding: .5rem;
+        /* padding: .3rem; */
         display: flex;
         align-items: center;
     }
@@ -142,8 +150,24 @@
     .active{
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
         font-size: 19px;
-        background-color: #E9F0FE;
-        color: black;
+        background-color: rgba(233, 240, 254, .8);
+        color: #4f4f4f;
+    }
+    .servicios{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .servicios li{
+        color: #4f4f4f;
+        height: auto;
+        padding: .3rem 0;
+        font-family: 'IngeText', Arial, Helvetica, sans-serif;
+        font-size: 20px;
+    }
+    .servicios li:hover{
+        cursor: pointer;
+        font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
     }
 @media screen and (max-width:1000px) {
     .container{
@@ -219,6 +243,16 @@ export default {
                         }
                     ]
                 }
+            ],
+            servicios:[
+                'Servicio Técnico a Demanda',
+                'Servicios de Post-Venta ',
+                'Abonos de Mantenimiento',
+                'Asistencia Técnica Remota',
+                'Cálculo de Blindaje, Planos, Obra de Blindaje y Tramites para la obtención de Certificaciones Homologadas',
+                'Digitalización e Integración de Tecnologías de Diagnóstico Médico',
+                'Puesta en Valor y Restauración de Equipos Clásicos',
+                'Proyectos de diseño de ambientación de equipos y salas de pediatría'
             ]
         }
     },
