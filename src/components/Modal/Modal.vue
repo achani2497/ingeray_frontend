@@ -155,4 +155,9 @@ button:hover{
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+@media screen and (max-width: 650px) {
+  .modal-container{
+    width: 95%;
+  }
+}
 </style>
