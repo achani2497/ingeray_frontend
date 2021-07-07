@@ -1,31 +1,31 @@
 <template>
     <nav class="fixed top-0 flex flex-col w-screen">
         <!-- Menu -->
-        <div class="menu flex justify-between flex-row bkg-nav-blue">
+        <div class="menu flex justify-between bkg-nav-blue">
             <!-- Logo -->
             <router-link to="/" class="logo-container" id="logo-container" exact>
                 <div class="logo"></div>
             </router-link>
             <!-- Secciones -->
-            <ul class="flex justify-between items-center">
-                <li>
-                    <router-link to="/" class="router-cta li-content" exact>Home</router-link>
+            <ul class="flex">
+                <li class="router-cta">
+                    <router-link to="/" class="li-content home" exact>Home</router-link>
                 </li>
-                <li>
-                    <div class="cta productos li-content" @click="openMenu('productos')">
+                <li class="cta">
+                    <div class="productos li-content" @click="openMenu('productos')">
                         Productos
                     </div>
                 </li>
-                <li>
-                    <div class="cta servicios li-content" @click="openMenu('servicios')">
+                <li class="cta">
+                    <div class="servicios li-content" @click="openMenu('servicios')">
                         Servicios
                     </div>
                 </li>
-                <li>
-                    <router-link to="/clientes" class="router-cta li-content" exact>Clientes</router-link>
+                <li class="router-cta">
+                    <router-link to="/clientes" class="li-content" exact>Clientes</router-link>
                 </li>
-                <li>
-                    <router-link to="/contacto" class="router-cta li-content" exact>Contacto</router-link>
+                <li class="router-cta">
+                    <router-link to="/contacto" class="li-content" exact>Contacto</router-link>
                 </li>
             </ul>
         </div>
@@ -45,15 +45,16 @@
     }
     .menu > ul{
         height: 3rem;
+        width: 100%;
         background: linear-gradient(to right, #666666,#999999, #CCCCCC);
         border-top-left-radius: 25px;
         overflow: hidden;
         box-shadow: 0px -3px 10px 5px rgba(0,0,0,.2);
         align-self: flex-end;
-        width: auto
     }
     .menu > ul > li{
         height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: row;
         font-weight: bold;
@@ -63,6 +64,7 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        width: 100%;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -75,12 +77,12 @@
         cursor: pointer;
         transition: all .5s ease-in-out;
     }
-    .cta{
-        width: 300px;
+    /* .cta{
+        min-width: 300px;
     }
     .router-cta{
-        width: 150px;
-    }
+        max-width: 150px;
+    } */
     img{
         height: 20px;
         width: 20px;
@@ -115,20 +117,17 @@
         color: white;
     }
     li a:hover:not(.router-link-exact-active), 
-    li .cta:hover:not(.router-link-exact-active){
+    .cta:hover:not(.router-link-exact-active){
         background-color: #666666;
         color: white;        
     }
     @media screen and (max-width:1000px) {
-        li:nth-child(1), li:nth-child(2){
-            width: 250px!important;
-        }
-        li:nth-child(3), li:nth-child(4){
-            width: 150px!important;
-        }
-        ul{
-            max-width: 60%;
-        }
+        /* .cta{
+            min-width: 250px!important;
+        } */
+        /* .router-cta{
+            min-width: 150px!important;
+        } */
     }
     @media screen and (max-width:650px){
         nav{
