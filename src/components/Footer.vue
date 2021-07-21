@@ -20,14 +20,14 @@
                 <span>Seguinos en Redes Sociales</span>
                 <div class="iconos flex justify-between" v-if="mostrar==='humanos'">
                     <div class="icon facebook-icon-hum"></div>
-                    <div class="icon instagram-icon-hum"></div>
+                    <a class="icon instagram-icon-hum" href="https://www.instagram.com/p/CMK8U71DnXq/"></a>
                     <div class="icon youtube-icon-hum"></div>
                 </div>
                 <div class="iconos-vet flex justify-between" v-else>
-                    <div class="icon facebook-icon-vet"></div>
-                    <div class="icon instagram-icon-vet"></div>
-                    <div class="icon youtube-icon-vet"></div>
-                    <div class="icon shop-icon-vet"></div>
+                    <a class="icon facebook-icon-vet" href="https://www.facebook.com/IngeRayVET"></a>
+                    <a class="icon instagram-icon-vet" href="https://www.instagram.com/inge_ray_vet/"></a>
+                    <a class="icon youtube-icon-vet" href="https://www.youtube.com/channel/UCmPvf69gHGonIM2fglmhBig"></a>
+                    <div class="icon shop-icon-vet" href="https://ingeraysrl.mercadoshops.com.ar/"></div>
                 </div>
             </div>
             <div class="newsletter flex flex-col items-center">

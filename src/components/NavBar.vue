@@ -77,12 +77,12 @@
         cursor: pointer;
         transition: all .5s ease-in-out;
     }
-    /* .cta{
+    .cta{
         min-width: 300px;
     }
     .router-cta{
         max-width: 150px;
-    } */
+    } 
     img{
         height: 20px;
         width: 20px;
@@ -120,14 +120,6 @@
     .cta:hover:not(.router-link-exact-active){
         background-color: #666666;
         color: white;        
-    }
-    @media screen and (max-width:1000px) {
-        /* .cta{
-            min-width: 250px!important;
-        } */
-        /* .router-cta{
-            min-width: 150px!important;
-        } */
     }
     @media screen and (max-width:650px){
         nav{
