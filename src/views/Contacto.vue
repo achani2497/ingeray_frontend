@@ -1,6 +1,6 @@
 <template>
     <div class="form-container flex flex-wrap justify-around">
-        <nav-bar :showLocationInfo="false"></nav-bar>
+        <nav-bar :showLocationInfo="true"></nav-bar>
         <div class="info">
             <h3 class="text-3xl text-center text-underline mb-3">Información de contacto</h3>
             <div class="contact-box">
