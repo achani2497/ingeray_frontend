@@ -14,10 +14,10 @@
             <div class="body">
                 <form class="h-full w-full" action="#">
                     <!-- Header del formulario -->
-                    <div class="help-box">
-                        <p :class="{'incomplete':!form.dudaPrincipal.complete}">Seleccione una opción*</p>
-                        <b :class="{'incomplete':!form.dudaPrincipal.complete}">¿Cómo podemos ayudarlo?</b>
-                        <select name="consulta" id="consulta" v-model="form.dudaPrincipal.val">
+                    <div class="help-box" :class="{'incomplete':!form.dudaPrincipal.complete}">
+                        <p>Seleccione una opción*</p>
+                        <b>¿Cómo podemos ayudarlo?</b>
+                        <select name="consulta" id="consulta" v-model="form.dudaPrincipal.val" @change="marcaloComoCompletado(form.dudaPrincipal)">
                             <option value="-">Seleccione una opción . . .</option>
                             <option value="1">Deseo información sobre este equipamiento.</option>
                             <option value="2">Necesito un presupuesto detallado del equipamiento</option>
@@ -45,27 +45,27 @@
                         </div>
                         <!-- Primeros 4 campos -->
                         <div class="fields" v-if="this.currentStep === 1">
-                            <div class="field w-full">
-                                <label for="nombre" :class="{'incomplete':!form.nombrePersona.complete}">Nombre *</label>
-                                <input class="input-text flex-grow" type="text" name="nombre" v-model="form.nombrePersona.val">
+                            <div class="field w-full" :class="{'incomplete':!form.nombrePersona.complete}">
+                                <label for="nombre">Nombre *</label>
+                                <input class="input-text flex-grow" type="text" name="nombre" v-model="form.nombrePersona.val" @change="marcaloComoCompletado(form.nombrePersona)">
                             </div>
-                            <div class="field w-full">
-                                <label for="apellido" :class="{'incomplete':!form.apellidoPersona.complete}">Apellido *</label>
-                                <input class="input-text flex-grow" type="text" name="apellido" v-model="form.apellidoPersona.val">
+                            <div class="field w-full" :class="{'incomplete':!form.apellidoPersona.complete}">
+                                <label for="apellido">Apellido *</label>
+                                <input class="input-text flex-grow" type="text" name="apellido" v-model="form.apellidoPersona.val" @change="marcaloComoCompletado(form.apellidoPersona)">
                             </div>
-                            <div class="field w-full">
-                                <label for="email" :class="{'incomplete':!form.emailPersona.complete}">Dirección de correo eléctronico *</label>
-                                <input class="input-text flex-grow" type="text" name="email" v-model="form.emailPersona.val">
+                            <div class="field w-full" :class="{'incomplete':!form.emailPersona.complete}">
+                                <label for="email">Dirección de correo eléctronico *</label>
+                                <input class="input-text flex-grow" type="text" name="email" v-model="form.emailPersona.val" @change="marcaloComoCompletado(form.emailPersona)">
                             </div>
-                            <div class="field w-full">
-                                <label for="telefono" :class="{'incomplete':!form.telefono.complete}">Teléfono Comercial *</label>
-                                <input class="input-text flex-grow" type="text" name="telefono" v-model="form.telefono.val">
+                            <div class="field w-full" :class="{'incomplete':!form.telefono.complete}">
+                                <label for="telefono">Teléfono Comercial *</label>
+                                <input class="input-text flex-grow" type="text" name="telefono" v-model="form.telefono.val" @change="marcaloComoCompletado(form.telefono)">
                             </div>
                         </div>
                         <!-- Segundos 4 campos -->
                         <div class="fields" v-else-if="this.currentStep === 2">
-                            <div class="field">
-                                <label for="empresa" :class="{'incomplete':!this.form.nombreEmpresa.complete}">Empresa/Organismo *</label>
+                            <div class="field" :class="{'incomplete':!this.form.nombreEmpresa.complete}">
+                                <label for="empresa">Empresa/Organismo *</label>
                                 <input class="input-text" type="text" name="empresa" v-model="form.nombreEmpresa.val">
                             </div>
                             <div class="field">
@@ -84,9 +84,9 @@
                         <!-- Últimos 3 campos -->
                         <div class="third-part" v-else>
                             <div class="selects">
-                                <div class="field">
-                                    <label for="atencion" :class="{'incomplete':!form.informacionAtencion.complete}">Información para su Atención *</label>
-                                    <select name="atencion" id="atencion" v-model="form.informacionAtencion.val">
+                                <div class="field" :class="{'incomplete':!form.informacionAtencion.complete}">
+                                    <label for="atencion">Información para su Atención *</label>
+                                    <select name="atencion" id="atencion" v-model="form.informacionAtencion.val" @change="marcaloComoCompletado(form.informacionAtencion)">
                                         <option value="-">Seleccione una opcion . . . </option>
                                         <option value="Ser contactado por ventas">Ser contactado por ventas</option>
                                         <option value="Cotización">Cotización</option>
@@ -217,10 +217,6 @@
         width: 50%;
         padding: .5rem;
     }
-    .incomplete{
-        color: red;
-        font-weight: bolder;
-    }
     .field label{
         position: absolute;
         left: 15px;
@@ -241,7 +237,16 @@
         padding-left: 5px;
         font-size: 20px;
     }
-
+    .incomplete input, .incomplete select{
+        border: 2px solid red;
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    }
+    .incomplete label, .incomplete p, .incomplete b{
+        color: red;
+        font-weight: bolder;
+        z-index: 10;
+    }
+    
 /* 3RA PARTE DEL FORMULARIO */
     .third-part{
         display: flex;
@@ -275,6 +280,7 @@
         background-color:white; 
         height: auto;
     }
+
 /* BOTONES */
     .form-footer{
         display: flex;
@@ -299,6 +305,26 @@
     .next{
         background: darkcyan;
         color: white;
+    }
+
+/* ANIMACION */
+    .shake {
+        animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        transform: translate3d(0, 0, 0);
+    }
+    @keyframes shake {
+        10%, 90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+        20%, 80% {
+            transform: translate3d(2px, 0, 0);
+        }
+        30%, 50%, 70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+        40%, 60% {
+            transform: translate3d(4px, 0, 0);
+        }
     }
 
 @media screen and (max-width: 830px) {
@@ -429,11 +455,13 @@ export default {
             let form = this.form;
             let steps1 = [form.nombrePersona, form.apellidoPersona, form.emailPersona, form.telefono];
             let steps2 = [form.nombreEmpresa]
+            this.unsetComplete(steps1)
             switch (this.currentStep) {
                 case 1:
                     this.validateFields(steps1)
                     break;
                 case 2:
+                    this.unsetComplete(steps2)
                     this.validateFields(steps2)
                 default:
                     break;
@@ -469,6 +497,9 @@ export default {
         },
         setActiveStep(stepNumber){
             this.steps[stepNumber-1].active = true
+        },
+        marcaloComoCompletado(field){
+            field.complete = true
         }
     }
 }

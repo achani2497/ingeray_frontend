@@ -20,6 +20,9 @@ export const validationMixins = {
                 }
             })
         },
+        unsetComplete(fields){ //Este método lo uso cuando le doy a next step, para que se pueda aplicar el efecto shake todas las veces que haga falta
+            fields.forEach(field => field.complete = true)
+        },
         validateFields(fields){
             if(this.fieldsNotEmpty(fields)){
                 this.setComplete(fields) // Acá me marca a todos como completos
