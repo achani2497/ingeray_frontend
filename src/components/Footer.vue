@@ -37,9 +37,18 @@
                 <span>Pais - Idioma</span>
                 <span>Argentina > Español</span>
             </div>
+            <!-- Modal -->
             <modal v-if="showModal" @close="showModal = false">
-              <newsletter-form v-if="showNewsletterForm"></newsletter-form>
-              <contact-form v-if="!showNewsletterForm"></contact-form>
+              <!-- Titulo del modal -->
+              <template #title v-if="showNewsletterForm"> Suscripción a Newsletter </template>
+              <template #title v-else>Formulario de Contacto </template>
+              <!-- Body y Footer del modal -->
+              <template #content v-if="showNewsletterForm">
+                <newsletter-form @close="showModal = false"></newsletter-form>
+              </template>
+              <template #content v-else>
+                <contact-form></contact-form>
+              </template>
             </modal>
         </div>
         <!-- Contacto -->

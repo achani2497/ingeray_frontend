@@ -3,53 +3,33 @@
         <div class="modal-mask">
             <div class="modal-wrapper">
                 <div class="modal-container">
-                  <slot name="content">
-                    <!-- Header -->
-                    <div class="modal-header">
-                        <!-- <slot name="header">
-                            default header
-                        </slot> -->
-                        <div class="title">Información del contacto</div>
-                        <button @click="$emit('close')">
-                          <span>&times;</span>
-                        </button>
-                    </div>
-                    <!-- Body -->
-                    <div class="modal-body">
-                        <!-- <slot name="body">
-                            default body
-                        </slot> -->
-                        <div class="modal-group">
-                          <label for="email">EMAIL</label>
-                          <input type="text" name="email">
-                        </div>
-                        <div class="modal-group">
-                          <label for="apellidos">APELLIDOS</label>
-                          <input type="text" name="apellidos">
-                        </div>
-                        <div class="modal-group">
-                          <label for="nombre">NOMBRE</label>
-                          <input type="text" name="nombre">
-                        </div>
-                        <div class="modal-group">
-                          <label for="sms">SMS</label>
-                          <input type="text" name="sms">
-                        </div>
-                    </div>
-                    <!-- Footer -->
-                    <div class="modal-footer">
-                        <!-- <slot name="footer">
-                            default footer
-                        </slot> -->
-                      <button class="bg-green-300" @click="$emit('close')"> Suscribirme!</button>
-                      <button class="border border-red-400" @click="$emit('close')"> Cancelar</button>
-                    </div>
-                  </slot>
+                  <!-- Header -->
+                  <div class="modal-header">
+                    <div class="title"><slot name="title"/></div>
+                    <button type="button" @click="$emit('close')">
+                        <span>&times;</span>
+                    </button>
+                  </div>
+                  <!-- Body -->
+                  <slot name="content" />
+
                 </div>
             </div>
         </div>
     </transition>
 </template>
+<script>
+export default {
+  data:function(){
+    return{
+
+    }
+  },
+  methods:{
+    
+  }
+}
+</script>
 <style scoped>
 .modal-mask {
   position: fixed;
@@ -68,6 +48,7 @@
 }
 .modal-container {
   width: 50vw;
+  height: auto;
   margin: 0px auto;
   background: #FEFEFE;
   padding: 20px 30px;
@@ -101,63 +82,7 @@
   font-size: 30px;
   color: #b0b0b0;
 }
-.modal-body {
-  margin: 20px 0;
-}
-.modal-group{
-  display: flex;
-  flex-direction: column;
-  margin: 1.5rem 0
-}
-input{
-  height: 2rem;
-  border-radius: 5px;
-  box-shadow: inset 5px 5px 20px #d8d8d8,
-              inset -5px -5px 20px #ffffff;
-  padding-left: .5rem;
-  font-size: 1.2rem;
-}
-input:focus{
-  border: 2px gray solid;
-  outline: none;
-}
-button{
-  transition: all .5s ease-in-out;
-}
 button:focus{
   outline: none;
-}
-button:hover{
-  transform: scale(1.1);
-}
-.modal-footer{
-  display: flex;
-  gap: 1.5rem;
-  height: 2rem;
-}
-.modal-footer button{
-  width: 100%;
-  border-radius: 5px;
-}
-.modal-footer button:hover{
-  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, .5);
-}
-
-/* Modal transtions */
-.modal-enter {
-  opacity: 0;
-}
-.modal-leave-active {
-  opacity: 0;
-}
-.modal-enter .modal-container,
-.modal-leave-active .modal-container {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-@media screen and (max-width: 650px) {
-  .modal-container{
-    width: 95%;
-  }
 }
 </style>

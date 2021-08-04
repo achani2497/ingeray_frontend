@@ -62,7 +62,7 @@
             </div>
         <!-- DIVISION VETERINARIA -->
             <div class="tabs">
-                <div class="sub-title">Diagnóstico por Imágenes</div>
+                <div class="sub-title">División Veterinaria</div>
                 <div class="tab">
                     <input type="checkbox" id="chck7" v-model="ultrasonografia.show">
                     <label class="tab-label" for="chck7">{{ultrasonografia.nombreProducto}}</label>

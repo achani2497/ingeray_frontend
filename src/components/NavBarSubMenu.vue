@@ -5,6 +5,7 @@
                 <div class="close-container">
                     <div class="close-btn" @click="$emit('closeSubMenu')"></div>
                 </div>
+                <!-- EQUIPOS -->
                 <div v-if="this.option === 'productos'">
                     <div class="tab" v-for="(equipo, index) in equipos" :key="index">
                         <input type="checkbox" :id="equipo.titulo" @click="setEquipoActive(equipo)">
@@ -19,7 +20,7 @@
                             </div>
                             <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box">
                                 <ul class="flex flex-wrap">
-                                    <li class="w-1/2 pl-4 py-1" v-for="(item, index) in equiposParaMostrar" :key="index">
+                                    <li class="w-1/2 pl-4 py-1" v-for="(item, index) in equiposParaMostrar" :key="index" @click="mostrarEnProductos(item)">
                                         {{item}}
                                     </li>
                                 </ul>
@@ -27,6 +28,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- SERVICIOS -->
                 <div v-else>
                     <div class="tab">
                         <div class="titleActive">Servicios</div>
@@ -266,6 +268,9 @@ export default {
             this.equiposParaMostrar = categoria.items; 
             categorias.forEach(categoria => categoria.isActive = false)
             categoria.isActive = true
+        },
+        mostrarEnProductos(producto){
+            console.log(producto)
         }
     }
 }
