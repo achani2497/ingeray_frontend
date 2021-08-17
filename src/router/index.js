@@ -1,10 +1,11 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import Servicios from '../views/Servicios.vue'
-import Productos from '../views/Productos.vue'
-import Contacto from '../views/Contacto.vue'
-import ContactForm from '../components/Forms/ContactForm.vue'
+import Vue                from 'vue'
+import VueRouter          from 'vue-router'
+import Home               from '../views/Home.vue'
+import Servicios          from '../views/Servicios.vue'
+import Productos          from '../views/Productos.vue'
+import ProductoCategoria  from '../views/ProductoCategoria.vue'
+import Contacto           from '../views/Contacto.vue'
+import ContactForm        from '../components/Forms/ContactForm.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,11 @@ const routes = [
     path: '/productos',
     name: 'Productos',
     component: Productos
+  },
+  {
+    path: '/productos/:categoria',
+    name: 'ProductoCategoria',
+    component: ProductoCategoria
   },
   {
     path: '/contacto',

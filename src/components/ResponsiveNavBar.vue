@@ -52,6 +52,7 @@ export default {
     @media screen and (max-width:650px) {
         .hidden{
             display: flex;
+            z-index: 999;
         }
         .router-link-exact-active,
         .router-link-active {

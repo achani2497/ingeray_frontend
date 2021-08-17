@@ -38,7 +38,7 @@
 <style scoped>
     nav{
         background-color: #7A9AC7;
-        z-index: 9;
+        z-index: 20;
     }
     .menu{
         height: 5rem;

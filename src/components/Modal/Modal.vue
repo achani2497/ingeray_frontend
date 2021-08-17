@@ -4,7 +4,7 @@
             <div class="modal-wrapper">
                 <div class="modal-container">
                   <!-- Header -->
-                  <div class="modal-header">
+                  <div class="modal-header" v-if="header">
                     <div class="title"><slot name="title"/></div>
                     <button type="button" @click="$emit('close')">
                         <span>&times;</span>
@@ -20,6 +20,7 @@
 </template>
 <script>
 export default {
+  props:['header'],
   data:function(){
     return{
 
@@ -47,11 +48,10 @@ export default {
   vertical-align: middle;
 }
 .modal-container {
-  width: 50vw;
+  width: fit-content;
   height: auto;
   margin: 0px auto;
   background: #FEFEFE;
-  padding: 20px 30px;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
@@ -62,6 +62,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 1rem 0 1rem;
 }
 .modal-header button{
   height: 20px;

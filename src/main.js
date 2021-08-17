@@ -39,6 +39,7 @@ Vue.component('important-info',   require('./components/InfoImportante.vue').def
 Vue.component('contact',          require('./components/ContactSection/ContactForm.vue').default);
 Vue.component('footer-content',   require('./components/Footer.vue').default);
 Vue.component('carousel',         require('./components/Carousel/Carousel.vue').default);
+Vue.component('image-carousel',   require('./components/Carousel/ImagesCarousel.vue').default);
 Vue.component('product-carousel', require('./components/Carousel/ProductCarousel.vue').default);
 Vue.component('service-carousel', require('./components/Carousel/ServiceCarousel.vue').default);
 Vue.component('modal',            require('./components/Modal/Modal.vue').default)

@@ -37,8 +37,9 @@ export default {
 }
 </script>
 <style scoped>
-.modal-body {
-  margin: 20px 0;
+form{
+  width: 100%;
+  padding: 1rem;
 }
 .modal-group{
   display: flex;

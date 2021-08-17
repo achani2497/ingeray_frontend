@@ -38,7 +38,7 @@
                 <span>Argentina > Español</span>
             </div>
             <!-- Modal -->
-            <modal v-if="showModal" @close="showModal = false">
+            <modal v-if="showModal" @close="showModal = false" :header="true">
               <!-- Titulo del modal -->
               <template #title v-if="showNewsletterForm"> Suscripción a Newsletter </template>
               <template #title v-else>Formulario de Contacto </template>

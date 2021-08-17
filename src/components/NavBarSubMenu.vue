@@ -7,21 +7,26 @@
                 </div>
                 <!-- EQUIPOS -->
                 <div v-if="this.option === 'productos'">
-                    <div class="tab" v-for="(equipo, index) in equipos" :key="index">
-                        <input type="checkbox" :id="equipo.titulo" @click="setEquipoActive(equipo)">
-                        <label class="tab-label px-2" :class="{titleActive : equipo.show}" :for="equipo.titulo">{{equipo.titulo}}</label>
-                        <div class="tab-content" :class="{contentActive : equipo.show}">
+                    <div class="tab" v-for="(categoria, index) in categorias" :key="index">
+                        <input type="checkbox" :id="categoria.nombreCategoria" @click="setCategoriaActive(categoria)">
+                        <label class="tab-label px-2" :class="{titleActive : categoria.show}" :for="categoria.nombreCategoria">{{categoria.nombreCategoria}}</label>
+                        <div class="tab-content" :class="{contentActive : categoria.show}">
+                            <!-- Columna izquierda, donde se muestran las categorias -->
                             <div class="categorias card h-auto w-6/12 lg:w-4/12 option-box">
                                 <ul>
-                                    <li v-for="(categoria, index) in equipo.categorias" :class="{active:categoria.isActive}" class="py-1 px-2" :key="index" @click="mostrarEquipos(categoria, equipo.categorias)">
-                                        {{categoria.subtitulo}}
+                                    <li v-for="(subcategoria, index) in categoria.subcategorias" :class="{active: subcategoria.isActive}" class="py-1 px-2" :key="index" @click="mostrarEquipos(categoria, subcategoria, subcategoria.equipos)">
+                                        {{subcategoria.nombreProducto}}
+                                    </li>
+                                    <li>
+                                        <router-link to="/productos" class="py-1 px-2">Ver todos los productos</router-link>
                                     </li>
                                 </ul>
                             </div>
+                            <!-- Columna derecha, donde se muestran los equipos -->
                             <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box">
                                 <ul class="flex flex-wrap">
-                                    <li class="w-1/2 pl-4 py-1" v-for="(item, index) in equiposParaMostrar" :key="index" @click="mostrarEnProductos(item)">
-                                        {{item}}
+                                    <li class="w-1/2 pl-4 py-1" v-for="(equipo, index) in equiposParaMostrar" :key="index">
+                                        <router-link :to="'/productos/'+equipo.urlName">{{equipo.nombre}}</router-link>
                                     </li>
                                 </ul>
                             </div>
@@ -76,7 +81,7 @@
     .close-btn:hover{
         cursor: pointer;
     }
-/* Accordion styles */
+
     input {
         position: absolute;
         opacity: 0;
@@ -132,7 +137,7 @@
         font-size: 18px;
     }
     .option-box ul li{
-        /* padding: .3rem; */
+
         display: flex;
         align-items: center;
     }
@@ -148,6 +153,10 @@
     .equipos ul li:hover{
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
         cursor: pointer;
+    }
+    .categorias a{
+        height: 30px;
+        width: 100%;
     }
     .active{
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
@@ -183,69 +192,17 @@
 }
 </style>
 <script>
+import categorias from '../assets/js/categoriasProductos.json'
+
 export default {
     props:['show', 'option'],
     data:function(){
         return{
             showProductos: true,
             showServicios: false,
-            showDiagnostico: true,
             showVeterinaria: false,
             equiposParaMostrar: [],
-            equipos:[    
-                {
-                    titulo: 'Diagnóstico por Imágenes',
-                    show: true,
-                    categorias:[
-                        {
-                            subtitulo:'Radiología Convencional',
-                            isActive: false,
-                            items:['Equipos con Fuentes de Alta Frecuencia', 'Equipos con Fuente de Frecuencia Industrial', 'Equipos Móviles']
-                        },
-                        {
-                            subtitulo:'Radiología Digital',
-                            isActive: false,
-                            items:['Paneles de Adquisición Digital Directa de Imágenes']
-                        },
-                        {
-                            subtitulo:'Radiología Intervensionista',
-                            isActive: false,
-                            items:['Arcos en C']
-                        },
-                        {
-                            subtitulo:'Sistemas de Digitalización',
-                            isActive: false,
-                            items:['Arcos en C', 'Mamógrafos', 'Radiología convencional', 'Radiología estudios contrastados']
-                        },
-                        {
-                            subtitulo:'Mamografía',
-                            isActive: false,
-                            items:['Mamógrafos analógicos y Digital directo']
-                        },
-                        {
-                            subtitulo:'Alquiler de Equipamiento',
-                            isActive: false,
-                            items:['Equipos de Sala', 'Equipos Móviles', 'Arcos en C', 'Mamógrafos']
-                        }
-                    ]
-                },
-                {
-                    titulo: 'División Veterinaria',
-                    show: false,
-                    categorias:[
-                        {
-                            subtitulo:'Ultrasonografía',
-                            isActive: false,
-                            items:['INGE V6', 'KX5200', 'INGE V9 HD', 'MSU1', 'Smart Scan', 'MSU3', 'RKU10', 'DCU12', 'KX5600', 'DCU30']
-                        },
-                        {
-                            subtitulo:'Accesorios',
-                            isActive: false,
-                            items:['Sondas de Ultrasonido', 'Mango Extensor para Sonda Transrectal', 'Gafas de Video de Ultrasonido']
-                        }
-                    ]
-                }
-            ],
+            categorias: categorias.categorias,
             servicios:[
                 'Servicio Técnico a Demanda',
                 'Servicios de Post-Venta ',
@@ -259,19 +216,24 @@ export default {
         }
     },
     methods:{
-        setEquipoActive(equipo){
-            this.equipos.forEach(equipo => equipo.show = false)
-            equipo.show = true
+        setCategoriaActive(cat){
+            this.categorias.forEach(categoria => categoria.show = false)
+            cat.show = true
             this.equiposParaMostrar = []
         },
-        mostrarEquipos(categoria, categorias){
-            this.equiposParaMostrar = categoria.items; 
-            categorias.forEach(categoria => categoria.isActive = false)
-            categoria.isActive = true
-        },
-        mostrarEnProductos(producto){
-            console.log(producto)
+        mostrarEquipos(categoria, subcategoria, equipos){
+            this.equiposParaMostrar = equipos; 
+            categoria.subcategorias.forEach(subCat => subCat.isActive = false)
+            subcategoria.isActive = true
         }
+    },
+    mounted(){
+        // Esto lo hago porque sino la primera vez que abro el submenu me aparecen las 2 categorias como activas y todas las subcategorias con la clase 'active' activada
+        this.categorias.forEach(categoria => {
+            categoria.show = false
+            categoria.subcategorias.forEach(subCat => subCat.isActive = false)
+        })
+        this.categorias[0].show = true
     }
 }
 </script>

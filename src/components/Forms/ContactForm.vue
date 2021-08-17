@@ -2,17 +2,11 @@
     <div>
         <!-- <nav-bar :showLocationInfo="true"></nav-bar> -->
         <div class="form-container">
-            <div class="header">
-                <div class="header-title">
-                    <div class="header-image"></div>
-                    <div class="header-text">
-                        <p>Contáctenos</p>
-                        <p>sobre este producto</p>
-                    </div>
-                </div>
-            </div>
             <div class="body">
                 <form class="h-full w-full" action="#">
+                    <button class="close-button" type="button" @click="$emit('closeModal')">
+                        <span>&times;</span>
+                    </button>
                     <!-- Header del formulario -->
                     <div class="help-box" :class="{'incomplete':!form.dudaPrincipal.complete}">
                         <p>Seleccione una opción*</p>
@@ -31,7 +25,7 @@
                         <div class="title-box">
                             <div class="title-container">
                                 <div class="title blue mr-2">Contáctenos sobre</div> 
-                                <div class="sub-title blue"> Equipos Rodantes</div>
+                                <div class="sub-title blue"> {{producto}}</div>
                             </div>
                             <small class="w-full">* Complete los 3 pasos del formulario para brindarle una mejor atención</small>
                         </div>
@@ -124,8 +118,9 @@
 <style scoped>
     .form-container{
         height: auto;
-        width: 100vw;
+        width: 100%;
         background: #D2DDEB;
+        position: relative;
     }
     .header{
         height: 6rem;
@@ -165,6 +160,19 @@
         width: 100%;
         border: 2px solid gray;
         margin-top: 5px;
+    }
+    .close-button{
+        height: 20px;
+        width: 20px;
+        border-radius: 100%;
+        position: absolute;
+        right: 5%;
+    }
+    .close-button span{
+        position: absolute;
+        top: -200%;
+        left: 50%;
+        font-size: 40px;
     }
     .title-box{
         display: flex;
@@ -375,8 +383,10 @@
 </style>
 <script>
 import { validationMixins } from '../../assets/js/validationMixin'
+
 export default {
     mixins:[validationMixins],
+    props:['producto'],
     data: function(){
         return{
             currentStep: 1,
