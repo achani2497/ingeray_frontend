@@ -1,0 +1,184 @@
+{
+    "productos":[
+        {
+            "nombreCategoriaGeneral": "Radiología Convencional",
+            "nombreCategoria": "equipos-alta-frecuencia",
+            "nombreCompleto": "Equipos con fuente de Alta Frecuencia",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod1",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod2",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod3",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        },
+        {
+            "nombreCategoriaGeneral": "Radiología Convencional",
+            "nombreCategoria": "equipos-frecuencia-industrial",
+            "nombreCompleto": "Equipos con fuente de Frecuencia Industrial",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod4",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod5",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod6",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        },
+        {
+            "nombreCategoriaGeneral": "Radiología Convencional",
+            "nombreCategoria": "equipos-moviles",
+            "nombreCompleto": "Equipos Móviles",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod7",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod8",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod9",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        },
+        {
+            "nombreCategoriaGeneral": "Radiología Dígital",
+            "nombreCategoria":"paneles",
+            "nombreCompleto": "Paneles de Adquisición Digital Directa de Imágenes",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod10",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod11",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod12",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        },
+        {
+            "nombreCategoriaGeneral": "Radiología Intervensionista",
+            "nombreCategoria":"arcos-c",
+            "nombreCompleto": "Arcos en C",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod13",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod14",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod15",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        },
+        {
+            "nombreCategoriaGeneral": "Alquiler de Equipamiento",
+            "nombreCategoria":"equipos-de-sala",
+            "nombreCompleto": "Equipos de Sala",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod16",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod17",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod18",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        },
+        {
+            "nombreCategoriaGeneral": "Alquiler de Equipamiento",
+            "nombreCategoria":"equipos-moviles",
+            "nombreCompleto": "Equipos Móviles",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod19",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod20",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod21",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        },
+        {
+            "nombreCategoriaGeneral": "",
+            "nombreCategoria":"arcos-c",
+            "nombreCompleto": "Arcos en C",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod22",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod23",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod24",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        },
+        {
+            "nombreCategoriaGeneral": "",
+            "nombreCategoria":"mamografos",
+            "nombreCompleto": "Mamógrafos",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae voluptates voluptatem fugit eum iusto quam vitae non, rerum porro quibusdam odio rem, explicabo molestiae. Quibusdam, doloribus? Consectetur reprehenderit quis impedit?",
+            "productos":[
+                {
+                    "productName":"Prod25",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod26",
+                    "productImage":"https://picsum.photos/500/500"
+                },
+                {
+                    "productName":"Prod27",
+                    "productImage":"https://picsum.photos/500/500"
+                }
+            ]
+        }
+    ]
+}

@@ -3,7 +3,7 @@
         <nav-bar :showLocationInfo="true"></nav-bar>
         <div class="product">
             <div class="product-image">
-                <image-carousel :elementos="productosSeleccionados.productos"></image-carousel>
+                <image-carousel :elementos="equipos.productos"></image-carousel>
             </div>
             <div class="product-description">
                 <!-- Path -->
@@ -15,15 +15,15 @@
                 <!-- Titulos -->
                 <div class="titulos">
                     <div class="title blue text-3xl xl:text-4xl sm:text-3xl">
-                        {{productosSeleccionados.nombreCategoriaGeneral}}
+                        {{equipos.nombreCategoriaGeneral}}
                     </div>
                     <div class="sub-title blue">
-                        {{productosSeleccionados.nombreCompleto}}
+                        {{equipos.nombreCompleto}}
                     </div>
                 </div>
                 <!-- Descripcion -->
                 <div class="descripcion simple-text gray">
-                    {{productosSeleccionados.descripcion}}
+                    {{equipos.descripcion}}
                 </div>
                 <button class="contact" @click="enviarMensajeWhastapp">Quiero que me contacten</button>
             </div>
@@ -38,9 +38,10 @@
                 </div>
             </button>
         </div>
+        <!-- Formulario de contacto -->
         <modal :header="false" v-if="showModal">
             <template #content>
-                <contact-form @closeModal="showModal = false" :producto="productosSeleccionados.nombreCompleto"></contact-form>
+                <contact-form @closeModal="showModal = false" :producto="equipos.nombreCompleto"></contact-form>
             </template>
         </modal>
     </div>
@@ -145,7 +146,6 @@ export default {
                 }
             ],
             productos:productos.productos,
-            productosSeleccionados:''
         }
     },
     methods:{
@@ -158,15 +158,19 @@ export default {
 
             console.log('https://wa.me/'+ from + '?text=%20' + message)
 
-        }
+        },
     },
     created(){
-        this.productosSeleccionados = this.productos.find(prod => prod.nombreCategoria === this.$route.params.categoria)
         const pathSlavon = {
-            sectionName: this.productosSeleccionados.nombreCategoriaGeneral,
+            sectionName: this.equipos.nombreCategoriaGeneral,
             sectionUrl:'/productos'
         }
         this.path.push(pathSlavon)
+    },
+    computed:{
+        equipos: function(){
+            return this.productos.find(prod => prod.nombreCategoria === this.$route.params.categoria)
+        }
     }
 }
 </script>
