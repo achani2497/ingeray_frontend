@@ -68,6 +68,11 @@
 			height: auto!important;
 		}
 	}
+	@media screen and (max-width: 650px) {
+		.carousel-card{
+			height: 350px;
+		}
+	}
 </style>
 <script>
 export default {
