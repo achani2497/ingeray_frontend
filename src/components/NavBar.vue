@@ -7,7 +7,7 @@
                 <div class="logo"></div>
             </router-link>
             <!-- Secciones -->
-            <ul class="flex">
+            <ul class="flex secciones">
                 <li class="router-cta">
                     <router-link to="/" class="li-content home" exact>Home</router-link>
                 </li>
@@ -27,11 +27,11 @@
                 <li class="router-cta">
                     <router-link to="/contacto" class="li-content" exact>Contacto</router-link>
                 </li>
+                <sub-menu :show="this.showSubMenu" :option="this.subMenuOption" @closeSubMenu="showSubMenu = false"></sub-menu>
             </ul>
         </div>
         <!-- Info importante -->
         <important-info v-if="showLocationInfo" :class="{'hide':showNavbar}"></important-info>
-        <sub-menu :show="this.showSubMenu" :option="this.subMenuOption" @closeSubMenu="showSubMenu = false"></sub-menu>
     </nav>
 </template>
 
@@ -42,25 +42,28 @@
     }
     .menu{
         height: 5rem;
+        padding-left: .3%;
+        z-index: 10;
     }
-    .menu > ul{
+    .secciones{
         height: 3rem;
-        width: 100%;
+        width: auto;
         background: linear-gradient(to right, #666666,#999999, #CCCCCC);
-        border-top-left-radius: 25px;
+        border-top-left-radius: 15px;
         overflow: hidden;
         box-shadow: 0px -3px 10px 5px rgba(0,0,0,.2);
         align-self: flex-end;
+        display: flex;
     }
-    .menu > ul > li{
+    .secciones li{
         height: 100%;
-        width: 100%;
+        width: min(170px, 15vw);
         display: flex;
         flex-direction: row;
         font-weight: bold;
         font-size: 1.1rem;
     }
-    .menu > ul > li .li-content{
+    .secciones .li-content{
         display: flex;
         flex-direction: column;
         height: 100%;
@@ -68,21 +71,17 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: .25rem 0;
     }
-    .menu > ul > li > label:hover{
+    .secciones li label:hover{
         cursor: pointer;
     }
-    .menu > ul > li > a, .cta{
+    .secciones li a, .cta{
         cursor: pointer;
         transition: all .5s ease-in-out;
     }
     .cta{
-        min-width: 300px;
+        width: min(230px, 23vw)!important;
     }
-    .router-cta{
-        max-width: 150px;
-    } 
     img{
         height: 20px;
         width: 20px;
@@ -90,9 +89,7 @@
     }
     #logo-container{
         background-color: transparent;
-        width: 30%;
-        padding: 0 2%;
-        max-width: 380px;
+        width: auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -101,8 +98,7 @@
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
-        width: 100%;
-        max-width: 240px;
+        width: 180px;
         height: 100%;
         background-image: url('../assets/images/icons/NavIcons/logo-ingeray1.svg');
     }
@@ -119,7 +115,7 @@
     li a:hover:not(.router-link-exact-active), 
     .cta:hover:not(.router-link-exact-active){
         background-color: #666666;
-        color: white;        
+        color: white; 
     }
     @media screen and (max-width:650px){
         nav{

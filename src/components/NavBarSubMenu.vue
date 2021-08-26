@@ -50,17 +50,16 @@
     .container{
         position: absolute;
         top: 5rem;
-        transform: translateX(-105%);
-        width: 80vw;
-        min-width: 850px;
+        width: 650px;
+        transform: translateY(-150%);
         height: 60vh;
         background: #9FB3E3;
-        padding: 3rem 3rem 0 6rem;
+        padding: 2rem;
         box-shadow: 2px 2px 10px 2px rgba(0,0,0,.6);
         transition: all .7s ease-in-out;
     }
     .open{
-        transform: translateX(0)
+        transform: translateY(0);
     }
     .close-container{
         position: absolute;
@@ -150,7 +149,7 @@
     .categorias ul li:hover{
         cursor: pointer;
     }
-    .equipos ul li:hover{
+    .equipos ul li a:hover{
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
         cursor: pointer;
     }
@@ -181,13 +180,16 @@
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
     }
 @media screen and (max-width:1000px) {
+}
+@media screen and (max-width:835px){
     .container{
-        padding: 3rem 1.5rem 0 1.5rem;
+        transform: translateX(-24%);
+        width: 100%;
     }
 }
-@media screen and (max-width:900px){
+@media screen and (max-width: 680px) {
     .container{
-        min-width: 100vw;
+        transform: translateX(-30%);
     }
 }
 </style>
