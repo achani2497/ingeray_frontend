@@ -27,11 +27,11 @@
                 <li class="router-cta">
                     <router-link to="/contacto" class="li-content" exact>Contacto</router-link>
                 </li>
-                <sub-menu :show="this.showSubMenu" :option="this.subMenuOption" @closeSubMenu="showSubMenu = false"></sub-menu>
+                <SubMenu :show="this.showSubMenu" :option="this.subMenuOption" @closeSubMenu="showSubMenu = false"></SubMenu>
             </ul>
         </div>
         <!-- Info importante -->
-        <important-info v-if="showLocationInfo" :class="{'hide':showNavbar}"></important-info>
+        <ImportantInfo v-if="showLocationInfo" :class="{'hide':showNavbar}"></ImportantInfo>
     </nav>
 </template>
 
@@ -130,7 +130,10 @@
 </style>
 
 <script>
+import SubMenu from '@/components/NavBarSubMenu.vue'
+import ImportantInfo from '@/components/InfoImportante.vue'
     export default {
+        components:{ImportantInfo, SubMenu},
         props:['showLocationInfo'],
         name:'nav-bar',
         data(){

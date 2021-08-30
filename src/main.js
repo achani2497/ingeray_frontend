@@ -35,18 +35,8 @@ Vue.mixin(titleMixin)
 
 Vue.component('nav-bar',          require('./components/NavBar.vue').default);
 Vue.component('resp-nav-bar',     require('./components/ResponsiveNavBar.vue').default);
-Vue.component('important-info',   require('./components/InfoImportante.vue').default);
 Vue.component('contact',          require('./components/ContactSection/ContactForm.vue').default);
-Vue.component('footer-content',   require('./components/Footer.vue').default);
-Vue.component('carousel',         require('./components/Carousel/Carousel.vue').default);
-Vue.component('image-carousel',   require('./components/Carousel/ImagesCarousel.vue').default);
-Vue.component('product-carousel', require('./components/Carousel/ProductCarousel.vue').default);
-Vue.component('service-carousel', require('./components/Carousel/ServiceCarousel.vue').default);
 Vue.component('modal',            require('./components/Modal/Modal.vue').default)
-Vue.component('newsletter-form',  require('./components/Modal/NewsletterSuscribe.vue').default)
-Vue.component('contact-form',     require('./components/Modal/Contact.vue').default)
-Vue.component('sub-menu',         require('./components/NavBarSubMenu.vue').default);
-Vue.component('contact-form-prod', require('./components/Forms/ContactForm.vue').default);
 
 new Vue({
   router,

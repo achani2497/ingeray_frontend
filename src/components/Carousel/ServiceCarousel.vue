@@ -1,8 +1,10 @@
 <template>
-    <carousel :elementos="servicios"></carousel>
+    <Carousel :elementos="servicios"></Carousel>
 </template>
 <script>
+import Carousel from '@/components/Carousel/Carousel.vue'
 export default {
+	components: {Carousel},
     data: function(){
         return{
             servicios:[

@@ -2,7 +2,7 @@
   <div id="app">
     <resp-nav-bar></resp-nav-bar>
     <router-view/>
-    <footer-content></footer-content>
+    <FooterContent></FooterContent>
   </div>
 </template>
 
@@ -24,3 +24,9 @@
   }
 }
 </style>
+<script>
+import FooterContent from "@/components/Footer.vue";
+export default {
+  components:{FooterContent}
+}
+</script>

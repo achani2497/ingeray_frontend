@@ -4,7 +4,7 @@
         <!-- Info del producto -->
         <div class="producto">
             <div class="producto-imagen">
-                <image-carousel :elementos="equipos.productos"></image-carousel>
+                <ImageCarousel :elementos="equipos.productos"></ImageCarousel>
             </div>
             <div class="producto-descripcion">
                 <!-- Path -->
@@ -41,7 +41,7 @@
         </div>
         <div class="info-adicional">
             <!-- Galeria de Imagenes -->
-            <Galeria/>
+            <Galeria :producto="equipos.nombreCompleto" />
             <!-- Caracteristicas -->
             <Caracteristicas/>
             <!-- Especificaciones -->
@@ -173,15 +173,16 @@
 }
 </style>
 <script>
-import productos from '../assets/js/productos.json'
-import ContactForm from '../components/Forms/ContactForm.vue'
-import Galeria from '@/components/Productos/GaleriaProductos.vue'
-import Especificaciones from '@/components/Productos/Especificaciones.vue'
-import Documentos from '@/components/Productos/Documentos.vue'
-import Caracteristicas from '@/components/Productos/Caracteristicas.vue'
+import productos            from '../assets/js/productos.json'
+import ContactForm          from '@/components/Forms/ContactForm.vue'
+import ImageCarousel        from '@/components/Carousel/ImagesCarousel.vue'
+import Galeria              from '@/components/Productos/GaleriaProductos.vue'
+import Especificaciones     from '@/components/Productos/Especificaciones.vue'
+import Documentos           from '@/components/Productos/Documentos.vue'
+import Caracteristicas      from '@/components/Productos/Caracteristicas.vue'
 
 export default {
-  components: { ContactForm, Galeria, Especificaciones, Documentos, Caracteristicas },
+  components: { ContactForm, ImageCarousel, Galeria, Especificaciones, Documentos, Caracteristicas },
     data(){
         return{
             showModal: false,

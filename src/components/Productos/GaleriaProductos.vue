@@ -1,7 +1,7 @@
 <template>
     <div class="galeria flex flex-col">
         <div class="titulos">
-            <div class="title blue text-3xl xl:text-4xl sm:text-3xl">Equipos Móviles</div>
+            <div class="title blue text-3xl xl:text-4xl sm:text-3xl">{{producto}}</div>
             <div class="sub-title blue">Galería</div>
         </div>
         <div class="tipos-imagenes flex mt-6">
@@ -48,3 +48,8 @@
     }
 }
 </style>
+<script>
+export default {
+    props:['producto']
+}
+</script>

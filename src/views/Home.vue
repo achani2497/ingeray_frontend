@@ -22,7 +22,7 @@
 					<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
 					<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2">Productos</div>
 				</div>
-				<product-carousel></product-carousel>
+				<ProductCarousel></ProductCarousel>
 			</div>
 			<!-- SERVICIOS -->
 			<div class="prods-services">
@@ -30,7 +30,7 @@
 					<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
 					<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2"> Servicios</div>
 				</div>
-				<service-carousel></service-carousel>
+				<ServiceCarousel></ServiceCarousel>
 			</div>
 		</div>
 
@@ -71,9 +71,10 @@
 </template>
 
 <script>
+import ProductCarousel from '@/components/Carousel/ProductCarousel.vue'
 import ServiceCarousel from '../components/Carousel/ServiceCarousel.vue'
 export default {
-  components: { ServiceCarousel },
+  components: { ProductCarousel, ServiceCarousel },
 	title: 'Ingeray - Home',
 	data: function(){
 		return {

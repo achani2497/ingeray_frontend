@@ -44,10 +44,10 @@
               <template #title v-else>Formulario de Contacto </template>
               <!-- Body y Footer del modal -->
               <template #content v-if="showNewsletterForm">
-                <newsletter-form @close="showModal = false"></newsletter-form>
+                <NewsletterForm @close="showModal = false"></NewsletterForm>
               </template>
               <template #content v-else>
-                <contact-form></contact-form>
+                <ContactForm></ContactForm>
               </template>
             </modal>
         </div>
@@ -310,7 +310,10 @@
 }
 </style>
 <script>
+import NewsletterForm from '@/components/Modal/NewsletterSuscribe.vue'
+import ContactForm from '@/components/Modal/Contact.vue'
 export default{
+  components: {NewsletterForm, ContactForm},
     data: function(){
         return {
             mostrar:'humanos',
