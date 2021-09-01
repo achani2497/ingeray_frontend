@@ -1,117 +1,114 @@
 <template>
-    <div>
-        <!-- <nav-bar :showLocationInfo="true"></nav-bar> -->
-        <div class="form-container">
-            <div class="body">
-                <form class="h-full w-full" action="#">
-                    <button class="close-button" type="button" @click="$emit('closeModal')">
-                        <span>&times;</span>
-                    </button>
-                    <!-- Header del formulario -->
-                    <div class="help-box" :class="{'incomplete':!form.dudaPrincipal.complete}">
-                        <p>Seleccione una opción*</p>
-                        <b>¿Cómo podemos ayudarlo?</b>
-                        <select name="consulta" id="consulta" v-model="form.dudaPrincipal.val" @change="marcaloComoCompletado(form.dudaPrincipal)">
-                            <option value="-">Seleccione una opción . . .</option>
-                            <option value="1">Deseo información sobre este equipamiento.</option>
-                            <option value="2">Necesito un presupuesto detallado del equipamiento</option>
-                            <option value="3">Busco asesoramiento sobre estos equipamientos</option>
-                            <option value="4">Tengo equipos que requieren reparación</option>
-                        </select>
+    <div class="form-container">
+        <div class="body">
+            <form class="h-full w-full" action="#">
+                <button class="close-button" type="button" @click="$emit('closeModal')">
+                    <span>&times;</span>
+                </button>
+                <!-- Header del formulario -->
+                <div class="help-box" :class="{'incomplete':!form.dudaPrincipal.complete}">
+                    <p>Seleccione una opción*</p>
+                    <b>¿Cómo podemos ayudarlo?</b>
+                    <select name="consulta" id="consulta" v-model="form.dudaPrincipal.val" @change="marcaloComoCompletado(form.dudaPrincipal)">
+                        <option value="-">Seleccione una opción . . .</option>
+                        <option value="1">Deseo información sobre este equipamiento.</option>
+                        <option value="2">Necesito un presupuesto detallado del equipamiento</option>
+                        <option value="3">Busco asesoramiento sobre estos equipamientos</option>
+                        <option value="4">Tengo equipos que requieren reparación</option>
+                    </select>
+                </div>
+                <!-- Body del formulario -->
+                <div class="data-box">
+                    <!-- Avance del formulario -->
+                    <div class="title-box">
+                        <div class="title-container">
+                            <div class="title blue mr-2">Contáctenos sobre</div> 
+                            <div class="sub-title blue"> {{producto}}</div>
+                        </div>
+                        <small class="w-full">* Complete los 3 pasos del formulario para brindarle una mejor atención</small>
                     </div>
-                    <!-- Body del formulario -->
-                    <div class="data-box">
-                        <!-- Avance del formulario -->
-                        <div class="title-box">
-                            <div class="title-container">
-                                <div class="title blue mr-2">Contáctenos sobre</div> 
-                                <div class="sub-title blue"> {{producto}}</div>
-                            </div>
-                            <small class="w-full">* Complete los 3 pasos del formulario para brindarle una mejor atención</small>
-                        </div>
-                        <div class="steps">
-                            <div v-for="(step, index) in this.steps" :key="index">
-                                <div class="step" :class="{disabled : !step.active}">
-                                    <div class="number">{{step.number}}</div>
-                                    {{step.title}}
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Primeros 4 campos -->
-                        <div class="fields" v-if="this.currentStep === 1">
-                            <div class="field w-full" :class="{'incomplete':!form.nombrePersona.complete}">
-                                <label for="nombre">Nombre *</label>
-                                <input class="input-text flex-grow" type="text" name="nombre" v-model="form.nombrePersona.val" @change="marcaloComoCompletado(form.nombrePersona)">
-                            </div>
-                            <div class="field w-full" :class="{'incomplete':!form.apellidoPersona.complete}">
-                                <label for="apellido">Apellido *</label>
-                                <input class="input-text flex-grow" type="text" name="apellido" v-model="form.apellidoPersona.val" @change="marcaloComoCompletado(form.apellidoPersona)">
-                            </div>
-                            <div class="field w-full" :class="{'incomplete':!form.emailPersona.complete}">
-                                <label for="email">Dirección de correo eléctronico *</label>
-                                <input class="input-text flex-grow" type="text" name="email" v-model="form.emailPersona.val" @change="marcaloComoCompletado(form.emailPersona)">
-                            </div>
-                            <div class="field w-full" :class="{'incomplete':!form.telefono.complete}">
-                                <label for="telefono">Teléfono Comercial *</label>
-                                <input class="input-text flex-grow" type="text" name="telefono" v-model="form.telefono.val" @change="marcaloComoCompletado(form.telefono)">
-                            </div>
-                        </div>
-                        <!-- Segundos 4 campos -->
-                        <div class="fields" v-else-if="this.currentStep === 2">
-                            <div class="field" :class="{'incomplete':!this.form.nombreEmpresa.complete}">
-                                <label for="empresa">Empresa/Organismo *</label>
-                                <input class="input-text" type="text" name="empresa" v-model="form.nombreEmpresa.val">
-                            </div>
-                            <div class="field">
-                                <label for="institucion">Institución/Unidad</label>
-                                <input class="input-text" type="text" name="instiitucion" v-model="form.nombreInstitucion.val">
-                            </div>
-                            <div class="field">
-                                <label for="area">Área</label>
-                                <input class="input-text" type="text" name="area" v-model="form.area.val">
-                            </div>
-                            <div class="field">
-                                <label for="cargo">Cargo</label>
-                                <input class="input-text" type="text" name="cargo" v-model="form.cargo.val">
-                            </div>
-                        </div>
-                        <!-- Últimos 3 campos -->
-                        <div class="third-part" v-else>
-                            <div class="selects">
-                                <div class="field" :class="{'incomplete':!form.informacionAtencion.complete}">
-                                    <label for="atencion">Información para su Atención *</label>
-                                    <select name="atencion" id="atencion" v-model="form.informacionAtencion.val" @change="marcaloComoCompletado(form.informacionAtencion)">
-                                        <option value="-">Seleccione una opcion . . . </option>
-                                        <option value="Ser contactado por ventas">Ser contactado por ventas</option>
-                                        <option value="Cotización">Cotización</option>
-                                        <option value="Solo información">Solo información</option>
-                                    </select>
-                                </div>
-                                <div class="field">
-                                    <label for="tiempoEntrega">Tiempo estimado de compra</label>
-                                    <select name="tiempoEntrega" id="tiempoEntrega" v-model="form.tiempoCompra.val">
-                                        <option value="-">Seleccione una opcion . . . </option>
-                                        <option value="Urgente">Urgente</option>
-                                        <option value="0 a 3 meses">0 a 3 meses</option>
-                                        <option value="3 a 6 meses">3 a 6 meses</option>
-                                        <option value="Más de 12 meses">Más de 12 meses</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="text-area">
-                                <label for="comentarios" class="text-area-label">Especifique el motivo de su consulta para que podamos ofrecerte un mejor servicio</label>
-                                <textarea name="comentarios" id="" cols="30" rows="5" v-model="form.comentarios.val"></textarea>
+                    <div class="steps">
+                        <div v-for="(step, index) in this.steps" :key="index">
+                            <div class="step" :class="{disabled : !step.active}">
+                                <div class="number">{{step.number}}</div>
+                                {{step.title}}
                             </div>
                         </div>
                     </div>
-                    <!-- Footer del formulario -->
-                    <div class="form-footer" :style="this.currentStep===1? 'justify-content: flex-end' : 'justify-content: space-between'">
-                        <button class="previous" @click="previousStep" v-show="this.currentStep > 1">Anterior</button>
-                        <button class="next" @click="nextStep" v-if="this.currentStep < 3">Siguiente</button>
-                        <button class="next" @click="enviarFormulario" v-else>Enviar</button>
+                    <!-- Primeros 4 campos -->
+                    <div class="fields" v-if="this.currentStep === 1">
+                        <div class="field w-full" :class="{'incomplete':!form.nombrePersona.complete}">
+                            <label for="nombre">Nombre *</label>
+                            <input class="input-text flex-grow" type="text" name="nombre" v-model="form.nombrePersona.val" @change="marcaloComoCompletado(form.nombrePersona)">
+                        </div>
+                        <div class="field w-full" :class="{'incomplete':!form.apellidoPersona.complete}">
+                            <label for="apellido">Apellido *</label>
+                            <input class="input-text flex-grow" type="text" name="apellido" v-model="form.apellidoPersona.val" @change="marcaloComoCompletado(form.apellidoPersona)">
+                        </div>
+                        <div class="field w-full" :class="{'incomplete':!form.emailPersona.complete}">
+                            <label for="email">Dirección de correo eléctronico *</label>
+                            <input class="input-text flex-grow" type="text" name="email" v-model="form.emailPersona.val" @change="marcaloComoCompletado(form.emailPersona)">
+                        </div>
+                        <div class="field w-full" :class="{'incomplete':!form.telefono.complete}">
+                            <label for="telefono">Teléfono Comercial *</label>
+                            <input class="input-text flex-grow" type="text" name="telefono" v-model="form.telefono.val" @change="marcaloComoCompletado(form.telefono)">
+                        </div>
                     </div>
-                </form>
-            </div>
+                    <!-- Segundos 4 campos -->
+                    <div class="fields" v-else-if="this.currentStep === 2">
+                        <div class="field" :class="{'incomplete':!this.form.nombreEmpresa.complete}">
+                            <label for="empresa">Empresa/Organismo *</label>
+                            <input class="input-text" type="text" name="empresa" v-model="form.nombreEmpresa.val">
+                        </div>
+                        <div class="field">
+                            <label for="institucion">Institución/Unidad</label>
+                            <input class="input-text" type="text" name="instiitucion" v-model="form.nombreInstitucion.val">
+                        </div>
+                        <div class="field">
+                            <label for="area">Área</label>
+                            <input class="input-text" type="text" name="area" v-model="form.area.val">
+                        </div>
+                        <div class="field">
+                            <label for="cargo">Cargo</label>
+                            <input class="input-text" type="text" name="cargo" v-model="form.cargo.val">
+                        </div>
+                    </div>
+                    <!-- Últimos 3 campos -->
+                    <div class="third-part" v-else>
+                        <div class="selects">
+                            <div class="field" :class="{'incomplete':!form.informacionAtencion.complete}">
+                                <label for="atencion">Información para su Atención *</label>
+                                <select name="atencion" id="atencion" v-model="form.informacionAtencion.val" @change="marcaloComoCompletado(form.informacionAtencion)">
+                                    <option value="-">Seleccione una opcion . . . </option>
+                                    <option value="Ser contactado por ventas">Ser contactado por ventas</option>
+                                    <option value="Cotización">Cotización</option>
+                                    <option value="Solo información">Solo información</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="tiempoEntrega">Tiempo estimado de compra</label>
+                                <select name="tiempoEntrega" id="tiempoEntrega" v-model="form.tiempoCompra.val">
+                                    <option value="-">Seleccione una opcion . . . </option>
+                                    <option value="Urgente">Urgente</option>
+                                    <option value="0 a 3 meses">0 a 3 meses</option>
+                                    <option value="3 a 6 meses">3 a 6 meses</option>
+                                    <option value="Más de 12 meses">Más de 12 meses</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-area">
+                            <label for="comentarios" class="text-area-label">Especifique el motivo de su consulta para que podamos ofrecerte un mejor servicio</label>
+                            <textarea name="comentarios" id="" cols="30" rows="5" v-model="form.comentarios.val"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer del formulario -->
+                <div class="form-footer" :style="this.currentStep===1? 'justify-content: flex-end' : 'justify-content: space-between'">
+                    <button class="previous" @click="previousStep" v-show="this.currentStep > 1">Anterior</button>
+                    <button class="next" @click="nextStep" v-if="this.currentStep < 3">Siguiente</button>
+                    <button class="next" @click="enviarFormulario" v-else>Enviar</button>
+                </div>
+            </form>
         </div>
     </div>
 </template>
@@ -120,6 +117,9 @@
         height: auto;
         width: 100%;
         background: #D2DDEB;
+        position: relative;
+    }
+    form{
         position: relative;
     }
     .header{
@@ -166,7 +166,7 @@
         width: 20px;
         border-radius: 100%;
         position: absolute;
-        right: 5%;
+        right: 0;
     }
     .close-button span{
         position: absolute;

@@ -1,6 +1,5 @@
 <template>
-    <div class="row">
-        <nav-bar :showLocationInfo="true"></nav-bar>
+    <div class="row" @open-form="alert('asd')">
         <!-- Info del producto -->
         <div class="producto">
             <div class="producto-imagen">
@@ -173,13 +172,16 @@
 }
 </style>
 <script>
-import productos            from '../assets/js/productos.json'
+import Productos            from '../assets/js/productos.json'
 import ContactForm          from '@/components/Forms/ContactForm.vue'
 import ImageCarousel        from '@/components/Carousel/ImagesCarousel.vue'
 import Galeria              from '@/components/Productos/GaleriaProductos.vue'
 import Especificaciones     from '@/components/Productos/Especificaciones.vue'
 import Documentos           from '@/components/Productos/Documentos.vue'
 import Caracteristicas      from '@/components/Productos/Caracteristicas.vue'
+import Vue from 'vue'
+
+var eventBus = new Vue()
 
 export default {
   components: { ContactForm, ImageCarousel, Galeria, Especificaciones, Documentos, Caracteristicas },
@@ -196,7 +198,7 @@ export default {
                     sectionUrl:'/productos'
                 }
             ],
-            productos:productos.productos,
+            productos: Productos.productos,
         }
     },
     methods:{
@@ -211,12 +213,24 @@ export default {
 
         },
     },
+    mounted(){
+        eventBus.$on('open-form', () => { //TODO: Ver como hacer para poder escuchar este evento
+            console.log('Escuchando la weaaa')
+            // this.showModal = true
+        })
+        // fetch("/productos.json")
+        //     .then(r => json())
+        //     .then(json => this.productos = json.productos)
+    },
     created(){
         const pathSlavon = {
             sectionName: this.equipos.nombreCategoriaGeneral,
             sectionUrl:'/productos'
         }
         this.path.push(pathSlavon)
+    },
+    beforeDestroy() {
+        eventBus.$off('open-form')
     },
     computed:{
         equipos: function(){

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <nav-bar></nav-bar>
     <resp-nav-bar></resp-nav-bar>
     <router-view/>
     <FooterContent></FooterContent>

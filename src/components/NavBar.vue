@@ -31,7 +31,7 @@
             </ul>
         </div>
         <!-- Info importante -->
-        <ImportantInfo v-if="showLocationInfo" :class="{'hide':showNavbar}"></ImportantInfo>
+        <ImportantInfo :class="{'hide':showNavbar}"></ImportantInfo>
     </nav>
 </template>
 
@@ -134,7 +134,6 @@ import SubMenu from '@/components/NavBarSubMenu.vue'
 import ImportantInfo from '@/components/InfoImportante.vue'
     export default {
         components:{ImportantInfo, SubMenu},
-        props:['showLocationInfo'],
         name:'nav-bar',
         data(){
             return{

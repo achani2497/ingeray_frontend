@@ -27,7 +27,7 @@
                     <a class="icon facebook-icon-vet" href="https://www.facebook.com/IngeRayVET"></a>
                     <a class="icon instagram-icon-vet" href="https://www.instagram.com/inge_ray_vet/"></a>
                     <a class="icon youtube-icon-vet" href="https://www.youtube.com/channel/UCmPvf69gHGonIM2fglmhBig"></a>
-                    <div class="icon shop-icon-vet" href="https://ingeraysrl.mercadoshops.com.ar/"></div>
+                    <a class="icon shop-icon-vet" href="https://ingeraysrl.mercadoshops.com.ar/"></a>
                 </div>
             </div>
             <div class="newsletter flex flex-col items-center">
@@ -37,19 +37,15 @@
                 <span>Pais - Idioma</span>
                 <span>Argentina > Español</span>
             </div>
-            <!-- Modal -->
-            <modal v-if="showModal" @close="showModal = false" :header="true">
+            <!-- Modal Newsletter Form -->
+            <Modal v-if="showNewsletterForm" @close="showNewsletterForm = false" :header="true">
               <!-- Titulo del modal -->
-              <template #title v-if="showNewsletterForm"> Suscripción a Newsletter </template>
-              <template #title v-else>Formulario de Contacto </template>
+              <template #title> Suscripción a Newsletter </template>
               <!-- Body y Footer del modal -->
-              <template #content v-if="showNewsletterForm">
-                <NewsletterForm @close="showModal = false"></NewsletterForm>
+              <template #content>
+                <NewsletterForm></NewsletterForm>
               </template>
-              <template #content v-else>
-                <ContactForm></ContactForm>
-              </template>
-            </modal>
+            </Modal>
         </div>
         <!-- Contacto -->
         <div class="contacto flex justify-between" :class="[mostrar==='humanos' ? 'bkg-dark-blue' : 'bkg-light-blue']">
@@ -60,11 +56,17 @@
             </p>
           </div>
           <div class="col2">
-            <button class="contact" @click="showModal = true ; showNewsletterForm = !showNewsletterForm"> Quiero que me contacten </button>
+            <button class="contact" @click="abrirFormularioContacto(); showNewsletterForm = !showNewsletterForm"> Quiero que me contacten </button>
           </div>
           <div class="col3">
             <div class="sub-col1">
-              <a href="/">Quiénes Somos</a> <div class="separador">|</div> <a href="/">Aviso Legal</a> <div class="separador">|</div> <a href="/">Políticas de Privacidad</a>  <div class="separador">|</div> <a href="/">Contacto</a>
+              <router-link to="quienes-somos">Quiénes Somos</router-link> 
+              <div class="separador">|</div> 
+              <button type="button" @click="showAvisoLegalModal = true">Aviso Legal</button> 
+              <div class="separador">|</div> 
+              <button type="button" @click="showPDPrivacidad = true">Políticas de Privacidad</button>  
+              <div class="separador">|</div> 
+              <router-link to="contacto">Contacto</router-link>
             </div>
             <div class="sub-col2">
               <p>© Inge Ray S.R.L., 2021. Todos los derechos reservados.</p>
@@ -73,6 +75,26 @@
               </p>
             </div>
           </div>
+          <Modal :header="true" v-if="showAvisoLegalModal" @close="showAvisoLegalModal = false">
+            <template #title> <div class="title blue">Aviso Legal</div> </template>
+            <template #content>
+              <div class="legal-container overflow-y-scroll">
+                <div class="simple-text p-4">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem tempore sequi doloribus nesciunt ipsum at culpa. Iure asperiores possimus voluptatibus, debitis, aspernatur doloremque quia sit dolorem cum explicabo architecto provident incidunt consequuntur similique tenetur ea impedit, eligendi quasi iusto aliquam. Eaque ducimus ut similique reprehenderit modi iure fugit inventore velit officia! Molestias, impedit. Explicabo sunt voluptates laboriosam debitis provident autem consectetur, cum id harum possimus repellendus nihil natus accusamus voluptas facere quos facilis molestiae ab eum, tempora, fugit quas eveniet placeat. A modi facilis excepturi nam libero fuga accusamus, laborum quibusdam dolor consequatur, laudantium nostrum eaque debitis aspernatur suscipit id.
+                </div>
+              </div>
+            </template>
+          </Modal>
+          <Modal :header="true" v-if="showPDPrivacidad" @close="showPDPrivacidad = false">
+            <template #title> <div class="title blue">Políticas de Privacidad</div> </template>
+            <template #content>
+              <div class="legal-container overflow-y-scroll">
+                <div class="simple-text p-4">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem tempore sequi doloribus nesciunt ipsum at culpa. Iure asperiores possimus voluptatibus, debitis, aspernatur doloremque quia sit dolorem cum explicabo architecto provident incidunt consequuntur similique tenetur ea impedit, eligendi quasi iusto aliquam. Eaque ducimus ut similique reprehenderit modi iure fugit inventore velit officia! Molestias, impedit. Explicabo sunt voluptates laboriosam debitis provident autem consectetur, cum id harum possimus repellendus nihil natus accusamus voluptas facere quos facilis molestiae ab eum, tempora, fugit quas eveniet placeat. A modi facilis excepturi nam libero fuga accusamus, laborum quibusdam dolor consequatur, laudantium nostrum eaque debitis aspernatur suscipit id.
+                </div>
+              </div>
+            </template>
+          </Modal>
         </div>
     </footer>
 </template>
@@ -204,7 +226,10 @@
     padding-top: 1rem;
     font-size: 15px;
   }
-
+  .legal-container{
+    height: 80vh;
+    width: 80vw;
+  }
 @media screen and (max-width: 900px){
   .prods-services{
     padding: 2rem 2rem;
@@ -311,9 +336,13 @@
 </style>
 <script>
 import NewsletterForm from '@/components/Modal/NewsletterSuscribe.vue'
-import ContactForm from '@/components/Modal/Contact.vue'
+import Modal from './Modal/Modal.vue'
+import Vue from 'vue'
+
+var eventBus = new Vue()
+
 export default{
-  components: {NewsletterForm, ContactForm},
+  components: {NewsletterForm, Modal},
     data: function(){
         return {
             mostrar:'humanos',
@@ -355,9 +384,15 @@ export default{
                 img:require('@/assets/images/medios-de-pago/mercado-pago.svg')
             },
             ],
-            showModal: false,
-            showNewsletterForm: true
+            showNewsletterForm: false,
+            showAvisoLegalModal: false,
+            showPDPrivacidad: false
         }
+    },
+    methods:{
+      abrirFormularioContacto(){
+        eventBus.$emit('open-form')//TODO: Ver cómo hacer para que se pueda escuchar este evento en ProductoCategoria.
+      }
     }
 }
 </script>

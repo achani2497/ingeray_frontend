@@ -1,6 +1,5 @@
 <template>
   	<div class="row">
-		<nav-bar :showLocationInfo="true"></nav-bar>
 		<!-- PRESENTACION -->
 		<div class="presentation">
 			<!-- Banner Principal con imagen de la empresa -->

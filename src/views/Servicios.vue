@@ -1,6 +1,5 @@
 <template>
     <div class="row">
-        <nav-bar :showLocationInfo="true"></nav-bar>
         <div class="cards w-full flex flex-wrap justify-around">
             <div v-for="(servicio, index) in servicios" :key="index" class="card">
                 <div class="card-image bg-cover bg-no-repeat">

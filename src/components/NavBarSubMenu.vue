@@ -179,17 +179,9 @@
         cursor: pointer;
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
     }
-@media screen and (max-width:1000px) {
-}
 @media screen and (max-width:835px){
     .container{
-        transform: translateX(-24%);
-        width: 100%;
-    }
-}
-@media screen and (max-width: 680px) {
-    .container{
-        transform: translateX(-30%);
+        width: 100%; /* TODO: Arreglar este width */
     }
 }
 </style>

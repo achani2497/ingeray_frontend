@@ -62,13 +62,16 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   padding: 1rem 1rem 0 1rem;
 }
 .modal-header button{
   height: 20px;
   width: 20px;
   border-radius: 100%;
-  position: relative;
+  position: absolute;
+  top: 35px;
+  right: 30px;
 }
 .modal-header span{
   position: absolute;

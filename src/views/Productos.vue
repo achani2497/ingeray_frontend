@@ -1,6 +1,5 @@
 <template>
     <div class="row">
-    <nav-bar :showLocationInfo="true"></nav-bar>
         <div class="categorias-container" v-for="(categoria, index) in categorias" :key="index">
             <div class="sub-title">{{categoria.nombreCategoria}}</div>
             <div class="tab" v-for="(subcategoria, index1) in categoria.subcategorias" :key="index1">

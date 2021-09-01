@@ -1,0 +1,53 @@
+{
+    "staff":[
+        {
+            "nombre":"Alejandro I. Chañi",
+            "foto":"https://picsum.photos/400/400",
+            "rol":"Fullstack Developer 👨🏽‍💻",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dignissimos tenetur minima tempora fugit voluptatem nobis praesentium ipsam aliquam! Eius quisquam sed distinctio modi asperiores."
+        },
+        {
+            "nombre":"Alejandro I. Chañi",
+            "foto":"https://picsum.photos/400/400",
+            "rol":"Fullstack Developer 👨🏽‍💻",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dignissimos tenetur minima tempora fugit voluptatem nobis praesentium ipsam aliquam! Eius quisquam sed distinctio modi asperiores."
+        },
+        {
+            "nombre":"Alejandro I. Chañi",
+            "foto":"https://picsum.photos/400/400",
+            "rol":"Fullstack Developer 👨🏽‍💻",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dignissimos tenetur minima tempora fugit voluptatem nobis praesentium ipsam aliquam! Eius quisquam sed distinctio modi asperiores."
+        },
+        {
+            "nombre":"Alejandro I. Chañi",
+            "foto":"https://picsum.photos/400/400",
+            "rol":"Fullstack Developer 👨🏽‍💻",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dignissimos tenetur minima tempora fugit voluptatem nobis praesentium ipsam aliquam! Eius quisquam sed distinctio modi asperiores."
+        },
+        {
+            "nombre":"Alejandro I. Chañi",
+            "foto":"https://picsum.photos/400/400",
+            "rol":"Fullstack Developer 👨🏽‍💻",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dignissimos tenetur minima tempora fugit voluptatem nobis praesentium ipsam aliquam! Eius quisquam sed distinctio modi asperiores."
+        },
+        {
+            "nombre":"Alejandro I. Chañi",
+            "foto":"https://picsum.photos/400/400",
+            "rol":"Fullstack Developer 👨🏽‍💻",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dignissimos tenetur minima tempora fugit voluptatem nobis praesentium ipsam aliquam! Eius quisquam sed distinctio modi asperiores."
+        },
+        {
+            "nombre":"Alejandro I. Chañi",
+            "foto":"https://picsum.photos/400/400",
+            "rol":"Fullstack Developer 👨🏽‍💻",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dignissimos tenetur minima tempora fugit voluptatem nobis praesentium ipsam aliquam! Eius quisquam sed distinctio modi asperiores."
+        },
+        {
+            "nombre":"Alejandro I. Chañi",
+            "foto":"https://picsum.photos/400/400",
+            "rol":"Fullstack Developer 👨🏽‍💻",
+            "descripcion":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dignissimos tenetur minima tempora fugit voluptatem nobis praesentium ipsam aliquam! Eius quisquam sed distinctio modi asperiores."
+        }
+
+    ]
+}

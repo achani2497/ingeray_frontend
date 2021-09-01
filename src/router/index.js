@@ -5,7 +5,7 @@ import Servicios          from '../views/Servicios.vue'
 import Productos          from '../views/Productos.vue'
 import ProductoCategoria  from '../views/ProductoCategoria.vue'
 import Contacto           from '../views/Contacto.vue'
-import ContactForm        from '../components/Forms/ContactForm.vue'
+import QuienesSomos       from '../views/QuienesSomos.vue'
 
 Vue.use(VueRouter)
 
@@ -36,16 +36,23 @@ const routes = [
     component: Contacto
   },
   {
-    path: '/contact-form',
-    name: 'FormContacto',
-    component: ContactForm
+    path: '/quienes-somos',
+    name: 'QuienesSomos',
+    component: QuienesSomos
   }
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition){
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
 })
 
 export default router

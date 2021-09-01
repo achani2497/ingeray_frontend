@@ -2,7 +2,7 @@
     <div class="important-info flex justify-between items-center w-full pl-4" id="importantInfo">
         <!-- INFO DE UBICACION -->
         <div class="flex items-center ubicacion text-sm md:text-base">
-            <div class="icon nav-icon"></div>
+            <router-link to="/contacto" class="icon nav-icon"></router-link>
             <div class="direccion flex flex-col">
                 <span id="direccion-esp">Campillo 2585 | C1427DCC | CABA</span>
                 <span id="direccion-gen">Buenos Aires | Argentina</span>
