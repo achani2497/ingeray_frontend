@@ -1,5 +1,5 @@
 <template>
-    <ul class="hidden flex flex-row w-full justify-evenly fixed bottom-0">
+    <ul class="hidden w-full justify-evenly fixed bottom-0">
         <li v-for="(option, index) in options" class="w-full" :key="index">
             <router-link :to="option.sectionUrl" class="text-black flex flex-col h-full justify-center items-center text-center" exact>
                 {{option.sectionName}}
