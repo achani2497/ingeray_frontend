@@ -1,7 +1,7 @@
 <template>
-  	<div class="row">
+  	<div class="flex flex-wrap">
 		<!-- PRESENTACION -->
-		<div class="presentation">
+		<div class="presentation pt-4 bg-white">
 			<!-- Banner Principal con imagen de la empresa -->
 			<div class="presentation-image"></div>
 			<div class="presentation-text">
@@ -44,9 +44,9 @@
 		</div>
 
 		<!-- EQUIPOS DE RADIOLOGIA -->
-		<div class="radiologia w-full">
+		<div class="radiologia bkg-light-gray pt-8 pb-16 px-24 w-full">
 			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Radiologia Convencional</div>
-			<div class="equipos mt-8">
+			<div class="equipos flex flex-wrap justify-between items-center gap-8 mt-8">
 				<div class="equipo">
 					<span class="sub-title blue">Arcos en C</span>
 					<div class="img-equipo"></div>
@@ -63,8 +63,8 @@
 		</div>
 
 		<!-- ESHOP -->
-		<div class="medicina-veterinaria flex justify-center items-center">
-			<div class="banner-prods-veterinaria flex justify-center items-center">Banner de equipos de veterinaria</div>
+		<div class="medicina-veterinaria bkg-light-gray flex justify-center items-center">
+			<div class="banner-prods-veterinaria h-full w-full flex justify-center items-center">Banner de equipos de veterinaria</div>
 		</div>
   	</div>
 </template>
@@ -102,15 +102,8 @@ export default {
 </script>
 
 <style scoped>
-	.row{
-		display: flex;
-		flex-wrap: wrap;
-	}
-
 /* Presentacion */
 	.presentation{
-		padding-top: 1rem;
-		background-color: #ffffff;
 		box-shadow: 2px 2px 10px 4px rgba(0,0,0,.3);
 		z-index: 8;
 	}
@@ -134,7 +127,7 @@ export default {
 	.prods-services-container{
 		width: 100%;
 		overflow: hidden;
-		background-color: #D2DDEB;
+		background-color: var(--light-lilac);
 	}
 	.titles{
 		padding: 5rem 6rem 1rem 6rem;
@@ -142,21 +135,11 @@ export default {
 
 /* Texto Amistoso */
 	.friendly-text{
-		background-color: #D2DDEB;
+		background-color: var(--light-lilac);
 		padding: 1rem 0;
 	}
 
 /* Equipos de Radiologia */ 
-	.radiologia{
-		padding:2rem 6rem 4rem 6rem;
-	}
-	.equipos{
-		flex-wrap: wrap;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		gap: 2rem;
-	}
 	.equipo{
 		display: flex;
 		flex-direction: column;
@@ -180,11 +163,8 @@ export default {
 	.medicina-veterinaria{
 		height: 500px;
 		width: 100vw;
-		padding: 0 6rem 4rem 6rem;
 	}
 	.banner-prods-veterinaria{
-		height: 100%;
-		width: 100%;
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;

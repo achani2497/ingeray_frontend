@@ -1,5 +1,5 @@
 <template>
-    <div class="caracteristicas flex flex-col">
+    <div class="caracteristicas flex flex-col py-4 w-full h-auto">
         <div class="titulos">
             <div class="sub-title blue">Características</div>
             <div class="title blue">Destacables de este equipo</div>
@@ -11,11 +11,6 @@
     </div>
 </template>
 <style scoped>
-.caracteristicas{
-    padding: 1rem 0;
-    width: 100%;
-    height: auto;
-}
 .texto-caracteristica{
     column-count: 2;
     text-align: justify;

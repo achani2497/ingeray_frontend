@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel-container">
+    <div class="carousel-container flex justify-center items-center w-full h-full bg-white">
         <splide :options="options" class="images-carousel">
             <splide-slide v-for="(elemento, index) in elementos" :key="index" class="carousel-splide">
                 <div class="carousel-card">
@@ -10,14 +10,6 @@
     </div>
 </template>
 <style scoped>
-    .carousel-container{
-        height: 100%;
-        display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		background: #ffffff;
-	}
 	.carousel-splide{
 		overflow: visible;
 		height: auto;

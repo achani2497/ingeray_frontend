@@ -1,11 +1,11 @@
 <template>
     <div class="row" @open-form="alert('asd')">
         <!-- Info del producto -->
-        <div class="producto">
+        <div class="producto flex px-4 gap-4 h-auto">
             <div class="producto-imagen">
                 <ImageCarousel :elementos="equipos.productos"></ImageCarousel>
             </div>
-            <div class="producto-descripcion">
+            <div class="producto-descripcion flex flex-col gap-4">
                 <!-- Path -->
                 <ul class="flex flex-wrap">
                     <li v-for="(slavon, index) in this.path" :key="index">
@@ -22,14 +22,14 @@
                     </div>
                 </div>
                 <!-- Descripcion -->
-                <div class="descripcion simple-text gray">
+                <div class="descripcion my-4 simple-text gray">
                     {{equipos.descripcion}}
                 </div>
-                <button class="contact" @click="enviarMensajeWhastapp">Quiero que me contacten</button>
+                <button class="contact-inge-button" @click="enviarMensajeWhastapp">Quiero que me contacten</button>
             </div>
         </div>
         <!-- Banner de contacto -->
-        <div class="banner-contacto w-full flex">
+        <div class="banner-contacto bkg-light-gray w-full flex z-10 px-16 py-4">
             <button class="flex w-auto gap-2 items-center" @click="showModal = true">
                 <div class="envelope h-10 w-16 bg-yellow-200"></div>
                 <div class="flex flex-col text-left">
@@ -38,7 +38,7 @@
                 </div>
             </button>
         </div>
-        <div class="info-adicional">
+        <div class="info-adicional bkg-light-gray px-12 py-4">
             <!-- Galeria de Imagenes -->
             <Galeria :producto="equipos.nombreCompleto" />
             <!-- Caracteristicas -->
@@ -63,10 +63,6 @@
     display: flex;
 }
 .producto{
-    display: flex;
-    padding: 0 1rem;
-    gap: 1rem;
-    height: auto;
     width: 100vw;
 }
 .producto-imagen{
@@ -76,49 +72,28 @@
 .producto-descripcion{
     width: 40%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 .title{
-    font-size: 23px;
+    font-size: 24px;
     letter-spacing: 1px;
-    margin: 0;
     height: 28px;
-    display: flex;
 }
 .sub-title{
     font-size: 30px;
     line-height: normal;
     height: fit-content;
 }
-.descripcion{
-    margin: 1rem 0;
-}
 .simple-text{
     font-size: 22px;
 }
-.contact{
-    background-color: #0C7F7E;
-    color: white;
-    height: auto;
+.contact-inge-button{
     width: max(14rem, 15vw);
-    padding: .3rem .8rem;
-    border-radius: 5px;
-    border: 2px solid gray;
-    box-shadow: 4px 4px 8px 2px rgba(0,0,0,.3);
-    margin-top: .7rem
 }
 .banner-contacto{
-    background-color:#e1e1e1;
     box-shadow: 0px 5px 4px 1px rgba(0,0,0,.25);
-    padding: 1rem 4rem;
-    z-index: 10;
 }
 .info-adicional{
     width: 100vw;
-    background-color:#e1e1e1;
-    padding: 1rem 3rem;
 }
 
 @media screen and (min-width: 1400px) {

@@ -95,7 +95,7 @@ export default {
 }
 .card{
     box-shadow: none;
-    background: rgb(143, 143, 143);
+    background: #8f8f8f;
     padding: .5rem;
     transition: all .3s ease-in-out;
 }

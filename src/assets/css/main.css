@@ -15,17 +15,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'IngeText', Arial, Helvetica, sans-serif;
-}
-/* Backgrounds */
-    .bkg-light-blue{
-        background-color: #7A9AC7;
-    }
-    .bkg-blue{
-        background-color: #112576;
-    }
-    .bkg-dark-blue{
-        background-color: #0A1F42;
-    }
+}    
 /* Textos */
     .title{
         margin-bottom: .5rem;
@@ -46,60 +36,8 @@
         font-size: 22px;
         line-height: 1.5;
     }
-    .blue{
-        color: #1E6595;
-    }
-    .light-blue{
-        color: #9EB3E3;
-    }
-    .gray{
-        color: #677A8B;
-    }
     h1,h2{
         max-height: 45px;
-    }
-/* Botones */
-    .inge-button{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 2px solid white;
-        box-shadow: 0 3px 5px 2px rgba(0,0,0,.4);
-        border-radius: 25px;
-        text-align: center;
-        padding: 10px;
-        height: 4vh;
-        width: 70%;
-        overflow: hidden;
-        transition: all .4s ease-in-out;
-    }
-    .inge-button::before{
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transform: translateX(-100%);
-        z-index: -1;
-        background-color: rgba(57, 86, 105, .7);
-        transition: all .4s ease-in-out;
-    }
-    .inge-button:hover{
-        color: white;
-    }
-    .inge-button:hover::before{
-        transform: translateX(0)
-    }
-    .contact-outline{
-        border:2px solid #0C7F7E;
-        color: #0C7F7E;
-        height: auto;
-        width: auto;
-        min-width: 130px;
-        padding: .3rem .8rem;
-        border-radius: 5px;
-        align-self: flex-end;
     }
 /* Iconos */
     .icon{

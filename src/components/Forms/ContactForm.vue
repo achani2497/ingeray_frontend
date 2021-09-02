@@ -1,12 +1,12 @@
 <template>
     <div class="form-container">
-        <div class="body">
-            <form class="h-full w-full" action="#">
-                <button class="close-button" type="button" @click="$emit('closeModal')">
+        <div class="body h-full px-12 py-8">
+            <form class="h-full w-full relative" action="#">
+                <button class="close-button h-5 w-5 absolute right-0" type="button" @click="$emit('closeModal')">
                     <span>&times;</span>
                 </button>
                 <!-- Header del formulario -->
-                <div class="help-box" :class="{'incomplete':!form.dudaPrincipal.complete}">
+                <div class="help-box flex flex-col mb-10" :class="{'incomplete':!form.dudaPrincipal.complete}">
                     <p>Seleccione una opción*</p>
                     <b>¿Cómo podemos ayudarlo?</b>
                     <select name="consulta" id="consulta" v-model="form.dudaPrincipal.val" @change="marcaloComoCompletado(form.dudaPrincipal)">
@@ -20,36 +20,36 @@
                 <!-- Body del formulario -->
                 <div class="data-box">
                     <!-- Avance del formulario -->
-                    <div class="title-box">
-                        <div class="title-container">
+                    <div class="title-box flex flex-col relative">
+                        <div class="flex">
                             <div class="title blue mr-2">Contáctenos sobre</div> 
                             <div class="sub-title blue"> {{producto}}</div>
                         </div>
                         <small class="w-full">* Complete los 3 pasos del formulario para brindarle una mejor atención</small>
                     </div>
-                    <div class="steps">
+                    <div class="steps flex gap-8 py-8">
                         <div v-for="(step, index) in this.steps" :key="index">
-                            <div class="step" :class="{disabled : !step.active}">
-                                <div class="number">{{step.number}}</div>
+                            <div class="step inge-text-bold flex items-center gap-2" :class="{disabled : !step.active}">
+                                <div class="number flex justify-center items-center text-white">{{step.number}}</div>
                                 {{step.title}}
                             </div>
                         </div>
                     </div>
                     <!-- Primeros 4 campos -->
                     <div class="fields" v-if="this.currentStep === 1">
-                        <div class="field w-full" :class="{'incomplete':!form.nombrePersona.complete}">
+                        <div class="field" :class="{'incomplete':!form.nombrePersona.complete}">
                             <label for="nombre">Nombre *</label>
                             <input class="input-text flex-grow" type="text" name="nombre" v-model="form.nombrePersona.val" @change="marcaloComoCompletado(form.nombrePersona)">
                         </div>
-                        <div class="field w-full" :class="{'incomplete':!form.apellidoPersona.complete}">
+                        <div class="field" :class="{'incomplete':!form.apellidoPersona.complete}">
                             <label for="apellido">Apellido *</label>
                             <input class="input-text flex-grow" type="text" name="apellido" v-model="form.apellidoPersona.val" @change="marcaloComoCompletado(form.apellidoPersona)">
                         </div>
-                        <div class="field w-full" :class="{'incomplete':!form.emailPersona.complete}">
+                        <div class="field" :class="{'incomplete':!form.emailPersona.complete}">
                             <label for="email">Dirección de correo eléctronico *</label>
                             <input class="input-text flex-grow" type="text" name="email" v-model="form.emailPersona.val" @change="marcaloComoCompletado(form.emailPersona)">
                         </div>
-                        <div class="field w-full" :class="{'incomplete':!form.telefono.complete}">
+                        <div class="field" :class="{'incomplete':!form.telefono.complete}">
                             <label for="telefono">Teléfono Comercial *</label>
                             <input class="input-text flex-grow" type="text" name="telefono" v-model="form.telefono.val" @change="marcaloComoCompletado(form.telefono)">
                         </div>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                     <!-- Últimos 3 campos -->
-                    <div class="third-part" v-else>
+                    <div class="third-part flex flex-col" v-else>
                         <div class="selects">
                             <div class="field" :class="{'incomplete':!form.informacionAtencion.complete}">
                                 <label for="atencion">Información para su Atención *</label>
@@ -96,14 +96,14 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="text-area">
+                        <div class="text-area flex flex-col relative w-full p-2">
                             <label for="comentarios" class="text-area-label">Especifique el motivo de su consulta para que podamos ofrecerte un mejor servicio</label>
                             <textarea name="comentarios" id="" cols="30" rows="5" v-model="form.comentarios.val"></textarea>
                         </div>
                     </div>
                 </div>
                 <!-- Footer del formulario -->
-                <div class="form-footer" :style="this.currentStep===1? 'justify-content: flex-end' : 'justify-content: space-between'">
+                <div class="form-footer flex justify-between w-full h-12 mt-4" :style="this.currentStep===1? 'justify-content: flex-end' : 'justify-content: space-between'">
                     <button class="previous" @click="previousStep" v-show="this.currentStep > 1">Anterior</button>
                     <button class="next" @click="nextStep" v-if="this.currentStep < 3">Siguiente</button>
                     <button class="next" @click="enviarFormulario" v-else>Enviar</button>
@@ -116,44 +116,8 @@
     .form-container{
         height: auto;
         width: 100%;
-        background: #D2DDEB;
+        background: var(--light-lilac);
         position: relative;
-    }
-    form{
-        position: relative;
-    }
-    .header{
-        height: 6rem;
-        padding: 0 3rem;
-        width: 100%;
-        background: white;
-        box-shadow: 0 5px 10px 5px rgba(0,0,0,.3);
-        display: flex;
-        justify-items: center;
-        z-index: 10;
-    }
-    .header-title{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    .header-image{
-        background: blue;
-        width: 4rem;
-        height: 2.5rem;
-    }
-    .header-text{
-        padding-left: 5px;
-    }
-    .body{
-        height: 100%;
-        z-index: -1;
-        padding: 2rem 3rem;
-    }
-    .help-box{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 2.5rem;
     }
     select{
         height: 3rem;
@@ -162,51 +126,25 @@
         margin-top: 5px;
     }
     .close-button{
-        height: 20px;
-        width: 20px;
-        border-radius: 100%;
-        position: absolute;
-        right: 0;
+        border-radius: 10%;
+        width: auto;
     }
     .close-button span{
         position: absolute;
         top: -200%;
-        left: 50%;
+        right: 0;
         font-size: 40px;
-    }
-    .title-box{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-    .title-container{
-        display: flex;
     }
     .title-box small{
         font-weight: bolder;
         width: 100%;
         font-size: 15px;
     }
-    .steps{
-        display: flex;
-        gap: 2rem;
-        padding: 2rem 0 2.5rem 0;
-    }
-    .step{
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-        font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
-    }
     .number{
         height: 1.7rem;
         width: 1.7rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         border-radius: 100%;
-        color: white;
-        background: #1E6595;
+        background: var(--dark-bluish-green);
     }
     .disabled{
         filter:opacity(50%)
@@ -256,22 +194,11 @@
     }
     
 /* 3RA PARTE DEL FORMULARIO */
-    .third-part{
-        display: flex;
-        flex-direction: column;
-    }
     .third-part label{
         top: 15px
     }
     .third-part .selects{
         display: flex;
-    }
-    .third-part .text-area{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        width: 100%;
-        padding: .5rem;
     }
     .third-part textarea{
         padding-top: 25px;
@@ -290,13 +217,6 @@
     }
 
 /* BOTONES */
-    .form-footer{
-        display: flex;
-        width: 100%;
-        height: 3rem;
-        margin-top: 1rem;
-        justify-content: space-between;
-    }
     button{
         border-radius: 8px;
         width: 8rem;
@@ -306,12 +226,12 @@
     }
     .previous{
         background: transparent;
-        border: 2px solid darkcyan;
-        color: darkcyan;
+        border: 2px solid var(--bluish-green);
+        color: var(--bluish-green);
         font-weight: bolder;
     }
     .next{
-        background: darkcyan;
+        background: var(--bluish-green);
         color: white;
     }
 

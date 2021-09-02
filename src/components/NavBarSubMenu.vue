@@ -1,18 +1,18 @@
 <template>
-    <div class="container" :class="{open:this.show}">
+    <div class="container absolute top-20 p-8" :class="{open:this.show}">
         <div class="h-full w-full flex">
             <div class="tabs">
-                <div class="close-container">
+                <div class="close-container absolute right-2 top-2">
                     <div class="close-btn" @click="$emit('closeSubMenu')"></div>
                 </div>
                 <!-- EQUIPOS -->
                 <div v-if="this.option === 'productos'">
-                    <div class="tab" v-for="(categoria, index) in categorias" :key="index">
+                    <div class="tab text-white w-full overflow-hidden" v-for="(categoria, index) in categorias" :key="index">
                         <input type="checkbox" :id="categoria.nombreCategoria" @click="setCategoriaActive(categoria)">
-                        <label class="tab-label px-2" :class="{titleActive : categoria.show}" :for="categoria.nombreCategoria">{{categoria.nombreCategoria}}</label>
-                        <div class="tab-content" :class="{contentActive : categoria.show}">
+                        <label class="tab-label flex justify-between px-2" :class="{titleActive : categoria.show}" :for="categoria.nombreCategoria">{{categoria.nombreCategoria}}</label>
+                        <div class="tab-content flex flex-wrap justify-around" :class="{contentActive : categoria.show}">
                             <!-- Columna izquierda, donde se muestran las categorias -->
-                            <div class="categorias card h-auto w-6/12 lg:w-4/12 option-box">
+                            <div class="categorias card h-auto w-6/12 lg:w-4/12 option-box inge-text text-white">
                                 <ul>
                                     <li v-for="(subcategoria, index) in categoria.subcategorias" :class="{active: subcategoria.isActive}" class="py-1 px-2" :key="index" @click="mostrarEquipos(categoria, subcategoria, subcategoria.equipos)">
                                         {{subcategoria.nombreProducto}}
@@ -23,7 +23,7 @@
                                 </ul>
                             </div>
                             <!-- Columna derecha, donde se muestran los equipos -->
-                            <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box">
+                            <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box inge-text text-white">
                                 <ul class="flex flex-wrap">
                                     <li class="w-1/2 pl-4 py-1" v-for="(equipo, index) in equiposParaMostrar" :key="index">
                                         <router-link :to="'/productos/'+equipo.urlName">{{equipo.nombre}}</router-link>
@@ -38,7 +38,7 @@
                     <div class="tab">
                         <div class="titleActive">Servicios</div>
                         <ul class="servicios">
-                            <li class="equipos" v-for="(servicio, index) in servicios" :key="index">{{servicio}}</li>
+                            <li class="equipos inge-text h-auto" v-for="(servicio, index) in servicios" :key="index">{{servicio}}</li>
                         </ul>
                     </div>
                 </div>
@@ -48,13 +48,10 @@
 </template>
 <style scoped>
     .container{
-        position: absolute;
-        top: 5rem;
-        width: 650px;
+        width: 700px;
         transform: translateY(-150%);
         height: 60vh;
-        background: #9FB3E3;
-        padding: 2rem;
+        background: var(--lilac);
         box-shadow: 2px 2px 10px 2px rgba(0,0,0,.6);
         transition: all .7s ease-in-out;
     }
@@ -62,9 +59,6 @@
         transform: translateY(0);
     }
     .close-container{
-        position: absolute;
-        right: 20px;
-        top: 10px;
         background-color: #E9F0FE;
         border-radius: 100%;
         padding: .2rem;
@@ -80,7 +74,6 @@
     .close-btn:hover{
         cursor: pointer;
     }
-
     input {
         position: absolute;
         opacity: 0;
@@ -91,31 +84,14 @@
         border-radius: 8px;
         overflow: hidden;
     }
-    .tab {
-        width: 100%;
-        color: white;
-        overflow: hidden;
-    }
     .tab-label{
-        display: flex;
-        justify-content: space-between;
         cursor: pointer;
-        color: #4f4f4f;
+        color: var(--dark-gray);
         font-size: 26px;
     }
     .tab-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
         max-height: 0;
         transition: all 0.5s;
-    }
-    .tab-close {
-        display: flex;
-        justify-content: flex-end;
-        padding: 1em;
-        font-size: 0.75em;
-        cursor: pointer;
     }
     .titleActive{
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
@@ -131,12 +107,9 @@
         background-color: transparent;
     }
     .option-box{
-        color: white;
-        font-family: 'IngeText', Arial, Helvetica, sans-serif;
         font-size: 18px;
     }
     .option-box ul li{
-
         display: flex;
         align-items: center;
     }
@@ -144,7 +117,7 @@
         border-right: 1px solid white;
     }
     .equipos{
-        color: #4f4f4f;
+        color: var(--dark-gray);
     }
     .categorias ul li:hover{
         cursor: pointer;
@@ -160,8 +133,8 @@
     .active{
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
         font-size: 19px;
-        background-color: rgba(233, 240, 254, .8);
-        color: #4f4f4f;
+        background-color: #e9f0fecc;
+        color: var(--dark-gray);
     }
     .servicios{
         display: flex;
@@ -169,10 +142,8 @@
         flex-wrap: wrap;
     }
     .servicios li{
-        color: #4f4f4f;
-        height: auto;
+        color: var(--dark-gray);
         padding: .3rem 0;
-        font-family: 'IngeText', Arial, Helvetica, sans-serif;
         font-size: 20px;
     }
     .servicios li:hover{

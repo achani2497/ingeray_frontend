@@ -23,7 +23,7 @@
 </template>
 <style>
 .important-info{
-    background-color: var(--eshop-color);
+    background-color: var(--dark-blue);
     color: white;
     height: 4rem;
 }

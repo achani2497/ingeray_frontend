@@ -10,13 +10,13 @@
             </div>
         </div>
         <!-- Divisiones -->
-        <div class="divisiones h-16 flex justify-start items-center gap-10" :class="[mostrar==='humanos' ? 'bkg-dark-blue' : 'bkg-light-blue']">
+        <div class="divisiones h-16 flex justify-start items-center gap-10 text-white" :class="backgroundColor">
             <span class="active w-3/6 md:w-auto"><button @click="mostrar='humanos'" :class="{active: mostrar==='humanos'}">Diagnóstico por Imágenes</button></span>
             <span class="w-3/6 md:w-auto"><button @click="mostrar='animales'" :class="{active: mostrar==='animales'}">División veterinaria</button></span>
         </div>
         <!-- Redes sociales -->
-        <div class="redes-sociales flex justify-between items-center text-white" :class="[mostrar==='humanos' ? 'bkg-light-blue' : 'bkg-blue']">
-            <div class="redes flex flex-col">
+        <div class="redes-sociales flex justify-between items-center text-white" :class="backgroundColorSocial">
+            <div class="redes flex flex-col text-left">
                 <span>Seguinos en Redes Sociales</span>
                 <div class="iconos flex justify-between" v-if="mostrar==='humanos'">
                     <div class="icon facebook-icon-hum"></div>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="newsletter flex flex-col items-center">
-                <button class="contact" @click="showModal = true ; showNewsletterForm = true">Suscribase a nuestro Newsletter</button>
+                <button class="contact-inge-button" @click="showModal = true ; showNewsletterForm = true">Suscribase a nuestro Newsletter</button>
             </div>
             <div class="pais-region flex flex-col items-start gap-4">
                 <span>Pais - Idioma</span>
@@ -48,27 +48,27 @@
             </Modal>
         </div>
         <!-- Contacto -->
-        <div class="contacto flex justify-between" :class="[mostrar==='humanos' ? 'bkg-dark-blue' : 'bkg-light-blue']">
-          <div class="col1">
+        <div class="contacto flex justify-between flex-wrap text-white" :class="backgroundColor">
+          <div class="col1 text-justify">
             <strong>Contacto</strong>
             <p>
               ¿Necesitás más información? Completá el formulario y nos comunicaremos contigo lo más pronto posible.
             </p>
           </div>
           <div class="col2">
-            <button class="contact" @click="abrirFormularioContacto(); showNewsletterForm = !showNewsletterForm"> Quiero que me contacten </button>
+            <button class="contact-inge-button" @click="abrirFormularioContacto(); showNewsletterForm = !showNewsletterForm"> Quiero que me contacten </button>
           </div>
-          <div class="col3">
-            <div class="sub-col1">
-              <router-link to="quienes-somos">Quiénes Somos</router-link> 
+          <div class="col3 flex flex-col justify-center w-full">
+            <div class="sub-col1 flex text-xl">
+              <router-link to="/quienes-somos">Quiénes Somos</router-link> 
               <div class="separador">|</div> 
               <button type="button" @click="showAvisoLegalModal = true">Aviso Legal</button> 
               <div class="separador">|</div> 
               <button type="button" @click="showPDPrivacidad = true">Políticas de Privacidad</button>  
               <div class="separador">|</div> 
-              <router-link to="contacto">Contacto</router-link>
+              <router-link to="/contacto">Contacto</router-link>
             </div>
-            <div class="sub-col2">
+            <div class="sub-col2 flex justify-between pt-4 text-md">
               <p>© Inge Ray S.R.L., 2021. Todos los derechos reservados.</p>
               <p>
                 <strong>Desarrollo Web</strong> Alejandro Chañi
@@ -102,7 +102,7 @@
 /* MEDIOS DE PAGO */
   .medios-de-pago{
     padding: .5rem 1.5rem;
-    background-color: #e1e1e1;
+    background-color: var(--light-gray);
   }
   .medio-de-pago > img{
     width: 80px;
@@ -112,7 +112,6 @@
   }
 /* DIVISIONES */
   .divisiones{
-    color: white;
     padding: 0 6rem;
   }
   .active{
@@ -129,10 +128,7 @@
     height: 150px;
   }
   .redes{
-    width: 20%;
-    min-width: 210px;
-    max-width: 210px;
-    text-align: left;
+    width: 210px;
   } 
   .iconos, .iconos-vet{
     padding: 5px 10px 0 0px;
@@ -153,9 +149,7 @@
     width: 60%;
   }
   .pais-region{
-    width: 17%;
-    min-width: 210px;
-    max-width: 210px;
+    width: 210px;
   }
   /* HUMANOS */
     .facebook-icon-hum{
@@ -189,71 +183,35 @@
 
 /* CONTACTO */
   .contacto{
-    color: white;
     padding: 3rem 6rem;
     height: 300px;
-    display: flex;
-    flex-wrap: wrap;
   }
   .col1{
     width: 31%;
-    text-align: justify;
-  }
-  .contact{
-    background-color: #0C7F7E;
-    height: auto;
-    width: auto;
-    padding: .3rem .8rem;
-    border-radius: 5px;
-    border: 2px solid gray
-  }
-  .col3{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .sub-col1{
-    display: flex;
-    font-size: 20px;
   }
   .separador{
     padding: 0 10px
-  }
-  .sub-col2{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1rem;
-    font-size: 15px;
   }
   .legal-container{
     height: 80vh;
     width: 80vw;
   }
 @media screen and (max-width: 900px){
-  .prods-services{
-    padding: 2rem 2rem;
-	}
-  .divisiones, .redes-sociales, .contacto{
+  .prods-services, .divisiones, .redes-sociales, .contacto{
     padding: 2rem;
   }
   .divisiones{
     gap: 0;
     justify-content: space-around;
-    /* text-align: center; */
   }
   .redes-sociales{
     gap: 1rem;
   }
-  .redes, .newsletter{
+  .newsletter{
     width: 40%;
-  }
-  .pais-region{
-    min-width: 150px;
   }
   .contacto{
     height: 230px;
-
   }
   .col1, .col2{
     width: 45%;
@@ -392,6 +350,17 @@ export default{
     methods:{
       abrirFormularioContacto(){
         eventBus.$emit('open-form')//TODO: Ver cómo hacer para que se pueda escuchar este evento en ProductoCategoria.
+      },
+      seMuestraParaHumanos(){
+        return this.mostrar === 'humanos'
+      }
+    },
+    computed:{
+      backgroundColor(){
+        return this.seMuestraParaHumanos() ? 'bkg-dark-blue' : 'bkg-light-blue'
+      },
+      backgroundColorSocial(){
+        return this.seMuestraParaHumanos() ? 'bkg-light-blue' : 'bkg-blue'
       }
     }
 }

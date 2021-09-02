@@ -1,5 +1,5 @@
 <template>
-    <div class="galeria flex flex-col">
+    <div class="galeria flex flex-col py-4 w-full h-auto">
         <div class="titulos">
             <div class="title blue text-3xl xl:text-4xl sm:text-3xl">{{producto}}</div>
             <div class="sub-title blue">Galería</div>
@@ -40,19 +40,14 @@
     </div>
 </template>
 <style scoped>
-.galeria{
-    padding: 1rem 0;
-    width: 100%;
-    height: auto;
-}
 .opcion-imagen{
     border-bottom: 2px solid gray;
     padding: 0 1rem;
     text-align: center;
 }
 .opcionActiva{
-    color: #1E6595;
-    border-bottom: 4px solid #1E6595;
+    color: var(--dark-bluish-green);
+    border-bottom: 4px solid var(--dark-bluish-green);
 }
 .opcion-imagen, .opcionActiva:hover{
     cursor: pointer;

@@ -1,13 +1,13 @@
 <template>
-    <nav class="fixed top-0 flex flex-col w-screen">
+    <nav class="fixed top-0 flex flex-col w-screen bkg-light-blue z-20">
         <!-- Menu -->
-        <div class="menu flex justify-between bkg-nav-blue">
+        <div class="menu flex justify-between z-10">
             <!-- Logo -->
-            <router-link to="/" class="logo-container" id="logo-container" exact>
+            <router-link to="/" class="flex justify-center items-center w-auto bg-transparent" id="logo-container" exact>
                 <div class="logo"></div>
             </router-link>
             <!-- Secciones -->
-            <ul class="flex secciones">
+            <ul class="flex secciones w-auto h-12 self-end overflow-hidden">
                 <li class="router-cta">
                     <router-link to="/" class="li-content home" exact>Home</router-link>
                 </li>
@@ -31,29 +31,19 @@
             </ul>
         </div>
         <!-- Info importante -->
-        <ImportantInfo :class="{'hide':showNavbar}"></ImportantInfo>
+        <ImportantInfo></ImportantInfo>
     </nav>
 </template>
 
 <style scoped>
-    nav{
-        background-color: #7A9AC7;
-        z-index: 20;
-    }
     .menu{
         height: 5rem;
         padding-left: .3%;
-        z-index: 10;
     }
     .secciones{
-        height: 3rem;
-        width: auto;
         background: linear-gradient(to right, #666666,#999999, #CCCCCC);
         border-top-left-radius: 15px;
-        overflow: hidden;
         box-shadow: 0px -3px 10px 5px rgba(0,0,0,.2);
-        align-self: flex-end;
-        display: flex;
     }
     .secciones li{
         height: 100%;
@@ -87,13 +77,6 @@
         width: 20px;
         transition: all .5s ease-in-out;    
     }
-    #logo-container{
-        background-color: transparent;
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
     .logo{
         background-size: cover;
         background-position: center center;
@@ -102,14 +85,10 @@
         height: 100%;
         background-image: url('../assets/images/icons/NavIcons/logo-ingeray1.svg');
     }
-    .hide{
-        transition: all .3s ease-in-out;
-        opacity: 0;
-    }
     .router-link-exact-active,
     .router-link-active {
         transition: all .5s ease-in-out;
-        background-color: #9FB3E3;
+        background-color: var(--lilac);
         color: white;
     }
     li a:hover:not(.router-link-exact-active), 
@@ -118,11 +97,6 @@
         color: white; 
     }
     @media screen and (max-width:650px){
-        nav{
-            display: none;
-        }
-    }
-    @media screen and (max-width:414px) {
         nav{
             display: none;
         }
@@ -137,75 +111,40 @@ import ImportantInfo from '@/components/InfoImportante.vue'
         name:'nav-bar',
         data(){
             return{
-                showNavbar: false,
-                lastScrollPosition: 0,
                 showSubMenu: false,
                 subMenuOption: '',
                 options:[
                     {
                         sectionName: 'Inicio',
                         sectionUrl: '/',
-                        width:150
                     },
                     {
                         sectionName: 'Productos',
                         sectionUrl: '/productos',
-                        width:300
                     },
                     {
                         sectionName: 'Servicios',
                         sectionUrl: '/servicios',
-                        width:300
                     },
                     {
                         sectionName: 'Clientes',
                         sectionUrl: '/clientes',
-                        width:150
                     },
                     {
                         sectionName: 'Contacto',
                         sectionUrl: '/contacto',
-                        width:150
                     },
                 ]
             }
         },
         methods:{
-            onScroll(){
-                // Get the current scroll position
-                var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop
-                
-                // Because of momentum scrolling on mobiles, we shouldn't continue if it is less than zero
-                if (currentScrollPosition < 0) {
-                    return
-                }
-
-                // Stop executing this function if the difference between
-                // current scroll position and last scroll position is less than some offset
-                if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-                    return
-                }
-
-                // Here we determine whether we need to show or hide the navbar
-                // this.showNavbar = currentScrollPosition < this.lastScrollPosition
-                this.showNavbar = currentScrollPosition > 300
-                
-                // Set the current scroll position as the last scroll position
-                this.lastScrollPosition = currentScrollPosition
-            },
             getImg(imgName){
                 return require('@/assets/images/icons/NavIcons/'+imgName+'.svg')
             },
             openMenu(subMenuName){
                 this.subMenuOption = subMenuName
-                this.showSubMenu = true
+                this.showSubMenu = !this.showSubMenu
             }
         },
-        mounted(){
-            // window.addEventListener('scroll', this.onScroll)
-        },
-        destroyed(){
-            // window.removeEventListener('scroll', this.onScroll)
-        }
     }
 </script>

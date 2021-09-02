@@ -28,7 +28,7 @@
             <div class="title blue">Conocé a Nuestro Equipo</div>
             <div class="staff-personal">
                 <!-- Card -->
-                <div class="personal-card" v-for="(persona, index) in staff" :key="index">
+                <div class="personal-card bkg-light-gray" v-for="(persona, index) in staff" :key="index">
                     <div class="personal-card-header flex items-center justify-center p-4">
                         <img :src="persona.foto" alt="img">
                     </div>
@@ -57,9 +57,6 @@
 }
 .personal-card{
     box-shadow: 0px 3px 5px 2px rgba(0,0,0,.3);
-}
-.personal-card-header{
-    background: #e1e1e1;
 }
 img{
     height: 200px;
