@@ -27,7 +27,7 @@
                 <li class="router-cta">
                     <router-link to="/contacto" class="li-content" exact>Contacto</router-link>
                 </li>
-                <SubMenu :show="this.showSubMenu" :option="this.subMenuOption" @closeSubMenu="showSubMenu = false"></SubMenu>
+                <SubMenu :show="this.showSubMenu" :option="this.subMenuOption" @closeSubMenu="closeMenu"></SubMenu>
             </ul>
         </div>
         <!-- Info importante -->
@@ -142,8 +142,21 @@ import ImportantInfo from '@/components/InfoImportante.vue'
                 return require('@/assets/images/icons/NavIcons/'+imgName+'.svg')
             },
             openMenu(subMenuName){
-                this.subMenuOption = subMenuName
-                this.showSubMenu = !this.showSubMenu
+                if(!this.showSubMenu){
+                    this.showSubMenu = true
+                    if(this.subMenuOption !== subMenuName){
+                        this.subMenuOption = subMenuName
+                    }
+                } else{
+                    if(this.subMenuOption !== subMenuName){
+                        this.subMenuOption = subMenuName
+                    } else {
+                        this.showSubMenu = false
+                    }
+                }
+            },
+            closeMenu(){
+                this.showSubMenu = false
             }
         },
     }

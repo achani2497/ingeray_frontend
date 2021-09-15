@@ -63,7 +63,7 @@
 		</div>
 
 		<!-- ESHOP -->
-		<div class="medicina-veterinaria bkg-light-gray flex justify-center items-center">
+		<div class="medicina-veterinaria bkg-light-gray flex justify-center items-center px-24">
 			<div class="banner-prods-veterinaria h-full w-full flex justify-center items-center">Banner de equipos de veterinaria</div>
 		</div>
   	</div>

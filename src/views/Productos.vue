@@ -1,16 +1,19 @@
 <template>
     <div class="row">
-        <div class="categorias-container" v-for="(categoria, index) in categorias" :key="index">
-            <div class="sub-title">{{categoria.nombreCategoria}}</div>
-            <div class="tab" v-for="(subcategoria, index1) in categoria.subcategorias" :key="index1">
-                <label class="tab-label">{{subcategoria.nombreProducto}}</label>
-                <div class="tab-content">
-                    <router-link 
-                        v-for="(equipo, index) in subcategoria.equipos" :key="index" 
-                        :to="'/productos/'+equipo.urlName" 
-                        class="card">
-                            {{equipo.nombre}}
-                    </router-link>
+        <div class="container" v-for="(categoria, index) in categorias" :key="index">
+        <CustomPath :slavons="diagnosticoImagenesPath"></CustomPath>
+            <div class="sub-title blue">{{categoria.nombreCategoria}}</div>
+            <div class="subcategorias">
+                <div class="tab" v-for="(subcategoria, index1) in categoria.subcategorias" :key="index1">
+                    <div class="tab-label pl-4">{{subcategoria.nombreProducto}}</div>
+                    <div class="tab-content p-4">
+                        <div class="imagen-subcategoria h-full w-full">
+                            <div class="ver-productos w-full h-full flex justify-center items-center">
+                                <!-- TODO: PREGUNTAR A DONDE TIENE QUE REDIRECCIONAR ESTE BOTON -->
+                                <button class="contact-inge-button" type="button">Ver Equipos</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -18,13 +21,27 @@
 </template>
 <script>
 import categoriasProductos from '../assets/js/categoriasProductos.json'
+import CustomPath from '@/components/CustomPath.vue'
+import {slavonMixin} from '@/assets/js/slavonMixin.js'
 export default {
+    mixins:[slavonMixin],
     title: 'Productos',
+    components:{ CustomPath },
     data: function(){
         return {
             lastScrollPosition:0,
             showNavbar: false,
-            categorias: categoriasProductos.categorias
+            categorias: categoriasProductos.categorias,
+            basePath:[
+                {
+                    sectionName:'Inicio',
+                    sectionUrl:'/'
+                }, 
+                {
+                    sectionName:'Productos',
+                    sectionUrl:'/productos'
+                }
+            ],
         }
     },
     methods:{
@@ -39,6 +56,12 @@ export default {
                 this.showNavbar = currentScrollPosition > 300
                 this.lastScrollPosition = currentScrollPosition
             }
+        },
+        generameElPathCompleto(nombre, url){
+            let slavon = this.dameUnSlavon(nombre, url)
+            let auxPath = this.basePath
+            auxPath.push(slavon)
+            return auxPath
         }
     },
     mounted(){
@@ -46,6 +69,14 @@ export default {
     },
     destroyed(){
         window.removeEventListener('scroll', this.onScroll)
+    },
+    computed:{
+        diagnosticoImagenesPath(){
+            this.generameElPathCompleto('Diagnóstico por Imágenes', '/productos')
+        },
+        veterinariaPath(){
+            this.generameElPathCompleto('Division Veterinaria', '/productos')
+        }
     }
 }
 // {
@@ -68,72 +99,86 @@ export default {
 <style scoped>
 .row{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    padding: 2rem 3rem;
 }
-.categorias-container{
+.path{
+    padding-left: 1rem;
+}
+.container{
     height: auto;
     display: flex;
     flex-direction: column;
-    width: 100%;
     padding: 1rem;
     gap: .5rem;
+}
+.subcategorias{
+    display: grid;
+    row-gap: 1rem;
+    grid-auto-rows: auto;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }
 .tab{
     display: flex;
     flex-direction: column;
-    gap: .3rem;
-    padding: .5rem 0;
 }
 .tab-label{
-    font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
+    color: var(--gray);
+    height: 2rem;
+    border-bottom: 1px solid var(--gray);
 }
 .tab-content{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: .5rem;
+    height: 300px;
 }
-.card{
-    box-shadow: none;
-    background: #8f8f8f;
-    padding: .5rem;
+.imagen-subcategoria{
+    background-image: url('https://picsum.photos/300/300');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 4px 8px 4px rgba(0,0,0,.4);
+    position: relative;
+    overflow: hidden;
+}
+.ver-productos{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(12, 127, 126, .3);
+    transform: translateX(-100%);
     transition: all .3s ease-in-out;
 }
-.card:hover{
-    cursor: pointer;
-    transform: scale(1.03);
-    box-shadow: 0 0 10px 3px rgba(0,0,0,.2)
+.ver-productos:after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: blur(3px);
+}
+.tab:hover .tab-label{
+    color: var(--bluish-green);
+    font-size: 17px;
+    font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
+    border-bottom: 3px solid var(--bluish-green);
+}
+.tab:hover .ver-productos{
+    transform: translateX(0);
+}
+.contact-inge-button{
+    z-index: 3;
+    background-color: var(--bluish-green);
 }
 
 @media screen and (max-width: 900px){
-    .categories{
-        gap: 0;
-    }
-    .card{
-        width: 45%;
-        margin: .5rem 0;
-    }
+
 }
 @media screen and (max-width: 650px){
-    .categories{
-        gap: 0;
+    .row{
+        padding: 0 1rem;
     }
-    .card{
-        width: 45%;
-    }
-    .filter-box{
-        top: 0;
-    }
-}
-@media screen and (max-width: 615px){
-    .card{
-        width: 80%;
-    }
-}
-@media screen and (max-width: 414px){
-    .card{
-        width: 100%;
-        height: fit-content;
+    .container{
+        padding: 0;
     }
 }
 </style>

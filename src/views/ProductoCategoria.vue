@@ -1,4 +1,5 @@
 <template>
+    <!-- TODO: Ver que hago con este action -->
     <div class="row" @open-form="alert('asd')">
         <!-- Info del producto -->
         <div class="producto flex px-4 gap-4 h-auto">
@@ -7,11 +8,7 @@
             </div>
             <div class="producto-descripcion flex flex-col gap-4">
                 <!-- Path -->
-                <ul class="flex flex-wrap">
-                    <li v-for="(slavon, index) in this.path" :key="index">
-                        <router-link :to="slavon.sectionUrl" class="flex blue">{{slavon.sectionName}} <p class="px-2 text-black" v-if="index < path.length-1"> > </p> </router-link>
-                    </li>
-                </ul>
+                <CustomPath :slavons="this.path"></CustomPath>
                 <!-- Titulos -->
                 <div class="titulos">
                     <div class="title blue text-3xl xl:text-4xl sm:text-3xl">
@@ -154,27 +151,27 @@ import Galeria              from '@/components/Productos/GaleriaProductos.vue'
 import Especificaciones     from '@/components/Productos/Especificaciones.vue'
 import Documentos           from '@/components/Productos/Documentos.vue'
 import Caracteristicas      from '@/components/Productos/Caracteristicas.vue'
+import CustomPath           from '@/components/CustomPath.vue'
+
 import Vue from 'vue'
 
 var eventBus = new Vue()
 
 export default {
-  components: { ContactForm, ImageCarousel, Galeria, Especificaciones, Documentos, Caracteristicas },
     data(){
         return{
             showModal: false,
-            path:[
-                {
-                    sectionName:'Inicio',
-                    sectionUrl:'/'
-                }, 
-                {
-                    sectionName:'Productos',
-                    sectionUrl:'/productos'
-                }
-            ],
             productos: Productos.productos,
         }
+    },
+    components: { 
+        ContactForm,
+        ImageCarousel,
+        Galeria,
+        Especificaciones,
+        Documentos,
+        Caracteristicas,
+        CustomPath 
     },
     methods:{
         enviarMensajeWhastapp: function(){
@@ -187,6 +184,15 @@ export default {
             console.log('https://wa.me/'+ from + '?text=%20' + message)
 
         },
+        dameElEquipo: function(){
+            return this.productos.find(prod => prod.nombreCategoria === this.$route.params.categoria)
+        },
+        dameUnSlavon: function(name, url){
+            return {
+                sectionName: name,
+                sectionUrl: url
+            }
+        }
     },
     mounted(){
         eventBus.$on('open-form', () => { //TODO: Ver como hacer para poder escuchar este evento
@@ -197,19 +203,25 @@ export default {
         //     .then(r => json())
         //     .then(json => this.productos = json.productos)
     },
-    created(){
-        const pathSlavon = {
-            sectionName: this.equipos.nombreCategoriaGeneral,
-            sectionUrl:'/productos'
-        }
-        this.path.push(pathSlavon)
-    },
     beforeDestroy() {
         eventBus.$off('open-form')
     },
     computed:{
         equipos: function(){
-            return this.productos.find(prod => prod.nombreCategoria === this.$route.params.categoria)
+            return this.dameElEquipo()
+        },
+        path: function(){
+            let equipo = this.dameElEquipo()
+
+            let raiz = this.dameUnSlavon('Inicio', '/')
+            let nodo1 = this.dameUnSlavon('Productos', '/productos')
+            var newPath = new Array(raiz, nodo1)
+
+            let nodo2 = this.dameUnSlavon(equipo.nombreCategoriaGeneral, '/productos')
+            
+            newPath.push(nodo2)
+            
+            return newPath
         }
     }
 }
