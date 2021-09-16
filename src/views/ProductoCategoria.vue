@@ -153,9 +153,7 @@ import Documentos           from '@/components/Productos/Documentos.vue'
 import Caracteristicas      from '@/components/Productos/Caracteristicas.vue'
 import CustomPath           from '@/components/CustomPath.vue'
 
-import Vue from 'vue'
-
-var eventBus = new Vue()
+import EventBus from '@/assets/js/eventBus.js'
 
 export default {
     data(){
@@ -195,9 +193,8 @@ export default {
         }
     },
     mounted(){
-        eventBus.$on('open-form', () => { //TODO: Ver como hacer para poder escuchar este evento
-            console.log('Escuchando la weaaa')
-            // this.showModal = true
+        EventBus.$on('open-form', () => {
+            this.showModal = true
         })
         // fetch("/productos.json")
         //     .then(r => json())

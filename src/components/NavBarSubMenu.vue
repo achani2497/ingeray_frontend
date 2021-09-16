@@ -12,18 +12,20 @@
                         <label class="tab-label flex justify-between px-2" :class="{titleActive : categoria.show}" :for="categoria.nombreCategoria">{{categoria.nombreCategoria}}</label>
                         <div class="tab-content flex flex-wrap justify-around" :class="{contentActive : categoria.show}">
                             <!-- Columna izquierda, donde se muestran las categorias -->
-                            <div class="categorias card h-auto w-6/12 lg:w-4/12 option-box inge-text text-white">
+                            <div class="categorias card h-auto w-5/12 md:w-4/12 option-box inge-text text-white">
                                 <ul>
                                     <li v-for="(subcategoria, index) in categoria.subcategorias" :class="{active: subcategoria.isActive}" class="py-1 px-2" :key="index" @click="mostrarEquipos(categoria, subcategoria, subcategoria.equipos)">
                                         {{subcategoria.nombreProducto}}
                                     </li>
                                     <li>
-                                        <router-link to="/productos" class="py-1 px-2">Ver todos los productos</router-link>
+                                        <router-link to="/productos" class="py-1 px-2">
+                                            <span @click="$emit('closeSubMenu')">Ver todos los productos</span>
+                                        </router-link>
                                     </li>
                                 </ul>
                             </div>
                             <!-- Columna derecha, donde se muestran los equipos -->
-                            <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box inge-text text-white">
+                            <div class="equipos card h-auto w-7/12 md:w-8/12 option-box inge-text text-white">
                                 <ul class="flex flex-wrap">
                                     <li class="w-1/2 pl-4 py-1" v-for="(equipo, index) in equiposParaMostrar" :key="index">
                                         <router-link :to="'/productos/'+equipo.urlName" @click="$emit('closeSubMenu')">
@@ -152,9 +154,10 @@
         cursor: pointer;
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
     }
-@media screen and (max-width:835px){
+@media screen and (max-width:882px){
     .container{
-        width: 100%; /* TODO: Arreglar este width */
+        left: 0;
+        width:100%;
     }
 }
 </style>

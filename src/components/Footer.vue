@@ -56,7 +56,7 @@
             </p>
           </div>
           <div class="col2">
-            <button class="contact-inge-button" @click="abrirFormularioContacto(); showNewsletterForm = !showNewsletterForm"> Quiero que me contacten </button>
+            <button class="contact-inge-button" @click="abrirFormularioContacto()"> Quiero que me contacten </button>
           </div>
           <div class="col3 flex flex-col justify-center w-full">
             <div class="sub-col1 flex text-xl">
@@ -295,9 +295,8 @@
 <script>
 import NewsletterForm from '@/components/Modal/NewsletterSuscribe.vue'
 import Modal from './Modal/Modal.vue'
-import Vue from 'vue'
 
-var eventBus = new Vue()
+import EventBus from '@/assets/js/eventBus.js'
 
 export default{
   components: {NewsletterForm, Modal},
@@ -349,7 +348,8 @@ export default{
     },
     methods:{
       abrirFormularioContacto(){
-        eventBus.$emit('open-form')//TODO: Ver cómo hacer para que se pueda escuchar este evento en ProductoCategoria.
+        //Evento que tiene que escucharse en ProductoCategoria
+        EventBus.$emit('open-form')
       },
       seMuestraParaHumanos(){
         return this.mostrar === 'humanos'
