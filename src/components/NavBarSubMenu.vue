@@ -26,7 +26,9 @@
                             <div class="equipos card h-auto w-6/12 lg:w-8/12 option-box inge-text text-white">
                                 <ul class="flex flex-wrap">
                                     <li class="w-1/2 pl-4 py-1" v-for="(equipo, index) in equiposParaMostrar" :key="index">
-                                        <router-link :to="'/productos/'+equipo.urlName">{{equipo.nombre}}</router-link>
+                                        <router-link :to="'/productos/'+equipo.urlName" @click="$emit('closeSubMenu')">
+                                            <span @click="$emit('closeSubMenu')">{{equipo.nombre}}</span>
+                                        </router-link>
                                     </li>
                                 </ul>
                             </div>
@@ -122,7 +124,7 @@
     .categorias ul li:hover{
         cursor: pointer;
     }
-    .equipos ul li a:hover{
+    .equipos ul li a span:hover{
         font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
         cursor: pointer;
     }
