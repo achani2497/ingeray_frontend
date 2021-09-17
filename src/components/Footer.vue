@@ -31,7 +31,13 @@
                 </div>
             </div>
             <div class="newsletter flex flex-col items-center">
-                <button class="contact-inge-button" @click="showModal = true ; showNewsletterForm = true">Suscribase a nuestro Newsletter</button>
+              <!-- TODO: fixear el color de la sombra para este boton cuando se activa medicina veterinaria -->
+                <button 
+                  class="contact-inge-button shadow-animated" 
+                  :class="[mostrar==='humanos'?'inge-shadow-down-lilac':'inge-shadow-down-blue']"
+                  @click="showModal = true ; showNewsletterForm = true">
+                    Suscribase a nuestro Newsletter
+                </button>
             </div>
             <div class="pais-region flex flex-col items-start gap-4">
                 <span>Pais - Idioma</span>

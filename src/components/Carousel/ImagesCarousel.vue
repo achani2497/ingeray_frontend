@@ -2,7 +2,7 @@
     <div class="carousel-container flex justify-center items-center w-full h-full bg-white">
         <splide :options="options" class="images-carousel">
             <splide-slide v-for="(elemento, index) in elementos" :key="index" class="carousel-splide">
-                <div class="carousel-card">
+                <div class="carousel-card inge-shadow-down">
                     <img class="carousel-image" :src="elemento.productImage">
                 </div>
             </splide-slide>
@@ -19,13 +19,13 @@
 		height: 200px!important;
 	}
 	.carousel-card{
-		width: 100%;
-		height: 500px;
-		background: #ffffff;
-		box-shadow: 0 0px 5px 2px rgba(0, 0, 0, .3);
+		/* width: 100%; */
+		width: 98%;
+		height: 450px;
+		/* background: #ffffff; */
 		display: flex;
 		gap: 1rem;
-		margin: .2rem 0 1rem 0;
+		margin: .2rem 0 1rem .3rem;
 	}
 	.carousel-image{
 		width: 100%;

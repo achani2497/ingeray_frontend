@@ -21,6 +21,9 @@
   --gray: #677A8B;
   --dark-gray:#4f4f4f;
   --light-gray: #e1e1e1;
+  --shadow: hsl(0 0% 50% / 0.4);
+  --shadow-lilac: hsl(215 42% 50% / 0.7);
+  --shadow-blue: hsl(228 73% 5% / 0.6)
 }
 #app{
   background-size: cover;
@@ -66,7 +69,6 @@
     padding: .3rem .8rem;
     border-radius: 5px;
     border: 2px solid gray;
-    box-shadow: 4px 4px 8px 2px rgba(0,0,0,.3);
   }
   .inge-button{
     position: relative;
@@ -74,7 +76,6 @@
     align-items: center;
     justify-content: center;
     border: 2px solid white;
-    box-shadow: 0 3px 5px 2px rgba(0,0,0,.4);
     border-radius: 25px;
     text-align: center;
     padding: 10px;
@@ -110,6 +111,38 @@
     border-radius: 5px;
     align-self: flex-end;
   }
+/* Sombra */
+.shadow-animated{
+  transition: all .3s ease-in-out;
+}
+.shadow-animated:hover{
+  box-shadow: none;
+}
+.inge-shadow-down{
+    box-shadow: 2px 4px 4px var(--shadow);
+		box-shadow: 3px 6px 6px var(--shadow);
+		box-shadow: 4px 8px 8px var(--shadow);
+}
+.inge-shadow-down-lilac{
+    box-shadow: 2px 4px 4px var(--shadow-lilac);
+		box-shadow: 3px 6px 6px var(--shadow-lilac);
+		box-shadow: 4px 8px 8px var(--shadow-lilac);
+}
+.inge-shadow-down-blue{
+    box-shadow: 2px 4px 4px var(--shadow-blue);
+		box-shadow: 3px 6px 6px var(--shadow-blue);
+		box-shadow: 4px 8px 8px var(--shadow-blue);  
+}
+.inge-shadow-up{
+    box-shadow: -2px -4px 4px var(--shadow);
+		box-shadow: -3px -6px 6px var(--shadow);
+		box-shadow: -4px -8px 8px var(--shadow);  
+}
+.inge-shadow-up-lilac{
+    box-shadow: -1px -1px 1px var(--shadow-lilac);
+		box-shadow: -3px -4px 4px var(--shadow-lilac);  
+		box-shadow: -5px -6px 6px var(--shadow-lilac);
+}
 @media screen and (max-width: 650px){
   #app{
     padding-top: 0;

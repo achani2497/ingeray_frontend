@@ -1,8 +1,8 @@
 <template>
-    <div class="container absolute top-20 p-8" :class="{open:this.show}">
+    <div class="container inge-shadow-down absolute top-20 p-8" :class="{open:this.show}">
         <div class="h-full w-full flex">
             <div class="tabs">
-                <div class="close-container absolute right-2 top-2">
+                <div class="close-container inge-shadow-down shadow-animated absolute right-2 top-2">
                     <div class="close-btn" @click="$emit('closeSubMenu')"></div>
                 </div>
                 <!-- EQUIPOS -->
@@ -56,7 +56,6 @@
         transform: translateY(-150%);
         height: 60vh;
         background: var(--lilac);
-        box-shadow: 2px 2px 10px 2px rgba(0,0,0,.6);
         transition: all .7s ease-in-out;
     }
     .open{

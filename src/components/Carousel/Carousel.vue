@@ -2,7 +2,7 @@
     <div class="carousel-container">
         <splide :options="options">
             <splide-slide v-for="(elemento, index) in elementos" :key="index" class="carousel-splide">
-                <div class="carousel-card">
+                <div class="carousel-card inge-shadow-down">
                     <div class="carousel-image"></div>
                     <div class="carousel-text">
                         <div class="title gray text-3xl xl:text-4xl sm:text-3xl">{{elemento.titulo}}</div>
@@ -35,7 +35,6 @@
 		width: 100%;
 		height: 400px;
 		background: #ffffff;
-		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
 		display: flex;
 		gap: 1rem;
 		margin: .2rem 0 1rem 0;

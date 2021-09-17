@@ -22,7 +22,7 @@
                 <div class="descripcion my-4 simple-text gray">
                     {{equipos.descripcion}}
                 </div>
-                <button class="contact-inge-button" @click="enviarMensajeWhastapp">Quiero que me contacten</button>
+                <button class="contact-inge-button inge-shadow-down shadow-animated" @click="enviarMensajeWhastapp">Quiero que me contacten</button>
             </div>
         </div>
         <!-- Banner de contacto -->

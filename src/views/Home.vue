@@ -1,7 +1,7 @@
 <template>
   	<div class="flex flex-wrap">
 		<!-- PRESENTACION -->
-		<div class="presentation pt-4 bg-white">
+		<div class="inge-shadow-down presentation pt-4 bg-white">
 			<!-- Banner Principal con imagen de la empresa -->
 			<div class="presentation-image"></div>
 			<div class="presentation-text">
@@ -64,7 +64,7 @@
 
 		<!-- ESHOP -->
 		<div class="medicina-veterinaria bkg-light-gray flex justify-center items-center px-24">
-			<div class="banner-prods-veterinaria h-full w-full flex justify-center items-center">Banner de equipos de veterinaria</div>
+			<div class="banner-prods-veterinaria inge-shadow-down h-full w-full flex justify-center items-center">Banner de equipos de veterinaria</div>
 		</div>
   	</div>
 </template>
@@ -104,7 +104,6 @@ export default {
 <style scoped>
 /* Presentacion */
 	.presentation{
-		box-shadow: 2px 2px 10px 4px rgba(0,0,0,.3);
 		z-index: 8;
 	}
 	.presentation-text{
@@ -168,8 +167,6 @@ export default {
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
-		/* background-image: url('https://picsum.photos/1500/1000'); */
-		box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
 	}
 
 /* Media Queries */

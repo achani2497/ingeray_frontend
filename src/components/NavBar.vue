@@ -7,7 +7,7 @@
                 <div class="logo"></div>
             </router-link>
             <!-- Secciones -->
-            <ul class="flex secciones w-auto h-12 self-end overflow-hidden">
+            <ul class="flex secciones inge-shadow-up-lilac w-auto h-12 self-end overflow-hidden">
                 <li class="router-cta">
                     <router-link to="/" class="li-content home" exact>Home</router-link>
                 </li>
@@ -43,7 +43,6 @@
     .secciones{
         background: linear-gradient(to right, #666666,#999999, #CCCCCC);
         border-top-left-radius: 15px;
-        box-shadow: 0px -3px 10px 5px rgba(0,0,0,.2);
     }
     .secciones li{
         height: 100%;
