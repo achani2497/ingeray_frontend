@@ -2,42 +2,11 @@
 <!-- Form utilizado para cuando solicitan suscripción al newsletter y para cuando quieren que se los contacte tocando el boton 'Quiero que me contacten' en el footer -->
     <form @submit.prevent="enviarFormulario">
         <div class="form-content">
-            <div :class="['TextInput', information[0].value === '' ? '' : (information[0].hasError ? 'has-error' : 'success')]">
-                <label for="email">EMAIL</label>
-                <input type="text" name="email" v-model="information[0].value" @change="validar([information[0]])">
-                <ul v-if="information[0].hasError" class="help-message">
-                  <li v-for="(error, index) in information[0].errores" :key="index">
-                    <small>{{error}}</small>
-                  </li>
-                </ul>
-            </div>
-            <div :class="['TextInput', information[1].value === '' ? '' : (information[1].hasError ? 'has-error' : 'success')]">
-                <label for="apellido">APELLIDO</label>
-                <input type="text" name="apellido" v-model="information[1].value" @change="validar([information[1]])">
-                <ul v-if="information[1].hasError" class="help-message">
-                  <li v-for="(error, index) in information[1].errores" :key="index">
-                    <small>{{error}}</small>
-                  </li>
-                </ul>
-            </div>
-            <div :class="['TextInput', information[2].value === '' ? '' : (information[2].hasError ? 'has-error' : 'success')]">
-                <label for="nombre">NOMBRE</label>
-                <input type="text" name="nombre" v-model="information[2].value" @change="validar([information[2]])">
-                <ul v-if="information[2].hasError" class="help-message">
-                  <li v-for="(error, index) in information[2].errores" :key="index">
-                    <small>{{error}}</small>
-                  </li>
-                </ul>
-            </div>
-            <div :class="['TextInput', information[3].value === '' ? '' : (information[3].hasError ? 'has-error' : 'success')]">
-                <label for="celular">WHATSAPP</label>
-                <input type="text" name="celular" v-model="information[3].value" @change="validar([information[3]])">
-                <ul v-if="information[3].hasError" class="help-message">
-                  <li v-for="(error, index) in information[3].errores" :key="index">
-                    <small>{{error}}</small>
-                  </li>
-                </ul>
-            </div>
+          <Input :campo="information[0]"></Input>
+          <Input :campo="information[1]"></Input>
+          <Input :campo="information[2]"></Input>
+          <Input :campo="information[3]"></Input>
+          <div class="warning-temporal-message" :class="{fadeIn:formHasError}" v-show="formHasError">{{errorMessage}}</div>
         </div>
         <div class="modal-footer">
             <button type="submit" class="btn submit-btn" :class="{invalid: formHasError}"> {{sendButtonText}}</button>
@@ -46,11 +15,14 @@
     </form>
 </template>
 <script>
+import Input from './ModalInput.vue'
 export default {
+    components:{Input},
     props:['isNewsletter', 'sendButtonText'],
     data: function(){
         return{
           formHasError: false,
+          errorMessage: '',
           information:[
             {
               name:'Email',
@@ -63,14 +35,14 @@ export default {
               name:'Apellido',
               value:'',
               hasError: '',
-              rules:['required', 'min5'],
+              rules:['required', 'min4'],
               errores:[]
             },
             {
               name:'Nombre',
               value:'',
               hasError: '',
-              rules:['required', 'min5'],
+              rules:['required', 'min4'],
               errores:[]
             },
             {
@@ -84,81 +56,37 @@ export default {
         }
     },
     methods:{
-        enviarFormulario(){
-          let hayErrores = this.validar(this.information)
+      enviarFormulario(){
 
-          if(!hayErrores){
-            if(this.isNewsletter){
-              console.log('Mando newsletter')
-            } else {
-              console.log('Mando datos de contacto')
-            }
+        let estanTodosCompletos = this.estanTodosCompletos(this.information)
+        let ningunoTieneError = this.ningunoTieneError(this.information)
+
+        if(estanTodosCompletos && ningunoTieneError){
+          if(this.isNewsletter){
+            console.log('Mando newsletter')
           } else {
-            this.formHasError = true
+            console.log('Mando datos de contacto')
           }
-        },
-        validar(array){
-          let errores = []
-          array.forEach(campo => {
-            campo.errores = []
-            campo.rules.forEach(regla => {
-              let error = this.verificarRegla(campo, regla)
-              if(error !== ''){
-                errores.push(error)
-              }
-            })
-          })
-
-          return errores.length !== 0
-        },
-        verificarRegla(campo, regla){
-          let error = ''
-
-          switch (regla) {
-            case 'required':
-              if(campo.value.trim() !== ''){
-                campo.hasError = false
-              } else {
-                error = `Falta completar el campo ${campo.name}.`
-              }
-
-              break;
-            case 'emailFormat':
-              if(campo.value.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-                campo.hasError = false
-              } else {
-                error = 'El mail tiene un formato inválido.'
-              }
-
-              break;
-            case 'min5':
-              if(campo.value.length >= 5){
-                campo.hasError = false
-              } else {
-                error = `El ${campo.name} tiene que tener al menos 5 caracteres`
-              }
-
-              break;
-            case 'min10':
-              if(campo.value.length >= 10){
-                campo.hasError = false
-              } else {
-                error = `El ${campo.name} tiene que tener al menos 10 caracteres`
-              }
-
-              break;
+        } else {
+          this.formHasError = true
+          if(!estanTodosCompletos){
+            this.errorMessage = 'Primero completá todos los campos'
           }
-          if(error !== ''){
-            this.setError(campo, error)
-          }
-
-          return error
-        },
-        setError(campo, error){
-          campo.hasError = true
-          campo.errores.push(error)
         }
-
+      },
+      estanTodosCompletos(array){
+        return array.every(campo => campo.value.trim() !== '')
+      },
+      ningunoTieneError(array){
+        return array.every(campo => !campo.hasError)
+      }
+    },
+    watch:{
+      formHasError: function(newVal, oldVal){
+        setTimeout(() => {
+          this.formHasError = false
+        }, 4200)
+      }
     }
 }
 </script>
@@ -172,54 +100,21 @@ export default {
     font-size: 20px;
     color: white;
 }
-input {
-  border-radius: 5px;
-  color: black;
-  font-size: 18px;
-  border: 2px solid transparent;
-  padding: 5px;
-  outline: none;
-  background-color: #f2f5f7;
-  width: 100%;
-  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out;
-}
-input:focus {
-  border-color: #0071fe;
-}
-.help-message {
-  font-size: 14px;
-}
 .modal-footer{
   display: flex;
   justify-content: space-around;
   padding: 1rem;
   gap: 1rem;
 }
-.TextInput{
-    gap: .2rem;
-}
-.TextInput.has-error input {
+.warning-temporal-message{
+  border-radius: 15px;
   background-color: #fddfe2;
+  border: 1px solid #f23648;
   color: #f23648;
+  text-align: center;
 }
-.TextInput.has-error input:focus {
-  border-color: #f23648;
-}
-.TextInput.has-error .help-message {
-  color: #ff0019;
-}
-.help-message{
-  list-style: disc;
-  padding-left: 13px;
-  font-size: 19px;
-}
-.TextInput.success input{
-  background-color: #e0eee4;
-  color: #21a67a;
-}
-.TextInput.success input:focus{
-  border-color: #21a67a;
+.fadeIn{
+  animation: fadeInInge 5s forwards;
 }
 .btn{
   border-radius: 25px;
@@ -241,6 +136,9 @@ input:focus {
 .submit-btn.invalid {
   animation: shake 0.5s;
   animation-iteration-count: forwards;
+}
+.invalid{
+  animation: shake .5s forwards;
 }
 .message{
     gap: 2rem;
@@ -327,10 +225,24 @@ input:focus {
 }
 @keyframes fadeInInge {
     0%{
-        opacity: 0;
+      transform: translateY(10px);
+      opacity: 0;
+    }
+    25%{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50%{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    75%{
+      transform: translateY(0);
+      opacity: 1;
     }
     100%{
-        opacity: 100%;
+      transform: translateY(10px);
+      opacity: 0;
     }
 }
 @media screen and (max-width: 650px) {
