@@ -14,21 +14,22 @@ Vue.use(VueSplide)
 Vue.config.productionTip = true
 
 //* EmailJs Stuff init
-    init("user_eeVYemHTnHjSJqpAxC8wh")
+init("user_eeVYemHTnHjSJqpAxC8wh")
 //* End
 
 //* Google Maps Stuff init
-    Vue.use(VueGeolocation);
-    import * as VueGoogleMaps from 'vue2-google-maps';
-    Vue.use(VueGoogleMaps, {
-      load:{
-        key:'AIzaSyBDBIfFH7yfpNwPyzARzx0K-4D7bg-ZMK0',
-        libraries: 'places'
-      },
-      installComponents: false
-    })
-    Vue.component('g-map', VueGoogleMaps.Map);
-    Vue.component('g-marker', VueGoogleMaps.Marker);
+Vue.use(VueGeolocation);
+import * as VueGoogleMaps from 'vue2-google-maps';
+import './assets/tailwind.css'
+Vue.use(VueGoogleMaps, {
+  load:{
+    key:'AIzaSyBDBIfFH7yfpNwPyzARzx0K-4D7bg-ZMK0',
+    libraries: 'places'
+  },
+  installComponents: false
+})
+Vue.component('g-map', VueGoogleMaps.Map);
+Vue.component('g-marker', VueGoogleMaps.Marker);
 //* End
 
 Vue.mixin(titleMixin)

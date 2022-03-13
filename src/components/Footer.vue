@@ -16,7 +16,7 @@
         </div>
         <!-- Redes sociales -->
         <div class="redes-sociales flex justify-between items-center text-white" :class="backgroundColorSocial">
-            <div class="redes flex flex-col text-left">
+            <div class="redes flex flex-col">
                 <span>Seguinos en Redes Sociales</span>
                 <div class="iconos flex justify-between" v-if="mostrar==='humanos'">
                     <div class="icon facebook-icon-hum"></div>
@@ -49,7 +49,7 @@
               <template #title> Suscripción a Newsletter </template>
               <!-- Body y Footer del modal -->
               <template #content>
-                <NewsletterForm></NewsletterForm>
+                <InformationForm :isNewsletter="true" sendButtonText='Suscribirme'></InformationForm>
               </template>
             </Modal>
         </div>
@@ -61,18 +61,23 @@
               ¿Necesitás más información? Completá el formulario y nos comunicaremos contigo lo más pronto posible.
             </p>
           </div>
-          <div class="col2">
-            <button class="contact-inge-button" @click="abrirFormularioContacto()"> Quiero que me contacten </button>
+          <div class="col2 flex justify-end items-center">
+            <button class="contact-inge-button" @click="showContactMenu = true"> Quiero que me contacten </button>
           </div>
-          <div class="col3 flex flex-col justify-center w-full">
+          <div class="col3 w-full">
             <div class="sub-col1 flex text-xl">
-              <router-link to="/quienes-somos">Quiénes Somos</router-link> 
-              <div class="separador">|</div> 
-              <button type="button" @click="showAvisoLegalModal = true">Aviso Legal</button> 
-              <div class="separador">|</div> 
-              <button type="button" @click="showPDPrivacidad = true">Políticas de Privacidad</button>  
-              <div class="separador">|</div> 
-              <router-link to="/contacto">Contacto</router-link>
+              <div class="separator">
+                <router-link to="/quienes-somos">Quiénes Somos</router-link> 
+              </div>
+              <div class="separator">
+                <button type="button" @click="showAvisoLegalModal = true">Aviso Legal</button> 
+              </div>
+              <div class="separator">
+                <button type="button" @click="showPDPrivacidad = true">Políticas de Privacidad</button>  
+              </div>
+              <div class="separator">
+                <router-link to="/contacto">Contacto</router-link>
+              </div>
             </div>
             <div class="sub-col2 flex justify-between pt-4 text-md">
               <p>© Inge Ray S.R.L., 2021. Todos los derechos reservados.</p>
@@ -86,7 +91,7 @@
             <template #content>
               <div class="legal-container overflow-y-scroll">
                 <div class="simple-text p-4">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem tempore sequi doloribus nesciunt ipsum at culpa. Iure asperiores possimus voluptatibus, debitis, aspernatur doloremque quia sit dolorem cum explicabo architecto provident incidunt consequuntur similique tenetur ea impedit, eligendi quasi iusto aliquam. Eaque ducimus ut similique reprehenderit modi iure fugit inventore velit officia! Molestias, impedit. Explicabo sunt voluptates laboriosam debitis provident autem consectetur, cum id harum possimus repellendus nihil natus accusamus voluptas facere quos facilis molestiae ab eum, tempora, fugit quas eveniet placeat. A modi facilis excepturi nam libero fuga accusamus, laborum quibusdam dolor consequatur, laudantium nostrum eaque debitis aspernatur suscipit id.
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem tempore sequi doloribus nesciunt ipsum at culpa. Iure asperiores possimus voluptatibus, debitis, aspernatur doloremque quia sit dolorem cum explicabo architecto provident incidunt consequuntur similique tenetur ea impedit, eligendi quasi iusto aliquam. Eaque ducimus ut similique reprehenderit modi iure fugit inventore velit officia! Molestias, impedit. 
                 </div>
               </div>
             </template>
@@ -96,10 +101,18 @@
             <template #content>
               <div class="legal-container overflow-y-scroll">
                 <div class="simple-text p-4">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem tempore sequi doloribus nesciunt ipsum at culpa. Iure asperiores possimus voluptatibus, debitis, aspernatur doloremque quia sit dolorem cum explicabo architecto provident incidunt consequuntur similique tenetur ea impedit, eligendi quasi iusto aliquam. Eaque ducimus ut similique reprehenderit modi iure fugit inventore velit officia! Molestias, impedit. Explicabo sunt voluptates laboriosam debitis provident autem consectetur, cum id harum possimus repellendus nihil natus accusamus voluptas facere quos facilis molestiae ab eum, tempora, fugit quas eveniet placeat. A modi facilis excepturi nam libero fuga accusamus, laborum quibusdam dolor consequatur, laudantium nostrum eaque debitis aspernatur suscipit id.
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem tempore sequi doloribus nesciunt ipsum at culpa. Iure asperiores possimus voluptatibus, debitis, aspernatur doloremque quia sit dolorem cum explicabo architecto provident incidunt consequuntur similique tenetur ea impedit, eligendi quasi iusto aliquam. Eaque ducimus ut similique reprehenderit modi iure fugit inventore velit officia! Molestias, impedit. 
                 </div>
               </div>
             </template>
+          </Modal>
+          <Modal :header="true" v-if="showContactMenu" @close="showContactMenu = false">
+              <!-- Titulo del modal -->
+              <template #title> Datos de contacto </template>
+              <!-- Body y Footer del modal -->
+              <template #content>
+                <InformationForm :isNewsletter="false" sendButtonText='Enviar'></InformationForm>
+              </template>
           </Modal>
         </div>
     </footer>
@@ -195,8 +208,22 @@
   .col1{
     width: 31%;
   }
-  .separador{
-    padding: 0 10px
+  .col2 button{
+    height: fit-content;
+  }
+  .separator:not(:first-child){
+    padding-left: 7px;
+  }
+  .separator{
+    padding-right: 7px;
+  }
+  .separator a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .separator:not(:last-child){
+    border-right: 1px solid white;
   }
   .legal-container{
     height: 80vh;
@@ -217,7 +244,8 @@
     width: 40%;
   }
   .contacto{
-    height: 230px;
+    /* height: 230px; */
+    height: fit-content;
   }
   .col1, .col2{
     width: 45%;
@@ -226,12 +254,26 @@
     padding: 0 1rem;
   }
   .col3{
+    display: flex;
+    flex-direction: column;
     padding-top: 20px;
+  }
+  .sub-col1{
+    justify-content: center;
+  }
+  .separator{
+    font-size: 18px;
+    padding: 0 13px;
+  }
+  .sub-col2{
+    flex-direction: column;
+    text-align: center;
   }
   .contact{
     width: 100%;
   }
 }
+
 @media screen and (max-width: 650px){
 	.presentation-text{
 		padding: 1rem 3rem 4rem 3rem;
@@ -245,6 +287,9 @@
   }
   .divisiones{
     padding: 0 1rem;
+    text-align: center;
+  }
+  .redes{
     text-align: center;
   }
   .redes-sociales{
@@ -276,6 +321,7 @@
   .col2{
     width: 100%;
     padding: 0;
+    justify-content: center;
   }
   .col3{
     text-align: center;
@@ -289,23 +335,21 @@
     padding: 0 2px;
   }
   .sub-col1 a{
-    /* background: chocolate; */
     padding: 0 5px;
   }
   .sub-col2{
-    flex-direction: column;
     row-gap: 1rem;
   }
 }
 </style>
 <script>
-import NewsletterForm from '@/components/Modal/NewsletterSuscribe.vue'
+import InformationForm from '@/components/Modal/InformationForm.vue'
 import Modal from './Modal/Modal.vue'
 
 import EventBus from '@/assets/js/eventBus.js'
 
 export default{
-  components: {NewsletterForm, Modal},
+  components: {InformationForm, Modal},
     data: function(){
         return {
             mostrar:'humanos',
@@ -349,11 +393,12 @@ export default{
             ],
             showNewsletterForm: false,
             showAvisoLegalModal: false,
-            showPDPrivacidad: false
+            showPDPrivacidad: false,
+            showContactMenu: false
         }
     },
     methods:{
-      abrirFormularioContacto(){
+      abrirFormularioContacto(){ //Funcion que se triggereaba cuando apretaba el boton 'Quiero que me contacten' y lo reemplazé por el bool 'showContactMenu'
         //Evento que tiene que escucharse en ProductoCategoria
         EventBus.$emit('open-form')
       },

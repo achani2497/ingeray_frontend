@@ -6,7 +6,7 @@
 			<div class="presentation-image"></div>
 			<div class="presentation-text">
 				<h1 class="title blue text-3xl xl:text-4xl sm:text-3xl">Somos proveedores de Tecnología Médica</h1>
-				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 xl:mt-0 sm:mt-0">Comprometido con la Salud</h2>
+				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 xl:mt-0 sm:mt-0">Comprometidos con la Salud</h2>
 				<p class="simple-text mt-10">
 					Inge Ray SRL es una empresa argentina creada en 1992 y desde entonces nos comprometimos y dedicamos a brindar Soluciones Tecnológicas para la Salud que permitan a nuestros clientes ofrecer una medicina de calidad. Nos especializamos en Equipamiento Médico para Diagnóstico por Imágenes tanto para Medicina Humana como para Medicina Veterinaria. Fabricamos, comercializamos y alquilamos una amplia gama de equipos y periféricos de radiología convencional y digital, de mamografía y de ultrasonografía de producción nacional e internacional.
 				</p>

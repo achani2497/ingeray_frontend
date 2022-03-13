@@ -5,7 +5,7 @@
                 <div class="modal-container">
                   <!-- Header -->
                   <div class="modal-header" v-if="header">
-                    <div class="title"><slot name="title"/></div>
+                    <div class="futura t-35"><slot name="title"/></div>
                     <button type="button" @click="$emit('close')">
                         <span>&times;</span>
                     </button>
@@ -48,15 +48,19 @@ export default {
   vertical-align: middle;
 }
 .modal-container {
-  width: fit-content;
+  position: relative;
+  width: 90%;
+  max-width: 500px;
   height: auto;
   margin: 0px auto;
-  background: #FEFEFE;
+  background: var(--lilac);
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
-  font-family: 'IngeText', Arial, Helvetica, sans-serif;
-  color: black
+  color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .modal-header{
   display: flex;
@@ -66,27 +70,33 @@ export default {
   padding: 1rem 1rem 0 1rem;
 }
 .modal-header button{
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
   border-radius: 100%;
   position: absolute;
-  top: 35px;
-  right: 30px;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  z-index: 10;
+}
+.modal-header button:hover{
+  cursor: pointer;
 }
 .modal-header span{
-  position: absolute;
-  top: -200%;
-  left: 50%;
-  font-size: 40px;
+  display: inline-block;
+  font-size: 50px;
+  color: white;
+  line-height: 20px;
+  height: fit-content;
 }
-.modal-header h3 {
-  margin-top: 0;
+.futura{
+  color: white;
 }
-.title{
-  font-size: 30px;
-  color: #b0b0b0;
-}
-button:focus{
-  outline: none;
+.t-35{
+    font-size: 35px;
 }
 </style>

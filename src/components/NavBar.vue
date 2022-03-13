@@ -38,7 +38,7 @@
 <style scoped>
     .menu{
         height: 5rem;
-        padding-left: .3%;
+        padding-left: 1.4%;
     }
     .secciones{
         background: linear-gradient(to right, #666666,#999999, #CCCCCC);
