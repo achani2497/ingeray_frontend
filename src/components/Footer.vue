@@ -35,7 +35,7 @@
                 <button 
                   class="contact-inge-button shadow-animated" 
                   :class="[mostrar==='humanos'?'inge-shadow-down-lilac':'inge-shadow-down-blue']"
-                  @click="showModal = true ; showNewsletterForm = true">
+                  @click="showContactMenu = true">
                     Suscribase a nuestro Newsletter
                 </button>
             </div>
@@ -44,7 +44,7 @@
                 <span>Argentina > Español</span>
             </div>
             <!-- Modal Newsletter Form -->
-            <Modal v-if="showNewsletterForm" @close="showNewsletterForm = false" :header="true">
+            <Modal :header="true" v-if="showContactMenu" @close="showContactMenu = false">
               <!-- Titulo del modal -->
               <template #title> Suscripción a Newsletter </template>
               <!-- Body y Footer del modal -->
@@ -111,7 +111,7 @@
               <template #title> Datos de contacto </template>
               <!-- Body y Footer del modal -->
               <template #content>
-                <InformationForm :isNewsletter="false" sendButtonText='Enviar'></InformationForm>
+                <InformationForm :isNewsletter="false" sendButtonText='Enviar' @close="showContactMenu = false"></InformationForm>
               </template>
           </Modal>
         </div>
