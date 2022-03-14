@@ -35,7 +35,7 @@
                 <button 
                   class="contact-inge-button shadow-animated" 
                   :class="[mostrar==='humanos'?'inge-shadow-down-lilac':'inge-shadow-down-blue']"
-                  @click="showContactMenu = true">
+                  @click="showNewsLetterForm = true">
                     Suscribase a nuestro Newsletter
                 </button>
             </div>
@@ -44,7 +44,7 @@
                 <span>Argentina > Español</span>
             </div>
             <!-- Modal Newsletter Form -->
-            <Modal :header="true" v-if="showContactMenu" @close="showContactMenu = false">
+            <Modal :header="true" v-if="showNewsLetterForm" @close="showNewsLetterForm = false" large="sm">
               <!-- Titulo del modal -->
               <template #title> Suscripción a Newsletter </template>
               <!-- Body y Footer del modal -->
@@ -86,7 +86,7 @@
               </p>
             </div>
           </div>
-          <Modal :header="true" v-if="showAvisoLegalModal" @close="showAvisoLegalModal = false">
+          <Modal :header="true" v-if="showAvisoLegalModal" @close="showAvisoLegalModal = false" large="xl">
             <template #title> <div class="title blue">Aviso Legal</div> </template>
             <template #content>
               <div class="legal-container overflow-y-scroll">
@@ -96,7 +96,7 @@
               </div>
             </template>
           </Modal>
-          <Modal :header="true" v-if="showPDPrivacidad" @close="showPDPrivacidad = false">
+          <Modal :header="true" v-if="showPDPrivacidad" @close="showPDPrivacidad = false" large="xl">
             <template #title> <div class="title blue">Políticas de Privacidad</div> </template>
             <template #content>
               <div class="legal-container overflow-y-scroll">
@@ -106,7 +106,7 @@
               </div>
             </template>
           </Modal>
-          <Modal :header="true" v-if="showContactMenu" @close="showContactMenu = false">
+          <Modal :header="true" v-if="showContactMenu" @close="showContactMenu = false" large="sm">
               <!-- Titulo del modal -->
               <template #title> Datos de contacto </template>
               <!-- Body y Footer del modal -->
@@ -191,10 +191,10 @@
   .separator:not(:last-child){
     border-right: 1px solid white;
   }
-  .legal-container{
+  /* .legal-container{
     height: 80vh;
     width: 80vw;
-  }
+  } */
 @media screen and (max-width: 900px){
   .prods-services, .divisiones, .redes-sociales, .contacto{
     padding: 2rem;
@@ -358,6 +358,7 @@ export default{
                 img:require('@/assets/images/medios-de-pago/mercado-pago.svg')
             },
             ],
+            showNewsLetterForm: false,
             showAvisoLegalModal: false,
             showPDPrivacidad: false,
             showContactMenu: false

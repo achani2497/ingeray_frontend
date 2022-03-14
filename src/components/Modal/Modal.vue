@@ -2,7 +2,7 @@
     <transition name="modal">
         <div class="modal-mask">
             <div class="modal-wrapper">
-                <div class="modal-container">
+                <div :class="['modal-container', 'modal-container-'+large]">
                   <!-- Header -->
                   <div class="modal-header" v-if="header">
                     <div class="futura t-35"><slot name="title"/></div>
@@ -10,6 +10,7 @@
                         <span>&times;</span>
                     </button>
                   </div>
+
                   <!-- Body -->
                   <slot name="content" />
 
@@ -20,7 +21,7 @@
 </template>
 <script>
 export default {
-  props:['header'],
+  props:['header', 'large'],
   data:function(){
     return{
 
@@ -50,7 +51,6 @@ export default {
 .modal-container {
   position: relative;
   width: 90%;
-  max-width: 500px;
   height: auto;
   margin: 0px auto;
   background: var(--lilac);
@@ -61,6 +61,12 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.modal-container-sm{
+  max-width: 500px;
+}
+.modal-container-xl{
+  max-width: 1024px;
 }
 .modal-header{
   display: flex;
