@@ -19,15 +19,15 @@
             <div class="redes flex flex-col">
                 <span>Seguinos en Redes Sociales</span>
                 <div class="iconos flex justify-between" v-if="mostrar==='humanos'">
-                    <div class="icon facebook-icon-hum"></div>
-                    <a class="icon instagram-icon-hum" href="https://www.instagram.com/p/CMK8U71DnXq/"></a>
-                    <div class="icon youtube-icon-hum"></div>
+                    <Icon name="facebook" link='https://www.facebook.com/IngeRayEquipamientoMedico' division="hum"></Icon>
+                    <Icon name="instagram" link='https://www.instagram.com/p/CMK8U71DnXq/' division="hum"></Icon>
+                    <Icon name="youtube" link='https://www.youtube.com/channel/UCCP1syiaiGb3GE65LyxnDAA' division="hum"></Icon>
                 </div>
                 <div class="iconos-vet flex justify-between" v-else>
-                    <a class="icon facebook-icon-vet" href="https://www.facebook.com/IngeRayVET"></a>
-                    <a class="icon instagram-icon-vet" href="https://www.instagram.com/inge_ray_vet/"></a>
-                    <a class="icon youtube-icon-vet" href="https://www.youtube.com/channel/UCmPvf69gHGonIM2fglmhBig"></a>
-                    <a class="icon shop-icon-vet" href="https://ingeraysrl.mercadoshops.com.ar/"></a>
+                    <Icon name="facebook" link='https://www.facebook.com/IngeRayVET' division="vet"></Icon>
+                    <Icon name="instagram" link='https://www.instagram.com/inge_ray_vet/' division="vet"></Icon>
+                    <Icon name="youtube" link='https://www.youtube.com/channel/UCmPvf69gHGonIM2fglmhBig' division="vet"></Icon>
+                    <Icon name="shop" link='https://ingeraysrl.mercadoshops.com.ar/' division="vet"></Icon>
                 </div>
             </div>
             <div class="newsletter flex flex-col items-center">
@@ -152,11 +152,6 @@
   .iconos, .iconos-vet{
     padding: 5px 10px 0 0px;
   }
-  .icon{
-    width: 50px!important;
-    height: 50px!important;
-    transform: scale(1.3);
-  }
   .big-icon{
     width: 100px!important;
     height: 100px!important;
@@ -170,35 +165,6 @@
   .pais-region{
     width: 210px;
   }
-  /* HUMANOS */
-    .facebook-icon-hum{
-      background-image: url('../assets/images/icons/footerIcons/humanos/facebook.svg');
-    }
-    .instagram-icon-hum{
-      background-image: url('../assets/images/icons/footerIcons/humanos/instagram.svg');
-    }
-    .youtube-icon-hum{
-      background-image: url('../assets/images/icons/footerIcons/humanos/youtube.svg');
-    }
-    .ingeray-icon-hum{
-      background-image: url('../assets/images/icons/footerIcons/humanos/ingeray.svg');
-    }
-  /* VETERINARIA */
-    .facebook-icon-vet{
-      background-image: url('../assets/images/icons/footerIcons/veterinaria/facebook.svg');
-    }
-    .instagram-icon-vet{
-      background-image: url('../assets/images/icons/footerIcons/veterinaria/instagram.svg');
-    }
-    .youtube-icon-vet{
-      background-image: url('../assets/images/icons/footerIcons/veterinaria/youtube.svg');
-    }
-    .ingeray-icon-vet{
-      background-image: url('../assets/images/icons/footerIcons/veterinaria/ingeray.svg');
-    }
-    .shop-icon-vet{
-      background-image: url('../assets/images/icons/footerIcons/veterinaria/carrito.svg');
-    }
 
 /* CONTACTO */
   .contacto{
@@ -344,12 +310,13 @@
 </style>
 <script>
 import InformationForm from '@/components/Modal/InformationForm.vue'
-import Modal from './Modal/Modal.vue'
+import Modal from '../Modal/Modal.vue'
+import Icon from './SocialNetworkIcon.vue'
 
 import EventBus from '@/assets/js/eventBus.js'
 
 export default{
-  components: {InformationForm, Modal},
+  components: {InformationForm, Modal, Icon},
     data: function(){
         return {
             mostrar:'humanos',
@@ -391,14 +358,13 @@ export default{
                 img:require('@/assets/images/medios-de-pago/mercado-pago.svg')
             },
             ],
-            showNewsletterForm: false,
             showAvisoLegalModal: false,
             showPDPrivacidad: false,
             showContactMenu: false
         }
     },
     methods:{
-      abrirFormularioContacto(){ //Funcion que se triggereaba cuando apretaba el boton 'Quiero que me contacten' y lo reemplazé por el bool 'showContactMenu'
+      abrirFormularioContacto(){ //Funcion que se triggereaba cuando apretaba el boton 'Quiero que me contacten' y lo reemplazé por el bool 'showContactMenu', actualmente no se usa esta funcion
         //Evento que tiene que escucharse en ProductoCategoria
         EventBus.$emit('open-form')
       },

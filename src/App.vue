@@ -151,7 +151,7 @@
 }
 </style>
 <script>
-import FooterContent from "@/components/Footer.vue";
+import FooterContent from "@/components/Footer/Footer.vue";
 export default {
   components:{FooterContent}
 }
