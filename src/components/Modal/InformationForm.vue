@@ -35,21 +35,21 @@ export default {
               name:'Apellido',
               value:'',
               hasError: '',
-              rules:['required', 'min4'],
+              rules:['required', 'min3'],
               errores:[]
             },
             {
               name:'Nombre',
               value:'',
               hasError: '',
-              rules:['required', 'min4'],
+              rules:['required', 'min3'],
               errores:[]
             },
             {
               name:'Celular',
               value:'',
               hasError: '',
-              rules:['required', 'min10'],
+              rules:['required', 'numbers', 'min10'],
               errores:[]
             }
           ]
@@ -71,6 +71,8 @@ export default {
           this.formHasError = true
           if(!estanTodosCompletos){
             this.errorMessage = 'Primero completá todos los campos'
+          } else {
+            this.errorMessage = 'Hay campos con errores'
           }
         }
       },

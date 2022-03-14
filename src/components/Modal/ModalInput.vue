@@ -81,37 +81,55 @@ export default {
 
           switch (regla) {
             case 'required':
-              if(campo.value.trim() !== ''){
-                campo.hasError = false
-              } else {
-                error = `Falta completar el campo ${campo.name}.`
-              }
+                if(campo.value.trim() !== ''){
+                    if(campo.errores.length === 0){
+                        campo.hasError = false
+                    }
+                } else {
+                    error = `Falta completar el campo ${campo.name}.`
+                }
 
               break;
             case 'emailFormat':
-              if(campo.value.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
-                campo.hasError = false
-              } else {
-                error = 'El mail tiene un formato inválido.'
-              }
+                if(campo.value.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)){
+                    if(campo.errores.length === 0){
+                        campo.hasError = false
+                    }
+                } else {
+                    error = 'El mail tiene un formato inválido.'
+                }
 
-              break;
-            case 'min4':
-              if(campo.value.length >= 4){
-                campo.hasError = false
-              } else {
-                error = `El ${campo.name} tiene que tener al menos 4 caracteres`
-              }
+                break;
+            case 'min3':
+                if(campo.value.length >= 3){
+                    if(campo.errores.length === 0){
+                        campo.hasError = false
+                    }
+                } else {
+                    error = `El ${campo.name} tiene que tener al menos 3 caracteres.`
+                }
 
-              break;
+                break;
+            case 'numbers':
+                if(/^[+]*[0-9]+$/.test(campo.value.trim())){
+                    if(campo.errores.length === 0){
+                        campo.hasError = false
+                    }
+                } else {
+                    error = `El ${campo.name} solo admite números, el símbolo '+' y no debe tener espacios.`
+                }
+
+                break;
             case 'min10':
-              if(campo.value.length >= 10){
-                campo.hasError = false
-              } else {
-                error = `El ${campo.name} tiene que tener al menos 10 caracteres`
-              }
+                if(campo.value.length >= 10){
+                    if(campo.errores.length === 0){
+                        campo.hasError = false
+                    }
+                } else {
+                    error = `El ${campo.name} tiene que tener al menos 10 caracteres.`
+                }
 
-              break;
+                break;
           }
           if(error !== ''){
             this.setError(campo, error)
