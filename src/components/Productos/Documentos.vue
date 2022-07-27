@@ -1,8 +1,7 @@
 <template>
     <div class="documentos flex flex-col gap-4 py-4">
         <div class="titulos">
-            <div class="sub-title blue">Documentos</div>
-            <div class="title blue text-3xl xl:text-4xl sm:text-3xl">Brochure</div>
+            <titles title="Brochure" subtitle="Documentos" :fontSize="25"></titles>
         </div>
         <div class="links flex flex-wrap justify-between items-end gap-4">
             <div class="brochures flex flex-col gap-4">

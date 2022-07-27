@@ -17,17 +17,6 @@
     font-family: 'IngeText', Arial, Helvetica, sans-serif;
 }    
 /* Textos */
-    .title{
-        margin-bottom: .5rem;
-    }
-    .sub-title{
-        font-family: 'IngeTextBold', Arial, Helvetica, sans-serif;
-    }
-    .title, .sub-title{
-        height: auto;
-        text-align: left;
-        font-size: 42px;
-    }
     .simple-text{
         font-size: 27px;
         line-height: 1.6;
@@ -90,9 +79,6 @@
     }
     .title{
         margin-bottom: .2rem;
-    }
-    .title, .sub-title{
-        font-size: 29px;
     }
     .simple-text{
         font-size: 19px;

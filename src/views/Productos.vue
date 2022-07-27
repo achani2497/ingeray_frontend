@@ -2,7 +2,7 @@
     <div class="row">
         <div class="container" v-for="(categoria, index) in categorias" :key="index">
         <CustomPath :slavons="diagnosticoImagenesPath"></CustomPath>
-            <div class="sub-title blue">{{categoria.nombreCategoria}}</div>
+            <titles :subtitle="categoria.nombreCategoria" :fontSize="25"></titles>
             <div class="subcategorias">
                 <div class="tab" v-for="(subcategoria, index1) in categoria.subcategorias" :key="index1">
                     <div class="tab-label pl-4">{{subcategoria.nombreProducto}}</div>

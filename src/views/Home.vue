@@ -5,8 +5,7 @@
 			<!-- Banner Principal con imagen de la empresa -->
 			<div class="presentation-image"></div>
 			<div class="presentation-text">
-				<h1 class="title blue text-3xl xl:text-4xl sm:text-3xl">Somos proveedores de Tecnología Médica</h1>
-				<h2 class="sub-title blue text-3xl xl:text-4xl sm:text-3xl mt-8 xl:mt-0 sm:mt-0">Comprometidos con la Salud</h2>
+				<titles title="Somos proveedores de Tecnología Médica" subtitle="Comprometidos con la salud" :fontSize="25"></titles>
 				<p class="simple-text mt-10">
 					Inge Ray SRL es una empresa argentina creada en 1992 y desde entonces nos comprometimos y dedicamos a brindar Soluciones Tecnológicas para la Salud que permitan a nuestros clientes ofrecer una medicina de calidad. Nos especializamos en Equipamiento Médico para Diagnóstico por Imágenes tanto para Medicina Humana como para Medicina Veterinaria. Fabricamos, comercializamos y alquilamos una amplia gama de equipos y periféricos de radiología convencional y digital, de mamografía y de ultrasonografía de producción nacional e internacional.
 				</p>
@@ -17,18 +16,12 @@
 		<div class="prods-services-container">
 			<!-- PRODUCTOS -->
 			<div class="prods-services">
-				<div class="titles">
-					<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
-					<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2">Productos</div>
-				</div>
+				<titles title="Vea nuestra lista de" subtitle="Productos" :fontSize="25"></titles>
 				<ProductCarousel></ProductCarousel>
 			</div>
 			<!-- SERVICIOS -->
 			<div class="prods-services">
-				<div class="titles">
-					<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Vea nuestra lista de </div>
-					<div class="sub-title blue text-3xl xl:text-4xl sm:text-3xl sm:mt-2"> Servicios</div>
-				</div>
+				<titles title="Vea nuestra lista de" subtitle="Servicios" :fontSize="25"></titles>
 				<ServiceCarousel></ServiceCarousel>
 			</div>
 		</div>
@@ -45,18 +38,18 @@
 
 		<!-- EQUIPOS DE RADIOLOGIA -->
 		<div class="radiologia bkg-light-gray pt-8 pb-16 px-24 w-full">
-			<div class="title blue text-3xl xl:text-4xl sm:text-3xl">Radiologia Convencional</div>
+			<titles title="Radiologia Convencional" :fontSize="25"></titles>
 			<div class="equipos flex flex-wrap justify-between items-center gap-8 mt-8">
 				<div class="equipo">
-					<span class="sub-title blue">Arcos en C</span>
+					<titles subtitle="Arcos en C" :fontSize="25"></titles>
 					<div class="img-equipo"></div>
 				</div>
 				<div class="equipo">
-					<span class="sub-title blue">Equipos Móviles</span>
+		            <titles subtitle="Equipos moviles" :fontSize="25"></titles>
 					<div class="img-equipo"></div>
 				</div>
 				<div class="equipo">
-					<span class="sub-title blue">Equipos de Sala</span>
+					<titles subtitle="Equipos de Sala" :fontSize="25"></titles>
 					<div class="img-equipo"></div>
 				</div>
 			</div>
@@ -146,9 +139,6 @@ export default {
 		height: 300px;
 		width: 30%;
 		background: transparent;
-	}
-	.equipo .sub-title{
-		font-size: 24px;
 	}
 	.img-equipo{
 		height: 90%;

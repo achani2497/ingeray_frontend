@@ -1,8 +1,7 @@
 <template>
     <div class="galeria flex flex-col py-4 w-full h-auto">
         <div class="titulos">
-            <div class="title blue text-3xl xl:text-4xl sm:text-3xl">{{producto}}</div>
-            <div class="sub-title blue">Galería</div>
+            <titles :title="producto" subtitle="Galería" :fontSize="25"></titles>
         </div>
         <div class="tipos-imagenes flex mt-6">
             <div class="opcion-imagen" :class="{opcionActiva : showImagenesProd}" @click="showImagenesProd = true">Imágenes del producto</div>

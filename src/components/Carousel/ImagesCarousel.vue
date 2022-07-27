@@ -33,12 +33,6 @@
 		background-repeat: no-repeat;
 		/* background-image: url('https://picsum.photos/500/500'); */
 	}
-	.title{
-		font-size: 28px;
-	}
-	.sub-title{
-		font-size: 42px;
-	}
 	.splide{
 		padding: 0 initial;
 	}

@@ -5,8 +5,7 @@
                 <div class="carousel-card inge-shadow-down">
                     <div class="carousel-image"></div>
                     <div class="carousel-text">
-                        <div class="title gray text-3xl xl:text-4xl sm:text-3xl">{{elemento.titulo}}</div>
-						<div class="sub-title gray text-3xl xl:text-4xl sm:text-3xl">{{elemento.subtitulo}}</div>
+						<titles :title="elemento.titulo" :subtitle="elemento.subtitulo" :fontSize="25"></titles>
 						<p class="carousel-description mt-4">{{elemento.descripcion}}</p>
                     </div>
                 </div>
@@ -54,12 +53,6 @@
 		display: flex;
 		flex-direction: column;
 		
-	}
-	.title{
-		font-size: 28px;
-	}
-	.sub-title{
-		font-size: 42px;
 	}
 	@media screen and (max-width: 1000px){
 		.carousel-container{

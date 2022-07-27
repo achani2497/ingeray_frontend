@@ -1,133 +1,265 @@
 <template>
-    <div class="form-container flex flex-wrap justify-around">
-        <div class="info">
-            <h3 class="text-3xl text-center text-underline mb-3">Información de contacto</h3>
-            <div class="contact-box">
-                <h3 class="text-xl">Ventas</h3>
-                <div class="contact">
-                    <p>ingerayventas@gmail.com</p>
-                    <p>+54 9 11 3851-0695</p>
-                    <p>8 a 17 h.</p>
-                </div>
-                <div class="contact">
-                    <p>ventas@ingeray.com.ar</p>
-                    <p>+54 9 11 5976-7596</p>
-                    <p>8 a 18 h.</p>
-                </div>
-                <div class="contact">
-                    <p>ventasonlineingeray@gmail.com</p>
-                    <p>+54 9 11 5504-4427</p>
-                    <p>9 a 18 h.</p>
-                </div>
-            </div>
-            <div class="contact-box">
-                <h3 class="text-xl">Administración</h3>
-                <div class="contact">
-                    <p>administracion@ingeray.com.ar</p>
-                    <p>+54 9 11 3851-0695</p>
-                    <p>8 a 13 h.</p>
-                </div>
-                <div class="contact">
-                    <p>+54 9 11 5504 4427</p>
-                    <p>13 a 17 h.</p>
-                </div>
-            </div>
-            <div class="contact-box">
-                <h3 class="text-xl">Comercial</h3>
-                <div class="contact">
-                    <!-- <p>DANIEL PENHOS</p> -->
-                    <p>ingeraysrl@gmail.com</p>
-                    <p>danielpenhos@ingeray.com.ar</p>
-                    <p>+54 9 11 4192-6163</p>
-                    <p>8 a 17 h.</p>
-                </div>
-                <div class="contact">
-                    <!-- <p>MATIAS PENHOS</p> -->
-                    <p>mpenhos@ingeray.com.ar</p>
-                    <p>+54 9 11 4192-6162</p>
-                    <p>8 a 17 h.</p>
+    <div class="contact-container flex flex-col gap-4">
+        <!-- Banner & Buttons Container -->
+        <div class="padding-container">
+            <div class="inge-shadow-down flex flex-col">
+                <div class="staff-banner" :style="`background-image: ${bannerContacto}`"></div>
+                <div class="staff flex flex-col">
+                    <div class="staff-areas">
+                        <p class="inge-text-bold">¿Cómo podemos ayudarlo?</p>
+                        <titles subtitle="Contáctenos" :fontSize="25"></titles>
+                        <p class="mb-10">Seleccione entre las siguiente opciones, cuál es su área de interés, para poder brindarle informacion precisa y una mejor atención.</p>
+                        <div class="staff-buttons">
+                            <button class="area-button flex flex-col" :class="[area.visible ? 'is-active':'']" v-for="(area, index) in areas" :key="index" @click="setTeam(area)">
+                                <titles 
+                                    :title="area.first_line_name" 
+                                    :subtitle="area.second_line_name"
+                                    :fontSize="25"
+                                    :active="area.visible"
+                                ></titles>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="map">
-            <Map/>
+
+        <!-- Staff description -->
+        <transition name="fade">
+            <div class="padding-container">
+                <div class="staff-details flex flex-col gap-4" v-if="teamDetailsVisible">
+                    <titles title="Nuestro equipo de" :subtitle="areaName" :fontSize="25"></titles>
+                    <div class="staff-data">
+                        <staff-description :equipo="equipo"></staff-description>
+                        <!-- Bot -->
+                        <div class="chat-bot flex items-center">
+                            <div class="icon"></div>
+                            <div class="text flex flex-col py-4 pl-4 pr-10">
+                                <div class="inge-text-bold text-white">Chatea con nosotros</div>
+                                <p>Estamos disponibles de Lunes a Viernes de 9 a 17 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </transition>
+
+        <!-- Banner Contacto -->
+        <div class="banner-contacto flex items-center gap-2 mb-4">
+            <div class="envelope"></div>
+            <div class="text">
+                <titles title="Tengo una consulta" subtitle="Quiero que me contacten" :fontSize="25"></titles>
+            </div>
         </div>
-        <contact class="contact-form mt-6"></contact>
+
+        <!-- Mapa container -->
+        <div class="mapa-container flex flex-col gap-6">
+            <div class="padding-container">
+                <titles class="mapa-title" title="Ubicacion de" subtitle="Nuestra Empresa" :fontSize="25"></titles>
+                <ik-image path="/mapa.jpg" alt="imagen de mapa"></ik-image>
+            </div>
+        </div>
     </div>
 </template>
 <script>
-import Map from '../components/ContactSection/Map'
+import StaffDescription from '../components/StaffDescription/StaffDescription.vue'
+
 export default {
-    components: {Map},
     title: 'Contacto',
+    components:{
+        'staff-description': StaffDescription
+    },
+    data(){
+        return{
+            areas: [],
+            equipo: [],
+            teamDetailsVisible: false,
+            activeTeamId: 0,
+            areaName: '',
+            bannerContacto: `url(${this.$imageCDN}/banner_contacto.jpg)`
+        }
+    },
+    methods:{
+        setTeam(team){
+            this.areas.forEach(a => {a.visible = false});
+            if(this.activeTeamId !== team.id){
+                if(!this.teamDetailsVisible){
+                    this.teamDetailsVisible = true
+                }
+                this.activeTeamId = team.id
+                this.showTeamInfo(team)
+            } else {
+                if(this.teamDetailsVisible){
+                    this.teamDetailsVisible = false
+                    this.activeTeamId = 0
+                    this.visible = false
+                }
+            }
+        },
+        showTeamInfo(team){
+            this.activeTeamId = team.id
+            this.equipo = team.personal
+            this.areaName = team.second_line_name
+            team.visible = true
+        }
+    },
+    mounted(){
+        fetch("/staff.json") //El archivo tiene que estar en la carpeta public
+            .then(r => r.json())
+            .then(json => {
+                this.areas = json.areas
+            })
+    }
 }
 </script>
 <style scoped>
-    .form-container{
-        height: auto;
-        margin-top: -1rem;
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+.contact-container{
+    background-color: transparent;
+    align-items: center;
+}
+/* Banner & Buttons */
+    .staff-banner{
+        background-image: var(--image-url);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 0;
+        padding-top: calc((864/2872)*100%);
     }
-    .info{
-        width: 33%;
-        box-shadow: 0 5px 10px 4px rgba(0,0,0,.2);
-        padding: 0 1rem;
+    .staff{
+        padding: 2rem 4rem 4rem;
+        background-color: white;
     }
-    .map{
-        width: 63%;
-        height: 56vh;
-        box-shadow: 0 5px 10px 4px rgba(0,0,0,.2);
+    .staff-details{
+        width: 100%;
+        padding: 1rem 4rem;
     }
-    .contact-box{
-        letter-spacing: 2px;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
-    .contact-box:not(:last-child){
-        border-bottom: 2px solid rgba(255, 255 ,255, .8);
-    }
-    .contact-box h3{
-        font-weight: 600;
-    }
-    .contact{
-        margin: .5rem 0;
-        border-bottom: 1px solid rgba(0,0,0,.4);
-    }
-@media screen and (max-width: 900px){
-    .form-container{
+    .staff-data{
+        display: flex;
         gap: 1rem;
     }
-    .info{
+    .staff-description{
         width: 50%;
     }
-    .map{
-        width: 95%;
+    .staff-buttons{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+        column-gap: 4rem;
+        row-gap: 1.5rem;
     }
-    .contact-form{
-        margin-top: 0;
-        margin-bottom: 1rem;
+    .area-button{
+        border: 1px solid rgb(199, 199, 199);
+        transition: all 0s!important;
+        height: 100px;
+        padding-left: 20%;
+        justify-content: center;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    .is-active{
+        background-color: #b6cde2;
+    }
+/* ChatBot */
+    .chat-bot{
+        width: 50%;
+        height: 150px;
+        background: #9bbdd9;
+    }
+    .icon{
+        background-image: url('~@/assets/images/contacto/chat.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        height: inherit;
+        background-size: 140%;
+        width: 200px;
+    }
+    .inge-text-bold{
+        font-size: 22px!important;
+    }
+/* Banner contacto */
+    .banner-contacto{
+        height: 50px;
+        background-color: #f2f2f2;
+        padding: 2rem 14rem;
+        width: 100%;
+    }
+/* Mapa */
+    .mapa-container{
+        background-color: var(--light-gray);
+        width: 100%;
+        padding: 2rem 0;
+    }
+    .mapa-title{
+        padding: 0 4rem;
+    }
+@media screen and (max-width: 900px){
+    .staff{
+        padding: 2rem 3rem;
+    }
+    .staff-data{
+        flex-direction: column;
+    }    
+    .staff-details{
+        padding: 1rem 3rem;
+    }
+    .staff-buttons{
+        column-gap: 1.5rem;
+    }
+    .area-button{
+        padding: 1rem;
+    }
+    .staff-description{
+        width: 100%;
+    }
+    .chat-bot{
+        width: 100%;
+    }
+    .chat-bot .icon{
+        max-width: 150px;
+    }
+    .banner-contacto{
+        padding: 2rem 4rem;
+    }
+    .mapa-title{
+        padding: 0;
     }
 }
-@media screen and (max-width: 700px) {
-    .info{
-        width: 70%;
+@media screen and (max-width: 650px) {
+    .contact-container{
+        width: 100%;
     }
-}
-@media screen and (max-width: 650px){
-    .form-container{
-        margin-top: 0;
-        padding-top: 1rem;
+    .staff{
+        padding: 1rem;
     }
-}
-@media screen and (max-width: 500px) {
-    .info{
-        width: 95%;
+    .staff-details{
+        padding: 1rem 0;
+    }
+    .staff-buttons{
+        display: flex;
+        flex-direction: column;
+    }
+    .area-button{
+        padding-left: 1rem;
+    }
+    .banner-contacto{
+        padding: 2rem;
+        width: 100vw;
+    }
+    .mapa-container{
+        width: 100vw;
+        padding: 2rem 0;
     }
 }
 @media screen and (max-width: 414px) {
-    .form-container{
-        margin-bottom: 3vh;
-        margin-top: 0;
-        padding-top: 3vh;
-    }
+  .banner-contacto{
+    padding: 2rem 1rem;
+  }
 }
 </style>

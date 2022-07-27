@@ -11,12 +11,7 @@
                 <CustomPath :slavons="this.path"></CustomPath>
                 <!-- Titulos -->
                 <div class="titulos">
-                    <div class="title blue text-3xl xl:text-4xl sm:text-3xl">
-                        {{equipos.nombreCategoriaGeneral}}
-                    </div>
-                    <div class="sub-title blue">
-                        {{equipos.nombreCompleto}}
-                    </div>
+                    <titles :title="equipos.nombreCategoria" :subtitle="equipos.nombreCompleto" :fontSize="25"></titles>
                 </div>
                 <!-- Descripcion -->
                 <div class="descripcion my-4 simple-text gray">
@@ -28,10 +23,9 @@
         <!-- Banner de contacto -->
         <div class="banner-contacto bkg-light-gray w-full flex z-10 px-16 py-4">
             <button class="flex w-auto gap-2 items-center" @click="showModal = true">
-                <div class="envelope h-10 w-16 bg-yellow-200"></div>
+                <div class="envelope"></div>
                 <div class="flex flex-col text-left">
-                    <p class="blue">Contáctenos</p>
-                    <p class="blue">sobre este producto</p>
+                    <titles title="Contáctenos" subtitle="sobre este producto" :fontSize="25"></titles>
                 </div>
             </button>
         </div>
@@ -69,16 +63,6 @@
 .producto-descripcion{
     width: 40%;
     height: 100%;
-}
-.title{
-    font-size: 24px;
-    letter-spacing: 1px;
-    height: 28px;
-}
-.sub-title{
-    font-size: 30px;
-    line-height: normal;
-    height: fit-content;
 }
 .simple-text{
     font-size: 22px;

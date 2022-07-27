@@ -10,8 +10,7 @@
                         <h2 class="text-2xl">{{servicio.nombreServicio}}</h2>
                     </div>
                     <div v-if="servicio.titulo">
-                        <div class="title">{{servicio.titulo}}</div>
-                        <div class="sub-title">{{servicio.subtitulo}}</div>
+                        <titles :title="servicio.titulo" :subtitle="servicio.subtitulo" :fontSize="25"></titles>
                     </div>
                     <p class="text-lg">{{servicio.descripcion}}</p>
                 </div>

@@ -22,8 +22,7 @@
                     <!-- Avance del formulario -->
                     <div class="title-box flex flex-col relative">
                         <div class="flex">
-                            <div class="title blue mr-2">Contáctenos sobre</div> 
-                            <div class="sub-title blue"> {{producto}}</div>
+                            <titles title="Contáctenos sobre" :subtitle="producto" :fontSize="25"></titles>
                         </div>
                         <small class="w-full">* Complete los 3 pasos del formulario para brindarle una mejor atención</small>
                     </div>
@@ -259,12 +258,6 @@
     .steps{
         flex-direction: column;
     }
-    .title{
-        font-size: clamp(25px, 4.5vw, 50px);
-    }
-    .sub-title{
-        font-size: clamp(25px, 4.5vw, 50px);
-    }
 }
 @media screen and (max-width: 716px) {
     .third-part textarea{
@@ -290,14 +283,6 @@
     }
     .third-part .text-area-label{
         width: 94%;
-    }
-}
-@media screen and (max-width: 466px){
-    .title{
-        font-size: clamp(17px, 5vw, 50px);
-    }
-    .sub-title{
-        font-size: clamp(17px, 5vw, 50px);
     }
 }
 </style>
