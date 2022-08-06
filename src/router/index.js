@@ -6,6 +6,7 @@ import Productos          from '../views/Productos.vue'
 import ProductoCategoria  from '../views/ProductoCategoria.vue'
 import Contacto           from '../views/Contacto.vue'
 import QuienesSomos       from '../views/QuienesSomos.vue'
+import Clientes           from '../views/Cliente.vue'
 
 Vue.use(VueRouter)
 
@@ -29,6 +30,11 @@ const routes = [
     path: '/productos/:categoria',
     name: 'ProductoCategoria',
     component: ProductoCategoria
+  },
+  {
+    path: '/clientes',
+    name: 'Clientes',
+    component: Clientes
   },
   {
     path: '/contacto',

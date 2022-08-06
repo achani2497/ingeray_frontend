@@ -89,7 +89,6 @@
 </style>
 <script>
 export default {
-    title: 'Servicios',
     data: function(){
         return{
             lastScrollPosition:0,

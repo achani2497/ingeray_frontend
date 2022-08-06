@@ -25,7 +25,6 @@ import CustomPath from '@/components/CustomPath.vue'
 import {slavonMixin} from '@/assets/js/slavonMixin.js'
 export default {
     mixins:[slavonMixin],
-    title: 'Productos',
     components:{ CustomPath },
     data: function(){
         return {

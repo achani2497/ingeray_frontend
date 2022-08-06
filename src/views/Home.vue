@@ -67,7 +67,6 @@ import ProductCarousel from '@/components/Carousel/ProductCarousel.vue'
 import ServiceCarousel from '../components/Carousel/ServiceCarousel.vue'
 export default {
   components: { ProductCarousel, ServiceCarousel },
-	title: 'Ingeray - Home',
 	data: function(){
 		return {
 			
@@ -112,7 +111,7 @@ export default {
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-position: center center;
-		background-image: url('../assets/images/Banners/banner-principal.svg');
+		background-image: url('../assets/images/banners/banner-principal.svg');
 	}
 
 /* Productos */

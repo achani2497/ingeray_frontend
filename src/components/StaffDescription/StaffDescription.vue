@@ -56,7 +56,14 @@ export default {
 .whatsapp-icon{
     background-image: url('~@/assets/images/contacto/whatsapp.svg');
 }
+.staff-description{
+    width: 50%;
+}
+
 @media screen and (max-width: 900px){
+    .staff-description{
+        width: 100%;
+    }
     .personal-details{
         width: 100%;
     }

@@ -16,7 +16,7 @@ export default {
     }
     .title, .sub-title{
         text-align: left;
-        line-height: 33px;
+        line-height: 40px;
     }
 @media screen and (max-width: 414px) {
     .title-container{

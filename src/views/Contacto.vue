@@ -2,26 +2,25 @@
     <div class="contact-container flex flex-col gap-4">
         <!-- Banner & Buttons Container -->
         <div class="padding-container">
-            <div class="inge-shadow-down flex flex-col">
-                <div class="staff-banner" :style="`background-image: ${bannerContacto}`"></div>
-                <div class="staff flex flex-col">
-                    <div class="staff-areas">
-                        <p class="inge-text-bold">¿Cómo podemos ayudarlo?</p>
-                        <titles subtitle="Contáctenos" :fontSize="25"></titles>
-                        <p class="mb-10">Seleccione entre las siguiente opciones, cuál es su área de interés, para poder brindarle informacion precisa y una mejor atención.</p>
-                        <div class="staff-buttons">
-                            <button class="area-button flex flex-col" :class="[area.visible ? 'is-active':'']" v-for="(area, index) in areas" :key="index" @click="setTeam(area)">
-                                <titles 
-                                    :title="area.first_line_name" 
-                                    :subtitle="area.second_line_name"
-                                    :fontSize="25"
-                                    :active="area.visible"
-                                ></titles>
-                            </button>
-                        </div>
+            <banner-box :bannerName="bannerContacto">
+                <template v-slot:title>
+                    <p class="inge-text-bold">¿Cómo podemos ayudarlo?</p>
+                    <titles subtitle="Contáctenos" :fontSize="25"></titles>
+                    <p class="mb-10">Seleccione entre las siguiente opciones, cuál es su área de interés, para poder brindarle informacion precisa y una mejor atención.</p>
+                </template>
+                <template v-slot:stuff>
+                    <div class="staff-buttons">
+                        <button class="area-button flex flex-col" :class="[area.visible ? 'is-active':'']" v-for="(area, index) in areas" :key="index" @click="setTeam(area)">
+                            <titles 
+                                :title="area.first_line_name" 
+                                :subtitle="area.second_line_name"
+                                :fontSize="25"
+                                :active="area.visible"
+                            ></titles>
+                        </button>
                     </div>
-                </div>
-            </div>
+                </template>
+            </banner-box>
         </div>
 
         <!-- Staff description -->
@@ -63,11 +62,12 @@
 </template>
 <script>
 import StaffDescription from '../components/StaffDescription/StaffDescription.vue'
+import BannerWithBotVue from '../components/BannerWithBot.vue';
 
 export default {
-    title: 'Contacto',
     components:{
-        'staff-description': StaffDescription
+        'staff-description': StaffDescription,
+        'banner-box': BannerWithBotVue
     },
     data(){
         return{
@@ -123,36 +123,17 @@ export default {
     background-color: transparent;
     align-items: center;
 }
-/* Banner & Buttons */
-    .staff-banner{
-        background-image: var(--image-url);
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 0;
-        padding-top: calc((864/2872)*100%);
-    }
-    .staff{
-        padding: 2rem 4rem 4rem;
-        background-color: white;
-    }
-    .staff-details{
-        width: 100%;
-        padding: 1rem 4rem;
-    }
-    .staff-data{
-        display: flex;
-        gap: 1rem;
-    }
-    .staff-description{
-        width: 50%;
-    }
+/* Buttons */
     .staff-buttons{
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: repeat(2, minmax(0, 1fr));
         column-gap: 4rem;
         row-gap: 1.5rem;
+    }
+    .staff-data{
+        display: flex;
+        gap: 1rem;
     }
     .area-button{
         border: 1px solid rgb(199, 199, 199);
@@ -200,23 +181,14 @@ export default {
         padding: 0 4rem;
     }
 @media screen and (max-width: 900px){
-    .staff{
-        padding: 2rem 3rem;
+    .staff-buttons{
+        column-gap: 1.5rem;
     }
     .staff-data{
         flex-direction: column;
     }    
-    .staff-details{
-        padding: 1rem 3rem;
-    }
-    .staff-buttons{
-        column-gap: 1.5rem;
-    }
     .area-button{
         padding: 1rem;
-    }
-    .staff-description{
-        width: 100%;
     }
     .chat-bot{
         width: 100%;
@@ -234,9 +206,6 @@ export default {
 @media screen and (max-width: 650px) {
     .contact-container{
         width: 100%;
-    }
-    .staff{
-        padding: 1rem;
     }
     .staff-details{
         padding: 1rem 0;
