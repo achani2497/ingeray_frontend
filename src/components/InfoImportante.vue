@@ -59,7 +59,7 @@
 .icon{
     width: 60px;
     height: 60px;
-    z-index: 10;
+    z-index: 9;
 } 
 .nav-icon{
     background-image: url('../assets/images/icons/NavIcons/inge_map.svg');
