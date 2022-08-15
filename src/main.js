@@ -4,7 +4,6 @@ import router from './router'
 import store from './store'
 import '@/assets/css/main.css'
 import titleMixin from './assets/js/titleMixin'
-import VueGeolocation from 'vue-browser-geolocation';
 import{ init } from 'emailjs-com';
 import VueSplide from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
@@ -19,21 +18,6 @@ Vue.config.productionTip = true
 
 //* EmailJs Stuff init
 init("user_eeVYemHTnHjSJqpAxC8wh")
-//* End
-
-//* Google Maps Stuff init
-Vue.use(VueGeolocation);
-import * as VueGoogleMaps from 'vue2-google-maps';
-import './assets/tailwind.css'
-Vue.use(VueGoogleMaps, {
-  load:{
-    key:'AIzaSyBDBIfFH7yfpNwPyzARzx0K-4D7bg-ZMK0',
-    libraries: 'places'
-  },
-  installComponents: false
-})
-Vue.component('g-map', VueGoogleMaps.Map);
-Vue.component('g-marker', VueGoogleMaps.Marker);
 //* End
 
 Vue.mixin(titleMixin)

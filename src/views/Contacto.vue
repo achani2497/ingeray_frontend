@@ -62,7 +62,7 @@
 </template>
 <script>
 import StaffDescription from '../components/StaffDescription/StaffDescription.vue'
-import BannerWithBotVue from '../components/BannerWithBot.vue';
+import BannerWithBotVue from '../components/Common/BannerWithBot.vue';
 
 export default {
     components:{
@@ -76,7 +76,8 @@ export default {
             teamDetailsVisible: false,
             activeTeamId: 0,
             areaName: '',
-            bannerContacto: `url(${this.$imageCDN}/banner_contacto.jpg)`
+            // bannerContacto: `url(${this.$imageCDN}/banner_contacto.jpg)`
+            bannerContacto: `${this.$imageCDN}/banner_contacto.jpg`
         }
     },
     methods:{

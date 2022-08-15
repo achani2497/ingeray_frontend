@@ -1,12 +1,7 @@
 import Vue                from 'vue'
 import VueRouter          from 'vue-router'
 import Home               from '../views/Home.vue'
-import Servicios          from '../views/Servicios.vue'
-import Productos          from '../views/Productos.vue'
-import ProductoCategoria  from '../views/ProductoCategoria.vue'
-import Contacto           from '../views/Contacto.vue'
-import QuienesSomos       from '../views/QuienesSomos.vue'
-import Clientes           from '../views/Cliente.vue'
+import ServicesRoutes     from '../router/servicios.js'
 
 Vue.use(VueRouter)
 
@@ -19,32 +14,38 @@ const routes = [
   {
     path: '/servicios',
     name: 'Servicios',
-    component: Servicios
+    component: () => import('../views/Servicios.vue'),
+    children: ServicesRoutes
   },
   {
     path: '/productos',
     name: 'Productos',
-    component: Productos
+    component: () => import('../views/Productos.vue')
   },
   {
     path: '/productos/:categoria',
     name: 'ProductoCategoria',
-    component: ProductoCategoria
+    component: () => import('../views/ProductoCategoria.vue')
   },
   {
     path: '/clientes',
     name: 'Clientes',
-    component: Clientes
+    component: () => import('../views/Clientes.vue')
   },
   {
     path: '/contacto',
     name: 'Contacto',
-    component: Contacto
+    component: () => import('../views/Contacto.vue')
   },
   {
     path: '/quienes-somos',
     name: 'QuienesSomos',
-    component: QuienesSomos
+    component: () => import('../views/QuienesSomos.vue')
+  },
+  {
+    path: '*',
+    name: '404',
+    component: () => import('../views/404.vue')
   }
 ]
 
