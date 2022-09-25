@@ -13,26 +13,10 @@
           v-for="(subcategoria, index1) in categoria.subcategorias"
           :key="index1"
         >
-          <div class="tab-label pl-4">{{ subcategoria.nombreProducto }}</div>
-          <div class="tab-content p-4">
-            <div class="imagen-subcategoria h-full w-full">
-              <div
-                class="
-                  ver-productos
-                  w-full
-                  h-full
-                  flex
-                  justify-center
-                  items-center
-                "
-              >
-                <!-- TODO: PREGUNTAR A DONDE TIENE QUE REDIRECCIONAR ESTE BOTON -->
-                <button class="contact-inge-button" type="button">
-                  Ver Equipos
-                </button>
-              </div>
-            </div>
-          </div>
+          <mask-redirect-button-vue
+            :tabName="subcategoria.nombreProducto"
+            buttonText="Ver Equipos"
+          ></mask-redirect-button-vue>
         </div>
       </div>
     </div>
@@ -42,9 +26,11 @@
 import categoriasProductos from "../assets/js/categoriasProductos.json";
 import CustomPath from "@/components/CustomPath.vue";
 import { slavonMixin } from "@/assets/js/slavonMixin.js";
+import MaskRedirectButtonVue from "../components/Common/MaskRedirectButton.vue";
+
 export default {
   mixins: [slavonMixin],
-  components: { CustomPath },
+  components: { CustomPath, MaskRedirectButtonVue },
   data: function () {
     return {
       lastScrollPosition: 0,
@@ -142,51 +128,6 @@ export default {
 .tab {
   display: flex;
   flex-direction: column;
-}
-.tab-label {
-  color: var(--gray);
-  height: 2rem;
-  border-bottom: 1px solid var(--gray);
-}
-.tab-content {
-  width: 100%;
-  height: 300px;
-}
-.imagen-subcategoria {
-  background-image: url("https://picsum.photos/300/300");
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0px 4px 8px 4px rgba(0, 0, 0, 0.4);
-  position: relative;
-  overflow: hidden;
-}
-.ver-productos {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(12, 127, 126, 0.3);
-  transform: translateX(-100%);
-  transition: all 0.3s ease-in-out;
-}
-.ver-productos:after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  filter: blur(3px);
-}
-.tab:hover .tab-label {
-  color: var(--bluish-green);
-  font-size: 17px;
-  font-family: "IngeTextBold", Arial, Helvetica, sans-serif;
-  border-bottom: 3px solid var(--bluish-green);
-}
-.tab:hover .ver-productos {
-  transform: translateX(0);
-}
-.contact-inge-button {
-  z-index: 3;
-  background-color: var(--bluish-green);
 }
 
 @media screen and (max-width: 900px) {

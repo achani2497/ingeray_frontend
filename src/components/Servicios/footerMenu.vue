@@ -1,5 +1,5 @@
 <template>
-  <div class="px-52 py-10" id="servicesFooter">
+  <div class="padding-container py-10 flex flex-col gap-4" id="servicesFooter">
     <titles
       title="Conozca más sobre nuestro"
       subtitle="Prestaciones y servicios"
@@ -13,15 +13,11 @@
         v-for="(servicio, index) in servicios"
         :key="index"
       >
-        <titles
-          :subtitle="servicio.nombreCorto"
-          :fontSize="15"
-          class="pl-4"
-        ></titles>
+        <span class="pl-4 footer-menu-title"> {{ servicio.nombreCorto }} </span>
         <img class="shadow-lg" :src="servicio.miniBanner" />
       </router-link>
       <router-link to="/contacto" class="servicio-container flex flex-col">
-        <titles subtitle="Contacto" :fontSize="15" class="pl-4"></titles>
+        <span class="pl-4 footer-menu-title"> Atención Personalizada </span>
         <img
           class="shadow-lg"
           src="@/assets/images/servicios/footer-menu/atencion.jpg"
@@ -51,7 +47,12 @@ export default {
 #servicesFooter {
   background-color: var(--light-gray);
 }
-.router-link-active {
+#servicesFooter .router-link-exact-active {
   display: none;
+}
+.footer-menu-title {
+  font-family: "IngeTextBold", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  color: #0076a5;
 }
 </style>

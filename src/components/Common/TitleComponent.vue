@@ -1,15 +1,40 @@
 <template>
   <div
     class="title-container flex flex-col"
-    :style="`font-size:${fontSize}px; color:${active ? 'white' : '#0076a5'}`"
+    :style="`font-size:${fontSize}px!important; color:${
+      active ? 'white' : '#0076a5'
+    }`"
   >
     <span class="title" v-if="title"> {{ title }} </span>
-    <span class="sub-title" v-if="subtitle"> {{ subtitle }} </span>
+    <span
+      class="sub-title"
+      :style="`line-height:${lineHeight}px`"
+      v-if="subtitle"
+    >
+      {{ subtitle }}
+    </span>
   </div>
 </template>
 <script>
 export default {
-  props: ["title", "subtitle", "fontSize", "active"],
+  props: {
+    title: {
+      type: String,
+    },
+    subtitle: {
+      type: String,
+    },
+    fontSize: {
+      type: Number,
+    },
+    active: {
+      type: Boolean,
+    },
+    lineHeight: {
+      type: Number,
+      default: 30,
+    },
+  },
 };
 </script>
 <style scoped>
@@ -19,7 +44,16 @@ export default {
 .title,
 .sub-title {
   text-align: left;
-  line-height: 30px;
+}
+@media screen and (max-width: 1440px) {
+  .title-container {
+    font-size: 30px !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  .title-container {
+    font-size: 25px !important;
+  }
 }
 @media screen and (max-width: 414px) {
   .title-container {

@@ -17,7 +17,7 @@
           subtitle="Integración Tecnológica"
           :fontSize="25"
         ></titles>
-        <p class="text-justify mt-4" style="columns: 250px 2">
+        <p class="text-justify mt-4 text-xl" style="columns: 250px 2">
           Instalamos también en forma local o remota software dedicado y
           sistemas de redes y servidores PACS (sistema de almacenamiento y
           transmisión de imágenes) para que todas la imágenes en formato DICOM
@@ -39,11 +39,15 @@
           fontSize="25"
           class="mt-10"
         ></titles>
-        <titles
-          title="Diseños adaptables a las necesidades específicas de cada Cliente"
-          style="margin-top: -0.5rem"
-        ></titles>
-        <div class="h-80 w-full border-2 border-solid border-black"></div>
+        <span class="-mt-1" id="little-subtitle"
+          >Diseños adaptables a las necesidades específicas de cada
+          Cliente</span
+        >
+        <img
+          src="@/assets/images/servicios/digitalizacion/esquema.jpg"
+          alt="diagrama de instalacion de ejemplo"
+          class="mt-1"
+        />
       </div>
     </template>
   </service-template>
@@ -67,8 +71,22 @@ export default {
   beforeMount() {
     this.servicio = this.getServiceInfo(this.slug);
   },
+  methods: {
+    convertToLink() {
+      return `<router-link to='/productos'>Flat Panel</router-link>`;
+    },
+  },
 };
 </script>
 
 <style>
+#little-subtitle {
+  font-size: 18px;
+  color: #0076a5;
+}
+@media screen and (max-width: 900px) {
+  #little-subtitle {
+    font-size: 15px;
+  }
+}
 </style>

@@ -1,11 +1,11 @@
 <template>
-  <div class="flex flex-col gap-12 pb-20">
+  <div class="flex flex-col gap-12 pb-16">
     <banner-box :bannerName="serviceBanner">
       <template v-slot:title>
         <slot name="serviceTitle"></slot>
       </template>
       <template v-slot:stuff>
-        <p class="text-justify">{{ description }}</p>
+        <p class="text-justify text-xl" v-html="description"></p>
       </template>
     </banner-box>
     <div class="px-16">

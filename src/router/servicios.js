@@ -1,11 +1,26 @@
+import Alquileres from './alquileres'
+
 export default [
+    {
+        path: 'equipamiento',
+        name: 'Equipamiento',
+        component: () => import('../components/Servicios/equipamiento.vue'),
+        props: {
+            slug: "equipamiento"
+        }
+    },
     {
         path: 'alquileres',
         name: 'Alquiler de equipamiento',
-        component: () => import('../components/Servicios/alquileres.vue'),
+        component: () => import('../components/Servicios/alquiler/alquileres.vue'),
         props: {
             slug: "alquileres"
-        }
+        },
+    },
+    {
+        path: 'alquileres/:product',
+        name: 'Alquiler dedicado',
+        component: () => import('../components/Servicios/alquiler/alquilerEspecifico.vue')
     },
     {
         path: 'puesta-en-valor',

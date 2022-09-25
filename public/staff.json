@@ -1,91 +1,108 @@
 {
-    "areas":[
+    "areas": [
         {
-            "first_line_name":"Equipo de",
-            "second_line_name":"Asesores Comerciales",
+            "first_line_name": "Equipo de",
+            "second_line_name": "Asesores Comerciales",
             "id": 1,
             "visible": false,
-            "personal":[
+            "personal": [
                 {
-                    "nombre":"Dalina López",
-                    "imagen":"dalina_lopez.jpg",
-                    "rol":"Asesora de Abonos de Mantenimiento",
-                    "mail":["ingerayventas@gmail.com"],
-                    "whatsapp":"(+54 9) 11 3851-0695"        
+                    "nombre": "Dalina López",
+                    "imagen": "default.jpg",
+                    "rol": "Asesora de Abonos de Mantenimiento",
+                    "mail": [
+                        "ingerayventas@gmail.com"
+                    ],
+                    "whatsapp": "(+54 9) 11 3851-0695"
                 },
                 {
-                    "nombre":"Gabriel Fandini",
-                    "imagen":"gabriel_fandini.jpg",
-                    "rol":"Asesor de Equipamiento para Medicina Humana & Medicina Veterinaria",
-                    "mail":["ventas@ingeray.com.ar"],
-                    "whatsapp":"(+54 9) 11 5976-7596"        
+                    "nombre": "Gabriel Fandini",
+                    "imagen": "gabriel_fandini.jpg",
+                    "rol": "Asesor de Equipamiento para Medicina Humana & Medicina Veterinaria",
+                    "mail": [
+                        "ventas@ingeray.com.ar"
+                    ],
+                    "whatsapp": "(+54 9) 11 5976-7596"
                 }
             ]
         },
         {
-            "first_line_name":"Encargados de",
-            "second_line_name":"Servicio Tecnico",
+            "first_line_name": "Encargados de",
+            "second_line_name": "Servicio Tecnico",
             "id": 2,
             "visible": false,
-            "personal":[
+            "personal": [
                 {
-                    "nombre":"Matias Penhos",
-                    "imagen":"matias_penhos.jpg",
-                    "rol":"Jefe de Servicio Técnico",
-                    "mail":["mpenhos@ingeray.com.ar"],
-                    "whatsapp":"(+54 9) 11 4192-6162"        
+                    "nombre": "Matias Penhos",
+                    "imagen": "matias_penhos.jpg",
+                    "rol": "Jefe de Servicio Técnico",
+                    "mail": [
+                        "mpenhos@ingeray.com.ar"
+                    ],
+                    "whatsapp": "(+54 9) 11 4192-6162"
                 },
                 {
-                    "nombre":"Pablo Micas",
-                    "imagen":"pablo_micas.jpg",
-                    "rol":"Jefe de Soporte Técnico en Planta",
-                    "mail":["serviciotecnico@ingeray.com.ar"],
-                    "whatsapp":"(+54 9) 11 4192-6164"        
-                } 
+                    "nombre": "Pablo Micas",
+                    "imagen": "pablo_micas.jpg",
+                    "rol": "Jefe de Soporte Técnico en Planta",
+                    "mail": [
+                        "serviciotecnico@ingeray.com.ar"
+                    ],
+                    "whatsapp": "(+54 9) 11 4192-6164"
+                }
             ]
         },
         {
-            "first_line_name":"",
-            "second_line_name":"Gerencia Operativa",
+            "first_line_name": "",
+            "second_line_name": "Gerencia Operativa",
             "id": 3,
             "visible": false,
-            "personal":[
+            "personal": [
                 {
-                    "nombre":"Ing. Daniel Penhos",
-                    "imagen":"daniel_penhos.jpg",
-                    "rol":"Relaciones Institucionales & Comercio Exterior",
-                    "mail":["danielpenhos@ingeray.com.ar", "ingeraysrl@gmail.com"],
-                    "whatsapp":"(+54 9) 11 4192-6163"        
+                    "nombre": "Ing. Daniel Penhos",
+                    "imagen": "default.jpg",
+                    "rol": "Relaciones Institucionales & Comercio Exterior",
+                    "mail": [
+                        "danielpenhos@ingeray.com.ar",
+                        "ingeraysrl@gmail.com"
+                    ],
+                    "whatsapp": "(+54 9) 11 4192-6163"
                 },
                 {
-                    "nombre":"Matias Penhos",
-                    "imagen":"matias_penhos.jpg",
-                    "rol":"Relevamiento Tecnológico & Soluciones a Medida",
-                    "mail":["mpenhos@ingeray.com.ar"],
-                    "whatsapp":"(+54 9) 11 4192-6162"        
-                } 
+                    "nombre": "Matias Penhos",
+                    "imagen": "matias_penhos.jpg",
+                    "rol": "Relevamiento Tecnológico & Soluciones a Medida",
+                    "mail": [
+                        "mpenhos@ingeray.com.ar"
+                    ],
+                    "whatsapp": "(+54 9) 11 4192-6162"
+                }
             ]
         },
         {
-            "first_line_name":"Equipo de",
-            "second_line_name":"Administracion & Contable",
+            "first_line_name": "Equipo de",
+            "second_line_name": "Administracion & Contable",
             "id": 4,
             "visible": false,
-            "personal":[
+            "personal": [
                 {
-                    "nombre":"Dalina López",
-                    "imagen":"dalina_lopez.jpg",
-                    "rol":"Administración - Atención Comercial",
-                    "mail":["administracion@ingeray.com.ar"],
-                    "whatsapp":"(+54 9) 11 3113-4301"        
+                    "nombre": "Dalina López",
+                    "imagen": "default.jpg",
+                    "rol": "Administración - Atención Comercial",
+                    "mail": [
+                        "administracion@ingeray.com.ar"
+                    ],
+                    "whatsapp": "(+54 9) 11 3113-4301"
                 },
                 {
-                    "nombre":"Nadia Medina",
-                    "imagen":"nadia_medina.jpg",
-                    "rol":"Administración - Contable",
-                    "mail":["administracion@ingeray.com.ar"],
-                    "whatsapp":"(+54 9) 11 5504-4427"        
-                } 
+                    "nombre": "Nadia Medina",
+                    "imagen": "nadia_medina.jpg",
+                    "rol": "Administración - Contable",
+                    "mail": [
+                        "administracion@ingeray.com.ar"
+                    ],
+                    "whatsapp": "(+54 9) 11 5504-4427"
+                }
             ]
         }
     ]

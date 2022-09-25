@@ -42,7 +42,6 @@
               <!-- Columna izquierda, donde se muestran las categorias -->
               <div
                 class="
-                  categorias
                   card
                   h-auto
                   w-5/12
@@ -51,12 +50,13 @@
                   inge-text
                   text-white
                 "
+                :class="{ categorias: equiposParaMostrar.length > 0 }"
               >
                 <ul>
                   <li
                     v-for="(subcategoria, index) in categoria.subcategorias"
                     :class="{ active: subcategoria.isActive }"
-                    class="py-1 px-2"
+                    class="py-1 px-2 hover:cursor-pointer"
                     :key="index"
                     @click="
                       mostrarEquipos(
@@ -131,7 +131,7 @@
 .container {
   width: 700px;
   transform: translateY(-150%);
-  height: 60vh;
+  height: auto;
   background: var(--lilac);
   transition: all 0.7s ease-in-out;
 }
@@ -199,10 +199,10 @@ input {
 .equipos {
   color: var(--dark-gray);
 }
-.categorias ul li:hover {
+ul li:hover {
   cursor: pointer;
 }
-.equipos ul li a span:hover {
+.equipos ul li a:hover span {
   font-family: "IngeTextBold", Arial, Helvetica, sans-serif;
   cursor: pointer;
 }

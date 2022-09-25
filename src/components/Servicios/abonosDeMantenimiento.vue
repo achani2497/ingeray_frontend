@@ -13,14 +13,18 @@
     <template v-slot:serviceInfo>
       <div class="flex flex-col gap-6">
         <div class="flex gap-4">
-          <div class="h-60 w-2/5 bg-red-400"></div>
-          <div class="flex flex-col w-3/5 gap-4">
+          <img
+            src="@/assets/images/servicios/mantenimiento/personal.jpg"
+            alt="foto de personal de la empresa"
+            width="295px"
+          />
+          <div class="flex flex-col gap-4">
             <titles
               title="Características del"
               subtitle="Mantenimiento Preventivo"
               :fontSize="25"
             ></titles>
-            <p class="text-justify">
+            <p class="text-justify text-xl">
               Consiste en visitas programadas para llevar a cabo las tareas
               periódicas listadas en los manuales y recomendaciones del
               fabricante de cada unidad o el requerimiento de los responsables
@@ -32,12 +36,16 @@
           </div>
         </div>
         <div class="flex flex-col">
-          <titles subtitle="Mantenimiento Correctivo" fontSize="25"></titles>
+          <titles
+            subtitle="Mantenimiento Correctivo"
+            :fontSize="25"
+            :lineHeight="20"
+          ></titles>
           <titles
             title="con Préstamo de Partes y Equipos"
-            fontSize="25"
+            :fontSize="25"
           ></titles>
-          <p class="text-justify mt-4">
+          <p class="text-justify mt-4 text-xl">
             Incluye servicio ilimitado de pedidos de Servicio Técnico (ST). En
             los casos en que el equipamiento bajo Abono presente fallas en su
             funcionamiento, el pedido del cliente se procesa en el mismo día,

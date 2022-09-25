@@ -17,7 +17,7 @@
           subtitle="Destacables de este servicio"
           :fontSize="25"
         ></titles>
-        <p class="text-justify text-lg" style="columns: 250px 2">
+        <p class="text-justify text-xl" style="columns: 250px 2">
           Ofrecemos la adaptación tecnológica de componentes valiosos existentes
           en las instalaciones a Restaurar e incorporamos las nuevas tecnologías
           para obtener las mejores posibilidades de prestación tanto en lo que
@@ -33,11 +33,6 @@
           Bases para Equipos Rodantes, Sistemas de Video Digital para Arcos en C
           y Seriógrafos, Digitalización de Mamógrafos analógicos
         </p>
-        <div class="h-40 w-full flex gap-4">
-          <div class="w-1/3 bg-red-600"></div>
-          <div class="w-1/3 bg-red-600"></div>
-          <div class="w-1/3 bg-red-600"></div>
-        </div>
       </div>
     </template>
   </service-template>
