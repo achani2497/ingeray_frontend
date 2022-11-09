@@ -4,6 +4,7 @@
     <div class="carousel h-fit w-full mt-4 flex inge-shadow-down">
       <arrowless-carousel
         :product_name="this.productInfo.rental_equipment_dev"
+        product_type="services"
       ></arrowless-carousel>
       <div class="py-8 pr-12 flex flex-col gap-8">
         <titles

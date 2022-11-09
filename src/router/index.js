@@ -1,7 +1,7 @@
-import Vue                from 'vue'
-import VueRouter          from 'vue-router'
-import Home               from '../views/Home.vue'
-import ServicesRoutes     from '../router/servicios.js'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from '../views/Home.vue'
+import ServicesRoutes from '../router/servicios.js'
 
 Vue.use(VueRouter)
 
@@ -26,6 +26,11 @@ const routes = [
     path: '/productos/:categoria',
     name: 'ProductoCategoria',
     component: () => import('../views/ProductoCategoria.vue')
+  },
+  {
+    path: '/productos/veterinaria/:categoria',
+    name: 'ProductoVeterinaria',
+    component: () => import('../views/ProductoVeterinaria.vue')
   },
   {
     path: '/clientes',
@@ -53,7 +58,7 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,
-  scrollBehavior(to, from, savedPosition){
+  scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else {

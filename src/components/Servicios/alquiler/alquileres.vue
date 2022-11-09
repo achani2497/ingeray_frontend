@@ -29,13 +29,13 @@
               <mask-redirect-button
                 :buttonText="redirectButtonText"
                 :tabBackgroundImage="imagen_equipo_de_sala"
-                :imageWith="imageWidth"
+                :imageWidth="imageWidth"
                 url="alquileres/equipos-de-sala"
               ></mask-redirect-button>
               <mask-redirect-button
                 :buttonText="redirectButtonText"
                 :tabBackgroundImage="imagen_equipo_movil"
-                :imageWith="imageWidth"
+                :imageWidth="imageWidth"
                 url="alquileres/equipos-moviles"
               >
               </mask-redirect-button>
@@ -47,12 +47,13 @@
               <mask-redirect-button
                 :buttonText="redirectButtonText"
                 :tabBackgroundImage="imagen_arco_c"
-                :imageWith="imageWidth"
+                :imageWidth="imageWidth"
                 url="alquileres/arcos-c"
               ></mask-redirect-button>
             </div>
           </div>
         </div>
+        <eco-seal class="mt-6"></eco-seal>
       </div>
     </template>
   </service-template>
@@ -62,6 +63,7 @@
 import { serviceMixin } from "../../../assets/js/serviceMixin";
 import ServiceTemplate from "../serviceTemplate.vue";
 import MaskRedirectButtonVue from "../../Common/MaskRedirectButton.vue";
+import seccionEcoVue from "../seccionEco.vue";
 
 export default {
   props: ["slug"],
@@ -70,6 +72,7 @@ export default {
     "service-template": ServiceTemplate,
     "mask-redirect-button": MaskRedirectButtonVue,
     imageWidth: "250px",
+    "eco-seal": seccionEcoVue,
   },
   data() {
     return {

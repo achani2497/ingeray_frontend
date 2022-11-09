@@ -5,7 +5,7 @@
         <img
           ref="equipment_image"
           v-for="(image, index) in carouselImages"
-          :src="require(`@/assets/images/servicios/alquiler/carousel/${image}`)"
+          :src="require(`@/assets/images/${imagesPath}/${image}`)"
           :alt="image"
           :key="index"
         />
@@ -78,11 +78,12 @@ button {
 </style>
 <script>
 import { serviceMixin } from "../../assets/js/serviceMixin";
+import { productMixin } from "../../assets/js/productMixin";
 
 export default {
   name: "arrowles-carousel",
-  props: ["product_name"],
-  mixins: [serviceMixin],
+  props: ["product_name", "product_type"],
+  mixins: [serviceMixin, productMixin],
   data() {
     return {
       cards: [8, 1, 2, 3, 4, 5, 6, 7],
@@ -91,18 +92,22 @@ export default {
       stepNumber: "",
       transitioning: false,
       carouselImages: [],
+      imagesPath: "",
     };
   },
   mounted() {
     this.setStep();
     this.resetTranslate();
   },
+  watch: {
+    product_name: {
+      handler(newValue) {
+        this.setCarouselImages();
+      },
+    },
+  },
   methods: {
     setStep() {
-      // const innerWidth = this.$refs.inner.scrollWidth;
-      // console.log(this.$refs.inner.parentNode.scrollWidth);
-      // const totalImages = this.carouselImages.length;
-      // this.stepSize = `${innerWidth / totalImages}px`;
       this.stepSize = `${this.$refs.inner.parentNode.scrollWidth}px`;
       this.stepNumber = 1;
     },
@@ -159,9 +164,18 @@ export default {
         transform: `translateX(-${this.stepSize})`,
       };
     },
+    setCarouselImages() {
+      if (this.product_type.toString() === "services") {
+        this.imagesPath = "servicios/alquiler/carousel";
+        this.carouselImages = this.getRentCarouselImages(this.product_name);
+      } else {
+        this.imagesPath = "productos/veterinaria/carousel";
+        this.carouselImages = this.getVetCarouselImages(this.product_name);
+      }
+    },
   },
   created() {
-    this.carouselImages = this.getRentCarouselImages(this.product_name);
+    this.setCarouselImages();
   },
 };
 </script>

@@ -33,6 +33,30 @@
           Bases para Equipos Rodantes, Sistemas de Video Digital para Arcos en C
           y Seriógrafos, Digitalización de Mamógrafos analógicos
         </p>
+        <div class="flex gap-4 justify-around">
+          <picture-zoom-button
+            sectionName="/servicios/puesta-en-valor/"
+            imageName="puesta-en-valor-1"
+            imageExtension=".jpg"
+            imageWith="315px"
+          >
+          </picture-zoom-button>
+          <picture-zoom-button
+            sectionName="/servicios/puesta-en-valor/"
+            imageName="puesta-en-valor-2"
+            imageExtension=".jpg"
+            imageWith="315px"
+          >
+          </picture-zoom-button>
+          <picture-zoom-button
+            sectionName="/servicios/puesta-en-valor/"
+            imageName="puesta-en-valor-3"
+            imageExtension=".jpg"
+            imageWith="315px"
+          >
+          </picture-zoom-button>
+        </div>
+        <eco-seal></eco-seal>
       </div>
     </template>
   </service-template>
@@ -40,13 +64,17 @@
 
 <script>
 import { serviceMixin } from "../../assets/js/serviceMixin";
+import PictureZoomVue from "../Common/PictureZoom.vue";
 import ServiceTemplate from "./serviceTemplate.vue";
+import seccionEcoVue from "./seccionEco.vue";
 
 export default {
   props: ["slug"],
   mixins: [serviceMixin],
   components: {
     "service-template": ServiceTemplate,
+    "picture-zoom-button": PictureZoomVue,
+    "eco-seal": seccionEcoVue,
   },
   data() {
     return {

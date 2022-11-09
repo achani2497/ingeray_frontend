@@ -1,5 +1,3 @@
-import Alquileres from './alquileres'
-
 export default [
     {
         path: 'equipamiento',
@@ -11,7 +9,7 @@ export default [
     },
     {
         path: 'alquileres',
-        name: 'Alquiler de equipamiento',
+        name: 'Alquiler',
         component: () => import('../components/Servicios/alquiler/alquileres.vue'),
         props: {
             slug: "alquileres"

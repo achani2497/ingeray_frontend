@@ -96,7 +96,12 @@
                     v-for="(equipo, index) in equiposParaMostrar"
                     :key="index"
                   >
-                    <router-link :to="'/productos/' + equipo.urlName">
+                    <router-link
+                      :to="
+                        tipoCategoriaPath(categoria.tipoCategoria) +
+                        equipo.urlName
+                      "
+                    >
                       <span @click="$emit('closeSubMenu')">{{
                         equipo.nombre
                       }}</span>
@@ -264,6 +269,20 @@ export default {
       categoria.subcategorias.forEach((subCat) => (subCat.isActive = false));
       subcategoria.isActive = true;
     },
+    tipoCategoriaPath(nombreCategoria) {
+      return nombreCategoria === "humanos"
+        ? "/productos/"
+        : "/productos/veterinaria/";
+    },
+    // TODO: Fix this method
+    // tieneTodosLosProductosNativo(subcategorias) {
+    //   const todosLosProductos = subcategorias.find((producto) => {
+    //     producto.nombreProducto === "Ver todos los Productos";
+    //     console.log(producto.nombreProducto);
+    //   });
+    //   console.log(todosLosProductos);
+    //   return false;
+    // },
   },
   mounted() {
     // Esto lo hago porque sino la primera vez que abro el submenu me aparecen las 2 categorias como activas y todas las subcategorias con la clase 'active' activada

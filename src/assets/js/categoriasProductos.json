@@ -1,11 +1,12 @@
 {
-    "categorias":[
+    "categorias": [
         {
-            "nombreCategoria":"Diagnóstico por Imágenes",
+            "nombreCategoria": "Diagnóstico por Imágenes",
+            "tipoCategoria": "humanos",
             "show": "false",
             "subcategorias": [
                 {
-                    "nombreProducto":"Radiología Convencional",
+                    "nombreProducto": "Radiología Convencional",
                     "isActive": "false",
                     "equipos": [
                         {
@@ -23,60 +24,113 @@
                     ]
                 },
                 {
-                    "nombreProducto":"Radiólogia Dígital",
+                    "nombreProducto": "Radiólogia Dígital",
                     "isActive": "false",
                     "equipos": [
                         {
-                            "nombre":"Paneles de Adquisicion Digital Directa de Imágenes",
-                            "urlName":"paneles"
+                            "nombre": "Paneles de Adquisicion Digital Directa de Imágenes",
+                            "urlName": "paneles"
                         }
                     ]
                 },
                 {
-                    "nombreProducto":"Radiología Intervensionista",
+                    "nombreProducto": "Radiología Intervensionista",
                     "isActive": "false",
                     "equipos": [
                         {
-                            "nombre":"Arcos en C",
-                            "urlName":"arcos-c"
+                            "nombre": "Arcos en C",
+                            "urlName": "arcos-c"
                         }
                     ]
                 },
                 {
-                    "nombreProducto":"Sistemas de Digitalización",
+                    "nombreProducto": "Sistemas de Digitalización",
                     "isActive": "false",
                     "equipos": []
                 },
                 {
-                    "nombreProducto":"Mamografía",
+                    "nombreProducto": "Mamografía",
                     "isActive": "false",
-                    "equipos":[]
+                    "equipos": []
                 }
             ]
         },
         {
-            "nombreCategoria":"División Veterinaria",
+            "nombreCategoria": "División Veterinaria",
+            "tipoCategoria": "veterinaria",
             "show": "false",
-            "subcategorias":[
+            "subcategorias": [
                 {
-                    "nombreProducto":"Alquiler de Equipamiento",
+                    "nombreProducto": "Ultrasonografía",
                     "isActive": "false",
-                    "equipos":[
+                    "equipos": [
                         {
-                            "nombre":"Equipos de Sala",
-                            "urlName":"equipos-de-sala"
+                            "nombre": "INGE V6",
+                            "urlName": "inge-v6"
                         },
                         {
-                            "nombre":"Equipos Moviles",
-                            "urlName":"equipos-moviles"
+                            "nombre": "MSU3",
+                            "urlName": "msu3"
                         },
                         {
-                            "nombre":"Arcos en C",
-                            "urlName":"arcos-c"
+                            "nombre": "INGE V9 HD",
+                            "urlName": "inge-v9"
                         },
                         {
-                            "nombre":"Mamógrafos",
-                            "urlName":"mamografos"
+                            "nombre": "DCU30",
+                            "urlName": "dcu30"
+                        },
+                        {
+                            "nombre": "Smart Scan",
+                            "urlName": "smart-scan"
+                        },
+                        {
+                            "nombre": "PALM X6 Plus",
+                            "urlName": "palm-x6-plus"
+                        },
+                        {
+                            "nombre": "RKU10",
+                            "urlName": "rku10"
+                        },
+                        {
+                            "nombre": "KX5600",
+                            "urlName": "kx5600"
+                        },
+                        {
+                            "nombre": "KX5200",
+                            "urlName": "kx5200"
+                        }
+                    ]
+                },
+                {
+                    "nombreProducto": "Accesorios",
+                    "isActive": "false",
+                    "equipos": [
+                        {
+                            "nombre": "Brazos Extensores",
+                            "urlName": "brazo-extensor"
+                        },
+                        {
+                            "nombre": "",
+                            "urlName": ""
+                        },
+                        {
+                            "nombre": "Gafas de Video para Ultrasonido",
+                            "urlName": "gafas"
+                        }
+                    ]
+                },
+                {
+                    "nombreProducto": "Ver todos los Productos",
+                    "isActive": "false",
+                    "equipos": [
+                        {
+                            "nombre": "Ecógrafos",
+                            "urlName": "ecografos"
+                        },
+                        {
+                            "nombre": "Accesorios",
+                            "urlName": "accesorios"
                         }
                     ]
                 }

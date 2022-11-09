@@ -43,7 +43,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #servicesFooter {
   background-color: var(--light-gray);
 }
