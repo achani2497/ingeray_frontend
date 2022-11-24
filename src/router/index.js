@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ServicesRoutes from '../router/servicios.js'
-import ProductsRoutes from '../router/productos'
+import ProductsRoutes from '../router/productos.js'
 
 Vue.use(VueRouter)
 
@@ -22,12 +22,12 @@ const routes = [
     path: '/productos',
     name: 'Productos',
     component: () => import('../views/Productos.vue'),
-    // children: ProductsRoutes,
   },
   {
     path: '/productos/:categoria',
     name: 'ProductoCategoria',
-    component: () => import('../views/ProductoCategoria.vue')
+    component: () => import('../views/ProductoCategoria.vue'),
+    children: ProductsRoutes,
   },
   {
     path: '/productos/veterinaria/:categoria',

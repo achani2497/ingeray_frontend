@@ -1,6 +1,9 @@
 <template>
     <product-template>
         <template v-slot:productTitle>
+            <div class="producto-imagen">
+              <image-carousel :elementos="equipos.productos"></image-carousel>
+            </div>
             <div class="titulos">
                 <titles
                     :title="producto.nombreCategoria"
@@ -32,6 +35,7 @@
                 </div>
               </button>
             </div>
+
           </template>
         <template v-slot:productInfo>
           <!-- Caracteristicas -->
@@ -63,6 +67,7 @@ import GaleriaProductos from '../GaleriaProductos.vue';
 import ProductTemplate from '../productTemplate.vue';
 import BannerContacto from '../BannerContacto.vue';
 import ContactForm from '../../Forms/ContactForm';
+import ImageCarousel from '../../Carousel/ImagesCarousel';
 
 import EventBus from '../../../assets/js/eventBus';
 
@@ -77,6 +82,7 @@ export default {
         'galeria-productos': GaleriaProductos,
         'banner-contacto': BannerContacto,
         'contact-form': ContactForm,
+        'image-carousel': ImageCarousel,
     },
     data() {
         return {
