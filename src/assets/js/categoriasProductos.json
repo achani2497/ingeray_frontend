@@ -51,7 +51,16 @@
                 {
                     "nombreProducto": "Mamografía",
                     "isActive": "false",
-                    "equipos": []
+                    "equipos": [
+                        {
+                            "nombre": "Mamógrafos",
+                            "urlName": "mamografos"
+                        },
+                        {
+                            "nombre": "Captores Digitales",
+                            "urlName": "captores-digitales"
+                        }
+                    ]
                 }
             ]
         },

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ServicesRoutes from '../router/servicios.js'
+import ProductsRoutes from '../router/productos'
 
 Vue.use(VueRouter)
 
@@ -20,7 +21,8 @@ const routes = [
   {
     path: '/productos',
     name: 'Productos',
-    component: () => import('../views/Productos.vue')
+    component: () => import('../views/Productos.vue'),
+    // children: ProductsRoutes,
   },
   {
     path: '/productos/:categoria',
