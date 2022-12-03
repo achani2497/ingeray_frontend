@@ -88,7 +88,7 @@
 </style>
 <script>
 import { serviceMixin } from "../../../assets/js/serviceMixin";
-import ArrowlessCarouselVue from "../../ArrowlessCarousel.vue/ArrowlessCarousel.vue";
+import ArrowlessCarouselVue from "../../Carousels/ArrowlessCarousel/ArrowlessCarousel.vue";
 import PictureZoomVue from "../../Common/PictureZoom.vue";
 
 export default {

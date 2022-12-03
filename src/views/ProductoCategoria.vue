@@ -148,7 +148,7 @@
 <script>
 import Productos from "../assets/js/productos.json";
 import ContactForm from "@/components/Forms/ContactForm.vue";
-import ImageCarousel from "@/components/Carousel/ImagesCarousel.vue";
+import ImageCarousel from "@/components/Carousels/Carousel/ImagesCarousel.vue";
 import Galeria from "@/components/Productos/GaleriaProductos.vue";
 import Especificaciones from "@/components/Productos/Especificaciones.vue";
 import Documentos from "@/components/Productos/Documentos.vue";

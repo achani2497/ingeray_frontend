@@ -38,10 +38,10 @@ export default {
   },
   methods: {
     loaded() {
-      let load = false;
-      console.log(load);
-      load = true;
-      console.log(load);
+      // let load = false;
+      // console.log(load);
+      // load = true;
+      // console.log(load);
     },
   },
 };

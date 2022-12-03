@@ -1,39 +1,23 @@
 <template>
-  <div class="carousel-container flex flex-col gap-4">
-    <div class="carousel relative">
-      <div class="inner flex items-center" ref="inner" :style="innerStyles">
-        <img
-          ref="equipment_image"
-          v-for="(image, index) in carouselImages"
-          :src="require(`@/assets/images/${imagesPath}/${image}`)"
-          :alt="image"
-          :key="index"
-        />
-      </div>
-      <div class="control-buttons">
-        <button
-          class="h-6 w-6 arrow left rounded-full"
-          @click="prev()"
-        ></button>
-        <button class="h-6 w-6 arrow rounded-full" @click="next()"></button>
-      </div>
-    </div>
-    <div class="flex gap-4 justify-center mb-4">
-      <div
-        class="circle rounded-full h-5 w-5 bg-gray-400"
-        :class="[index === stepNumber - 1 ? 'green-dot' : 'gray-dot']"
-        v-for="(card, index) in carouselImages"
+  <div class="carousel relative">
+    <button class="h-6 w-6 arrow left rounded-full" @click="prev()"></button>
+    <div class="inner flex items-center" ref="inner" :style="innerStyles">
+      <router-link
+        :to="image.url"
+        v-for="(image, index) in elements"
         :key="index"
-      ></div>
+        class="w-screen"
+        ref="equipment_image"
+      >
+        <img :src="getImageUrl(image.imageName)" :alt="image" />
+      </router-link>
     </div>
+    <button class="h-6 w-6 arrow rounded-full" @click="next()"></button>
   </div>
 </template>
 <style scoped>
-.carousel-container {
-  width: fit-content;
-}
 .carousel {
-  width: 500px;
+  width: 100%;
   overflow: hidden;
 }
 .inner {
@@ -41,31 +25,18 @@
   width: fit-content;
   z-index: 2;
 }
-.control-buttons {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-  top: 50%;
-  width: 100%;
-  z-index: 10;
-}
 
 button {
   margin-right: 5px;
   margin-top: 10px;
-}
-.gray-dot {
-  background-color: #cacaca;
-}
-.green-dot {
-  background-color: #669193;
+  position: absolute;
+  top: 50%;
+  right: 10%;
 }
 .inner {
   transition: transform 0.2s;
 }
 .arrow {
-  /* background-image: url("~@/assets/images/icons/arrow.svg"); */
   background-image: url("~@/assets/images/icons/arrow.svg");
   background-position: center;
   background-size: cover;
@@ -74,19 +45,14 @@ button {
 }
 .left {
   transform: rotate(-180deg) scale(3);
+  left: 10%;
 }
 </style>
 <script>
-import { serviceMixin } from "../../assets/js/serviceMixin";
-import { productMixin } from "../../assets/js/productMixin";
-
 export default {
-  name: "arrowles-carousel",
-  props: ["product_name", "product_type"],
-  mixins: [serviceMixin, productMixin],
+  props: ["elements"],
   data() {
     return {
-      cards: [8, 1, 2, 3, 4, 5, 6, 7],
       innerStyles: {},
       stepSize: "",
       stepNumber: "",
@@ -97,18 +63,14 @@ export default {
   },
   mounted() {
     this.setStep();
-    this.resetTranslate();
-  },
-  watch: {
-    product_name: {
-      handler(newValue) {
-        this.setCarouselImages();
-      },
-    },
+    // this.resetTranslate();
   },
   methods: {
+    getImageUrl(imageName) {
+      return `${this.$imageCDN}/${imageName}`;
+    },
     setStep() {
-      this.stepSize = `${this.$refs.inner.parentNode.scrollWidth}px`;
+      this.stepSize = `100vw`;
       this.stepNumber = 1;
     },
     next() {
@@ -142,13 +104,13 @@ export default {
     moveLeft() {
       this.innerStyles = {
         transform: `translateX(-${this.stepSize})
-                        translateX(-${this.stepSize})`,
+                          translateX(-${this.stepSize})`,
       };
     },
     moveRight() {
       this.innerStyles = {
         transform: `translateX(${this.stepSize})
-                      translateX(-${this.stepSize})`,
+                        translateX(-${this.stepSize})`,
       };
     },
     afterTransition(callback) {
@@ -164,18 +126,9 @@ export default {
         transform: `translateX(-${this.stepSize})`,
       };
     },
-    setCarouselImages() {
-      if (this.product_type.toString() === "services") {
-        this.imagesPath = "servicios/alquiler/carousel";
-        this.carouselImages = this.getRentCarouselImages(this.product_name);
-      } else {
-        this.imagesPath = "productos/veterinaria/carousel";
-        this.carouselImages = this.getVetCarouselImages(this.product_name);
-      }
-    },
   },
   created() {
-    this.setCarouselImages();
+    this.carouselImages = this.elements;
   },
 };
 </script>

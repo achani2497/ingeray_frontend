@@ -110,9 +110,6 @@ export default {
       showModal: false,
     };
   },
-  created() {
-    console.log(this.bannerName);
-  },
   methods: {
     loaded() {
       // TODO: VER QUE HAGO CON ESTO

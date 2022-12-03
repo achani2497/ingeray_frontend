@@ -2,7 +2,12 @@
   <div class="mask-redirect-button-container">
     <div class="tab-label pl-4" v-if="tabName">{{ tabName }}</div>
     <div class="tab-content">
-      <img :src="tabBackgroundImage" :width="imageWidth" />
+      <img
+        v-if="alternateImageName === null"
+        :src="tabBackgroundImage"
+        :width="imageWidth"
+      />
+      <img v-else :src="require(`@/assets/images/${alternateImageName}`)" />
       <div class="mask w-full h-full flex justify-center items-center">
         <router-link :to="url" class="contact-inge-button" type="button">
           {{ buttonText }}
@@ -21,6 +26,10 @@ export default {
       type: String,
       default: "https://picsum.photos/300/300",
     },
+    alternateImageName: {
+      type: String,
+      default: null,
+    },
     buttonText: {
       type: String,
     },
@@ -35,6 +44,11 @@ export default {
   name: "mask-redirect-button",
   data: function () {
     return {};
+  },
+  methods: {
+    getImage(imagePath) {
+      return require(`@/assets/images/${imagePath}`);
+    },
   },
 };
 </script>
