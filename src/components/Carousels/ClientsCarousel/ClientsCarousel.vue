@@ -42,7 +42,7 @@ export default {
       innerStyles: {},
       stepSize: "",
       transitioning: false,
-      carouselImages: [],
+      carouselImages: this.elements,
       imagesPath: "",
     };
   },
@@ -87,9 +87,6 @@ export default {
         transition: "none",
       };
     },
-  },
-  created() {
-    this.carouselImages = this.elements;
   },
 };
 </script>

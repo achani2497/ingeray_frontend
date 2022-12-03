@@ -25,5 +25,10 @@ export default {
       image: require(`@/assets/images/home/${this.imagePath}`),
     };
   },
+  watch: {
+    imagePath: function (newVal, oldVal) {
+      this.image = require(`@/assets/images/home/${newVal}`);
+    },
+  },
 };
 </script>

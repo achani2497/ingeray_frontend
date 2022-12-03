@@ -1,7 +1,7 @@
 <template>
   <div class="mask-redirect-button-container">
     <div class="tab-label pl-4" v-if="tabName">{{ tabName }}</div>
-    <div class="tab-content">
+    <div class="tab-content inge-shadow-down">
       <img
         v-if="alternateImageName === null"
         :src="tabBackgroundImage"

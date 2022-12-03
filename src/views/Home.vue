@@ -32,6 +32,7 @@
         subtitle="Los más buscados"
         :isExtended="false"
         :elements="productos"
+        :showCheckout="false"
       ></polimorfic-carousel>
     </div>
     <banner-carousel :elements="banner1"></banner-carousel>
@@ -49,16 +50,27 @@
         subtitle="Prestaciones y Servicios"
         :isExtended="true"
         :elements="servicios"
+        :showCheckout="false"
       ></polimorfic-carousel>
     </div>
     <banner-carousel :elements="banner2"></banner-carousel>
     <clients :elements="clients" />
-    <div class="padding-container flex flex-col gap-16 bkg-light-gray py-10">
+    <div
+      class="
+        padding-container
+        flex flex-col
+        gap-16
+        bkg-light-gray
+        py-10
+        relative
+      "
+    >
       <polimorfic-carousel
         title="Nuestra linea para"
         subtitle="Diagnostico Veterinario"
         :isExtended="false"
         :elements="veterinaria"
+        :showCheckout="true"
       ></polimorfic-carousel>
     </div>
   </div>

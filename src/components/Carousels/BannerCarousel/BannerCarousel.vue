@@ -32,6 +32,7 @@ button {
   position: absolute;
   top: 50%;
   right: 10%;
+  z-index: 4;
 }
 .inner {
   transition: transform 0.2s;
@@ -55,15 +56,16 @@ export default {
     return {
       innerStyles: {},
       stepSize: "",
-      stepNumber: "",
       transitioning: false,
-      carouselImages: [],
+      carouselImages: this.elements,
       imagesPath: "",
     };
   },
   mounted() {
     this.setStep();
-    // this.resetTranslate();
+    setInterval(() => {
+      this.next();
+    }, 3000);
   },
   methods: {
     getImageUrl(imageName) {
@@ -71,7 +73,6 @@ export default {
     },
     setStep() {
       this.stepSize = `100vw`;
-      this.stepNumber = 1;
     },
     next() {
       if (this.transitioning) return;
@@ -82,23 +83,17 @@ export default {
         this.carouselImages.push(card);
         this.resetTranslate();
         this.transitioning = false;
-        this.stepNumber === this.carouselImages.length
-          ? (this.stepNumber = 1)
-          : this.stepNumber++;
       });
     },
     prev() {
       if (this.transitioning) return;
       this.transitioning = true;
-      this.moveRight(1);
+      this.moveRight();
       this.afterTransition(() => {
         const card = this.carouselImages.pop();
         this.carouselImages.unshift(card);
         this.resetTranslate();
         this.transitioning = false;
-        this.stepNumber === 1
-          ? (this.stepNumber = this.carouselImages.length)
-          : this.stepNumber--;
       });
     },
     moveLeft() {
@@ -126,9 +121,6 @@ export default {
         transform: `translateX(-${this.stepSize})`,
       };
     },
-  },
-  created() {
-    this.carouselImages = this.elements;
   },
 };
 </script>

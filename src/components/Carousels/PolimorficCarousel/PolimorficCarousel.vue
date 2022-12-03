@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8">
+  <div class="flex flex-col gap-8 relative">
     <titles :title="title" :subtitle="subtitle" class="px-16"></titles>
     <div class="carousel-container flex items-center">
       <!-- Control button Left -->
@@ -10,7 +10,7 @@
       <!-- Carousel -->
       <div class="carousel px-14">
         <div class="overflow-hidden flex">
-          <div class="inner flex gap-4" ref="inner" :style="innerStyles">
+          <div class="inner flex gap-4 pb-4" ref="inner" :style="innerStyles">
             <div
               class="card-container"
               v-for="(image, index) in elements"
@@ -18,7 +18,7 @@
             >
               <mask-redirect-button
                 buttonText="Ver producto"
-                imageWidth="300"
+                imageWidth="290"
                 :url="image.url"
                 :alternateImageName="`home/${image.imagePath}`"
                 v-if="!isExtended"
@@ -38,11 +38,24 @@
       <!-- Control button right -->
       <button class="h-6 w-6 arrow rounded-full" @click="next()"></button>
     </div>
+    <a
+      href="https://ingeraysrl.mercadoshops.com.ar/"
+      class="absolute right-12 -bottom-6 rounded-full"
+      v-if="showCheckout"
+    >
+      <img
+        class="inge-shadow-down rounded-full"
+        :src="require('@/assets/images/icons/checkout.png')"
+        alt="carrito-de-compras"
+        width="70"
+      />
+    </a>
   </div>
 </template>
 <style scoped >
 .card-container {
-  width: 275px;
+  width: 270px;
+  padding-left: 5px;
   display: flex;
 }
 .carousel-container {
@@ -71,13 +84,16 @@ button {
 .left {
   transform: rotate(-180deg) scale(3);
 }
+.checkout {
+  box-shadow: ;
+}
 </style>
 <script>
 import MaskRedirectButtonVue from "../../Common/MaskRedirectButton.vue";
 import ExtendedCard from "../../Home/ExtendedCard.vue";
 
 export default {
-  props: ["isExtended", "title", "subtitle", "elements"],
+  props: ["isExtended", "title", "subtitle", "elements", "showCheckout"],
   components: {
     "mask-redirect-button": MaskRedirectButtonVue,
     "extended-card": ExtendedCard,
@@ -86,9 +102,8 @@ export default {
     return {
       innerStyles: {},
       stepSize: "",
-      stepNumber: "",
       transitioning: false,
-      carouselElements: [],
+      carouselElements: this.elements,
     };
   },
   mounted() {
@@ -98,7 +113,6 @@ export default {
   methods: {
     setStep() {
       this.stepSize = `${275 + 16}px`;
-      this.stepNumber = 1;
     },
     next() {
       if (this.transitioning) return;
@@ -109,9 +123,6 @@ export default {
         this.carouselElements.push(card);
         this.resetTranslate();
         this.transitioning = false;
-        this.stepNumber === this.carouselElements.length
-          ? (this.stepNumber = 1)
-          : this.stepNumber++;
       });
     },
     prev() {
@@ -123,9 +134,6 @@ export default {
         this.carouselElements.unshift(card);
         this.resetTranslate();
         this.transitioning = false;
-        this.stepNumber === 1
-          ? (this.stepNumber = this.carouselElements.length)
-          : this.stepNumber--;
       });
     },
     moveLeft() {
@@ -156,9 +164,6 @@ export default {
     getImage(imagePath) {
       return require(`@/assets/images/home/${imagePath}.jpg`);
     },
-  },
-  created() {
-    this.carouselElements = this.elements;
   },
 };
 </script>
