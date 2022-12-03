@@ -43,12 +43,12 @@
       </button>
     </div>
     <div class="info-adicional bkg-light-gray px-12 py-4">
-      <!-- Galeria de Imagenes -->
-      <Galeria :producto="equipos.nombreCompleto" />
       <!-- Caracteristicas -->
       <Caracteristicas />
       <!-- Especificaciones -->
       <Especificaciones />
+      <!-- Galeria de Imagenes -->
+      <Galeria :producto="equipos.nombreCompleto" />
       <!-- Documentos -->
       <Documentos />
     </div>
