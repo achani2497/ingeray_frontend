@@ -5,19 +5,20 @@
         </div>
         <div class="links flex flex-wrap justify-between items-end gap-4">
             <div class="brochures flex flex-col gap-4">
-                <div class="flex items-center gap-3">
+                <div v-for="datos in brochures" class="flex items-center gap-3">
                     <div class="icono-brochure"></div>
-                    <a href="#">Equipo de Rx Rodantes de 60 a 500 mA</a>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="icono-brochure"></div>
-                    <a href="#">Equipo de Rx Rodantes de 60 a 500 mA</a>
+                    <a :href="datos.link">{{datos.nombreLink}}</a>
                 </div>
             </div>
             <router-link to="/productos" class="contact-outline">Ver todos los productos</router-link>
         </div>
     </div>
 </template>
+<script>
+export default {
+    props: ['brochures']
+}
+</script>
 <style scoped>
 .icono-brochure{
     height: 40px;

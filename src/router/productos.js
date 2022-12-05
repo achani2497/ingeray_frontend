@@ -16,19 +16,19 @@ export default [
         }
     },
     {
-        path: 'equipos-alta-frecuencia',
-        name: 'Equipos con fuente de Alta Frecuencia',
-        component: () => import('../components/Productos/subcategorias/altaFrecuencia.vue'),
+        path: 'equipos-sala',
+        name: 'Equipos de Sala',
+        component: () => import('../components/Productos/subcategorias/equiposSala.vue'),
         props: {
-            slug: 'equipos-alta-frecuencia'
+            slug: 'equipos-sala'
         }
     },
     {
-        path: 'equipos-frecuencia-industrial',
-        name: 'Equipos con fuente de Frecuencia Industrial',
-        component: () => import('../components/Productos/subcategorias/frecuenciaIndustrial.vue'),
+        path: 'equipos-sala-digital',
+        name: 'Equipos de Sala',
+        component: () => import('../components/Productos/subcategorias/equiposSalaDigital.vue'),
         props: {
-            slug: 'equipos-frecuencia-industrial'
+            slug: 'equipos-sala-digital'
         }
     },
     {
@@ -40,11 +40,11 @@ export default [
         }
     },
     {
-        path: 'paneles',
-        name: 'Paneles de Adquisición Digital Directa de Imágenes',
-        component: () => import('../components/Productos/subcategorias/paneles.vue'),
+        path: 'equipos-moviles-digitales',
+        name: 'Equipos Móviles',
+        component: () => import('../components/Productos/subcategorias/equiposMovilesDigitales.vue'),
         props: {
-            slug: 'paneles'
+            slug: 'equipos-moviles-digitales'
         }
     },
     {
@@ -53,6 +53,46 @@ export default [
         component: () => import('../components/Productos/subcategorias/arcoc.vue'),
         props: {
             slug: 'arcos-c'
+        }
+    },
+    {
+        path: 'arcos-c-digitales',
+        name: 'Arcos en C',
+        component: () => import('../components/Productos/subcategorias/arcocDigital.vue'),
+        props: {
+            slug: 'arcos-c-digitales'
+        }
+    },
+    {
+        path: 'arcos-c-intervencionista',
+        name: 'Arcos en C',
+        component: () => import('../components/Productos/subcategorias/arcocIntervencionista.vue'),
+        props: {
+            slug: 'arcos-c-intervencionista'
+        }
+    },
+    {
+        path: 'panel',
+        name: 'Flat Panel',
+        component: () => import('../components/Productos/subcategorias/paneles.vue'),
+        props: {
+            slug: 'panel'
+        }
+    },
+    {
+        path: 'pacs',
+        name: 'PACS',
+        component: () => import('../components/Productos/subcategorias/pacs.vue'),
+        props: {
+            slug: 'pacs'
+        }
+    },
+    {
+        path: 'video-digital',
+        name: 'Video Digital',
+        component: () => import('../components/Productos/subcategorias/videoDigital.vue'),
+        props: {
+            slug: 'video-digital'
         }
     },
     // {

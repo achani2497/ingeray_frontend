@@ -1,8 +1,8 @@
 <template>
     <product-template>
-        <template v-slot:productTitle>
+        <template v-slot:title>
             <div class="producto-imagen">
-              <image-carousel :elementos="equipos.productos"></image-carousel>
+              <image-carousel :elementos="producto.productos"></image-carousel>
             </div>
             <div class="titulos">
                 <titles
@@ -39,20 +39,27 @@
           </template>
         <template v-slot:productInfo>
           <!-- Caracteristicas -->
-          <caracteristicas />
+          <caracteristicas :datos = "producto.caracteristicas"/>
           <!-- Especificaciones -->
-          <especificaciones />
-          <!-- Galeria de Imagenes -->
-          <galeria-productos :producto="producto.nombreCompleto" />
+          <especificaciones :datos = "producto.especificaciones"/>
+          <!-- Algunas diferencias -->
+          <div class="diferencias flex flex-col py-4 w-full h-auto">
+            <div class="titulos">
+              <titles title="Algunas diferencias" :subtitle="producto.diferencias.titulo" :fontSize="25"></titles>
+            </div>
+            <div class="texto-caracteristica simple-text py-4">
+              {{(producto.diferencias.content)}}
+            </div>
+          </div>
           <!-- Documentos -->
-          <documentos />
+          <documentos :brochures="producto.brochures"/>
         </template>
         <!-- Formulario de contacto -->
         <modal :header="false" v-if="showModal">
           <template #content>
             <contact-form
               @closeModal="showModal = false"
-              :producto="equipos.nombreCompleto"
+              :producto="producto.nombreCompleto"
             ></contact-form>
           </template>
         </modal>
@@ -91,7 +98,9 @@ export default {
         };
     },
     beforeMount() {
-        this.producto = this.getEquipmentInfo(this.slug);
+        this.producto = this.getProductEquipment(this.slug);
+        console.log(this.producto)
+        console.log(this.slug)
     },
     mounted() {
       EventBus.$on("open-form", () => {
