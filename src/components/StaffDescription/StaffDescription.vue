@@ -1,17 +1,19 @@
 <template>
-  <ul class="staff-description flex flex-col gap-4">
+  <ul class="staff-description flex flex-col gap-4 mb-4">
     <li
       v-for="(persona, index) in equipo"
       :key="index"
       class="personal-card flex gap-4"
     >
-      <ik-image
-        v-if="persona.imagen"
-        class="ik-image"
-        :path="`/${persona.imagen}`"
-        :alt="`foto de ${persona.nombre}`"
-      ></ik-image>
-      <div v-else class="w-full h-full bg-gray-300"></div>
+      <img
+        :src="
+          require(`@/assets/images/contacto/fotosPersonal/${persona.imagen}`)
+        "
+        :alt="`Foto de ${persona.nombre}`"
+        width="110px"
+        height="300px"
+        class="inge-shadow-down"
+      />
       <div class="personal-details flex flex-col gap-2 w-1/2">
         <div class="person">
           <titles :subtitle="persona.nombre" class="staff-name-title"></titles>
@@ -28,9 +30,9 @@
           </div>
           <div class="contact-data-icon">
             <div class="data-icon whatsapp-icon"></div>
-            <a class="blue" :href="persona.whatsapp">
+            <button class="blue" @click="sendWhatsapp(persona.whatsapp)">
               {{ persona.whatsapp }}
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -38,21 +40,15 @@
   </ul>
 </template>
 <script>
+import { contactMixin } from "../../assets/js/contactMixin";
 export default {
   props: ["equipo"],
+  mixins: [contactMixin],
 };
 </script>
 <style scoped>
-.ik-image {
-  max-width: 130px;
-  max-height: 150px;
-  width: 25%;
-}
 .personal-details {
   width: 75%;
-}
-.nombre {
-  font-size: 20px;
 }
 .contact-data-icon {
   display: flex;

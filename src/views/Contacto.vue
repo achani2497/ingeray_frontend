@@ -60,16 +60,38 @@
     </transition>
 
     <!-- Banner Contacto -->
-    <!-- <div class="banner-contacto flex items-center gap-2 mb-4">
+    <button
+      class="banner-contacto flex items-center gap-2 mb-4"
+      type="button"
+      @click="showContactMenu = true"
+    >
       <div class="envelope"></div>
       <div class="text">
         <titles
           title="Tengo una consulta"
           subtitle="Quiero que me contacten"
           class="banner-contacto-title"
+          :fontSize="16"
+          :lineHeight="10"
         ></titles>
       </div>
-    </div> -->
+    </button>
+    <!-- Form de Contacto -->
+    <Modal
+      :header="false"
+      v-if="showContactMenu"
+      @close="showContactMenu = false"
+      large="sm"
+    >
+      <!-- Titulo del modal -->
+      <template #title> Datos de contacto </template>
+      <!-- Body y Footer del modal -->
+      <template #content>
+        <simple-contact-form
+          @close="showContactMenu = false"
+        ></simple-contact-form>
+      </template>
+    </Modal>
 
     <!-- Mapa container -->
     <div class="mapa-container flex flex-col gap-6">
@@ -87,11 +109,15 @@
 <script>
 import StaffDescription from "../components/StaffDescription/StaffDescription.vue";
 import BannerWithBotVue from "../components/Common/BannerWithBot.vue";
+import SimpleContactForm from "../components/Forms/SimpleContactForm.vue";
+import Modal from "../components/Modal/Modal.vue";
 
 export default {
   components: {
     "staff-description": StaffDescription,
     "banner-box": BannerWithBotVue,
+    Modal,
+    "simple-contact-form": SimpleContactForm,
   },
   data() {
     return {
@@ -100,6 +126,7 @@ export default {
       teamDetailsVisible: false,
       activeTeamId: 0,
       areaName: "",
+      showContactMenu: false,
       bannerContacto: `${this.$imageCDN}/banner_contacto.jpg`,
     };
   },

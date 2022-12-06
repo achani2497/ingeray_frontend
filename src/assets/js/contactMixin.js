@@ -6,7 +6,8 @@ export const contactMixin = {
     mail_user_id: "user_eeVYemHTnHjSJqpAxC8wh",
     methods: {
         sendWhatsapp(destinationNumber) {
-            const to = `54911${destinationNumber}`
+            const basicNumber = this.cleanNumber(destinationNumber)
+            const to = `54911${basicNumber}`
             window.open("https://wa.me/" + to);
         },
         sendEMail() {
@@ -28,6 +29,14 @@ export const contactMixin = {
                     console.log(err);
                     alert(err);
                 });
+        },
+        cleanNumber(number) {
+            let newNumber = number.replace(/[^\d.]/g, '')
+            if (newNumber.startsWith("54911")) {
+                newNumber = newNumber.replace("54911", "")
+            }
+            return newNumber
+
         }
     }
 }

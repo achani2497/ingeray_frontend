@@ -35,7 +35,7 @@ button {
   z-index: 4;
 }
 .inner {
-  transition: transform 0.2s;
+  transition: transform 1s ease-in-out;
 }
 .arrow {
   background-image: url("~@/assets/images/icons/arrow.svg");
@@ -65,7 +65,7 @@ export default {
     this.setStep();
     setInterval(() => {
       this.next();
-    }, 3000);
+    }, 5000);
   },
   methods: {
     getImageUrl(imageName) {
