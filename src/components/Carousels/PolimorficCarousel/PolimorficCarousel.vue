@@ -84,9 +84,6 @@ button {
 .left {
   transform: rotate(-180deg) scale(3);
 }
-.checkout {
-  box-shadow: ;
-}
 </style>
 <script>
 import MaskRedirectButtonVue from "../../Common/MaskRedirectButton.vue";

@@ -5,7 +5,7 @@
       subtitle="Confían en nosotros"
       :fontSize="32"
     ></titles>
-    <ul class="flex flex-wrap justify-around">
+    <ul class="clients-gallery">
       <li
         v-for="(client, index) in clientes"
         :key="index"
@@ -14,85 +14,34 @@
         <img
           :src="require(`@/assets/images/logos-clientes/${client.imagen}`)"
           :alt="client.imagen"
-          @load="loaded()"
-          width="300px"
+          width="250px"
         />
       </li>
     </ul>
+    <button
+      class="contact-inge-button self-end px-8"
+      @click="$emit('openText')"
+    >
+      Ver más
+    </button>
   </div>
 </template>
-
+<style scoped>
+.clients-gallery {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+</style>
 <script>
 import clientes from "../../assets/js/clientes.json";
-import { VueClazyLoad } from "vue-clazy-load";
 
 export default {
-  components: {
-    "clazy-load": VueClazyLoad,
-  },
   data() {
     return {
       clientes: clientes.clientes,
       panel: 1,
     };
   },
-  methods: {
-    loaded() {
-      // let load = false;
-      // console.log(load);
-      // load = true;
-      // console.log(load);
-    },
-  },
 };
 </script>
-
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-/* preloader source: https://codepen.io/Alex-Miller/pen/qviHa */
-.preloader {
-  top: 50%;
-  left: 50%;
-  margin: -25px 0 0 -25px;
-  width: 50px;
-  height: 50px;
-  transition: all 100ms ease-in;
-}
-
-.preloader .circle,
-.preloader .circle .circle-inner {
-  width: inherit;
-  height: inherit;
-  border-radius: 50%;
-  background: linear-gradient(
-    rgba(64, 150, 238, 1) -50%,
-    rgba(64, 150, 238, 0) 60%
-  );
-}
-
-.preloader .circle {
-  animation: roll 6s linear infinite;
-}
-
-.preloader .circle .circle-inner {
-  padding: 5px;
-  animation: roll 2s linear infinite reverse;
-}
-
-.preloader .circle .circle-inner::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #fff;
-}
-</style>

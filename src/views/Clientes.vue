@@ -24,10 +24,10 @@
             </p>
           </template>
         </banner-box>
-        <clients></clients>
+        <clients @openText="showText = !showText"></clients>
       </div>
     </div>
-    <div class="bg-white py-10">
+    <div class="bg-white" v-if="showText">
       <our-values></our-values>
     </div>
   </div>
@@ -47,6 +47,7 @@ export default {
   data() {
     return {
       bannerCliente: `${this.$imageCDN}/banner_clientes.jpg`,
+      showText: false,
     };
   },
 };

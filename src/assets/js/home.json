@@ -44,22 +44,28 @@
     "banner1": [
         {
             "imageName": "carousel-banner1-1.jpg",
-            "url": "/productos/arco-c"
+            "url": "/"
         },
         {
             "imageName": "carousel-banner1-2.jpg",
-            "url": "/productos/arco-c"
+            "url": "/servicios/puesta-en-valor"
         },
         {
             "imageName": "carousel-banner1-3.jpg",
-            "url": "/servicios/mantenimiento"
+            "url": "/"
         },
         {
             "imageName": "carousel-banner1-4.jpg",
-            "url": "/servicios/puesta-en-valor"
+            "url": "/servicios/mantenimiento"
         }
     ],
     "servicios": [
+        {
+            "title": "Atención Personalizada",
+            "description": "Contratos de Alquiler de Equipamiento para Diagnóstico por Imágenes durante períodos prolongados o en modo temporario.",
+            "imagePath": "carousel-servicios/carousel-servicios-6.jpg",
+            "url": "/contacto"
+        },
         {
             "title": "Servicio Técnico",
             "description": "Visitas Técnica Programadas sobre pedido a cargo de personal  técnico e ingenier@s altamente capacitados y con larga experiencia.",
@@ -89,22 +95,16 @@
             "description": "Proveemos Flat Panel, Software, Redes y Servidores PACS para la centralización de todas la imágenes en formato DICOM.",
             "imagePath": "carousel-servicios/carousel-servicios-5.jpg",
             "url": "/servicios/digitalizacion"
-        },
-        {
-            "title": "Atención Personalizada",
-            "description": "Contratos de Alquiler de Equipamiento para Diagnóstico por Imágenes durante períodos prolongados o en modo temporario.",
-            "imagePath": "carousel-servicios/carousel-servicios-6.jpg",
-            "url": "/contacto"
         }
     ],
     "banner2": [
         {
             "imageName": "carousel-banner1-3.jpg",
-            "url": "/productos/arco-c"
+            "url": "/"
         },
         {
             "imageName": "carousel-banner1-4.jpg",
-            "url": "/productos/arco-c"
+            "url": "/"
         },
         {
             "imageName": "carousel-banner1-1.jpg",

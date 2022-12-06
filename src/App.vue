@@ -26,7 +26,7 @@
 }
 #app {
   background-size: cover;
-  height: auto;
+  height: fit-content;
   padding-top: 8rem;
   background-color: var(--light-lilac);
 }

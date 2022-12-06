@@ -4,16 +4,16 @@
       <!-- PRESENTACION -->
       <div class="inge-shadow-down presentation pt-4 bg-white">
         <!-- Banner Principal con imagen de la empresa -->
-        <div class="presentation-image"></div>
+        <img :src="`${this.$imageCDN}/banner-home.jpg`" alt="banner home" />
         <div class="presentation-text">
           <titles
             title="Somos proveedores de Tecnología Médica"
             subtitle="Comprometidos con la salud"
-            :fontSize="44"
-            :lineHeight="70"
+            :fontSize="31"
+            :lineHeight="40"
             class="leading-9"
           ></titles>
-          <p class="simple-text mt-10">
+          <p class="simple-text">
             Inge Ray SRL es una empresa argentina creada en 1992 y desde
             entonces nos comprometimos y dedicamos a brindar Soluciones
             Tecnológicas para la Salud que permitan a nuestros clientes ofrecer
@@ -25,6 +25,22 @@
             internacional.
           </p>
         </div>
+        <!-- Boton de Contacto -->
+        <button
+          @click="showContactMenu = true"
+          class="banner-contacto flex items-center gap-2 mb-10 -mt-2"
+        >
+          <div class="envelope"></div>
+          <div class="text">
+            <titles
+              title="Tengo una consulta"
+              subtitle="Quiero que me contacten"
+              class="banner-contacto-title"
+              :fontSize="16"
+              :lineHeight="10"
+            ></titles>
+          </div>
+        </button>
       </div>
       <!-- Carousel "Los mas Buscados" -->
       <polimorfic-carousel
@@ -73,6 +89,22 @@
         :showCheckout="true"
       ></polimorfic-carousel>
     </div>
+    <!-- Modal de form de Contacto -->
+    <Modal
+      :header="false"
+      v-if="showContactMenu"
+      @close="showContactMenu = false"
+      large="sm"
+    >
+      <!-- Titulo del modal -->
+      <template #title> Datos de contacto </template>
+      <!-- Body y Footer del modal -->
+      <template #content>
+        <simple-contact-form
+          @close="showContactMenu = false"
+        ></simple-contact-form>
+      </template>
+    </Modal>
   </div>
 </template>
 
@@ -81,12 +113,16 @@ import PolimorficCarousel from "../components/Carousels/PolimorficCarousel/Polim
 import BannerCarousel from "../components/Carousels/BannerCarousel/BannerCarousel.vue";
 import ClientsCarousel from "../components/Carousels/ClientsCarousel/ClientsCarousel.vue";
 import carousels from "../assets/js/home.json";
+import Modal from "../components/Modal/Modal.vue";
+import SimpleContactForm from "../components/Forms/SimpleContactForm.vue";
 
 export default {
   components: {
     "polimorfic-carousel": PolimorficCarousel,
     "banner-carousel": BannerCarousel,
     clients: ClientsCarousel,
+    Modal,
+    "simple-contact-form": SimpleContactForm,
   },
   data: function () {
     return {
@@ -96,6 +132,7 @@ export default {
       banner2: carousels.banner2,
       veterinaria: carousels.veterinaria,
       clients: carousels.clientes,
+      showContactMenu: false,
     };
   },
   mounted: function () {
@@ -132,29 +169,21 @@ export default {
   display: flex;
   flex-direction: column;
   text-align: justify;
+  gap: 2rem;
 }
-.presentation-image {
-  position: relative;
-  height: 400px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-image: url("../assets/images/banners/banner-principal.svg");
+.banner-contacto {
+  height: 50px;
+  background-color: #e6e6e6;
+  padding: 2rem 4rem;
+  width: 100%;
 }
-
 /* Media Queries */
 @media screen and (max-width: 1000px) {
-  .presentation-image {
-    height: 440px;
-  }
   .presentation-text {
     padding: 2.5rem 6rem;
   }
 }
 @media screen and (max-width: 900px) {
-  .presentation-image {
-    height: 270px;
-  }
   .presentation-text {
     padding: 1.5rem;
   }
@@ -163,13 +192,9 @@ export default {
   .presentation {
     padding-top: 0;
   }
-  .presentation-image {
-    height: 25vh;
-  }
   .presentation-text {
     padding: 1rem;
     text-align: justify;
-    /* text-align: center; */
   }
 }
 </style>
