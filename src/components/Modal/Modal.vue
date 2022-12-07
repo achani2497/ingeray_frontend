@@ -4,7 +4,7 @@
       <div class="modal-wrapper">
         <div
           :class="['modal-container', 'modal-container-' + large]"
-          v-clickOutside="asd"
+          v-clickOutside="close"
         >
           <!-- Header -->
           <div class="modal-header" v-if="header">
@@ -28,7 +28,7 @@ export default {
     return {};
   },
   methods: {
-    asd() {
+    close() {
       this.$emit("close");
     },
   },

@@ -44,28 +44,28 @@
               <img
                 src="@/assets/images/logos-clientes/ministerio-de-salud.png"
                 alt="logo del ministerio de salud de la nación"
-                width="300px"
+                width="250"
               />
             </li>
             <li>
               <img
                 src="@/assets/images/logos-clientes/gba.png"
                 alt="logo del gobierno de buenos aires"
-                width="300px"
+                width="250"
               />
             </li>
             <li>
               <img
                 src="@/assets/images/logos-clientes/gcba.png"
                 alt="logo de logo del gobierno de la ciudad de buenos aires"
-                width="300px"
+                width="250"
               />
             </li>
           </ul>
           <img
             src="@/assets/images/logos-clientes/anmat.png"
             alt="logo de anmat"
-            width="300px"
+            width="250"
             class="self-center"
           />
         </div>

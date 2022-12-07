@@ -134,7 +134,7 @@
 </style>
 <script>
 import { productMixin } from "../assets/js/productMixin";
-import ArrowlessCarouselVue from "../components/ArrowlessCarousel.vue/ArrowlessCarousel.vue";
+import ArrowlessCarouselVue from "../components/Carousels/ArrowlessCarousel/ArrowlessCarousel.vue";
 import PictureZoomVue from "../components/Common/PictureZoom.vue";
 
 export default {
