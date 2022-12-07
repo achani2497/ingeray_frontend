@@ -69,7 +69,6 @@ import BannerContacto from '../BannerContacto.vue';
 import ContactForm from '../../Forms/ContactForm';
 import ImageCarousel from '../../Carousel/ImagesCarousel';
 
-import EventBus from '../../../assets/js/eventBus';
 
 export default {
     props: ['slug'],
@@ -95,33 +94,12 @@ export default {
         console.log(this.producto)
         console.log(this.slug)
     },
-    mounted() {
-      EventBus.$on("open-form", () => {
-      this.showModal = true;
-      });
-    },
-    beforeDestroy() {
-      eventBus.$off("open-form");
-    },
 }
 </script>
 <style scoped>
-.row {
-  background: white;
-  padding-top: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-.producto {
-  width: 100vw;
-}
 .producto-imagen {
   height: 100%;
   width: 60%;
-}
-.producto-descripcion {
-  width: 40%;
-  height: 100%;
 }
 .simple-text {
   font-size: 22px;
@@ -132,58 +110,24 @@ export default {
 .banner-contacto {
   box-shadow: 0px 5px 4px 1px rgba(0, 0, 0, 0.25);
 }
-.info-adicional {
-  width: 100vw;
-}
-
 @media screen and (min-width: 1400px) {
   .producto-imagen {
     height: 100%;
     width: 45%;
   }
-  .producto-descripcion {
-    width: 55%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
 }
 @media screen and (max-width: 900px) {
-  .producto {
-    display: flex;
-    flex-direction: column-reverse;
-    height: auto;
-    gap: 0;
-    padding: 0;
-  }
   .producto-descripcion,
   .producto-imagen {
     width: 100%;
     height: auto;
   }
-  .producto-descripcion {
-    padding: 0 2rem;
-    gap: 0.5rem;
-  }
   .producto-imagen {
     width: 100%;
     padding: 0 0.2rem;
   }
-  .contact {
-    width: max(30%, 30vh);
-    align-self: center;
-  }
   .banner-contacto {
     padding: 1rem 3rem;
-  }
-  .info-adicional {
-    padding: 1rem 2rem 0;
-  }
-}
-@media screen and (max-width: 650px) {
-  .contact-outline {
-    align-self: center;
   }
 }
 </style>
