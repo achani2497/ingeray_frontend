@@ -1,119 +1,139 @@
 <template>
-  <div class="flex flex-wrap gap-20">
-    <!-- PRESENTACION -->
-    <div class="inge-shadow-down presentation pt-4 bg-white">
-      <!-- Banner Principal con imagen de la empresa -->
-      <div class="presentation-image"></div>
-      <div class="presentation-text">
-        <titles
-          title="Somos proveedores de Tecnología Médica"
-          subtitle="Comprometidos con la salud"
-          :fontSize="44"
-          :lineHeight="70"
-          class="leading-9"
-        ></titles>
-        <p class="simple-text mt-10">
-          Inge Ray SRL es una empresa argentina creada en 1992 y desde entonces
-          nos comprometimos y dedicamos a brindar Soluciones Tecnológicas para
-          la Salud que permitan a nuestros clientes ofrecer una medicina de
-          calidad. Nos especializamos en Equipamiento Médico para Diagnóstico
-          por Imágenes tanto para Medicina Humana como para Medicina
-          Veterinaria. Fabricamos, comercializamos y alquilamos una amplia gama
-          de equipos y periféricos de radiología convencional y digital, de
-          mamografía y de ultrasonografía de producción nacional e
-          internacional.
-        </p>
-      </div>
-    </div>
-
-    <!-- PRODUCTOS Y SERVICIOS -->
-    <div class="prods-services-container flex flex-col gap-20">
-      <!-- PRODUCTOS -->
-      <div class="prods-services">
-        <titles
-          title="Vea nuestra lista de"
-          subtitle="Productos"
-          :fontSize="35"
-          class="pl-24 lg:pl-56 mb-2"
-        ></titles>
-        <ProductCarousel></ProductCarousel>
-      </div>
-      <!-- SERVICIOS -->
-      <div class="prods-services">
-        <titles
-          title="Vea nuestra lista de"
-          subtitle="Servicios"
-          :fontSize="35"
-          class="pl-24 lg:pl-56 mb-2"
-        ></titles>
-        <ServiceCarousel></ServiceCarousel>
-      </div>
-    </div>
-
-    <!-- TEXTO AMISTOSO -->
-    <div class="friendly-text -mt-8 mb-8">
-      <div class="presentation-text">
-        <titles
-          title="Mejorando la Experiencia del Paciente"
-          :fontSize="36"
-        ></titles>
-        <p class="mt-10 simple-text">
-          Adecuar la imagen del equipamiento de diagnóstico y las áreas
-          pediátricas para que los pequeños se sientan a gusto cuando tengan que
-          acudir al médico, es algo que viene preocupando hace bastante tiempo.
-          Contamos con los mejores profesionales y diseñadores especializados
-          Proyectos de Ambientación. Ponete en contacto para la generación
-          ambientes amigables que contribuyan a reducir la ansiedad a través de
-          la decoración y el color para crear un ambiente acogedor que ayude a
-          reducir el estrés de los niños.
-        </p>
-      </div>
-    </div>
-
-    <!-- EQUIPOS DE RADIOLOGIA -->
-    <!-- <div class="presentation-text bkg-light-gray pt-8 pb-16 px-24 w-full">
-      <titles title="Radiologia Convencional" :fontSize="25"></titles>
-      <div
-        class="equipos flex flex-wrap justify-between items-center gap-8 mt-8"
-      >
-        <div class="equipo">
-          <titles subtitle="Arcos en C" :fontSize="25"></titles>
-          <div class="img-equipo"></div>
+  <div class="flex flex-col flex-wrap gap-20">
+    <div class="padding-container flex flex-col gap-16">
+      <!-- PRESENTACION -->
+      <div class="inge-shadow-down presentation pt-4 bg-white">
+        <!-- Banner Principal con imagen de la empresa -->
+        <img :src="`${this.$imageCDN}/banner-home.jpg`" alt="banner home" />
+        <div class="presentation-text">
+          <titles
+            title="Somos proveedores de Tecnología Médica"
+            subtitle="Comprometidos con la salud"
+            :fontSize="31"
+            :lineHeight="40"
+            class="leading-9"
+          ></titles>
+          <p class="simple-text">
+            Inge Ray SRL es una empresa argentina creada en 1992 y desde
+            entonces nos comprometimos y dedicamos a brindar Soluciones
+            Tecnológicas para la Salud que permitan a nuestros clientes ofrecer
+            una medicina de calidad. Nos especializamos en Equipamiento Médico
+            para Diagnóstico por Imágenes tanto para Medicina Humana como para
+            Medicina Veterinaria. Fabricamos, comercializamos y alquilamos una
+            amplia gama de equipos y periféricos de radiología convencional y
+            digital, de mamografía y de ultrasonografía de producción nacional e
+            internacional.
+          </p>
         </div>
-        <div class="equipo">
-          <titles subtitle="Equipos moviles" :fontSize="25"></titles>
-          <div class="img-equipo"></div>
-        </div>
-        <div class="equipo">
-          <titles subtitle="Equipos de Sala" :fontSize="25"></titles>
-          <div class="img-equipo"></div>
-        </div>
+        <!-- Boton de Contacto -->
+        <button
+          @click="showContactMenu = true"
+          class="banner-contacto flex items-center gap-2 mb-10 -mt-2"
+        >
+          <div class="envelope"></div>
+          <div class="text">
+            <titles
+              title="Tengo una consulta"
+              subtitle="Quiero que me contacten"
+              class="banner-contacto-title"
+              :fontSize="16"
+              :lineHeight="10"
+            ></titles>
+          </div>
+        </button>
       </div>
-      <div
-        class="
-          banner-prods-veterinaria
-          inge-shadow-down
-          w-full
-          flex
-          justify-center
-          items-center
-          mt-20
-          h-96
-        "
-      >
-        Banner de equipos de veterinaria
-      </div>
-    </div> -->
+      <!-- Carousel "Los mas Buscados" -->
+      <polimorfic-carousel
+        title="Galeria de Productos"
+        subtitle="Los más buscados"
+        :isExtended="false"
+        :elements="productos"
+        :showCheckout="false"
+      ></polimorfic-carousel>
+    </div>
+    <banner-carousel :elements="banner1"></banner-carousel>
+    <div class="padding-container flex flex-col gap-16">
+      <!-- Banner de "Contratos de Alquiler de Equipamiento Medico" -->
+      <router-link to="/servicios/alquileres">
+        <img
+          :src="`${this.$imageCDN}/home-banner-alquileres.jpg`"
+          alt="banner-alquileres"
+        />
+      </router-link>
+      <!-- Carousel "Prestaciones y Servicios" -->
+      <polimorfic-carousel
+        title="Conozca más"
+        subtitle="Prestaciones y Servicios"
+        :isExtended="true"
+        :elements="servicios"
+        :showCheckout="false"
+      ></polimorfic-carousel>
+    </div>
+    <banner-carousel :elements="banner2"></banner-carousel>
+    <clients :elements="clients" />
+    <div
+      class="
+        padding-container
+        flex flex-col
+        gap-16
+        bkg-light-gray
+        py-10
+        relative
+      "
+    >
+      <polimorfic-carousel
+        title="Nuestra linea para"
+        subtitle="Diagnostico Veterinario"
+        :isExtended="false"
+        :elements="veterinaria"
+        :showCheckout="true"
+      ></polimorfic-carousel>
+    </div>
+    <!-- Modal de form de Contacto -->
+    <Modal
+      :header="false"
+      v-if="showContactMenu"
+      @close="showContactMenu = false"
+      large="sm"
+    >
+      <!-- Titulo del modal -->
+      <template #title> Datos de contacto </template>
+      <!-- Body y Footer del modal -->
+      <template #content>
+        <simple-contact-form
+          @close="showContactMenu = false"
+        ></simple-contact-form>
+      </template>
+    </Modal>
   </div>
 </template>
 
 <script>
-import ProductCarousel from "@/components/Carousel/ProductCarousel.vue";
-import ServiceCarousel from "../components/Carousel/ServiceCarousel.vue";
+import PolimorficCarousel from "../components/Carousels/PolimorficCarousel/PolimorficCarousel";
+import BannerCarousel from "../components/Carousels/BannerCarousel/BannerCarousel.vue";
+import ClientsCarousel from "../components/Carousels/ClientsCarousel/ClientsCarousel.vue";
+import carousels from "../assets/js/home.json";
+import Modal from "../components/Modal/Modal.vue";
+import SimpleContactForm from "../components/Forms/SimpleContactForm.vue";
+
 export default {
-  components: { ProductCarousel, ServiceCarousel },
+  components: {
+    "polimorfic-carousel": PolimorficCarousel,
+    "banner-carousel": BannerCarousel,
+    clients: ClientsCarousel,
+    Modal,
+    "simple-contact-form": SimpleContactForm,
+  },
   data: function () {
-    return {};
+    return {
+      productos: carousels.productos,
+      banner1: carousels.banner1,
+      servicios: carousels.servicios,
+      banner2: carousels.banner2,
+      veterinaria: carousels.veterinaria,
+      clients: carousels.clientes,
+      showContactMenu: false,
+    };
   },
   mounted: function () {
     this.fadeInElements = Array.from(
@@ -145,97 +165,26 @@ export default {
   z-index: 8;
 }
 .presentation-text {
-  width: 100vw;
-  padding: 2.5rem 14rem;
+  padding: 2.5rem 4rem;
   display: flex;
   flex-direction: column;
   text-align: justify;
+  gap: 2rem;
 }
-.presentation-image {
-  position: relative;
-  height: 400px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-image: url("../assets/images/banners/banner-principal.svg");
-}
-
-/* Productos */
-.prods-services-container {
+.banner-contacto {
+  height: 50px;
+  background-color: #e6e6e6;
+  padding: 2rem 4rem;
   width: 100%;
-  overflow: hidden;
-  background-color: var(--light-lilac);
 }
-.titles {
-  padding: 5rem 6rem 1rem 6rem;
-}
-
-/* Texto Amistoso */
-.friendly-text {
-  background-color: var(--light-lilac);
-}
-
-/* Equipos de Radiologia */
-.equipo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 300px;
-  width: 30%;
-  background: transparent;
-}
-.img-equipo {
-  height: 90%;
-  width: 100%;
-  background-image: url("https://picsum.photos/200/300");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 /* Media Queries */
 @media screen and (max-width: 1000px) {
-  .presentation-image {
-    height: 440px;
-  }
   .presentation-text {
     padding: 2.5rem 6rem;
   }
-  .friendly-text {
-    padding-bottom: 2rem;
-  }
 }
 @media screen and (max-width: 900px) {
-  .presentation-image {
-    height: 270px;
-  }
   .presentation-text {
-    padding: 1.5rem;
-  }
-  .prods-services-container {
-    padding-top: 0;
-  }
-  .prods-services {
-    padding: 0;
-  }
-  .titles {
-    padding: 4rem 1.5rem 1rem 1.5rem;
-  }
-  .friendly-text {
-    padding-top: 2rem;
-  }
-  .friendly-text .presentation-text {
-    padding: 0 1.5rem;
-  }
-  .radiologia {
-    padding: 1.5rem;
-  }
-  .equipos {
-    gap: 1rem;
-  }
-  .equipo {
-    width: 48%;
-  }
-  .medicina-veterinaria {
     padding: 1.5rem;
   }
 }
@@ -243,41 +192,9 @@ export default {
   .presentation {
     padding-top: 0;
   }
-  .presentation-image {
-    height: 25vh;
-  }
   .presentation-text {
     padding: 1rem;
     text-align: justify;
-    /* text-align: center; */
-  }
-  .prods-services-container {
-    padding-top: 3rem;
-  }
-  .titles {
-    padding: 0 3rem 1rem 3rem;
-  }
-  .friendly-text {
-    padding-top: 0;
-  }
-  .friendly-text .presentation-text {
-    padding: 0 1rem;
-  }
-  .friendly-text p {
-    padding-top: 2rem;
-  }
-  .radiologia {
-    padding: 1rem;
-  }
-  .equipos {
-    display: flex;
-    justify-content: center;
-  }
-  .equipo {
-    width: 90%;
-  }
-  .medicina-veterinaria {
-    padding: 1rem;
   }
 }
 </style>

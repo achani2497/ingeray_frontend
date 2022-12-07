@@ -77,8 +77,8 @@ button {
 }
 </style>
 <script>
-import { serviceMixin } from "../../assets/js/serviceMixin";
-import { productMixin } from "../../assets/js/productMixin";
+import { serviceMixin } from "../../../assets/js/serviceMixin";
+import { productMixin } from "../../../assets/js/productMixin";
 
 export default {
   name: "arrowles-carousel",

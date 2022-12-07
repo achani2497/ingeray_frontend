@@ -169,7 +169,7 @@ export default {
 <script>
 import Productos from "../assets/js/productos.json";
 import ContactForm from "@/components/Forms/ContactForm.vue";
-import ImageCarousel from "@/components/Carousel/ImagesCarousel.vue";
+import ImageCarousel from "@/components/Carousels/Carousel/ImagesCarousel.vue";
 import Galeria from "@/components/Productos/GaleriaProductos.vue";
 import Especificaciones from "@/components/Productos/Especificaciones.vue";
 import Documentos from "@/components/Productos/Documentos.vue";
@@ -196,12 +196,12 @@ export default {
   },
   methods: {
     enviarMensajeWhastapp: function () {
-      const from = "54911...";
+      const to = "54911...";
       var yourMessage = "testeando";
 
       let message = yourMessage.split(" ").join("%20");
 
-      console.log("https://wa.me/" + from + "?text=%20" + message);
+      window.open("https://wa.me/" + to + "?text=%20" + message);
     },
     dameElEquipo: function () {
       return this.productos.find(
@@ -224,7 +224,7 @@ export default {
     //     .then(json => this.productos = json.productos)
   },
   beforeDestroy() {
-    eventBus.$off("open-form");
+    EventBus.$off("open-form");
   },
   computed: {
     equipos: function () {
