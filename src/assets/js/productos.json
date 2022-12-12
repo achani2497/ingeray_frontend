@@ -7,6 +7,7 @@
             "descripcion":"Ofrecemos equipamiento Radiológico de tipo Analógico para Salas de Radiología General, pudiendo optar entre diferentes líneas de productos de acuerdo a las rutinas y necesidades de trabajo. Consulte por nuestras Líneas Standard, Control XD y la línea Analógico HF con Sello de Productos de Diágnóstico Eco Responsable.",
             "caracteristicas": {
                 "titulo": "Equipamiento Radiológico Analógico para Salas de Radiología General",
+                "imagen":"",
                 "content":"Inge Ray ofrece equipamiento e instalaciones de Radiología Analógica pensados para la realización de rutinas de trabajo con pacientes ambulatorios o internados simplificando tanto el proceso de preinstalación y requerimientos previos como la disposición de sistemas  compactos que priorizan la dinámica del flujo de trabajo con dispositivos y equipos sencillos de operar y cuyo servicio técnico estará al alcance de todo profesional. Podrá optar por mesas radiológicas simples, mesas de plano flotante o mesas elevadoras con movimiento vertical motorizado todas con una capacidad nominal de carga de paciente de 250 kg. Columnas porta tubo con angulación y rotación para una cobertura completa de posiciones radiográficas y un amplio recorrido longitudinal y transversal, sistemas de montado al techo y soporte de Bucky a pared con un amplio rango de recorrido vertical con punto focal mínimo a distancia del piso para un posición de pie cómoda."
             },
             "especificaciones":[
@@ -72,8 +73,36 @@
                 "titulo":"Variedad de opciones para Equipamiento de Alta Frecuencia",
                 "imagenes": [
                     {
-                        "nombreImagen":"COMPLETAR",
-                        "imagen": "COMPLETAR faltan agregar mas imagenes"
+                        "nombreImagen":"generador 1",
+                        "imagen": "../images/productos/humanos/radioConvencional/rad-conv-gen-1.png"
+                    },
+                    {
+                        "nombreImagen":"generador 2",
+                        "imagen": "../images/productos/humanos/radioConvencional/rad-conv-gen-2.png"
+                    },
+                    {
+                        "nombreImagen":"generador 3",
+                        "imagen": "../images/productos/humanos/radioConvencional/rad-conv-gen-3.png"
+                    },
+                    {
+                        "nombreImagen":"generador 4",
+                        "imagen": "../images/productos/humanos/radioConvencional/rad-conv-gen-4.png"
+                    },
+                    {
+                        "nombreImagen":"consola 1",
+                        "imagen": "../images/productos/humanos/radioConvencional/rad-conv-consola-1.png"
+                    },
+                    {
+                        "nombreImagen":"consola 2",
+                        "imagen": "../images/productos/humanos/radioConvencional/rad-conv-consola-2.png"
+                    },
+                    {
+                        "nombreImagen":"consola 3",
+                        "imagen": "../images/productos/humanos/radioConvencional/rad-conv-consola-3.png"
+                    },
+                    {
+                        "nombreImagen":"consola 4",
+                        "imagen": "../images/productos/humanos/radioConvencional/rad-conv-consola-4.png"
                     }
                 ]
             },
@@ -85,16 +114,52 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod1",
-                    "productImage":""
+                    "productName":"carrousel rad conv sala 1",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Analogico-HF-1.png"
                 },
                 {
-                    "productName":"Prod2",
-                    "productImage":""
+                    "productName":"carrousel rad conv sala 2",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Analogico-HF-2.png"
                 },
                 {
-                    "productName":"Prod3",
-                    "productImage":""
+                    "productName":"carrousel rad conv sala 3",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Analogico-HF-3.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 4",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Analogico-HF-4.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 5",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Analogico-HF-5.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 6",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Analogico-HF-6.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 7",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Control-XD-1.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 8",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Control-XD-2.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 9",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Standard-1.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 10",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Standard-2.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 11",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Standard-3.png"
+                },
+                {
+                    "productName":"carrousel rad conv sala 12",
+                    "productImage":"../images/productos/humanos/radioConvencional/rad-conv-Sala-Standard-4.png"
                 }
             ]
         },
@@ -105,6 +170,7 @@
             "descripcion":"Ofrecemos equipamiento radiológico móvil para Salas de Internación o para uso general, pudiendo optar entre una Línea Clásica o de Portátiles a baterías con Sello de Productos de Diagnóstico Eco Responsable.",
             "caracteristicas": {
                 "titulo": "Equipamiento Radiológico Móvil para Salas de Internación o Uso General",
+                "imagen":"../images/productos/humanos/radioConvencional/caracteristicas-rad-conv-moviles.png",
                 "content":"Inge Ray ofrece equipos rodantes analógicos pensados para la realización de rutinas de trabajo con pacientes internados o como equipos alternativo en salas de Guardia o Shock Rooms, posibilitando la rutina de control radiológico con pacientes inmovilizables, en situación de emergencia o simplemente para cubrir las necesidades de servicios de Radiología  pequeños o de bajo caudal de trabajo. Podrá optar por una Línea Clásica con mayor potencia o la Línea de Portátiles a Baterías, que también pueden ser utilizados en atención domiciliaria, socorro y tratamientos médicos de emergencia."
             },
             "especificaciones":[
@@ -117,10 +183,29 @@
             ],
             "galeria":[
                 {
-                    "productName":"",
-                    "productImage":""
+                    "productName":"galeria rad conv moviles 1",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Móviles 1.png"
                 },
-                {}
+                {
+                    "productName":"galeria rad conv moviles 2",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Móviles 2.png"
+                },
+                {
+                    "productName":"galeria rad conv moviles 3",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Móviles 3.png"
+                },
+                {
+                    "productName":"galeria rad conv moviles 4",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Móviles 4.png"
+                },
+                {
+                    "productName":"galeria rad conv moviles 5",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Móviles 5.png"
+                },
+                {
+                    "productName":"galeria rad conv moviles 6",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Móviles 6.png"
+                }
             ],
             "brochures": [
                 {
@@ -134,16 +219,52 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod4",
-                    "productImage":""
+                    "productName":"carrousel rad conv mov 1",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-1.png"
                 },
                 {
-                    "productName":"Prod5",
-                    "productImage":""
+                    "productName":"carrousel rad conv mov 2",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-2.png"
                 },
                 {
-                    "productName":"Prod6",
-                    "productImage":""
+                    "productName":"carrousel rad conv mov 3",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-3.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 4",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-4.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 5",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-5.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 6",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-6.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 7",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-7.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 8",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-8.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 9",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-9.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 10",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-10.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 11",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-11.png"
+                },
+                {
+                    "productName":"carrousel rad conv mov 12",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-conv-mov-12.png"
                 }
             ]
         },
@@ -154,6 +275,7 @@
             "descripcion":"Ofrecemos equipamiento móvil con Arco quirúrgico en C para radiología intervencionista, tanto modelos con generador tipo monoblock o integrado al cuerpo principal del equipo, dependiendo de la tecnología  requerida.",
             "caracteristicas": {
                 "titulo": "Equipamiento Radiológico Móvil para Salas de Internación o Uso General ",
+                "imagen":"../images/productos/humanos/radioConvencional/caracteristicas-rad-conv-arco.png",
                 "content":"Inge Ray comercializa equipos para Radiología Intervencionista. Ofrecemos modelos de Arco en C con generador tipo monoblock o integrado al cuerpo principal del equipo, dependiendo de la tecnología requerida. Todos los modelos permiten alta  eficiencia dentro del ciclo de trabajo en  quirófano, con una calidad de imagen que es clave. Esto permite la identificación de estructuras anatómicas, la posición de implantes, materiales quirúrgicos, instrumentos y dispositivos médicos durante la intervención. El sistema móvil de imágenes con brazo en C brinda la posibilidad de visualización de alta resolución en tiempo real y sin movilizar al paciente, lo que permite aportar soluciones a todo tipo de posiciones y abordajes quirúrgicos  en el momento."
             },
             "especificaciones":[
@@ -166,10 +288,37 @@
             ],
             "galeria":[
                 {
-                    "productName":"",
-                    "productImage":""
+                    "productName":"galeria rad conv arco 1",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX Arcos 1.png"
                 },
-                {}
+                {
+                    "productName":"galeria rad conv arco 2",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX Arcos 2.png"
+                },
+                {
+                    "productName":"galeria rad conv arco 3",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX Arcos 3.png"
+                },
+                {
+                    "productName":"galeria rad conv arco 4",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX Arcos 4.png"
+                },
+                {
+                    "productName":"galeria rad conv arco 5",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX Arcos 5.png"
+                },
+                {
+                    "productName":"galeria rad conv arco 6",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX Arcos 6.png"
+                },
+                {
+                    "productName":"galeria rad conv arco 7",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX Arcos 7.png"
+                },
+                {
+                    "productName":"galeria rad conv arco 8",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX Arcos 8.png"
+                }
             ],
             "brochures": [
                 {
@@ -183,8 +332,36 @@
             ],
             "productos":[
                 {
-                    "productName":"",
-                    "productImage":""
+                    "productName":"carrousel rad conv arco 1",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-con-arco-1.png"
+                },
+                {
+                    "productName":"carrousel rad conv arco 2",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-con-arco-2.png"
+                },
+                {
+                    "productName":"carrousel rad conv arco 3",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-con-arco-3.png"
+                },
+                {
+                    "productName":"carrousel rad conv arco 4",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-con-arco-4.png"
+                },
+                {
+                    "productName":"carrousel rad conv arco 5",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-con-arco-5.png"
+                },
+                {
+                    "productName":"carrousel rad conv arco 6",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-con-arco-zen-1.png"
+                },
+                {
+                    "productName":"carrousel rad conv arco 7",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-con-arco-zen-2.png"
+                },
+                {
+                    "productName":"carrousel rad conv arco 8",
+                    "productImage":"../images/productos/humanos/radioConvencional/carrousel-rad-con-arco-zen-3.png"
                 }
             ]
         },
