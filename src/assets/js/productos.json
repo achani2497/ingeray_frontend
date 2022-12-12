@@ -43,15 +43,15 @@
             "productos":[
                 {
                     "productName":"Prod1",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod2",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod3",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 }
             ]
         },
@@ -89,15 +89,15 @@
             "productos":[
                 {
                     "productName":"Prod4",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod5",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod6",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 }
             ]
         },
@@ -135,15 +135,15 @@
             "productos":[
                 {
                     "productName":"Prod7",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod8",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod9",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 }
             ]
         },
@@ -154,11 +154,12 @@
             "descripcion":"Ofrecemos Sistemas Digitales de Radiografía. Equipos de Rayos X y Paneles de adquisición digital directa para Salas de Radiología, Emergencias e Internación. Distribuimos una amplia gama de Productos de Serie DR con Alta Calidad Imagen y Gran Rendimiento.",
             "caracteristicas": {
                 "titulo": "Equipamiento Radiológico Digital Directo de Alto Rendimiento",
+                "imagen":"",
                 "content":"Inge Ray distribuye equipamiento de adquisición para Radiología Digital Directa basados en Panel Plano (Flat Panel) con gran velocidad de procesamiento (5seg.),  posibilitando agilizar 4 veces o más el tiempo de toma de radiografías con equipos fijos  en Salas de Radiología General de  sanatorios y hospitales como para el caso de equipos Rodantes para pacientes internados en UTI, UCO, Guardia o Shock Rooms o en  situaciones  de emergencia, pudiendo acceder los profesionales rápidamente a las imágenes distribuidas en red para la toma de decisiones basadas en diagnóstico. La Serie DR alberga una combinación sobresaliente de diseño ergonómico y elegante, perfeccionando el flujo de trabajo continuo del paciente. Esta Serie presenta diversas configuraciones de sala pudiendo elegir tipo de mesa, columna portatubo con suspensión de techo o piso, estructura y configuraciones de diseño moderno en variantes clásicas y compactas."
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-dig-cuadro-sala_YOvLadu75.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670813907076"
                 }
             ],
             "galeria":[
@@ -186,15 +187,15 @@
             "productos":[
                 {
                     "productName":"Prod10",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod11",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod12",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 }
             ]
         },
@@ -205,11 +206,15 @@
             "descripcion":"Ofrecemos Sistemas Digitales de Radiografía. Equipos de Rayos X Portátiles y Paneles de adquisición digital directa para Salas de Radiología, Emergencias e Internación. Distribuimos una amplia gama de Productos de Serie DR con Alta Calidad Imegen y Gran Rendimiento.",
             "caracteristicas": {
                 "titulo": "Equipamiento Radiológico Móvil Digital Directo",
+                "imagen":"",
                 "content":"Inge Ray comercializa equipos digitales de alto rendimiento y alta velocidad de adquisición, son equipos pensados para la realización de rutinas de trabajo con pacientes internados o como equipamiento para Salas de Guardia o Shock Rooms, posibilitando el  control radiológico de pacientes que requieren ser inmovilizados, en situación de emergencia o simplemente para cubrir las necesidades de sanatorios y hospitales con red de imágenes digitales DICOM integradas."
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-dig-cuadro-movil-1_BuQbXXW2r.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670813913352"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-dig-cuadro-movil-2_fkWDefbTO.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670813903067"
                 }
             ],
             "galeria":[
@@ -232,15 +237,15 @@
             "productos":[
                 {
                     "productName":"Prod10",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod11",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod12",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 }
             ]
         },
@@ -251,11 +256,15 @@
             "descripcion":"Ofrecemos equipamiento móvil con Arco quirúrgico en C para radiología intervencionista, tanto modelos con generador tipo monoblock o integrado al cuerpo principal del equipo, dependiendo de la tecnología  requerida.",
             "caracteristicas": {
                 "titulo": "Equipamiento Móvil con Arco en C para Radiología Intervencionista",
+                "imagen":"",
                 "content":"Inge Ray comercializa equipos para Radiología Intervencionista. Ofrecemos modelos de Arco en C con generador tipo monoblock o integrado al cuerpo principal del equipo. Todos los modelos permiten alta  eficiencia dentro del ciclo de trabajo en  quirófano, con una calidad de imagen que es clave. Esto permite la identificación de estructuras anatómicas, la posición de implantes, materiales quirúrgicos, instrumentos y dispositivos médicos durante la intervención. El sistema móvil de imágenes con brazo en C brinda la posibilidad de visualización de alta resolución en tiempo real y sin movilizar al paciente, lo que permite aportar soluciones a todo tipo de posiciones y abordajes quirúrgicos  en el momento."
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-dig-cuadro-arco-1_fsZkZqvq0.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670813903424"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-dig-cuadro-arco-2_rSH3h_Cv5.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670813902803"
                 }
             ],
             "galeria":[
@@ -274,15 +283,15 @@
             "productos":[
                 {
                     "productName":"Prod10",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod11",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 },
                 {
                     "productName":"Prod12",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productImage":""
                 }
             ]
         },
@@ -293,19 +302,56 @@
             "descripcion":"Ofrecemos equipamiento móvil con Arco quirúrgico en C para radiología intervencionista, tanto modelos con generador tipo monoblock o integrado al cuerpo principal del equipo, dependiendo de la tecnología  requerida.",
             "caracteristicas": {
                 "titulo": "Equipamiento Móvil con Arco en C para Radiología Intervencionista",
+                "imagen":"../images/productos/humanos/radioInterven/caracteristicas-intervensionista.png",
                 "content":"Inge Ray comercializa equipos para Radiología Intervencionista. Ofrecemos modelos de Arco en C con generador tipo monoblock o integrado al cuerpo principal del equipo, dependiendo de la tecnología requerida. Todos los modelos permiten alta  eficiencia dentro del ciclo de trabajo en  quirófano, con una calidad de imagen que es clave. Esto permite la identificación de estructuras anatómicas, la posición de implantes, materiales quirúrgicos, instrumentos y dispositivos médicos durante la intervención. El sistema móvil de imágenes con brazo en C brinda la posibilidad de visualización de alta resolución en tiempo real y sin movilizar al paciente, lo que permite aportar soluciones a todo tipo de posiciones y abordajes quirúrgicos  en el momento."
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/Cuadro_Arco_L%C3%8DNEA_CL%C3%81SICA_M8haseSUl.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670812074231"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/Cuadro_Arco_ZEN_Bs9eYkE_2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670812077248"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/Cuadro_Arco_FLAT_PANEL_oHZTtB2K6.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670812073267"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/Cuadro_Arco_FLAT_PANEL_MONO_T5BUfQD-M.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670812180682"
                 }
             ],
             "galeria":[
                 {
-                    "productName":"",
-                    "productImage":""
+                    "productName":"galeria arco-c-intervensionista 1",
+                    "productImage":"../images/productos/humanos/radioInterven/RX Arcos 1.png"
                 },
-                {}
+                {
+                    "productName":"galeria arco-c-intervensionista 2",
+                    "productImage":"../images/productos/humanos/radioInterven/RX Arcos 2.png"
+                },
+                {
+                    "productName":"galeria arco-c-intervensionista 3",
+                    "productImage":"../images/productos/humanos/radioInterven/RX Arcos 3.png"
+                },
+                {
+                    "productName":"galeria arco-c-intervensionista 4",
+                    "productImage":"../images/productos/humanos/radioInterven/RX Arcos 4.png"
+                },
+                {
+                    "productName":"galeria arco-c-intervensionista 5",
+                    "productImage":"../images/productos/humanos/radioInterven/RX Arcos 5.png"
+                },
+                {
+                    "productName":"galeria arco-c-intervensionista 6",
+                    "productImage":"../images/productos/humanos/radioInterven/RX Arcos 6.png"
+                },
+                {
+                    "productName":"galeria arco-c-intervensionista 7",
+                    "productImage":"../images/productos/humanos/radioInterven/RX Arcos 7.png"
+                },
+                {
+                    "productName":"galeria arco-c-intervensionista 8",
+                    "productImage":"../images/productos/humanos/radioInterven/RX Arcos 8.png"
+                }
             ],
             "brochures": [
                 {
@@ -323,16 +369,52 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod13",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel-arco-c-intervensionista-1",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-1.png"
                 },
                 {
-                    "productName":"Prod14",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel-arco-c-intervensionista-2",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-2.png"
                 },
                 {
-                    "productName":"Prod15",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel-arco-c-intervensionista-3",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-3.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-4",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-4.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-5",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-5.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-6",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-6.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-7",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-7.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-8",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-8.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-9",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-9.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-10",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-10.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-11",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-11.png"
+                },
+                {
+                    "productName":"carrousel-arco-c-intervensionista-12",
+                    "productImage":"../images/productos/humanos/radioInterven/carrousel-intervensionista-12.png"
                 }
             ]
         },
@@ -343,11 +425,18 @@
             "descripcion":"Ofrecemos una amplia gama de detectores de excelente calidad para radiografía y radioscopía digital. Pudiendo elegir entre paneles de adquisición de imágenes de sistema cableado o  Wifi para aplicaciones  multipropósito o específicos para mamografía.",
             "caracteristicas": {
                 "titulo": "Destacables de este producto",
+                "imagen":"../images/productos/humanos/digitalizacion/caracteristicas-flatpanel.png",
                 "content":"Inge Ray ofrece los más avanzados paneles, detectores planos para radiografía y radioscopia digital. Contamos con una amplia gama de prductos de las fábricas más importantes de detectores de rayos X con procesamiento avanzado de imágenes médicas digitales, diseños robustos, hardware de excelente resistencia y funcionalida, software de obtención de imágenes y sistema PACS optimizado, para  mejorar el flujo de trabajo diario de los centros médicos. De acuerdo a las necesidad su servicio podrá elegir entre opciones cableadas o wifi, detectores multipropósito o especiales para mamografía."
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/cuadro-flat-mamo_6sHTOS_pR.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670808665792"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/cuadro-flat-cable_fzEimUmPt.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670808667501"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/cuadro-flat-wifi_nHBgHOzs6.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670808667448"
                 }
             ],
             "brochures": [
@@ -358,16 +447,76 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod16",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"Flat Panel 1",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-1.png"
                 },
                 {
-                    "productName":"Prod17",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"Flat Panel 2",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-2.png"
                 },
                 {
-                    "productName":"Prod18",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"Flat Panel 3",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-3.png"
+                },
+                {
+                    "productName":"Flat Panel 4",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-4.png"
+                },
+                {
+                    "productName":"Flat Panel 5",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-5.png"
+                },
+                {
+                    "productName":"Flat Panel 6",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-6.png"
+                },
+                {
+                    "productName":"Flat Panel 7",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-7.png"
+                },
+                {
+                    "productName":"Flat Panel 8",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-8.png"
+                },
+                {
+                    "productName":"Flat Panel 9",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-9.png"
+                },
+                {
+                    "productName":"Flat Panel 10",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-10.png"
+                },
+                {
+                    "productName":"Flat Panel 11",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-11.png"
+                },
+                {
+                    "productName":"Flat Panel 12",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-12.png"
+                },
+                {
+                    "productName":"Flat Panel 13",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-13.png"
+                },
+                {
+                    "productName":"Flat Panel 14",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-14.png"
+                },
+                {
+                    "productName":"Flat Panel 15",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-15.png"
+                },
+                {
+                    "productName":"Flat Panel 16",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-16.png"
+                },
+                {
+                    "productName":"Flat Panel 17",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-17.png"
+                },
+                {
+                    "productName":"Flat Panel 18",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-flatpanel-18.png"
                 }
             ]
         },
@@ -378,19 +527,34 @@
             "descripcion":"Proporcionamos los mejores Sistemas de Almacenamiento y Comunicación de Imágenes DICOM desde cualquier lugar y en cualquier momento.",
             "caracteristicas": {
                 "titulo": "Sistemas de Almacenamiento de Imágenes DICOM",
+                "imagen":"",
                 "content":"Con la implementación de los Sistemas DIGIRAD PACS podrá almacenar estudios provenientes de cualquier dispositivo médico de norma DICOM, permitiendo acceso inmediato para su análisis tanto en estaciones de trabajo locales como también de forma remota a través de su servidor web. El Servidor DIGIRAD PACS es de fácil manejo y mantenimiento e incluye los servicios DICOM como DICOM C-STORE SCP, C-FIND y C-MOVE SCP, C-ECHO. Además incluye las aplicaciones de Software de Servidor DICOM, Workstation para visualización y revisión de imágenes con poderosas herramientas que facilitan el diagnóstico y la realización de los informes, Software para Grabación de estudios en CD/DVD y  para impresión en impresoras DICOM y/o papel común. También cuenta con Software Web Server con herramientas para visualización, diagnóstico y confección de informes vía Internet sin necesidad de otras aplicaciones. Múltiples accesos simultáneos. Acceso a base de datos mediante niveles de seguridad configurables."
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/cuadro-pacs_iL85KQ1hh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670808667264"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/cuadro-pacs-workstation_UdSPJZcR3.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670808668165"
                 }
             ],
             "galeria":[
                 {
-                    "productName":"",
-                    "productImage":""
+                    "productName":"galeria grafico",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-pacs-grafico.png"
                 },
-                {}
+                {
+                    "productName":"galeria pacs 1",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-pacs-clinicas-1.png"
+                },
+                {
+                    "productName":"galeria pacs 2",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-pacs-clinicas-2.png"
+                },
+                {
+                    "productName":"galeria pacs 3",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-pacs-clinicas-3.png"
+                }
             ],
             "brochures": [
                 {
@@ -404,16 +568,24 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod16",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel pacs 1",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-pacs-1.png"
                 },
                 {
-                    "productName":"Prod17",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel pacs 2",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-pacs-2.png"
                 },
                 {
-                    "productName":"Prod18",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel pacs 3",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-pacs-3.png"
+                },
+                {
+                    "productName":"carrousel pacs 4",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-pacs-4.png"
+                },
+                {
+                    "productName":"carrousel pacs 5",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-pacs-5.png"
                 }
             ]
         },
@@ -424,19 +596,38 @@
             "descripcion":"Proporcionamos los mejores Sistemas de Digitalización para Equipos de Arco en C o Equipos de Sala obteniendo imágenes cuadro a cuadro, fijas y congeladas, así como para estudios con largas secuencias de video digital.",
             "caracteristicas": {
                 "titulo": "Sistemas de Digitalización para Imágenes Dinámicas",
+                "imagen":"../images/productos/humanos/digitalizacion/caracteristicas-video.png",
                 "content":"Con la implementación de los Sistemas de Video Digitalización con sensores de adquisición digital de las señales obtenidas por intensificadores de imágen convencionales, no se requiere de cambiar todo su equipo de Arco en C o Equipo de Sala para estudios contrastados, cateterismo, videodeglución, etc.  obteniendo tanto  imágenes cuadro a cuadro, fijas congeladas, así como largas secuencias de video digital. El médico especialista  puede obtener, durante y después del exámen, imágenes fijas o videos de altísima calidad y resolución. La rapidez del sistema y la posibilidad de guardar los estudios en carpetas pacientes, permite acelerar el flujo de trabajo con el consiguiente aumento de la productividad. RELACIÓN COSTO BENEFICIO   Los sistemas de Video Digital combinan la alta calidad de las imágenes con la más confiable tecnología, todo ello con una inversión inicial acorde con la mayoría de los presupuestos para  emprendimientos de diagnóstico por imágenes y bajísimos costos de mantenimiento,  permitiendo extender la vida útil de sus equipos analógicos. CONECTIVIDAD DICOM 3.0   Los sistemas provistos por nuestra empresa son totalmente compatibles con la norma DICOM 3.0 para intercambio de imágenes médicas. A su vez permiten la integración con otros usos de la norma DICOM incluyendo PACS, RIS, como así también visualizadores y Servidores DICOM, Impresoras y Servidores WEB DICOM."
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/cuadro-video-digirad_6LJQkpMDm.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670808676297"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/cuadro-video-memorad_F5Ht1woIb.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670808677196"
                 }
             ],
             "galeria":[
                 {
-                    "productName":"",
-                    "productImage":""
+                    "productName":"galeria-video-1",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-video-1.png"
                 },
-                {}
+                {
+                    "productName":"galeria-video-2",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-video-2.png"
+                },
+                {
+                    "productName":"galeria-video-3",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-video-3.png"
+                },
+                {
+                    "productName":"galeria-video-4",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-video-4.png"
+                },
+                {
+                    "productName":"galeria-video-5",
+                    "productImage":"../images/productos/humanos/digitalizacion/galeria-video-5.png"
+                }
             ],
             "brochures": [
                 {
@@ -450,16 +641,56 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod16",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel-video-1",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-1.png"
                 },
                 {
-                    "productName":"Prod17",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel-video-2",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-2.png"
                 },
                 {
-                    "productName":"Prod18",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel-video-3",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-3.png"
+                },
+                {
+                    "productName":"carrousel-video-4",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-4.png"
+                },
+                {
+                    "productName":"carrousel-video-5",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-5.png"
+                },
+                {
+                    "productName":"carrousel-video-6",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-6.png"
+                },
+                {
+                    "productName":"carrousel-video-7",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-7.png"
+                },
+                {
+                    "productName":"carrousel-video-8",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-8.png"
+                },
+                {
+                    "productName":"carrousel-video-9",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-9.png"
+                },
+                {
+                    "productName":"carrousel-video-10",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-10.png"
+                },
+                {
+                    "productName":"carrousel-video-11",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-11.png"
+                },
+                {
+                    "productName":"carrousel-video-12",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-12.png"
+                },
+                {
+                    "productName":"carrousel-video-13",
+                    "productImage":"../images/productos/humanos/digitalizacion/carrousel-video-13.png"
                 }
             ]
         },
@@ -470,19 +701,16 @@
             "descripcion":"Proporcionamos soluciones de acuerdo a las necesidades específicas de cada cliente. Ofrecemos una amplia gama de sofisticados equipos de Diagnóstico para Mamografía, pudiendo optar entre mamógrafos analógicos o digitales de acuerdo a las prestaciones que brinde en su servicio.",
             "caracteristicas": {
                 "titulo": "Equipamiento para Diagnóstico Mamográfico",
+                "imagen": "../images/productos/humanos/mamo/caracteristicas-mamo.jpg",
                 "content":"En Inge Ray estamos comprometidos con la concientización sobre el valor diagnóstico que tiene el examen regular mediante mamografías en la detección temprana del cáncer de mamas, dado que la mamografía permite detectar lesiones cuando todavía no son palpables. Nuestra empresa ofrece una amplia gama de soluciones para Servicios de Mamografía, con equipos de imagen específicos en el rango de 22 y 35 kV, tubos de rayos X con ánodos con pistas de molibdeno (Mo) y de rodio (Rh) y generadores de alta frecuencia que mejoran la calidad de la imagen. Punto focal entre 0.1 y 0.3 mm² para una evaluación diagnóstica de alta resolución. Ventana del tubo de berilio para reducir la radiación dispersa del haz. Sistemas de compresión automáticos con posibilidad de regulación manual. Reducción de radiación dispersa para una mejor calidad de imagen, mayor precisión en detección de lesiones pequeñas de bajo contraste y micro calcificaciones. Los equipos de mamografía incluyen un control automático de exposición (CAE) que mide la intensidad y la calidad de los rayos en el receptor de imagen. Esa medición permite evaluar la composición de la mama y seleccionar la combinación correcta de blanco/filtro. Entre las distintas opciones se ofrecen equipos compatibles con receptores de imagen tipo CR o Detectores Digitales."
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
-                }
-            ],
-            "galeria":[
-                {
-                    "productName":"",
-                    "productImage":""
+                    "tabla":"https://ik.imagekit.io/ingesystem22/Cuadro_MAMO_GENORAY_0zdM3ODnS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670803902984"
                 },
-                {}
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/Cuadro_MAMO_VIOLA_CARROUSEL_0X52QjVUc.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670805072564"
+                }
             ],
             "diferencias": {
                 "titulo": "Breve explicación de las diferencias tecnológicas",
@@ -504,16 +732,44 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod25",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel mamo 1",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-1.jpg"
                 },
                 {
-                    "productName":"Prod26",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel mamo 2",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-2.jpg"
                 },
                 {
-                    "productName":"Prod27",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel mamo 3",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-3.jpg"
+                },
+                {
+                    "productName":"carrousel mamo 4",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-4.jpg"
+                },
+                {
+                    "productName":"carrousel mamo 5",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-5.jpg"
+                },
+                {
+                    "productName":"carrousel mamo 6",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-6.jpg"
+                },
+                {
+                    "productName":"carrousel mamo 7",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-7.jpg"
+                },
+                {
+                    "productName":"carrousel mamo 8",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-8.png"
+                },
+                {
+                    "productName":"carrousel mamo 9",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-9.png"
+                },
+                {
+                    "productName":"carrousel mamo 10",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-mamo-10.png"
                 }
             ]
         },
@@ -524,64 +780,64 @@
             "descripcion":"Ofrecemos una amplia gama de detectores de excelente calidad para radiografía y radioscopía digital. Pudiendo elegir entre paneles de adquisición de imágenes de sistema cableado o  Wifi para aplicaciones  multipropósito o específicos para mamografía.",
             "caracteristicas": {
                 "titulo": "Destacables de este producto",
-                "content":"Inge Ray ofrece los más avanzados paneles, detectores planos para radiografía y radioscopia digital. Contamos con una amplia gama de productos de las fábricas más importantes de detectores de rayos X con procesamiento avanzado de imágenes médicas digitales, diseños robustos, hardware de excelente resistencia y funcionalidad, software de obtención de imágenes y sistema PACS optimizado, para  mejorar el flujo de trabajo diario de los centros médicos. De acuerdo a las necesidades de su servicio, podrá elegir entre opciones cableadas o wifi especiales para mamografía."
+                "imagen":"../images/productos/humanos/mamo/caracteristicas-captores.jpg"
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/Cuadro_CAPTORES_MAMO_Vivix_00fHhZ7ak.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670803901469"
                 },
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/Cuadro_CAPTORES_MAMO_DR_Tech_Rose_QD-hNeCLY.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670803903216"
                 }
             ],
             "galeria":[
                 {
-                    "productName":"Imagen MAMO 1",
-                    "productImage":""
+                    "productName":"Imagen Captores 1",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-1.png"
                 },
                 {
-                    "productName":"Imagen MAMO 2",
-                    "productImage":""
+                    "productName":"Imagen Captores 2",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-2.png"
                 },
                 {
-                    "productName":"Imagen MAMO 3",
-                    "productImage":""
+                    "productName":"Imagen Captores 3",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-3.png"
                 },
                 {
-                    "productName":"Imagen MAMO 4",
-                    "productImage":""
+                    "productName":"Imagen Captores 4",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-4.png"
                 },
                 {
-                    "productName":"Imagen MAMO 5",
-                    "productImage":""
+                    "productName":"Imagen Captores 5",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-5.png"
                 },
                 {
-                    "productName":"Imagen MAMO 6",
-                    "productImage":""
+                    "productName":"Imagen Captores 6",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-6.png"
                 },
                 {
-                    "productName":"Imagen MAMO 7",
-                    "productImage":""
+                    "productName":"Imagen Captores 7",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-7.png"
                 },
                 {
-                    "productName":"Imagen MAMO 8",
-                    "productImage":""
+                    "productName":"Imagen Captores 8",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-8.png"
                 },
                 {
-                    "productName":"Imagen MAMO 9",
-                    "productImage":""
+                    "productName":"Imagen Captores 9",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-9.png"
                 },
                 {
-                    "productName":"Imagen MAMO 10",
-                    "productImage":""
+                    "productName":"Imagen Captores 10",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-10.png"
                 },
                 {
-                    "productName":"Imagen MAMO 11",
-                    "productImage":""
+                    "productName":"Imagen Captores 11",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-11.png"
                 },
                 {
-                    "productName":"Imagen MAMO 12",
-                    "productImage":""
+                    "productName":"Imagen Captores 12",
+                    "productImage":"../images/productos/humanos/mamo/galeria-captores-12.png"
                 }
             ],
             "brochures": [
@@ -596,16 +852,20 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod25",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel captores 1",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-captores-1.jpg"
                 },
                 {
-                    "productName":"Prod26",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel captores 2",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-captores-2.jpg"
                 },
                 {
-                    "productName":"Prod27",
-                    "productImage":"https://picsum.photos/500/500"
+                    "productName":"carrousel captores 3",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-captores-3.jpg"
+                },
+                {
+                    "productName":"carrousel captores 4",
+                    "productImage":"../images/productos/humanos/mamo/carrousel-captores-4.jpg"
                 }
             ]
         }

@@ -65,7 +65,7 @@ import GaleriaProductos from '../GaleriaProductos.vue';
 import ProductTemplate from '../productTemplate.vue';
 import BannerContacto from '../BannerContacto.vue';
 import ContactForm from '../../Forms/ContactForm';
-import ImageCarousel from '../../Carousel/ImagesCarousel';
+import ImageCarousel from '../../Carousels/Carousel/ImagesCarousel.vue';
 
 export default {
     props: ['slug'],

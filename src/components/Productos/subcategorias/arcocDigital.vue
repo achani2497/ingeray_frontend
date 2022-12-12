@@ -1,8 +1,9 @@
 <template>
     <product-template>
-        <template v-slot:title>
+        <template v-slot:productTitle>
             <div class="producto-imagen">
               <image-carousel :elementos="producto.productos"></image-carousel>
+              <div>ACAAAAAA arcos c digitales</div>
             </div>
             <div class="titulos">
                 <titles
@@ -67,7 +68,7 @@ import GaleriaProductos from '../GaleriaProductos.vue';
 import ProductTemplate from '../productTemplate.vue';
 import BannerContacto from '../BannerContacto.vue';
 import ContactForm from '../../Forms/ContactForm';
-import ImageCarousel from '../../Carousel/ImagesCarousel';
+import ImageCarousel from '../../Carousels/Carousel/ImagesCarousel.vue';
 
 
 export default {
@@ -91,8 +92,6 @@ export default {
     },
     beforeMount() {
         this.producto = this.getProductEquipment(this.slug);
-        console.log(this.producto)
-        console.log(this.slug)
     },
 }
 </script>
