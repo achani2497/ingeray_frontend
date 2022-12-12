@@ -44,7 +44,7 @@
           <!-- Especificaciones -->
           <especificaciones :datos = "producto.especificaciones"/>
           <!-- Galeria -->
-          <galeria-productos :datos="producto.galeria"/>
+          <!-- <galeria-productos :datos="producto.galeria"/> -->
           <!-- Documentos -->
           <documentos :brochures="producto.brochures"/>
         </template>

@@ -11,19 +11,62 @@
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-conv-sala-cuadro-1_IZ44vqthz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670857751500"
                 }
             ],
             "galeria":[
                 {
-                    "productName":"completar",
-                    "productImage":"completar"
+                    "productName":"galeria rad conv 1",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 1.png"
                 },
-                {}
+                {
+                    "productName":"galeria rad conv 2",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 2.png"
+                },
+                {
+                    "productName":"galeria rad conv 3",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 3.png"
+                },
+                {
+                    "productName":"galeria rad conv 4",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 4.png"
+                },
+                {
+                    "productName":"galeria rad conv 5",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 5.png"
+                },
+                {
+                    "productName":"galeria rad conv 6",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 6.png"
+                },
+                {
+                    "productName":"galeria rad conv 7",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 7.png"
+                },
+                {
+                    "productName":"galeria rad conv 8",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 8.png"
+                },
+                {
+                    "productName":"galeria rad conv 9",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 9.png"
+                },
+                {
+                    "productName":"galeria rad conv 10",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 10.png"
+                },
+                {
+                    "productName":"galeria rad conv 11",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 11.png"
+                },
+                {
+                    "productName":"galeria rad conv 12",
+                    "productImage":"../images/productos/humanos/radioConvencional/RX RAD.CONVENCIONAL Salas 12.png"
+                }
             ],
             "datosTecnicos": {
                 "titulo":"Equipamiento Analógico para Salas de Radiología Convencional",
-                "tabla": "COMPLETAR"
+                "tabla": "https://ik.imagekit.io/ingesystem22/rad-conv-sala-cuadro-2_1Ix2lMJCv.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670857759181"
             },
             "generadoresConsolas": {
                 "titulo":"Variedad de opciones para Equipamiento de Alta Frecuencia",
@@ -66,7 +109,10 @@
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-conv-mov-cuadro-1_Y6f32W4k3.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670857750762"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-conv-mov-cuadro-2_JKzf388As.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670857750936"
                 }
             ],
             "galeria":[
@@ -112,7 +158,10 @@
             },
             "especificaciones":[
                 {
-                    "tabla":"COMPLETAR"
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-conv-arc-cuadro-1_pxmINAf6f.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670857753438"
+                },
+                {
+                    "tabla":"https://ik.imagekit.io/ingesystem22/rad-conv-arc-cuadro-2_n9F0q1Eie.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670857758691"
                 }
             ],
             "galeria":[
@@ -134,15 +183,7 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod7",
-                    "productImage":""
-                },
-                {
-                    "productName":"Prod8",
-                    "productImage":""
-                },
-                {
-                    "productName":"Prod9",
+                    "productName":"",
                     "productImage":""
                 }
             ]
@@ -164,17 +205,68 @@
             ],
             "galeria":[
                 {
-                    "productName":"",
-                    "productImage":""
+                    "productName":"Rad digital sala 1",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 1.png"
                 },
-                {}
+                {
+                    "productName":"Rad digital sala 2",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 2.png"
+                },
+                {
+                    "productName":"Rad digital sala 3",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 3.png"
+                },
+                {
+                    "productName":"Rad digital sala 4",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 4.png"
+                },
+                {
+                    "productName":"Rad digital sala 5",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 5.png"
+                },
+                {
+                    "productName":"Rad digital sala 6",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 6.png"
+                },
+                {
+                    "productName":"Rad digital sala 7",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 7.png"
+                },
+                {
+                    "productName":"Rad digital sala 8",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 8.png"
+                },
+                {
+                    "productName":"Rad digital sala 9",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 9.png"
+                },
+                {
+                    "productName":"Rad digital sala 10",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 10.png"
+                },
+                {
+                    "productName":"Rad digital sala 11",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 11.png"
+                },
+                {
+                    "productName":"Rad digital sala 12",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Sala 12.png"
+                }
             ],
             "configuracionDeSala": {
                 "titulo": "Opciones disponibles de Equipamiento Radiológico Digital Directo",
                 "imagenes": [
                     {
-                        "nombreImagen": "COMPLETAR",
-                        "imagen": "COMPLETAR faltan agregar mas imagenes"
+                        "nombreImagen": "Configuraricion sala 1",
+                        "imagen": "../images/productos/humanos/radioDigital/rad-dig-sala-config-1.png"
+                    },
+                    {
+                        "nombreImagen": "Configuraricion sala 2",
+                        "imagen": "../images/productos/humanos/radioDigital/rad-dig-sala-config-2.png"
+                    },
+                    {
+                        "nombreImagen": "Configuraricion sala 3",
+                        "imagen": "../images/productos/humanos/radioDigital/rad-dig-sala-config-3.png"
                     }
                 ]
             },
@@ -186,16 +278,44 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod10",
-                    "productImage":""
+                    "productName":"carrousel sala 1",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-1.png"
                 },
                 {
-                    "productName":"Prod11",
-                    "productImage":""
+                    "productName":"carrousel sala 2",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-2.png"
                 },
                 {
-                    "productName":"Prod12",
-                    "productImage":""
+                    "productName":"carrousel sala 3",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-3.png"
+                },
+                {
+                    "productName":"carrousel sala 4",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-4.png"
+                },
+                {
+                    "productName":"carrousel sala 5",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-5.png"
+                },
+                {
+                    "productName":"carrousel sala 6",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-6.png"
+                },
+                {
+                    "productName":"carrousel sala 7",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-7.png"
+                },
+                {
+                    "productName":"carrousel sala 8",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-8.png"
+                },
+                {
+                    "productName":"carrousel sala 9",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-9.png"
+                },
+                {
+                    "productName":"carrousel sala 10",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-rad-digi-sala-10.png"
                 }
             ]
         },
@@ -206,7 +326,7 @@
             "descripcion":"Ofrecemos Sistemas Digitales de Radiografía. Equipos de Rayos X Portátiles y Paneles de adquisición digital directa para Salas de Radiología, Emergencias e Internación. Distribuimos una amplia gama de Productos de Serie DR con Alta Calidad Imegen y Gran Rendimiento.",
             "caracteristicas": {
                 "titulo": "Equipamiento Radiológico Móvil Digital Directo",
-                "imagen":"",
+                "imagen":"../images/productos/humanos/radioDigital/caracteristicas-moviles-digi-1.png",
                 "content":"Inge Ray comercializa equipos digitales de alto rendimiento y alta velocidad de adquisición, son equipos pensados para la realización de rutinas de trabajo con pacientes internados o como equipamiento para Salas de Guardia o Shock Rooms, posibilitando el  control radiológico de pacientes que requieren ser inmovilizados, en situación de emergencia o simplemente para cubrir las necesidades de sanatorios y hospitales con red de imágenes digitales DICOM integradas."
             },
             "especificaciones":[
@@ -219,10 +339,25 @@
             ],
             "galeria":[
                 {
-                    "productName":"",
-                    "productImage":""
+                    "productName":"galeria digi moviles 1",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Móviles 1.png"
                 },
-                {}
+                {
+                    "productName":"galeria digi moviles 2",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Móviles 2.png"
+                },
+                {
+                    "productName":"galeria digi moviles 3",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Móviles 3.png"
+                },
+                {
+                    "productName":"galeria digi moviles 4",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Móviles 4.png"
+                },
+                {
+                    "productName":"galeria digi moviles 5",
+                    "productImage":"../images/productos/humanos/radioDigital/RX RAD.DIGI Móviles 5.png"
+                }
             ],
             "brochures": [
                 {
@@ -236,16 +371,36 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod10",
-                    "productImage":""
+                    "productName":"carrousel mov dig 1",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-mov-digi-1.png"
                 },
                 {
-                    "productName":"Prod11",
-                    "productImage":""
+                    "productName":"carrousel mov dig 2",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-mov-digi-2.png"
                 },
                 {
-                    "productName":"Prod12",
-                    "productImage":""
+                    "productName":"carrousel mov dig 3",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-mov-digi-3.png"
+                },
+                {
+                    "productName":"carrousel mov dig 4",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-mov-digi-4.png"
+                },
+                {
+                    "productName":"carrousel mov dig 5",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-mov-digi-5.png"
+                },
+                {
+                    "productName":"carrousel mov dig 6",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-mov-digi-6.png"
+                },
+                {
+                    "productName":"carrousel mov dig 7",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-mov-digi-7.png"
+                },
+                {
+                    "productName":"carrousel mov dig 8",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-mov-digi-8.png"
                 }
             ]
         },
@@ -256,7 +411,7 @@
             "descripcion":"Ofrecemos equipamiento móvil con Arco quirúrgico en C para radiología intervencionista, tanto modelos con generador tipo monoblock o integrado al cuerpo principal del equipo, dependiendo de la tecnología  requerida.",
             "caracteristicas": {
                 "titulo": "Equipamiento Móvil con Arco en C para Radiología Intervencionista",
-                "imagen":"",
+                "imagen":"../images/productos/humanos/radioDigital/caracteristicas-arco-digi.png",
                 "content":"Inge Ray comercializa equipos para Radiología Intervencionista. Ofrecemos modelos de Arco en C con generador tipo monoblock o integrado al cuerpo principal del equipo. Todos los modelos permiten alta  eficiencia dentro del ciclo de trabajo en  quirófano, con una calidad de imagen que es clave. Esto permite la identificación de estructuras anatómicas, la posición de implantes, materiales quirúrgicos, instrumentos y dispositivos médicos durante la intervención. El sistema móvil de imágenes con brazo en C brinda la posibilidad de visualización de alta resolución en tiempo real y sin movilizar al paciente, lo que permite aportar soluciones a todo tipo de posiciones y abordajes quirúrgicos  en el momento."
             },
             "especificaciones":[
@@ -282,16 +437,24 @@
             ],
             "productos":[
                 {
-                    "productName":"Prod10",
-                    "productImage":""
+                    "productName":"carrousel arco digi 1",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-arco-digi-1.png"
                 },
                 {
-                    "productName":"Prod11",
-                    "productImage":""
+                    "productName":"carrousel arco digi 2",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-arco-digi-2.png"
                 },
                 {
-                    "productName":"Prod12",
-                    "productImage":""
+                    "productName":"carrousel arco digi 3",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-arco-digi-3.png"
+                },
+                {
+                    "productName":"carrousel arco digi 4",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-arco-digi-4.png"
+                },
+                {
+                    "productName":"carrousel arco digi 5",
+                    "productImage":"../images/productos/humanos/radioDigital/carrousel-arco-digi-5.png"
                 }
             ]
         },
