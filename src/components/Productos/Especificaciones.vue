@@ -15,7 +15,7 @@ export default {
 </script>
 <style scoped>
 .ficha{
-    height: 400px;
+    height: auto;
     background-color: cornsilk;
 }
 </style>
