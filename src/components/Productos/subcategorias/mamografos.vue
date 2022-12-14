@@ -1,6 +1,6 @@
 <template>
     <product-template>
-        <template v-slot:title>
+        <template v-slot:productTitle>
             <div class="producto-imagen">
               <image-carousel :elementos="producto.productos"></image-carousel>
             </div>

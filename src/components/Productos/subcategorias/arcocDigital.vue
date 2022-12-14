@@ -3,7 +3,6 @@
         <template v-slot:productTitle>
             <div class="producto-imagen">
               <image-carousel :elementos="producto.productos"></image-carousel>
-              <div>ACAAAAAA arcos c digitales</div>
             </div>
             <div class="titulos">
                 <titles
