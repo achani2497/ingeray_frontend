@@ -9,8 +9,8 @@
                     {{primeraMitad(datos.content)}}
                 </div>
                 <div class="custom-col">
-                    <img v-if="datos.imagen" :src="getImgSource(datos.imagen)" alt="img-caracteristicas">
                     {{segundaMitad(datos.content)}}
+                    <img v-if="datos.imagen" :src="getImgSource(datos.imagen)" alt="img-caracteristicas">
                 </div>
             </div>            
         </div>
