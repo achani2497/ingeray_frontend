@@ -19,7 +19,7 @@
             Tecnológicas para la Salud que permitan a nuestros clientes ofrecer
             una medicina de calidad. Nos especializamos en Equipamiento Médico
             para Diagnóstico por Imágenes tanto para Medicina Humana como para
-            Medicina Veterinaria. Fabricamos, comercializamos y alquilamos una
+            Medicina Veterinaria. Distribuimos, comercializamos y alquilamos una
             amplia gama de equipos y periféricos de radiología convencional y
             digital, de mamografía y de ultrasonografía de producción nacional e
             internacional.
