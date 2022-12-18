@@ -1,0 +1,39 @@
+name: Build and deploy on prod
+on:
+  push:
+    branches: [master]
+  workflow_dispatch: 
+jobs:
+  build:
+    name: Build ⛏
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+      uses: actions/checkout@master
+      - name: Install dependencies
+      uses: npm ci
+      - name: Build dependencies
+      uses: npm run build
+      - name: Archive production artifact
+      uses: actions/upload-artifact@master
+      with:
+        name: dist
+        path: dist
+  deploy:
+    name: Deploy 🚀
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+      uses: actions/checkout@master
+      - name: Download artifact
+      uses: actions/download-artifact@master
+      with:
+        name: dist
+        path: dist
+      - name: Sync files with hosting
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ftp.ingeray.com.ar
+        username: achani_github@ingeray.com.ar
+        password: ${{ secrets.FTP_PASSWORD }}
