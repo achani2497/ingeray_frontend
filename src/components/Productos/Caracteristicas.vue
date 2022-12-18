@@ -4,7 +4,7 @@
             <titles title="Características" :subtitle="datos.titulo" :fontSize="25"></titles>
         </div>
         <div class="texto-caracteristica simple-text py-4">
-            <div class="custom-col-container">
+            <div class="custom-col-container text-justify text-xl leading-8">
                 <div class="custom-col">
                     {{primeraMitad(datos.content)}}
                 </div>
