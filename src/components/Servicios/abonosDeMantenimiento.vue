@@ -7,7 +7,7 @@
       <titles
         :title="servicio.titulo"
         :subtitle="servicio.subtitulo"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
     </template>
     <template v-slot:serviceInfo>
@@ -22,7 +22,7 @@
             <titles
               title="Características del"
               subtitle="Mantenimiento Preventivo"
-              :fontSize="25"
+              :fontSize="31"
             ></titles>
             <p class="text-justify text-xl">
               Consiste en visitas programadas para llevar a cabo las tareas
@@ -38,12 +38,12 @@
         <div class="flex flex-col">
           <titles
             subtitle="Mantenimiento Correctivo"
-            :fontSize="25"
+            :fontSize="31"
             :lineHeight="20"
           ></titles>
           <titles
             title="con Préstamo de Partes y Equipos"
-            :fontSize="25"
+            :fontSize="31"
           ></titles>
           <p class="text-justify mt-4 text-xl">
             Incluye servicio ilimitado de pedidos de Servicio Técnico (ST). En

@@ -7,7 +7,7 @@
       <titles
         :title="servicio.titulo"
         :subtitle="servicio.subtitulo"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
     </template>
     <template v-slot:serviceInfo>
@@ -15,7 +15,7 @@
         <titles
           title="Radiologia Convencional e Intervencionista"
           subtitle="Galería de Productos en Alquiler"
-          :fontSize="25"
+          :fontSize="31"
         ></titles>
         <div class="flex mt-6">
           <div>

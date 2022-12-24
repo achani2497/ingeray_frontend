@@ -7,7 +7,7 @@
             <titles
               title="Conózcanos a través de"
               subtitle="Quienes nos eligen"
-              :fontSize="32"
+              :fontSize="31"
             ></titles>
           </template>
           <template v-slot:stuff>
@@ -28,7 +28,20 @@
       </div>
     </div>
     <div class="bg-white" v-if="showText">
-      <our-values></our-values>
+      <text-checklist
+        title="Conozca más sobre"
+        subtitle="Los valores que nos mueven"
+        :list="valores"
+        :extraPadding="true"
+      >
+        <template v-slot:button>
+          <router-link
+            class="contact-inge-button self-end py-2 px-8"
+            to="/quienes-somos"
+            >Quiénes Somos</router-link
+          ></template
+        >
+      </text-checklist>
     </div>
   </div>
 </template>
@@ -36,18 +49,20 @@
 <script>
 import BannerWithBotVue from "../components/Common/BannerWithBot.vue";
 import clientsListVue from "../components/Clientes/clients-list.vue";
-import ourValuesVue from "../components/Clientes/our-values.vue";
+import { valores } from "@/assets/js/valores.json";
+import TextList from "../components/Common/TextList.vue";
 
 export default {
   components: {
     "banner-box": BannerWithBotVue,
     clients: clientsListVue,
-    "our-values": ourValuesVue,
+    "text-checklist": TextList,
   },
   data() {
     return {
       bannerCliente: `${this.$imageCDN}/banner_clientes.jpg`,
       showText: false,
+      valores,
     };
   },
 };

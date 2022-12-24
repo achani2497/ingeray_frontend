@@ -1,6 +1,10 @@
 <template>
   <div class="padding-container flex flex-col -mt-8 -mb-16">
-    <titles title="Clientes que" subtitle="Confian en Nosotros"></titles>
+    <titles
+      title="Clientes que"
+      subtitle="Confian en Nosotros"
+      :fontSize="31"
+    ></titles>
     <div class="carousel relative flex">
       <div class="inner flex items-center" ref="inner" :style="innerStyles">
         <router-link
