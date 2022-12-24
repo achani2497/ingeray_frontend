@@ -1120,7 +1120,8 @@
             "descripcion":"Ofrecemos una amplia gama de detectores de excelente calidad para radiografía y radioscopía digital. Pudiendo elegir entre paneles de adquisición de imágenes de sistema cableado o  Wifi para aplicaciones  multipropósito o específicos para mamografía.",
             "caracteristicas": {
                 "titulo": "Destacables de este producto",
-                "imagen":"mamo/caracteristicas-captores.jpg"
+                "imagen":"mamo/caracteristicas-captores.jpg",
+                "content":"Inge Ray ofrece los más avanzados paneles, detectores planos para radiografía y radioscopia digital. Contamos con una amplia gama de productos de las fábricas más importantes de detectores de rayos X con procesamiento avanzado de imágenes médicas digitales, diseños robustos, hardware de excelente resistencia y funcionalidad, software de obtención de imágenes y sistema PACS optimizado, para  mejorar el flujo de trabajo diario de los centros médicos. De acuerdo a las necesidades de su servicio, podrá elegir entre opciones cableadas o wifi especiales para mamografía."
             },
             "especificaciones":[
                 {

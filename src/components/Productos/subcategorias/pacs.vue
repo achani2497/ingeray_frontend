@@ -42,8 +42,6 @@
           <caracteristicas :datos = "producto.caracteristicas"/>
           <!-- Especificaciones -->
           <especificaciones :datos = "producto.especificaciones"/>
-          <!-- Galeria -->
-          <galeria-productos :datos="producto.galeria"/>
           <!-- Documentos -->
           <documentos :brochures="producto.brochures"/>
         </template>
@@ -63,7 +61,6 @@ import { productMixin } from '../../../assets/js/productMixin';
 import Caracteristicas from '../Caracteristicas.vue';
 import Documentos from '../Documentos.vue';
 import Especificaciones from '../Especificaciones.vue';
-import GaleriaProductos from '../GaleriaProductos.vue';
 import ProductTemplate from '../productTemplate.vue';
 import BannerContacto from '../BannerContacto.vue';
 import ContactForm from '../../Forms/ContactForm';
@@ -77,7 +74,6 @@ export default {
         'caracteristicas': Caracteristicas,
         'documentos': Documentos,
         'especificaciones': Especificaciones,
-        'galeria-productos': GaleriaProductos,
         'banner-contacto': BannerContacto,
         'contact-form': ContactForm,
         'image-carousel': ImageCarousel,

@@ -1,7 +1,7 @@
 <template>
   <div class="galeria flex flex-col py-4 w-full h-auto">
     <div class="titulos">
-      <titles title="" subtitle="Galería" :fontSize="25"></titles>
+      <titles subtitle="Galería" :fontSize="25"></titles>
     </div>
     <div class="flex mt-6">
       <div
@@ -10,8 +10,8 @@
         Imágenes Clínicas
       </div>
     </div>
-    <div class="imagenes-galeria flex flex-wrap justify-between py-6">
-      <div v-for="(imagen, index) in datos.slice(0,6)" :key="index" class="imagen">
+    <div class="imagenes-galeria flex flex-wrap justify-evenly py-6">
+      <div v-for="(imagen, index) in datos.slice(0,4)" :key="index" class="imagen">
         <img :src="imagen.productImage" :alt="imagen.productName"/>
       </div>
     </div>
@@ -52,10 +52,10 @@
   cursor: pointer;
 }
 .imagenes-galeria {
-  display: grid;
+  /* display: grid;
   gap: 1rem;
   grid-auto-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); */
 }
 .images-container {
   height: 80vh;
@@ -69,12 +69,10 @@
   grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
 }
 .imagen {
-  background-color: brown;
-  height: 200px;
+  width: 180px;
   margin-bottom: 40px;
 }
 .imagen-modal {
-  background-color: brown;
   height: 300px;
   margin-bottom: 40px;
 }

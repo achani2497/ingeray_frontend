@@ -1,5 +1,5 @@
 <template>
-    <div class="documentos flex flex-col gap-4 py-4">
+    <!-- <div class="documentos flex flex-col gap-4 py-4">
         <div class="titulos">
             <titles title="Brochure" subtitle="Documentos" :fontSize="25"></titles>
         </div>
@@ -12,7 +12,7 @@
             </div>
             <router-link to="/productos" class="contact-outline">Ver todos los productos</router-link>
         </div>
-    </div>
+    </div> -->
 </template>
 <script>
 export default {

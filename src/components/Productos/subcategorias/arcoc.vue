@@ -6,7 +6,6 @@
             </div>
             <div class="titulos">
                 <titles
-                    :title="producto.nombreCategoria"
                     :subtitle="producto.nombreCompleto"
                     :fontSize="25"
                 ></titles>

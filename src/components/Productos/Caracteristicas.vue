@@ -1,7 +1,7 @@
 <template>
     <div class="caracteristicas flex flex-col py-4 w-full h-auto">
         <div class="titulos">
-            <titles title="Características" :subtitle="datos.titulo" :fontSize="25"></titles>
+            <titles title="Características Generales" :subtitle="datos.titulo" :fontSize="25"></titles>
         </div>
         <div class="texto-caracteristica simple-text py-4">
             <div class="custom-col-container text-justify text-xl leading-8">
@@ -31,11 +31,16 @@
             },
             primeraMitad: function(texto) {
                 let textLength = texto.length;
+                if(textLength <= 570) {
+                    return texto
+                }
                 this.mediaTexto = Math.floor(textLength*0.6);
                 return texto.substring(0, this.mediaTexto);
             },
             segundaMitad: function(texto) {
-                return texto.substring(this.mediaTexto)
+                if(texto.length > 570) {
+                    return texto.substring(this.mediaTexto)
+                }
             }
         },
     }
