@@ -4,7 +4,7 @@
       class="flex flex-col gap-4 py-6"
       :class="[extraPadding ? 'px-16' : '']"
     >
-      <titles :title="title" :subtitle="subtitle" :fontSize="30"></titles>
+      <titles :title="title" :subtitle="subtitle" :fontSize="31"></titles>
       <ul class="flex flex-col gap-12 pt-4">
         <li
           v-for="(item, index) in list"

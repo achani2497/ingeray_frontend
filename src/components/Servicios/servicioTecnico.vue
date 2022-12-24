@@ -7,7 +7,7 @@
       <titles
         :title="servicio.titulo"
         :subtitle="servicio.subtitulo"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
     </template>
     <template v-slot:serviceInfo>
@@ -22,7 +22,7 @@
           <titles
             title="Mayores prestaciones en"
             subtitle="Pedidos de Servicio Técnico"
-            :fontSize="25"
+            :fontSize="31"
           ></titles>
           <p class="text-justify mt-4 text-xl">
             Además nuestros clientes, desde sus divisiones de Compras,

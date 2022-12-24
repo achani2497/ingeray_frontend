@@ -7,7 +7,7 @@
             <titles
               title="Conózcanos a través de"
               subtitle="Quienes nos eligen"
-              :fontSize="32"
+              :fontSize="31"
             ></titles>
           </template>
           <template v-slot:stuff>

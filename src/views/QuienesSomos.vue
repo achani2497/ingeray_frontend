@@ -8,11 +8,11 @@
           <titles
             title="Conocé a nuestra empresa y a los que forman parte"
             subtitle="Nos enfocamos en brindar soluciones"
-            :fontSize="30"
+            :fontSize="31"
           ></titles>
         </template>
-        <template slot="stuff">
-          <p class="text-justify text-xl leading-9">
+        <template slot="stuff" class="relative">
+          <p class="text-justify text-xl leading-9 pb-14">
             Desde 1992 INGE RAY SRL se especializa en Equipamiento para
             Diagnóstico por Imágenes y al día de hoy somos la empresa del área
             más compenetrada con las necesidades de nuestros clientes. Desde ese
@@ -25,7 +25,15 @@
           </p>
           <button
             @click="showContactMenu = true"
-            class="banner-contacto flex items-center gap-2 mb-10 -mt-2"
+            class="
+              banner-contacto
+              flex
+              items-center
+              gap-2
+              absolute
+              bottom-8
+              right-0
+            "
           >
             <div class="envelope"></div>
             <div class="text">
@@ -40,11 +48,21 @@
           </button>
         </template>
       </banner-with-bot>
+      <!-- Modal -->
+      <modal large="sm" @close="showContactMenu = false" v-if="showContactMenu">
+        <template #content>
+          <simple-contact-form
+            @close="showContactMenu = false"
+          ></simple-contact-form>
+        </template>
+        ></modal
+      >
       <!-- Bases -->
       <div class="flex flex-col gap-4">
         <titles
           title="Las bases que"
           subtitle="Nos inspiran para crecer"
+          :fontSize="31"
         ></titles>
         <mision-vision-valores></mision-vision-valores>
       </div>
@@ -56,6 +74,7 @@
           class="pl-3"
           title="Conocénos"
           subtitle="Somos un gran equipo"
+          :fontSize="31"
         ></titles>
         <div class="staff-description-card flex">
           <img
@@ -110,6 +129,7 @@
         <titles
           title="El equipo de Inge Ray está compuesto por un"
           subtitle="Grupo Multidiciplinario de Profesionales que disfrutan su trabajo"
+          :fontSize="31"
         ></titles>
         <!-- Gerentes -->
         <div class="flex justify-center gap-6">
@@ -139,6 +159,7 @@
         <titles
           title="El equipo de Inge Ray está compuesto por un"
           subtitle="Grupo Multidiciplinario de Profesionales que disfrutan su trabajo"
+          :fontSize="31"
         ></titles>
         <staff-carousel></staff-carousel>
         <button
@@ -164,7 +185,11 @@
       class="padding-container bg-white -mt-8 flex flex-col gap-8 py-16"
       v-if="showAllTeam"
     >
-      <titles title="Conozca más sobre" subtitle="Nuestra Historia"></titles>
+      <titles
+        title="Conozca más sobre"
+        subtitle="Nuestra Historia"
+        :fontSize="31"
+      ></titles>
       <p class="text-lg">
         En INGE RAY SRL reconocemos a todos los que formaron parte en estos 30
         años, los recordamos con alegría y les agradecemos por haber caminado
@@ -205,7 +230,7 @@
       <titles
         title="Certificaciones ante"
         subtitle="Organismos Oficiales"
-        :fontSize="25"
+        :fontSize="31"
         class="pl-8"
       ></titles>
       <ul class="flex flex-wrap justify-around">
@@ -274,6 +299,8 @@ import { chiefs, staff, contracts } from "../assets/js/quienes-somos.json";
 import TextList from "../components/Common/TextList.vue";
 import { valores } from "@/assets/js/valores.json";
 import StaffCarousel from "../components/Carousels/StaffCarousel/StaffCarousel.vue";
+import Modal from "../components/Modal/Modal.vue";
+import SimpleContactForm from "../components/Forms/SimpleContactForm.vue";
 
 export default {
   components: {
@@ -282,6 +309,8 @@ export default {
     "presentation-card": PresentationCard,
     "text-checklist": TextList,
     "staff-carousel": StaffCarousel,
+    modal: Modal,
+    "simple-contact-form": SimpleContactForm,
   },
   data() {
     return {

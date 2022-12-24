@@ -5,7 +5,7 @@
       <banner-box :bannerName="bannerContacto">
         <template v-slot:title>
           <p class="inge-text-bold">¿Cómo podemos ayudarlo?</p>
-          <titles subtitle="Contáctenos" :fontSize="25"></titles>
+          <titles subtitle="Contáctenos" :fontSize="31"></titles>
           <p class="mb-10">
             Seleccione entre las siguiente opciones, cuál es su área de interés,
             para poder brindarle informacion precisa y una mejor atención.
@@ -43,6 +43,7 @@
             title="Nuestro equipo de"
             :subtitle="areaName"
             class="staff-title"
+            :fontSize="31"
           ></titles>
           <div class="staff-data">
             <staff-description :equipo="equipo"></staff-description>
@@ -100,6 +101,7 @@
           class="mapa-title mb-4"
           title="Ubicacion de"
           subtitle="Nuestra Empresa"
+          :fontSize="31"
         ></titles>
         <ik-image path="/mapa.jpg" alt="imagen de mapa"></ik-image>
       </div>

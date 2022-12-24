@@ -3,7 +3,7 @@
     <titles
       title="Clientes que"
       subtitle="Confían en nosotros"
-      :fontSize="32"
+      :fontSize="31"
     ></titles>
     <ul class="clients-gallery">
       <li

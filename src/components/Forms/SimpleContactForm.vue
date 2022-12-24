@@ -13,7 +13,7 @@
       <titles
         title="Déjenos su"
         subtitle="Consulta"
-        :fontSize="30"
+        :fontSize="31"
         class="pl-2"
       >
       </titles>

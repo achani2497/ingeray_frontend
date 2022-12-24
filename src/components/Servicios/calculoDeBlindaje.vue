@@ -7,7 +7,7 @@
       <titles
         :title="servicio.titulo"
         :subtitle="servicio.subtitulo"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
     </template>
     <template v-slot:serviceInfo>
@@ -16,7 +16,7 @@
           title="Conozca más sobre el servicio de"
           subtitle="Nuestros Profesionales"
           class="pl-8"
-          :fontSize="25"
+          :fontSize="31"
         ></titles>
         <div class="flex gap-8">
           <div class="w-1/2">
@@ -36,7 +36,7 @@
           <titles
             title="Certificaciones ante"
             subtitle="Organismos Oficiales"
-            :fontSize="25"
+            :fontSize="31"
             class="pl-8"
           ></titles>
           <ul class="flex flex-wrap justify-around">

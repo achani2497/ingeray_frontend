@@ -3,7 +3,7 @@
     <titles
       title="Conozca más sobre nuestro"
       subtitle="Prestaciones y servicios"
-      :fontSize="25"
+      :fontSize="31"
       class="pl-4"
     ></titles>
     <div class="grid grid-cols-4 grid-rows-2 gap-y-4 gap-8 mt-4">

@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col gap-8 relative">
-    <titles :title="title" :subtitle="subtitle" class="px-16"></titles>
     <div class="carousel-container flex items-center">
       <!-- Control button Left -->
       <button
@@ -10,7 +9,7 @@
       <!-- Carousel -->
       <div class="carousel px-14">
         <div class="overflow-hidden flex">
-          <div class="inner flex gap-4 pb-4" ref="inner" :style="innerStyles">
+          <div class="inner flex pb-4" ref="inner" :style="innerStyles">
             <div
               class="card-container"
               v-for="(person, index) in carouselElements"
@@ -20,7 +19,7 @@
                 :src="
                   require(`@/assets/images/quienes-somos/staff-cards/${person.image}`)
                 "
-                width="290"
+                width="90%"
               />
             </div>
           </div>
@@ -29,18 +28,6 @@
       <!-- Control button right -->
       <button class="h-6 w-6 arrow rounded-full" @click="next()"></button>
     </div>
-    <a
-      href="https://ingeraysrl.mercadoshops.com.ar/"
-      class="absolute right-12 -bottom-6 rounded-full"
-      v-if="showCheckout"
-    >
-      <img
-        class="inge-shadow-down rounded-full"
-        :src="require('@/assets/images/icons/checkout.png')"
-        alt="carrito-de-compras"
-        width="70"
-      />
-    </a>
   </div>
 </template>
 <style scoped >
@@ -48,6 +35,7 @@
   width: 270px;
   padding-left: 5px;
   display: flex;
+  justify-content: center;
 }
 .carousel-container {
   width: 100%;

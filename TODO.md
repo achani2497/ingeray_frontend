@@ -17,5 +17,5 @@ Alquileres
 [ ] Agregar el producto Sistemas (En la parte de Sistemas de Digitalizacion -> PACS)
 [ ] Agregar el producto Integracion (En la parte de Sistemas de Digitalizacion -> Video Digital)
 
-Horas trabajadas sin pagar: 48
+Horas trabajadas sin pagar: 51
 

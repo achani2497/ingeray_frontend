@@ -7,7 +7,7 @@
       <titles
         :title="servicio.titulo"
         :subtitle="servicio.subtitulo"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
     </template>
     <template v-slot:serviceInfo>
@@ -15,7 +15,7 @@
         <titles
           title="Conozca los alcances de estar"
           subtitle="Asistido Tecnológicamente"
-          :fontSize="25"
+          :fontSize="31"
           class="pl-6"
         ></titles>
         <div class="flex gap-8">
@@ -47,7 +47,7 @@
                 <titles
                   title="Visualice la calidad de nuestras"
                   subtitle="Intervenciones"
-                  :fontSize="25"
+                  :fontSize="31"
                   id="x-ray-text-button"
                 ></titles>
                 <button
