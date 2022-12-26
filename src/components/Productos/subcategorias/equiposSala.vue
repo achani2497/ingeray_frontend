@@ -94,9 +94,9 @@ export default {
 .generadores-images {
   display: grid;
   row-gap: 2rem;
-  column-gap: 10px;
+  column-gap: 5px;
   justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 }
 .generadores-images img {
   max-height: 270px;

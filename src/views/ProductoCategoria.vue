@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="padding-container">
+    <div class="fondo-mamo padding-container">
       <router-view />
     </div>
     <footer-menu></footer-menu>
@@ -15,6 +15,9 @@ export default {
 </script>
 
 <style>
+.fondo-mamo{
+  /* background-color: rgb(245, 238, 239); */
+}
 </style>
 
 

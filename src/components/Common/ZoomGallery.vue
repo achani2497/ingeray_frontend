@@ -12,7 +12,7 @@
         :sectionName="`/productos/humanos/${sectionName}/`"
         :imageName="img.baseImg"
         imageExtension=".png"
-        imageWith="250px"
+        imageWith="240px"
         v-for="(img, index) in producto.zoomGallery.slice(0, imagesToShow)"
         :key="index"
       >

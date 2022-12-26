@@ -3,6 +3,15 @@
     <template v-slot:productInfo>
       <!-- Caracteristicas -->
       <caracteristicas :datos="producto.caracteristicas" />
+      <!-- Galeria de características-->
+      <img :src="getImgSource()" alt="galeria-caracteristicas" class="galeria-caracteristicas">
+      <div class="contenedor-img-caracteristicas">
+        <p class="nombre-imagenes-caracteristicas">Interruptor Sensible</p>
+        <p class="nombre-imagenes-caracteristicas">Interfaces Múltiples</p>
+        <p class="nombre-imagenes-caracteristicas">Diseño antigolpes</p>
+        <p class="nombre-imagenes-caracteristicas">Pulsador Remoto</p>
+        <p class="nombre-imagenes-caracteristicas">Colimado Regulable</p>
+      </div>
       <!-- Especificaciones -->
       <especificaciones :datos="producto.especificaciones" />
       <!-- Galeria de imagenes para hacer Zoom -->
@@ -56,7 +65,22 @@ export default {
   beforeMount() {
     this.producto = this.getProductEquipment(this.slug);
   },
+  methods: {
+    getImgSource: function() {
+      return require(`@/assets/images/productos/humanos/radioDigital/caracteristicas-moviles-digi-2.png`)
+    }
+  }
 };
 </script>
 <style scoped>
+.nombre-imagenes-caracteristicas{
+  font-weight: bold;
+  font-size: 80%;
+}
+.contenedor-img-caracteristicas{
+  margin-top: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 </style>

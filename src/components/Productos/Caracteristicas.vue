@@ -28,19 +28,6 @@ export default {
     getImgSource: function (imgSrc) {
       return require(`@/assets/images/productos/humanos/${imgSrc}`);
     },
-    primeraMitad: function (texto) {
-      let textLength = texto.length;
-      if (textLength <= 570) {
-        return texto;
-      }
-      this.mediaTexto = Math.floor(textLength * 0.6);
-      return texto.substring(0, this.mediaTexto);
-    },
-    segundaMitad: function (texto) {
-      if (texto.length > 570) {
-        return texto.substring(this.mediaTexto);
-      }
-    },
   },
 };
 </script>
