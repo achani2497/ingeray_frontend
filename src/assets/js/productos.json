@@ -1033,15 +1033,38 @@
             "especificaciones": [
                 {
                     "tabla": "https://ik.imagekit.io/ingesystem22/Cuadro_MAMO_GENORAY_0zdM3ODnS.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670803902984"
-                },
-                {
-                    "tabla": "https://ik.imagekit.io/ingesystem22/Cuadro_MAMO_VIOLA_CARROUSEL_0X52QjVUc.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670805072564"
                 }
             ],
             "diferencias": {
                 "titulo": "Breve explicación de las diferencias tecnológicas",
                 "content": "Los equipos analógicos operan con film y sistema de procesadora para revelado automático. Son equipos funcionales y que siguen ofreciendo imágenes de calidad pero actualmente presentan la dificultad de la reposición de los insumos  y requiere de un control de desechos de los líquidos de revelado para un adecuado cuidado del medio ambiente. Los equipos digitalizados con tecnología indirecta o CR (Computed Radiography) constituyen una tecnología intermedia dónde equipos analógicos son convertidos para que pueda obtenerse una imagen digital. Para ello se reemplazan los antiguos chasis de pantalla y film por nuevos diseñados con pantalla de fósforo fotoestimulable, cuya lectura genera una imagen digital. Los equipos con tecnología directa o DR consiste en un sensor directo Flat Panel el cual tiene tamaño de chasis y se coloca dentro del Bucky del mamógrafo existente, el mismo capta las imágenes en forma digital y las transmite automáticamente a la computadora en cuestión de segundos. Es un sistema más eficiente, rápido y sin mantenimientos respecto del sistema indirecto y una mejor solución en los casos que se posea un mamógrafo analógico de buena calidad. Los equipos digitales DR (Direct Radiography) o de digitalización directa son los más nuevos en cuanto a tecnología. Con ellos se obtienen imágenes de alta calidad y permiten mejores funciones que los modelos analógicos, aunque son equipos que requieren de una mayor inversión inicial."
             },
+            "carousel": [
+                {
+                    "title": "Viola D",
+                    "imagePath": "MAMO-VIOLA-D.png",
+                    "url": "",
+                    "description": "Este modelo de la Línea Viola es una  solución innovadora en mamografía que combina un diseño estético moderno con avanzadas prestaciones para obtener una excelente calidad de imagen."
+                },
+                {
+                    "title": "Viola D Gantry Circular",
+                    "imagePath": "MAMO-VIOLA-D-Gantry-Circular.png",
+                    "url": "",
+                    "description": "Es el modelo digital base, super estable y con gran calidad diagnóstica y versatilidad en el posicionamiento. Este modelo está orientado a screening. El gantry circular permite el posicionamiento lateral y frontal."
+                },
+                {
+                    "title": "Viola DBT Doble Columna",
+                    "imagePath": "MAMO-VIOLA-DBT-Doble-Columna.png",
+                    "url": "",
+                    "description": "Sistema de tomosíntesis de mama avanzado e innovador que incluye la capacidad integrada de generar imágenes de mamografía digital de campo completo (FFDM)."
+                },
+                {
+                    "title": "Viola DBT Monocolumna",
+                    "imagePath": "MAMO-VIOLA-DBT-monocolumna.png",
+                    "url": "",
+                    "description": "Este modelo está orientado a screening y posee la característica de poder expandirse y realizar tomosíntesis. Es apto para incorporar el kit de biopsia 3D que desee el usuario."
+                }
+            ],
             "brochures": [
                 {
                     "link": "COMPLETAR",
