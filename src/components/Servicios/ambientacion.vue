@@ -7,7 +7,7 @@
       <titles
         :title="servicio.titulo"
         :subtitle="servicio.subtitulo"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
     </template>
     <template v-slot:serviceInfo>
@@ -15,7 +15,7 @@
         <titles
           title="Mejoramos la calidad de"
           subtitle="Atención de sus Pacientes"
-          :fontSize="25"
+          :fontSize="31"
         ></titles>
         <p class="text-justify text-xl" style="columns: 250px 2">
           Signos, colores y formas que se vinculan simbólicamente con ideas de

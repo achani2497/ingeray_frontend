@@ -20,9 +20,6 @@ import BannerWithBotVue from "../Common/BannerWithBot.vue";
 export default {
   props: ["bannerName", "description"],
   components: { "banner-box": BannerWithBotVue },
-  created() {
-    console.log(this.$route.path.split("/")[2]);
-  },
   computed: {
     serviceBanner() {
       const serviceName = this.$route.path.split("/")[2];

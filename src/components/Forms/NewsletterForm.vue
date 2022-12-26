@@ -3,7 +3,10 @@
     <div class="flex bkg-light-gray">
       <div class="flex flex-col gap-6 p-8 w-1/2">
         <div>
-          <titles subtitle="Suscríbase a nuestro Newsletter"></titles>
+          <titles
+            subtitle="Suscríbase a nuestro Newsletter"
+            :fontSize="31"
+          ></titles>
           <p>
             Lo mantendremos informados sobre todas las novedades y
             actualizaciones de nuestra empresa

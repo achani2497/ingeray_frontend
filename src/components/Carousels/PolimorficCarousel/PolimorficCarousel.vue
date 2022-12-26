@@ -1,6 +1,11 @@
 <template>
   <div class="flex flex-col gap-8 relative">
-    <titles :title="title" :subtitle="subtitle" class="px-16"></titles>
+    <titles
+      :title="title"
+      :subtitle="subtitle"
+      :fontSize="31"
+      class="px-16"
+    ></titles>
     <div class="carousel-container flex items-center">
       <!-- Control button Left -->
       <button
@@ -9,8 +14,8 @@
       ></button>
       <!-- Carousel -->
       <div class="carousel px-14">
-        <div class="overflow-hidden flex">
-          <div class="inner flex gap-4 pb-4" ref="inner" :style="innerStyles">
+        <div class="overflow-hidden flex" id="inner-wrapper">
+          <div class="inner flex pb-4" ref="inner" :style="innerStyles">
             <div
               class="card-container"
               v-for="(image, index) in elements"
@@ -69,6 +74,7 @@
 .inner {
   width: fit-content;
   transition: transform 0.2s;
+  gap: 17px;
 }
 button {
   margin-right: 0px;

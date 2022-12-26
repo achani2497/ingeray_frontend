@@ -7,7 +7,7 @@
       <titles
         :title="servicio.titulo"
         :subtitle="servicio.subtitulo"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
     </template>
     <template v-slot:serviceInfo>
@@ -15,7 +15,7 @@
         <titles
           title="Conozca las posibilidades de"
           subtitle="Integración Tecnológica"
-          :fontSize="25"
+          :fontSize="31"
         ></titles>
         <p class="text-justify mt-4 text-xl" style="columns: 250px 2">
           Instalamos también en forma local o remota software dedicado y
@@ -36,8 +36,8 @@
         </p>
         <titles
           subtitle="Variedad de Configuraciones"
-          fontSize="25"
           class="mt-10"
+          :fontSize="31"
         ></titles>
         <span class="-mt-1" id="little-subtitle"
           >Diseños adaptables a las necesidades específicas de cada

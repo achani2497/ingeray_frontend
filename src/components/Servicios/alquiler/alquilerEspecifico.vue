@@ -10,8 +10,9 @@
         <titles
           :title="this.productInfo.rental_equipment_category"
           :subtitle="this.productInfo.rental_equipment_name"
+          :fontSize="31"
         ></titles>
-        <p class="text-justify text-lg">
+        <p class="text-justify text-xl">
           {{ this.productInfo.rental_equipment_carousel_description }}
         </p>
         <button
@@ -24,18 +25,18 @@
     <!-- Caracteristicas -->
     <div class="flex flex-col gap-4 px-16">
       <div class="titles">
-        <titles subtitle="Características"></titles>
-        <titles title="Destacables de este servicio" :fontSize="18"></titles>
+        <titles :fontSize="31" subtitle="Características"></titles>
+        <titles :fontSize="25" title="Destacables de este servicio"></titles>
       </div>
-      <p class="text-justify text-lg two-columns-text">
+      <p class="text-justify text-xl leading-8 two-columns-text">
         {{ this.productInfo.rental_equipment_description }}
       </p>
     </div>
     <!-- Especificaciones -->
     <div class="flex flex-col gap-4">
       <div class="titles pl-16">
-        <titles subtitle="Especificaciones"></titles>
-        <titles title="Ficha Técnica" :fontSize="18"></titles>
+        <titles :fontSize="31" subtitle="Especificaciones"></titles>
+        <titles :fontSize="25" title="Ficha Técnica"></titles>
       </div>
       <img
         v-for="(ficha, index) in this.productInfo
@@ -51,8 +52,12 @@
       class="flex flex-col gap-4 px-16"
       v-if="this.productInfo.rental_equipment_galery_images.length !== 0"
     >
-      <titles title="Equipos de Sala" subtitle="Galería"></titles>
-      <div class="tab-label">Imágenes Clínicas</div>
+      <titles
+        :fontSize="31"
+        title="Equipos de Sala"
+        subtitle="Galería"
+      ></titles>
+      <div class="tab-label text-xl">Imágenes Clínicas</div>
       <div class="flex justify-around gap-2">
         <picture-zoom-button
           v-for="(picture, index) in this.productInfo

@@ -5,7 +5,7 @@
       <titles
         title="Tecnología Verde"
         subtitle="Productos Eco Resposables"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
       <div class="flex gap-6">
         <img

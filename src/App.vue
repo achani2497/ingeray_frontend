@@ -160,6 +160,11 @@
   width: 100%;
   padding: 0 14rem;
 }
+@media screen and (min-width: 1441px) {
+  .padding-container {
+    padding: 0 22%;
+  }
+}
 @media screen and (max-width: 900px) {
   .padding-container {
     padding: 0 4rem;

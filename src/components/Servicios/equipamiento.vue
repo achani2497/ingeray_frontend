@@ -7,7 +7,7 @@
       <titles
         :title="servicio.titulo"
         :subtitle="servicio.subtitulo"
-        :fontSize="25"
+        :fontSize="31"
       ></titles>
     </template>
     <template v-slot:serviceInfo>
@@ -15,7 +15,7 @@
         <titles
           title="Galería de Productos"
           subtitle="Los más buscados"
-          :fontSize="25"
+          :fontSize="31"
         ></titles>
       </div>
     </template>
