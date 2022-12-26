@@ -18,7 +18,7 @@
         <button class="h-6 w-6 arrow rounded-full" @click="next()"></button>
       </div>
     </div>
-    <div class="flex gap-4 justify-center mb-4">
+    <div class="flex gap-4 justify-center mb-4" id="carousel-dots">
       <div
         class="circle rounded-full h-5 w-5 bg-gray-400"
         :class="[index === stepNumber - 1 ? 'green-dot' : 'gray-dot']"
@@ -50,7 +50,10 @@
   width: 100%;
   z-index: 10;
 }
-
+#carousel-dots {
+  max-width: 500px;
+  flex-wrap: wrap;
+}
 button {
   margin-right: 5px;
   margin-top: 10px;
@@ -165,12 +168,19 @@ export default {
       };
     },
     setCarouselImages() {
-      if (this.product_type.toString() === "services") {
-        this.imagesPath = "servicios/alquiler/carousel";
-        this.carouselImages = this.getRentCarouselImages(this.product_name);
-      } else {
-        this.imagesPath = "productos/veterinaria/carousel";
-        this.carouselImages = this.getVetCarouselImages(this.product_name);
+      switch (this.product_type.toString()) {
+        case "services":
+          this.imagesPath = "servicios/alquiler/carousel";
+          this.carouselImages = this.getRentCarouselImages(this.product_name);
+          break;
+        case "human":
+          this.imagesPath = "productos/humanos/carousel";
+          this.carouselImages = this.getHumCarouselImages(this.product_name);
+          break;
+        default:
+          this.imagesPath = "productos/veterinaria/carousel";
+          this.carouselImages = this.getVetCarouselImages(this.product_name);
+          break;
       }
     },
   },

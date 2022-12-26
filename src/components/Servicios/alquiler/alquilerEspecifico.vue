@@ -68,9 +68,6 @@
   </div>
 </template>
 <style scoped>
-.two-columns-text {
-  column-count: 2;
-}
 .tab-label {
   color: var(--gray);
   position: relative;

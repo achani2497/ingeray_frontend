@@ -114,9 +114,6 @@
   </div>
 </template>
 <style scoped>
-.two-columns-text {
-  column-count: 2;
-}
 .tab-label {
   color: var(--gray);
   position: relative;
@@ -150,7 +147,7 @@ export default {
     };
   },
   created() {
-    this.productInfo = this.getEquipmentInfo(this.$route.params.categoria);
+    this.productInfo = this.getVetEquipmentInfo(this.$route.params.categoria);
     this.products = this.getAllProducts();
   },
   computed: {
@@ -163,7 +160,9 @@ export default {
   watch: {
     "$route.params.categoria": {
       handler(newValue) {
-        this.productInfo = this.getEquipmentInfo(this.$route.params.categoria);
+        this.productInfo = this.getVetEquipmentInfo(
+          this.$route.params.categoria
+        );
         this.products = this.getAllProducts();
       },
       immediate: true,

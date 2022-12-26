@@ -37,6 +37,9 @@
 .inge-text-bold {
   font-family: "IngeTextBold", Arial, Helvetica, sans-serif;
 }
+.two-columns-text {
+  column-count: 2;
+}
 /* Colores de texto */
 .blue {
   color: var(--dark-bluish-green);

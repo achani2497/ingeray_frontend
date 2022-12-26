@@ -1,6 +1,6 @@
 <template>
   <div class="inge-shadow-down flex flex-col mt-4">
-    <img :src="bannerName" @load="loaded()" alt="banner-contactos" />
+    <img :src="bannerName" alt="banner-contactos" />
     <div class="banner-content flex flex-col gap-6 relative">
       <div id="banner-section-title">
         <slot name="title"></slot>
@@ -44,15 +44,6 @@ export default {
       load: false,
       showModal: false,
     };
-  },
-  methods: {
-    loaded() {
-      // TODO: VER QUE HAGO CON ESTO
-      console.log(this.load);
-      console.log("cargado");
-      this.load = true;
-      console.log(this.load);
-    },
   },
 };
 </script>
