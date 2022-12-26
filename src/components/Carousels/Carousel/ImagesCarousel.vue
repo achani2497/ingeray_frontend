@@ -3,7 +3,7 @@
         <splide :options="options" class="images-carousel">
             <splide-slide v-for="(elemento, index) in elementos" :key="index" class="carousel-splide">
                 <div class="carousel-card inge-shadow-down">
-                    <img class="carousel-image" :src="elemento.productImage">
+                    <img class="carousel-image" :src="elemento.productImage" :alt="elemento.productName">
                 </div>
             </splide-slide>
         </splide>
@@ -71,7 +71,13 @@ export default {
 				width  : '100%',
 				gap    : '1rem',
 			},
+			carrouselImages: [],
 		}
+	},
+	created: function() {
+		this.carrouselImages = this.elementos.map((imagen) => {
+      imagen.productImage = require(`@/assets/images/productos/humanos/${imagen.productImage}`)
+    })
 	}
 }
 </script>

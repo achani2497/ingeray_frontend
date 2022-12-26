@@ -10,16 +10,16 @@
                     "isActive": "false",
                     "equipos": [
                         {
-                            "nombre": "Equipos con Fuentes de Alta Frecuencia",
-                            "urlName": "equipos-alta-frecuencia"
-                        },
-                        {
-                            "nombre": "Equipos con Fuente de Frecuencia Industrial",
-                            "urlName": "equipos-frecuencia-industrial"
+                            "nombre": "Equipos de Sala",
+                            "urlName": "equipos-sala"
                         },
                         {
                             "nombre": "Equipos Móviles",
                             "urlName": "equipos-moviles"
+                        },
+                        {
+                            "nombre": "Arcos en C",
+                            "urlName": "arcos-c"
                         }
                     ]
                 },
@@ -28,8 +28,16 @@
                     "isActive": "false",
                     "equipos": [
                         {
-                            "nombre": "Paneles de Adquisicion Digital Directa de Imágenes",
-                            "urlName": "paneles"
+                            "nombre": "Equipos de Sala",
+                            "urlName": "equipos-sala-digital"
+                        },
+                        {
+                            "nombre": "Equipos Móviles",
+                            "urlName": "equipos-moviles-digitales"
+                        },
+                        {
+                            "nombre": "Arcos en C",
+                            "urlName": "arcos-c-digitales"
                         }
                     ]
                 },
@@ -39,14 +47,27 @@
                     "equipos": [
                         {
                             "nombre": "Arcos en C",
-                            "urlName": "arcos-c"
+                            "urlName": "arcos-c-intervencionista"
                         }
                     ]
                 },
                 {
                     "nombreProducto": "Sistemas de Digitalización",
                     "isActive": "false",
-                    "equipos": []
+                    "equipos": [
+                        {
+                            "nombre": "Flat Panel",
+                            "urlName": "panel"
+                        },
+                        {
+                            "nombre": "PACS",
+                            "urlName": "pacs"
+                        },
+                        {
+                            "nombre": "Video Digital",
+                            "urlName": "video-digital"
+                        }
+                    ]
                 },
                 {
                     "nombreProducto": "Mamografía",

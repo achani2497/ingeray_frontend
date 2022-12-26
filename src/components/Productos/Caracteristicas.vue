@@ -1,23 +1,48 @@
 <template>
-    <div class="caracteristicas flex flex-col py-4 w-full h-auto">
-        <div class="titulos">
-            <titles title="Destacables de este equipo" subtitle="Características" :fontSize="25"></titles>
-        </div>
-        <div class="texto-caracteristica simple-text py-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, incidunt expedita. Mollitia asperiores possimus impedit, nemo velit voluptates accusantium quidem labore at. Necessitatibus optio vitae, doloremque, tempore aliquid voluptates recusandae impedit officiis sunt tempora alias deleniti aut maxime! Qui vero distinctio numquam, earum quod deserunt rem incidunt accusamus aperiam, repellat aliquid voluptatibus minus assumenda odit nihil? Reprehenderit vero inventore, deserunt laborum similique reiciendis nostrum, molestias animi commodi porro maiores quasi sapiente molestiae unde ea eligendi eos necessitatibus quod? Doloribus, blanditiis aspernatur, consequatur cum earum temporibus, enim nisi fugiat saepe architecto obcaecati pariatur. Atque autem ipsum odit sapiente animi dolorem maxime?
-        </div>
-        <button class="contact-outline">Ver Más</button>
-    </div>
+  <div class="caracteristicas flex flex-col py-4 gap-4 w-full h-auto">
+    <titles
+      subtitle="Características Generales"
+      :fontSize="25"
+      :lineHeight="0"
+    ></titles>
+    <titles :title="datos.titulo" :fontSize="25"></titles>
+    <p class="text-justify text-lg two-columns-text">
+      {{ datos.content }}
+      <img
+        v-if="datos.imagen"
+        :src="getImgSource(datos.imagen)"
+        alt="img-caracteristicas"
+      />
+    </p>
+  </div>
 </template>
+<script>
+export default {
+  props: ["datos"],
+  data() {
+    return {
+      mediaTexto: 0,
+    };
+  },
+  methods: {
+    getImgSource: function (imgSrc) {
+      return require(`@/assets/images/productos/humanos/${imgSrc}`);
+    },
+    primeraMitad: function (texto) {
+      let textLength = texto.length;
+      if (textLength <= 570) {
+        return texto;
+      }
+      this.mediaTexto = Math.floor(textLength * 0.6);
+      return texto.substring(0, this.mediaTexto);
+    },
+    segundaMitad: function (texto) {
+      if (texto.length > 570) {
+        return texto.substring(this.mediaTexto);
+      }
+    },
+  },
+};
+</script>
 <style scoped>
-.texto-caracteristica{
-    column-count: 2;
-    text-align: justify;
-}
-@media screen and (max-width: 650px){
-    .texto-caracteristica{
-        column-count: 1;
-        text-align: left;
-    }
-}
 </style>

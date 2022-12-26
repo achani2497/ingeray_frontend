@@ -1,15 +1,36 @@
 <template>
-  <!-- TODO: Ver que hago con este action -->
+  <div class="">
+    <div class="padding-container">
+      <router-view />
+    </div>
+    <footer-menu></footer-menu>
+  </div>
+</template>
+
+<script>
+import footerMenuVue from "../components/Servicios/footerMenu.vue";
+export default {
+  components: { "footer-menu": footerMenuVue },
+};
+</script>
+
+<style>
+</style>
+
+
+<!-- Lo dejo comentado al archivo anterior para tener una referencia -->
+<!--<template>
+{{//TODO: Ver que hago con este action}}
   <div class="row" @open-form="alert('asd')">
-    <!-- Info del producto -->
+    {{//Info del producto}}
     <div class="producto flex px-4 gap-4 h-auto">
       <div class="producto-imagen">
         <ImageCarousel :elementos="equipos.productos"></ImageCarousel>
       </div>
       <div class="producto-descripcion flex flex-col gap-4">
-        <!-- Path -->
+        {{//Path}}
         <CustomPath :slavons="this.path"></CustomPath>
-        <!-- Titulos -->
+        {{//Titulos}}
         <div class="titulos">
           <titles
             :title="equipos.nombreCategoria"
@@ -17,7 +38,7 @@
             :fontSize="25"
           ></titles>
         </div>
-        <!-- Descripcion -->
+        {{//Descripcion}}
         <div class="descripcion my-4 simple-text gray">
           {{ equipos.descripcion }}
         </div>
@@ -29,7 +50,7 @@
         </button>
       </div>
     </div>
-    <!-- Banner de contacto -->
+    {{//Banner de contacto}}
     <div class="banner-contacto bkg-light-gray w-full flex z-10 px-16 py-4">
       <button class="flex w-auto gap-2 items-center" @click="showModal = true">
         <div class="envelope"></div>
@@ -43,16 +64,16 @@
       </button>
     </div>
     <div class="info-adicional bkg-light-gray px-12 py-4">
-      <!-- Caracteristicas -->
+      {{//Caracteristicas}}
       <Caracteristicas />
-      <!-- Especificaciones -->
+      {{//Especificaciones}}
       <Especificaciones />
-      <!-- Galeria de Imagenes -->
+      {{//Galeria de Imagenes}}
       <Galeria :producto="equipos.nombreCompleto" />
-      <!-- Documentos -->
+      {{//Documentos}}
       <Documentos />
     </div>
-    <!-- Formulario de contacto -->
+    {{/* Formulario de contacto */}}
     <modal :header="false" v-if="showModal">
       <template #content>
         <contact-form
@@ -227,4 +248,4 @@ export default {
     },
   },
 };
-</script>
+</script> -->
