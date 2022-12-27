@@ -2,7 +2,7 @@
   <div
     class="title-container flex flex-col"
     :style="`font-size:${fontSize}px!important; color:${
-      active ? 'white' : '#0076a5'
+      active ? 'white' : esMamo() ? '#e878a0' : '#0076a5'
     }`"
   >
     <span class="title" v-if="title"> {{ title }} </span>
@@ -35,9 +35,24 @@ export default {
       default: 30,
     },
   },
+  methods: {
+    esMamo: function() {
+      var urlActual = window.location.href;
+      urlActual = urlActual.split('/');
+      urlActual = urlActual[urlActual.length - 1];
+      if(urlActual === 'mamografos' || urlActual === 'captores-digitales') {
+        return true
+      } else {
+        return false
+      }
+    }
+  }
 };
 </script>
 <style scoped>
+.mamo {
+  color: #e878a0;
+}
 .sub-title {
   font-family: "IngeTextBold", Arial, Helvetica, sans-serif;
 }

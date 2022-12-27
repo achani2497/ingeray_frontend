@@ -45,7 +45,7 @@ export default {
 
 <style>
 .fondo-mamo{
-  background-color: rgb(255, 217, 223);
+  background-color: #F6ECED;
 }
 </style>
 
