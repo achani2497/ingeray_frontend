@@ -98,7 +98,7 @@
             },
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipos de Sala / INGE RAY / LÍNEA STANDARD - CONTROL XD - ANALÓGICO HF"
                 }
             ],
@@ -195,11 +195,11 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipos Rodantes / INGE RAY / LÍNEA CLÁSICA"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipos Rodantes / INGE RAY / LÍNEA PORTÁTIL A BATERÍAS"
                 }
             ],
@@ -302,11 +302,11 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipo Arco en C / INGE RAY / LÍNEA CLÁSICA"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipo Arco en C / INGE RAY / LÍNEA ZEN"
                 }
             ],
@@ -419,7 +419,7 @@
             },
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipo Digital de Sala / INGE RAY / LÍNEA DIGITAL DIRECTO"
                 }
             ],
@@ -505,11 +505,11 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipos Rodantes Digitales / INGE RAY / PORTÁTIL DIGITAL MOTORIZADO"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipos Rodantes Digitales / INGE RAY / PORTÁTIL GAMA SUPERIOR"
                 }
             ],
@@ -596,7 +596,7 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipo Arco en C / INGE RAY / LÍNEA FLAT PANEL - FLAT PANEL MONO"
                 }
             ],
@@ -677,15 +677,15 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipo Arco en C / INGE RAY / LÍNEA CLÁSICA"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipo Arco en C / INGE RAY / LÍNEA ZEN"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Equipo Arco en C / INGE RAY / LÍNEA FLAT PANEL - FLAT PANEL MONO"
                 }
             ],
@@ -764,7 +764,7 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Sistemas de Digitalización / INGE RAY / CAPTORES DIGITALES"
                 }
             ],
@@ -882,11 +882,11 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Sistemas de Digitalización / INGE RAY / DIGIRAD PACS"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Sistemas de Digitalización / INGE RAY / DIGIRAD WORKSTATION"
                 }
             ],
@@ -956,11 +956,11 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Sistemas de Digitalización / INGE RAY / VIDEO DIGITAL / DIGIRAD"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Sistemas de Digitalización / INGE RAY / VIDEO DIGITAL / MEMORAD Q"
                 }
             ],
@@ -1044,15 +1044,15 @@
             },
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "Mamografos_LINEA_GENORAY.pdf",
                     "nombreLink": "Mamografía / INGE RAY / Mamógrafos LÍNEA GENORAY"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "Mamografos_LINEA_VIOLA_D_Circular_DBT.pdf",
                     "nombreLink": "Mamografía / INGE RAY / Mamógrafos LÍNEA GMM VIOLA"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "LALCEC_info_cáncer_de_mama.pdf",
                     "nombreLink": "Sobre el cancer de mama / LALCEC / INFORMATE"
                 }
             ],
@@ -1170,11 +1170,11 @@
             ],
             "brochures": [
                 {
-                    "link": "COMPLETAR",
+                    "link": "#",
                     "nombreLink": "Mamografía/ INGE RAY / CAPTORES DIGITALES MAMOGRÁFICOS"
                 },
                 {
-                    "link": "COMPLETAR",
+                    "link": "LALCEC_info_cáncer_de_mama.pdf",
                     "nombreLink": "Sobre el cancer de mama / LALCEC / INFORMATE"
                 }
             ],
