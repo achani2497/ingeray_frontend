@@ -8,7 +8,9 @@ import { init } from 'emailjs-com';
 import VueSplide from '@splidejs/vue-splide';
 import '@splidejs/splide/dist/css/themes/splide-sea-green.min.css';
 import ImageKit from 'imagekitio-vue'
+import Popover from 'vue-js-popover'
 
+Vue.use(Popover)
 Vue.use(VueSplide)
 Vue.use(ImageKit, {
   urlEndpoint: "https://ik.imagekit.io/ingesystem22"

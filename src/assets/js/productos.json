@@ -1044,15 +1044,15 @@
             },
             "brochures": [
                 {
-                    "link": "Mamografos_LINEA_GENORAY.pdf",
+                    "link": "#",
                     "nombreLink": "Mamografía / INGE RAY / Mamógrafos LÍNEA GENORAY"
                 },
                 {
-                    "link": "Mamografos_LINEA_VIOLA_D_Circular_DBT.pdf",
+                    "link": "#",
                     "nombreLink": "Mamografía / INGE RAY / Mamógrafos LÍNEA GMM VIOLA"
                 },
                 {
-                    "link": "LALCEC_info_cáncer_de_mama.pdf",
+                    "link": "#",
                     "nombreLink": "Sobre el cancer de mama / LALCEC / INFORMATE"
                 }
             ],
@@ -1174,7 +1174,7 @@
                     "nombreLink": "Mamografía/ INGE RAY / CAPTORES DIGITALES MAMOGRÁFICOS"
                 },
                 {
-                    "link": "LALCEC_info_cáncer_de_mama.pdf",
+                    "link": "#",
                     "nombreLink": "Sobre el cancer de mama / LALCEC / INFORMATE"
                 }
             ],
