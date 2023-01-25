@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <div class="padding-container">
+    <div :class="cambiarFondo()">
       <router-view />
     </div>
     <footer-menu></footer-menu>
@@ -11,10 +11,42 @@
 import footerMenuVue from "../components/Servicios/footerMenu.vue";
 export default {
   components: { "footer-menu": footerMenuVue },
+  data: function() {
+    return {
+      fondoRosa: false,
+    }
+  },
+  methods: {
+    esMamo: function() {
+      var urlActual = window.location.href;
+      urlActual = urlActual.split('/');
+      urlActual = urlActual[urlActual.length - 1];
+      if(urlActual === 'mamografos' || urlActual === 'captores-digitales') {
+        this.fondoRosa = true;
+      } else {
+        this.fondoRosa = false;
+      }
+    },
+      cambiarFondo: function() {
+        if(this.fondoRosa) {
+          return 'fondo-mamo padding-container'
+        }
+        return 'padding-container'
+      }
+  },
+  updated: function() {
+    this.esMamo();
+  },
+  created: function() {
+    this.esMamo();
+  }
 };
 </script>
 
 <style>
+.fondo-mamo{
+  background-color: #F6ECED;
+}
 </style>
 
 
