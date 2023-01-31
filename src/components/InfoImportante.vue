@@ -7,22 +7,23 @@
     <div class="flex items-center ubicacion text-sm md:text-base">
       <router-link to="/contacto" class="icon nav-icon"></router-link>
       <div class="direccion flex flex-col">
-        <span id="direccion-esp">Campillo 2585 | C1427DCC | CABA</span>
-        <span id="direccion-gen">Buenos Aires | Argentina</span>
+        <span id="direccion-esp">Campillo 2585 | C1427DCC | CABA | Argentina</span>
+        <!-- <span id="direccion-gen">Buenos Aires | Argentina</span> -->
       </div>
     </div>
     <!-- INFO DE CONTACTO -->
     <div class="flex items-center gap-4 whatsapp">
       <div
         class="
-          flex
-          gap-14
-          pr-4
-          text-xs
-          w-full
-          md:text-sm
-          items-center
-          text-center
+        flex
+        gap-14
+        pr-4
+        text-xs
+        w-full
+        md:text-sm
+        items-center
+        text-center
+        responsive-text
         "
       >
         <div class="flex gap-2">
@@ -54,7 +55,8 @@
   transition: all 0.3s ease-in-out;
 }
 #direccion-esp {
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
+  font-size: 90%;
 }
 #direccion-gen {
   font-size: 18px;
@@ -115,8 +117,13 @@
 }
 
 @media screen and (max-width: 1000px) {
+  .responsive-text{
+    font-size: 65%;
+    padding-right: 12px;
+  }
   #direccion-esp {
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
+    font-size: 65%;
     letter-spacing: 0.1rem;
   }
   #direccion-gen {
@@ -133,22 +140,30 @@
     width: 40%;
   }
   .whatsapp {
-    width: 60%;
+    /* width: 60%; */
+  }
+  .icon {
+    height: 45px;
+    width: 45px;
   }
 }
 @media screen and (max-width: 800px) {
   #direccion-esp {
-    font-size: 0.7rem;
+    /* font-size: 0.7rem; */
     letter-spacing: 0.11rem;
   }
   #direccion-gen {
     font-size: 0.9rem;
     letter-spacing: 0.2rem;
   }
+    .icon {
+    height: 30px;
+    width: 30px;
+  }
 }
 @media screen and (max-width: 751px) {
   #direccion-esp {
-    font-size: 70%;
+    font-size: 50%;
   }
   #direccion-gen {
     font-size: 90%;
@@ -156,7 +171,7 @@
 }
 @media screen and (max-width: 700px) {
   #direccion-esp {
-    font-size: 60%;
+    font-size: 50%;
   }
   #direccion-gen {
     font-size: 80%;

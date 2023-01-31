@@ -165,7 +165,7 @@
     padding: 0 22%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .padding-container {
     padding: 0 4rem;
   }

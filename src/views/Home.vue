@@ -43,13 +43,13 @@
         </button>
       </div>
       <!-- Carousel "Los mas Buscados" -->
-      <polimorfic-carousel
+      <!-- <polimorfic-carousel
         title="Galeria de Productos"
         subtitle="Los más buscados"
         :isExtended="false"
         :elements="productos"
         :showCheckout="false"
-      ></polimorfic-carousel>
+      ></polimorfic-carousel> -->
     </div>
     <banner-carousel :elements="banner1"></banner-carousel>
     <div class="padding-container flex flex-col gap-16">
@@ -81,13 +81,13 @@
         relative
       "
     >
-      <polimorfic-carousel
+      <!-- <polimorfic-carousel
         title="Nuestra linea para"
         subtitle="Diagnostico Veterinario"
         :isExtended="false"
         :elements="veterinaria"
         :showCheckout="true"
-      ></polimorfic-carousel>
+      ></polimorfic-carousel> -->
     </div>
     <!-- Modal de form de Contacto -->
     <Modal
@@ -160,6 +160,10 @@ export default {
 </script>
 
 <style scoped>
+/* estilos para corregir desfases */
+.padding-correction{
+  padding: 0 10rem;
+}
 /* Presentacion */
 .presentation {
   z-index: 8;
