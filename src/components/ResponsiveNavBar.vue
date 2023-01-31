@@ -16,10 +16,10 @@ export default {
                     sectionName: 'Inicio',
                     sectionUrl: '/'
                 },
-                {
-                    sectionName: 'Productos',
-                    sectionUrl: '/productos'
-                },
+                // {
+                //     sectionName: 'Productos',
+                //     sectionUrl: '/productos'
+                // },
                 {
                     sectionName: 'Servicios',
                     sectionUrl: '/servicios'

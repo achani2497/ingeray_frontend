@@ -1,5 +1,5 @@
 <template>
-    <nav class="fixed top-0 flex flex-col w-screen bkg-light-blue z-20">
+    <nav class="fixed top-0 flex flex-col bkg-light-blue z-20 padding-correction">
         <!-- Menu -->
         <div class="menu flex justify-between z-10">
             <!-- Logo -->
@@ -11,11 +11,11 @@
                 <li class="router-cta">
                     <router-link to="/" class="li-content home" exact>Home</router-link>
                 </li>
-                <li class="cta">
+                <!-- <li class="cta">
                     <div class="productos li-content" @click="openMenu('productos')">
                         Productos
                     </div>
-                </li>
+                </li> -->
                 <li class="cta">
                     <div class="servicios li-content" @click="openMenu('servicios')">
                         Servicios
@@ -36,6 +36,12 @@
 </template>
 
 <style scoped>
+/* estilos para corregir desfases */
+.padding-correction{
+  padding: 0 14rem;
+  right:0;
+  left: 0;
+}
     .menu{
         height: 5rem;
         padding-left: 1.4%;
@@ -95,6 +101,11 @@
         background-color: #666666;
         color: white; 
     }
+    @media screen and (max-width: 1000px) {
+  .padding-correction {
+    padding: 0 4rem;
+  }
+}
     @media screen and (max-width:650px){
         nav{
             display: none;
