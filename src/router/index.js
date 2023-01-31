@@ -18,22 +18,22 @@ const routes = [
     component: () => import('../views/Servicios.vue'),
     children: ServicesRoutes
   },
-  {
-    path: '/productos',
-    name: 'Productos',
-    component: () => import('../views/Productos.vue'),
-  },
-  {
-    path: '/productos',
-    name: 'ProductoCategoria',
-    component: () => import('../views/ProductoCategoria.vue'),
-    children: ProductsRoutes,
-  },
-  {
-    path: '/productos/veterinaria/:categoria',
-    name: 'ProductoVeterinaria',
-    component: () => import('../views/ProductoVeterinaria.vue')
-  },
+  // {
+  //   path: '/productos',
+  //   name: 'Productos',
+  //   component: () => import('../views/Productos.vue'),
+  // },
+  // {
+  //   path: '/productos',
+  //   name: 'ProductoCategoria',
+  //   component: () => import('../views/ProductoCategoria.vue'),
+  //   children: ProductsRoutes,
+  // },
+  // {
+  //   path: '/productos/veterinaria/:categoria',
+  //   name: 'ProductoVeterinaria',
+  //   component: () => import('../views/ProductoVeterinaria.vue')
+  // },
   {
     path: '/clientes',
     name: 'Clientes',
