@@ -6,7 +6,7 @@
       :fontSize="31"
       class="px-16"
     ></titles>
-    <div class="carousel-container flex items-center">
+    <div class="carousel-container flex justify-center">
       <!-- Control button Left -->
       <button
         class="h-6 w-6 mr-8 arrow left rounded-full"
@@ -14,8 +14,8 @@
       ></button>
       <!-- Carousel -->
       <div class="carousel px-14">
-        <div class="overflow-hidden flex" id="inner-wrapper">
-          <div class="inner flex pb-4" ref="inner" :style="innerStyles">
+        <div class="overflow-hidden flex wrap-correction" id="inner-wrapper">
+          <div :class="isExtended ? 'inner flex pb-4 big-card' : 'inner flex pb-4 small-card'" ref="inner" :style="innerStyles">
             <div
               class="card-container"
               v-for="(image, index) in elements"
@@ -59,9 +59,20 @@
 </template>
 <style scoped >
 .card-container {
-  width: 270px;
-  padding-left: 5px;
+  width: 250px;
+  padding-left: 25px;
   display: flex;
+}
+.big-card {
+  height: 440px;
+}
+.small-card {
+  height: 270px;
+}
+.wrap-correction {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .carousel-container {
   width: 100%;
