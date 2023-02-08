@@ -5,8 +5,8 @@
       subtitle="Confian en Nosotros"
       :fontSize="31"
     ></titles>
-    <div class="carousel relative flex">
-      <div class="inner flex items-center" ref="inner" :style="innerStyles">
+    <div class="relative flex carousel">
+      <div class="inner flex justify-evenly" ref="inner" :style="innerStyles">
         <router-link
           class="client-icon w-fit"
           to="clientes"
@@ -28,13 +28,17 @@
 .inner {
   width: fit-content;
   transition: transform 0.7s ease-in-out;
+  height: 125px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .client-icon {
   width: 250px;
 }
 .client-icon img {
-  aspect-ratio: 3/2;
+  aspect-ratio: 4/2;
   object-fit: contain;
 }
 </style>

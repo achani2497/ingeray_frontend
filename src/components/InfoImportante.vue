@@ -47,6 +47,10 @@
   background-color: var(--dark-blue);
   color: white;
   height: 4rem;
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+  padding: 0 14rem;
 }
 .important-info > div > img {
   transition: all 0.5s ease-in-out;
