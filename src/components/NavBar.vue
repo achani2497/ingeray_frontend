@@ -3,7 +3,7 @@
         <!-- Menu -->
         <div class="menu flex justify-between z-10">
             <!-- Logo -->
-            <router-link to="/" class="flex justify-center items-center w-auto bg-transparent" id="logo-container" exact>
+            <router-link to="/" class="flex justify-center items-center w-auto bg-transparent logo-correction" id="logo-container" exact>
                 <div class="logo"></div>
             </router-link>
             <!-- Secciones -->
@@ -11,11 +11,11 @@
                 <li class="router-cta">
                     <router-link to="/" class="li-content home" exact>Home</router-link>
                 </li>
-                <!-- <li class="cta">
+                <li class="cta">
                     <div class="productos li-content" @click="openMenu('productos')">
                         Productos
                     </div>
-                </li> -->
+                </li>
                 <li class="cta">
                     <div class="servicios li-content" @click="openMenu('servicios')">
                         Servicios
@@ -42,9 +42,12 @@
   right:0;
   left: 0;
 }
+.logo-correction{
+    margin: 0 5%;
+}
     .menu{
         height: 5rem;
-        padding-left: 1.4%;
+        /* padding-left: 1.4%; */
     }
     .secciones{
         background: linear-gradient(to right, #666666,#999999, #CCCCCC);

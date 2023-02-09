@@ -149,20 +149,6 @@
                             "urlName": "gafas"
                         }
                     ]
-                },
-                {
-                    "nombreProducto": "Ver todos los Productos",
-                    "isActive": "false",
-                    "equipos": [
-                        {
-                            "nombre": "Ecógrafos",
-                            "urlName": "ecografos"
-                        },
-                        {
-                            "nombre": "Accesorios",
-                            "urlName": "accesorios"
-                        }
-                    ]
                 }
             ]
         }

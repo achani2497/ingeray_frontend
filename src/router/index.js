@@ -18,22 +18,24 @@ const routes = [
     component: () => import('../views/Servicios.vue'),
     children: ServicesRoutes
   },
-  // {
-  //   path: '/productos',
-  //   name: 'Productos',
-  //   component: () => import('../views/Productos.vue'),
-  // },
-  // {
-  //   path: '/productos',
-  //   name: 'ProductoCategoria',
-  //   component: () => import('../views/ProductoCategoria.vue'),
-  //   children: ProductsRoutes,
-  // },
-  // {
-  //   path: '/productos/veterinaria/:categoria',
-  //   name: 'ProductoVeterinaria',
-  //   component: () => import('../views/ProductoVeterinaria.vue')
-  // },
+  {//Acá cambiar el import del component una vez hecho
+    path: '/productos',
+    name: 'Productos',
+    component: () => import('../views/EnConstruccion.vue'),
+    // component: () => import('../views/Productos.vue'),
+  },
+  {
+    path: '/productos/veterinaria/:categoria',
+    name: 'ProductoVeterinaria',
+    component: () => import('../views/ProductoVeterinaria.vue')
+  },
+  {//Acá  sacar el * una vez que se pueda visualizar la sección y cambiar el import del component
+    path: '/productos/*',
+    name: 'ProductoCategoria',
+    component: () => import('../views/EnConstruccion.vue'),
+    // component: () => import('../views/ProductoCategoria.vue'),
+    // children: ProductsRoutes,
+  },
   {
     path: '/clientes',
     name: 'Clientes',
