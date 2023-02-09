@@ -26,16 +26,16 @@
         responsive-text
         "
       >
-        <div class="flex gap-2">
+        <div class="flex gap-2 position-correction">
           <router-link to="/contacto" class="icon whatsapp-icon"></router-link>
           <button type="button" @click="sendWhatsapp('59767596')">
             Diagnóstico por Imágenes
           </button>
         </div>
-        <button type="button" @click="sendWhatsapp('41926163')">
+        <button class="position-correction" type="button" @click="sendWhatsapp('41926163')">
           Atención Comercial
         </button>
-        <button type="button" @click="sendWhatsapp('55044427')">
+        <button class="position-correction" type="button" @click="sendWhatsapp('55044427')">
           División Veterinaria
         </button>
       </div>
@@ -51,6 +51,9 @@
   position: relative;
   left: calc(-50vw + 50%);
   padding: 0 14rem;
+}
+.position-correction {
+  /* width: min(170px, 15vw); */
 }
 .important-info > div > img {
   transition: all 0.5s ease-in-out;
