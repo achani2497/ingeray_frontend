@@ -53,7 +53,6 @@
             </div>
           </div>
         </div>
-        <eco-seal class="mt-6"></eco-seal>
       </div>
     </template>
   </service-template>

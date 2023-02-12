@@ -32,13 +32,37 @@ import servicios from "../../assets/js/servicios.json";
 export default {
   data() {
     return {
-      servicios: servicios.servicios.map((servicio) => {
+      servicios: [],
+    };
+  },
+  created() {
+    this.setServices();
+  },
+  watch: {
+    $route(to, from) {
+      this.show = false;
+      this.setServices();
+    },
+  },
+  methods: {
+    setServices() {
+      let serviceUrl = this.$route.path.split("/")[2];
+      let preService = servicios.servicios.find(
+        (servicio) => servicio.url === serviceUrl
+      );
+      let exception = preService.exception;
+
+      let listOfServices = servicios.servicios.map((servicio) => {
         return {
           ...servicio,
           miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`),
         };
-      }),
-    };
+      });
+
+      this.servicios = listOfServices.filter(
+        (servicio) => servicio.url != exception
+      );
+    },
   },
 };
 </script>

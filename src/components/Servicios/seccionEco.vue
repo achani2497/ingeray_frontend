@@ -1,6 +1,5 @@
 <template>
   <div class="relative">
-    <div class="extended-bg-white z-0"></div>
     <div class="flex flex-col gap-4">
       <titles
         title="Tecnología Verde"
@@ -25,6 +24,7 @@
             los productos con el <b>Sello ECO</b>, serán desarrollados bajo las
             Normas para Tecnologías Verdes Responsables.
           </p>
+          <img src="@/assets/images/sello-eco.png" class="mt-3" alt="" />
         </div>
       </div>
     </div>
@@ -36,13 +36,4 @@ export default {
 };
 </script>
 <style scoped>
-.extended-bg-white {
-  position: absolute;
-  width: 300%;
-  height: 100%;
-  transform: translateX(-50%);
-  border: 1px solid black;
-  background-color: white;
-  z-index: -2;
-}
 </style>
