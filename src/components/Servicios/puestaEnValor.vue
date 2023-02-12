@@ -33,7 +33,7 @@
           Bases para Equipos Rodantes, Sistemas de Video Digital para Arcos en C
           y Seriógrafos, Digitalización de Mamógrafos analógicos
         </p>
-        <div class="flex gap-4 justify-around">
+        <div class="flex gap-4 justify-around my-8">
           <picture-zoom-button
             sectionName="/servicios/puesta-en-valor/"
             imageName="puesta-en-valor-1"
