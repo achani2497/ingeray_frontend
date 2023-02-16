@@ -14,7 +14,7 @@
         <img
           :src="require(`@/assets/images/logos-clientes/${client.imagen}`)"
           :alt="client.imagen"
-          width="250px"
+          width="240px"
         />
       </li>
     </ul>
@@ -29,8 +29,8 @@
 <style scoped>
 .clients-gallery {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* gap: 1rem; */
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 }
 </style>
 <script>

@@ -8,15 +8,15 @@
     ></titles>
     <div class="grid grid-cols-4 grid-rows-2 gap-y-4 gap-8 mt-4">
       <router-link
-        :to="servicio.url"
+        :to="servicios[index - 1].url"
         class="servicio-container flex flex-col"
-        v-for="(servicio, index) in servicios"
+        v-for="index in 8"
         :key="index"
       >
-        <span class="pl-4 footer-menu-title"> {{ servicio.nombreCorto }} </span>
-        <img class="shadow-lg" :src="servicio.miniBanner" />
+        <span class="pl-4 footer-menu-title"> {{ servicios[index - 1].nombreCorto }} </span>
+        <img class="shadow-lg" :src="servicios[index - 1].miniBanner" />
       </router-link>
-      <router-link to="/contacto" class="servicio-container flex flex-col">
+      <router-link v-if="supportIf" to="/contacto" class="servicio-container flex flex-col">
         <span class="pl-4 footer-menu-title"> Atención Personalizada </span>
         <img
           class="shadow-lg"
@@ -33,9 +33,11 @@ export default {
   data() {
     return {
       servicios: [],
+      supportIf: true,
     };
   },
   created() {
+    this.showSupport();
     this.setServices();
   },
   watch: {
@@ -45,23 +47,39 @@ export default {
     },
   },
   methods: {
+    showSupport() {
+      if(this.$route.path.split('/')[1] !== 'servicios') {
+        this.supportIf = false;
+      } else {
+        this.supportIf = true;
+      } 
+    },
     setServices() {
-      let serviceUrl = this.$route.path.split("/")[2];
-      let preService = servicios.servicios.find(
-        (servicio) => servicio.url === serviceUrl
-      );
-      let exception = preService.exception;
+      if(this.$route.path.split('/')[1]==='servicios') {
+        let serviceUrl = this.$route.path.split("/")[2];
 
-      let listOfServices = servicios.servicios.map((servicio) => {
+        let preService = servicios.servicios.find(
+          (servicio) => servicio.url === serviceUrl
+          );
+          let exception = preService.exception;
+          
+          let listOfServices = servicios.servicios.map((servicio) => {
+            return {
+              ...servicio,
+              miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`),
+            };
+          });
+          
+          this.servicios = listOfServices.filter(
+            (servicio) => servicio.url != exception
+            );
+      }
+      this.servicios = servicios.servicios.map((servicio) => {
         return {
           ...servicio,
-          miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`),
-        };
-      });
-
-      this.servicios = listOfServices.filter(
-        (servicio) => servicio.url != exception
-      );
+          miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`)
+        }
+      })
     },
   },
 };

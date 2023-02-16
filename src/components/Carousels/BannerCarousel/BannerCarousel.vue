@@ -19,6 +19,7 @@
 .carousel {
   width: 100%;
   overflow: hidden;
+  /* max-height: 630px; */
 }
 .inner {
   white-space: nowrap;

@@ -1,17 +1,6 @@
 {
     "servicios": [
         {
-            "nombre": "Equipamiento",
-            "nombreCorto": "Equipamiento",
-            "url": "equipamiento",
-            "banner": "banner-servicio-equipamiento.jpg",
-            "miniBanner": "equipamiento.jpg",
-            "titulo": "Gran Variedad de",
-            "subtitulo": "Equipamiento Radiológico Nuevo o Puesto en Valor",
-            "descripcion": "Inge Ray ofrece equipamiento, instalaciones, partes, accesorios y soluciones  a la medida de las necesidades reales de cada cliente tanto en la esfera de instituciones públicas como privadas y desde centros de Diagnóstico por Imágenes y Empresas de Medicina Prepaga hasta Secretarías y Ministerios de Salud. Nuestro compromiso con el medioambiente y la sustentabilidad hace que nos enfoquemos de manera prioritaria en optimizar los recursos existentes basándonos en normas internacionales de recuperación y uso consciente de materiales mediante el protocolo de Análisis del Ciclo de Vida (Normas IRAM-ISO 14040 a 14049), teniendo por otra parte muy en cuenta  que las inversiones en tecnologías para el diagnóstico médico son pensadas a mediano y largo plazo cuando un cliente decide comenzar, actualizar o ampliar su operación. Estaremos allí para asesorar en las Áreas: Ingeniería, Comercial, Regulaciones y el enfoque Financiero.",
-            "exception": "alquileres"
-        },
-        {
             "nombre": "Alquiler de Equipamiento",
             "nombreCorto": "Alquileres",
             "url": "alquileres",
@@ -98,6 +87,17 @@
             "subtitulo": "Ambientación de equipos y salas de Imagenología",
             "descripcion": "Este es un servicio que está basado en una nueva mirada sobre la salud la cual entiende que, ambientes amigables reducen el estrés y mejoran la evolución anímica de los pacientes más vulnerables y sobre todo en áreas de atención Pediátrica. Desde intervenciones gráficas, pinturas especiales y ploteos en muros y equipos hasta  piezas de diseño ad hoc, hacen que nuestros Proyectos de Ambientación transformen de forma mágica la experiencia diagnóstica tanto en pacientes y acompañantes  que incidentalmente acuden a los centros de atención para realizarse una práctica como a los profesionales que por su trabajo, deben a veces estar muchas horas  en las salas de imágenes y en las áreas técnicas.",
             "exception": "equipamiento"
+        },
+        {
+            "nombre": "Equipamiento",
+            "nombreCorto": "Equipamiento",
+            "url": "equipamiento",
+            "banner": "banner-servicio-equipamiento.jpg",
+            "miniBanner": "equipamiento.jpg",
+            "titulo": "Gran Variedad de",
+            "subtitulo": "Equipamiento Radiológico Nuevo o Puesto en Valor",
+            "descripcion": "Inge Ray ofrece equipamiento, instalaciones, partes, accesorios y soluciones  a la medida de las necesidades reales de cada cliente tanto en la esfera de instituciones públicas como privadas y desde centros de Diagnóstico por Imágenes y Empresas de Medicina Prepaga hasta Secretarías y Ministerios de Salud. Nuestro compromiso con el medioambiente y la sustentabilidad hace que nos enfoquemos de manera prioritaria en optimizar los recursos existentes basándonos en normas internacionales de recuperación y uso consciente de materiales mediante el protocolo de Análisis del Ciclo de Vida (Normas IRAM-ISO 14040 a 14049), teniendo por otra parte muy en cuenta  que las inversiones en tecnologías para el diagnóstico médico son pensadas a mediano y largo plazo cuando un cliente decide comenzar, actualizar o ampliar su operación. Estaremos allí para asesorar en las Áreas: Ingeniería, Comercial, Regulaciones y el enfoque Financiero.",
+            "exception": "alquileres"
         }
     ]
 }

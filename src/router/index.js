@@ -21,8 +21,8 @@ const routes = [
   {//Acá cambiar el import del component una vez hecho
     path: '/productos',
     name: 'Productos',
-    component: () => import('../views/EnConstruccion.vue'),
-    // component: () => import('../views/Productos.vue'),
+    // component: () => import('../views/EnConstruccion.vue'),
+    component: () => import('../views/Productos.vue'),
   },
   {
     path: '/productos/veterinaria/:categoria',
