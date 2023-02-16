@@ -104,11 +104,16 @@
         background-color: #666666;
         color: white; 
     }
+    @media screen and (min-width: 1441px) {
+        .padding-correction {
+            padding: 0 22%;
+        }
+    }
     @media screen and (max-width: 1000px) {
-  .padding-correction {
-    padding: 0 4rem;
-  }
-}
+        .padding-correction {
+            padding: 0 4rem;
+        }
+    }
     @media screen and (max-width:650px){
         nav{
             display: none;

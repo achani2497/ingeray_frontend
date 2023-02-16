@@ -4,9 +4,10 @@
       title="Clientes que"
       subtitle="Confian en Nosotros"
       :fontSize="31"
+      class="px-16"
     ></titles>
     <div class="relative flex carousel">
-      <div class="inner flex justify-evenly" ref="inner" :style="innerStyles">
+      <div class="inner flex justify-evenly px-16" ref="inner" :style="innerStyles">
         <router-link
           class="client-icon w-fit"
           to="clientes"
