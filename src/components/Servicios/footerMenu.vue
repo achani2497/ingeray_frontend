@@ -16,13 +16,6 @@
         <span class="pl-4 footer-menu-title"> {{ servicios[index - 1].nombreCorto }} </span>
         <img class="shadow-lg" :src="servicios[index - 1].miniBanner" />
       </router-link>
-      <router-link v-if="supportIf" to="/contacto" class="servicio-container flex flex-col">
-        <span class="pl-4 footer-menu-title"> Atención Personalizada </span>
-        <img
-          class="shadow-lg"
-          src="@/assets/images/servicios/footer-menu/atencion.jpg"
-        />
-      </router-link>
     </div>
   </div>
 </template>

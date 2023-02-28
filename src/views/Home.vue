@@ -44,7 +44,7 @@
       </div>
       <!-- Carousel "Los mas Buscados" -->
       <polimorfic-carousel
-        title="Galeria de Productos"
+        title="Galería de Productos"
         subtitle="Los más buscados"
         :isExtended="false"
         :elements="productos"
@@ -82,8 +82,8 @@
       "
     >
       <polimorfic-carousel
-        title="Nuestra linea para"
-        subtitle="Diagnostico Veterinario"
+        title="Nuestra línea para"
+        subtitle="Diagnóstico Veterinario"
         :isExtended="false"
         :elements="veterinaria"
         :showCheckout="true"
