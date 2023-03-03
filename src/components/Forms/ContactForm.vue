@@ -5,7 +5,7 @@
         <button
           class="close-button h-5 w-5 absolute right-0"
           type="button"
-          @click="$emit('closeModal')"
+          @click="$emit('close')"
         >
           <span>&times;</span>
         </button>
