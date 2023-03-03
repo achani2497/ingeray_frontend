@@ -10,7 +10,7 @@
       <router-link
         :to="servicios[index - 1].url"
         class="servicio-container flex flex-col"
-        v-for="index in 8"
+        v-for="index in 9"
         :key="index"
       >
         <span class="pl-4 footer-menu-title"> {{ servicios[index - 1].nombreCorto }} </span>
@@ -67,12 +67,13 @@ export default {
             (servicio) => servicio.url != exception
             );
       }
-      this.servicios = servicios.servicios.map((servicio) => {
-        return {
-          ...servicio,
-          miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`)
-        }
-      })
+        this.servicios = servicios.servicios.map((servicio) => {
+          return {
+            ...servicio,
+            miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`)
+          }
+        })
+        console.log(this.servicios)
     },
   },
 };

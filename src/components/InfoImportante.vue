@@ -6,9 +6,9 @@
     >
       <!-- INFO DE UBICACION -->
       <div class="flex items-center ubicacion text-sm md:text-base">
-        <router-link to="/contacto" class="icon nav-icon"></router-link>
+        <router-link :to="{name: 'Contacto', hash:'#direccion-mapa'}" class="icon nav-icon"></router-link>
         <div class="direccion flex flex-col">
-          <router-link to="/contacto">
+          <router-link :to="{name: 'Contacto', hash:'#direccion-mapa'}">
             <span id="direccion-esp">Campillo 2585 | C1427DCC | CABA | Argentina</span>
           </router-link>
         </div>
@@ -197,6 +197,7 @@
 </style>
 <script>
 import { contactMixin } from "@/assets/js/contactMixin.js";
+import { Hash } from "crypto";
 export default {
   mixins: [contactMixin],
   data() {

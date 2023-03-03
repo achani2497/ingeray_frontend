@@ -67,7 +67,7 @@ import buscados from '../assets/js/mas_buscados.json';
 import CustomPath from "@/components/CustomPath.vue";
 import { slavonMixin } from "@/assets/js/slavonMixin.js";
 import MaskRedirectButtonVue from "../components/Common/MaskRedirectButton.vue";
-import footerMenu from "../components/Servicios/footerMenu.vue";
+import footerParaProds from "../components/Footer/FooterParaProductos.vue";
 import BannerWithBot from "../components/Common/BannerWithBot.vue";
 import seccionEco from "../components/Servicios/seccionEco.vue";
 import PicZoomWithText from "../components/Common/PicZoomWithText.vue";
@@ -77,7 +77,7 @@ export default {
   components: { 
     CustomPath,
     MaskRedirectButtonVue,
-    'footer-menu': footerMenu,
+    'footer-menu': footerParaProds,
     'banner-box': BannerWithBot,
     'eco-seal': seccionEco,
     'mas-buscados': PicZoomWithText,

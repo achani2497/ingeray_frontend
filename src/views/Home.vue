@@ -93,7 +93,6 @@
     <Modal
       :header="false"
       v-if="showContactMenu"
-      @close="showContactMenu = false"
       large="sm"
     >
       <!-- Titulo del modal -->
