@@ -176,7 +176,7 @@ export default {
     sendMail: function (dato) {
       let submitButton = document.getElementById("sendEmail");
       submitButton.innerHTML = "Enviando...";
-      emailjs.sendForm('service_sta7ovf','template_f4ojytf',this.$refs.form,'objvruOQEA3DNzdjE')
+      emailjs.sendForm('service_mailweb','contact_template',this.$refs.form,'7L68zCfT1wnoX0EhR')
       .then((result) => {
         submitButton.innerHTML = "Enviado!";
           this.resetInner(submitButton)

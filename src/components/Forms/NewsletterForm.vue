@@ -99,7 +99,7 @@ export default {
           answer3: this.information.answer3 ? 'Suscripto' : 'No Suscripto',
           answer4: this.information.answer4 ? 'Suscripto' : 'No Suscripto',
         }
-        emailjs.send('service_sta7ovf','template_d7mrslf',paraEnviar,'objvruOQEA3DNzdjE')
+        emailjs.send('service_mailweb','newsletter_template',paraEnviar,'7L68zCfT1wnoX0EhR')
         .then((result) => {
           //hacer algo para indicar que se mandó
           submitButton.innerHTML = "Enviado!"
