@@ -151,7 +151,6 @@
     <Modal
       :header="false"
       v-if="showPasos"
-      @close="showPasos= false"
       large="xl"
     >
       <!-- Form del modal -->
