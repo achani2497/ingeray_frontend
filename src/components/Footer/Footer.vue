@@ -497,8 +497,12 @@ export default {
   },
   watch: {
     $route: function(to, from) {
-      console.log(to.path);
-      console.log(from);
+      let ruta = to.path.split('/')
+      if(ruta.at(-1) === 'veterinaria') {
+        this.mostrar = 'animales' 
+      } else {
+        this.mostrar = 'humanos'
+      }
     }
   },
   computed: {
