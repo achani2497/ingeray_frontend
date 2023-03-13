@@ -23,6 +23,7 @@
   --shadow: hsl(0 0% 50% / 0.4);
   --shadow-lilac: hsl(215 42% 50% / 0.7);
   --shadow-blue: hsl(228 73% 5% / 0.6);
+  --shadow-gray: rgba(49, 49, 49, 0.5);
 }
 #app {
   background-size: cover;

@@ -497,8 +497,9 @@ export default {
   },
   watch: {
     $route: function(to, from) {
-      let ruta = to.path.split('/')
-      if(ruta.at(-1) === 'veterinaria') {
+      let ruta = to.path.split('/').includes('veterinaria')
+      console.log(ruta)
+      if(ruta) {
         this.mostrar = 'animales' 
       } else {
         this.mostrar = 'humanos'

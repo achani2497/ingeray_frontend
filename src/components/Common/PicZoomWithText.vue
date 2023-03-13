@@ -62,7 +62,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgb(12, 127, 126, 0.3);
+    background-color: var(--shadow-gray);
     top: 0;
     transform: translateX(-100%);
     transition: all 0.3s ease-in-out;
