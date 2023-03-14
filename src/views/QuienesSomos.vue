@@ -49,7 +49,7 @@
         </template>
       </banner-with-bot>
       <!-- Modal -->
-      <modal large="sm" @close="showContactMenu = false" v-if="showContactMenu">
+      <modal large="sm" v-if="showContactMenu">
         <template #content>
           <simple-contact-form
             @close="showContactMenu = false"

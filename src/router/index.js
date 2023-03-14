@@ -18,15 +18,14 @@ const routes = [
     component: () => import('../views/Servicios.vue'),
     children: ServicesRoutes
   },
-  {//Borrar cuando solucione el problema del padding en nuestras marcas en equipamiento
+  {
     path: '/servicios/equipamiento',
     name: 'Equipamiento',
     component: () => import('../components/Servicios/equipamiento.vue')
   },
-  {//Acá cambiar el import del component una vez hecho
+  {
     path: '/productos',
     name: 'Productos',
-    // component: () => import('../views/EnConstruccion.vue'),
     component: () => import('../views/Productos.vue'),
   },
   {

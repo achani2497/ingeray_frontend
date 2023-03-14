@@ -498,7 +498,6 @@ export default {
   watch: {
     $route: function(to, from) {
       let ruta = to.path.split('/').includes('veterinaria')
-      console.log(ruta)
       if(ruta) {
         this.mostrar = 'animales' 
       } else {
