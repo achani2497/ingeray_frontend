@@ -1,17 +1,21 @@
 <template>
   <div class="carousel-container flex flex-col gap-4">
     <div class="carousel relative">
-      <div class="inner flex items-center" ref="inner" :style="innerStyles">
+      <div class="inner flex items-center">
         <img
+          v-for="(img, index) in carouselImages"
+          :key="index"
           ref="equipment_image"
-          v-bind:src="getImgUrl(imgActual)"
-          :alt="carouselImages[imgActual]"
+          :src="getImgUrl(index)"
+          :alt="img"
+          class="hidden"
+          :id="`car-img-${index}`"
         />
       </div>
     </div>
     <div class="flex gap-4 justify-center mb-4" id="carousel-dots">
       <div
-        class="circle rounded-full h-5 w-5 bg-gray-400 carousel-btn"
+        class="circle rounded-full h-3 w-3 bg-gray-400 carousel-btn"
         :class="[index === imgActual ? 'green-dot' : 'gray-dot']"
         v-for="(card, index) in carouselImages"
         :key="index"
@@ -73,6 +77,9 @@ button {
 .carousel-btn:hover {
   cursor: pointer;
 }
+.active-img {
+  display: block;
+}
 </style>
 <script>
 import { serviceMixin } from "../../../assets/js/serviceMixin";
@@ -85,18 +92,13 @@ export default {
   data() {
     return {
       cards: [8, 1, 2, 3, 4, 5, 6, 7],
-      innerStyles: {},
-      stepSize: "",
-      stepNumber: "",
-      transitioning: false,
       carouselImages: [],
       imagesPath: "",
       imgActual: 0,
     };
   },
   mounted() {
-    this.setStep();
-    this.resetTranslate();
+    this.mostrarImg();
   },
   watch: {
     product_name: {
@@ -106,63 +108,6 @@ export default {
     },
   },
   methods: {
-    setStep() {
-      this.stepSize = `${this.$refs.inner.parentNode.scrollWidth}px`;
-      this.stepNumber = 1;
-    },
-    next() {
-      if (this.transitioning) return;
-      this.transitioning = true;
-      this.moveLeft();
-      this.afterTransition(() => {
-        const card = this.carouselImages.shift();
-        this.carouselImages.push(card);
-        this.resetTranslate();
-        this.transitioning = false;
-        this.stepNumber === this.carouselImages.length
-          ? (this.stepNumber = 1)
-          : this.stepNumber++;
-      });
-    },
-    prev() {
-      if (this.transitioning) return;
-      this.transitioning = true;
-      this.moveRight(1);
-      this.afterTransition(() => {
-        const card = this.carouselImages.pop();
-        this.carouselImages.unshift(card);
-        this.resetTranslate();
-        this.transitioning = false;
-        this.stepNumber === 1
-          ? (this.stepNumber = this.carouselImages.length)
-          : this.stepNumber--;
-      });
-    },
-    moveLeft() {
-      this.innerStyles = {
-        transform: `translateX(-${this.stepSize})
-                        translateX(-${this.stepSize})`,
-      };
-    },
-    moveRight() {
-      this.innerStyles = {
-        transform: `translateX(${this.stepSize})
-                      translateX(-${this.stepSize})`,
-      };
-    },
-    afterTransition(callback) {
-      const listener = () => {
-        callback();
-        this.$refs.inner.removeEventListener("transitionend", listener);
-      };
-      this.$refs.inner.addEventListener("transitionend", listener);
-    },
-    resetTranslate() {
-      this.innerStyles = {
-        transition: "none",
-        transform: `translateX(-${this.stepSize})`,
-      };
-    },
     setCarouselImages() {
       switch (this.product_type.toString()) {
         case "services":
@@ -179,17 +124,22 @@ export default {
           break;
       }
     },
-    mostrarImg(indice) {
+    mostrarImg(indice = 0) {
       this.imgActual = indice;
+      for (let index = 0; index < this.carouselImages.length; index++) {
+        let paraBorrar = document.getElementById(`car-img-${index}`);
+        paraBorrar.classList.remove('active-img');
+      }
+      let aMostrar = document.getElementById(`car-img-${indice}`);
+      aMostrar.classList.add('active-img');
     },
     getImgUrl(indice) {
-      console.log(`@/assets/images/${this.imagesPath}/${this.carouselImages[indice]}`)
+      // console.log(`@/assets/images/${this.imagesPath}/${this.carouselImages[indice]}`)
       return require(`@/assets/images/${this.imagesPath}/${this.carouselImages[indice]}`);
     }
   },
   created() {
     this.setCarouselImages();
-    console.log(this.carouselImages)
   },
 };
 </script>

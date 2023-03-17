@@ -49,7 +49,7 @@
         </template>
       </banner-with-bot>
       <!-- Modal -->
-      <modal large="sm" @close="showContactMenu = false" v-if="showContactMenu">
+      <modal large="sm" v-if="showContactMenu">
         <template #content>
           <simple-contact-form
             @close="showContactMenu = false"
@@ -107,7 +107,7 @@
         <div class="staff-description-card flex">
           <img
             :src="
-              require('@/assets/images/contacto/fotosPersonal/GERENTE_Matías_Penhos.jpg')
+              require('@/assets/images/contacto/fotosPersonal/GERENTE_Matias_Penhos.jpg')
             "
             width="310"
           />

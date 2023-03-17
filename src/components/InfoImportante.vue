@@ -1,5 +1,5 @@
 <template>
-  <div class="color-and-position">
+  <div :class="`solo-posicion ${backgroundColor}`">
     <div
       class="important-info flex justify-between items-center w-full pl-4"
       id="importantInfo"
@@ -46,8 +46,7 @@
   </div>
 </template>
 <style>
-.color-and-position {
-  background-color: var(--dark-blue);
+.solo-posicion {
   height: 4rem;
   width: 100vw;
   position: relative;
@@ -201,7 +200,30 @@ import { Hash } from "crypto";
 export default {
   mixins: [contactMixin],
   data() {
-    return {};
+    return {
+      mostrar: 'humanos',
+    };
   },
+  methods: {
+    seMuestraParaHumanos() {
+      return this.mostrar === "humanos";
+    },
+  },
+  watch: {
+    $route: function(to, from) {
+      let ruta = to.path.split('/').includes('veterinaria')
+      if(ruta) {
+        this.mostrar = 'animales' 
+      } else {
+        this.mostrar = 'humanos'
+      }
+    }
+  },
+  computed: {
+    backgroundColor() {
+      return this.seMuestraParaHumanos() ? "bkg-dark-blue" : "bkg-blue";
+    },
+  },
+
 };
 </script>
