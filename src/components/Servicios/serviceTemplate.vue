@@ -9,6 +9,9 @@
       </template>
     </banner-box>
     <div class="px-16">
+      <div class="pb-4">
+        <path-route></path-route>
+      </div>
       <slot name="serviceInfo"></slot>
     </div>
   </div>
@@ -16,10 +19,14 @@
 
 <script>
 import BannerWithBotVue from "../Common/BannerWithBot.vue";
+import PathRoute from "../Common/PathRoute.vue";
 
 export default {
-  props: ["bannerName", "description"],
-  components: { "banner-box": BannerWithBotVue },
+  props: ["bannerName", "description",'slug'],
+  components: { 
+    "banner-box": BannerWithBotVue,
+    'path-route':PathRoute, 
+  },
   computed: {
     serviceBanner() {
       const serviceName = this.$route.path.split("/")[2];

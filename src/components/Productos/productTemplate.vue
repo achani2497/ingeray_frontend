@@ -5,7 +5,8 @@
         :product_name="product.nombreCategoria"
         product_type="human"
       ></arrowless-carousel>
-      <div class="py-8 pr-12 flex flex-col gap-8">
+      <div class="py-8 pr-12 flex flex-col gap-5">
+        <path-route></path-route>
         <titles
           :title="product.nombreCategoriaGeneral"
           :subtitle="product.nombreCompleto"
@@ -34,11 +35,15 @@
   <script>
 import { productMixin } from "../../assets/js/productMixin";
 import ArrowlessCarousel from "../Carousels/ArrowlessCarousel/ArrowlessCarousel";
+import PathRoute from "../Common/PathRoute.vue";
 
 export default {
   props: ["bannerName", "description"],
   mixins: [productMixin],
-  components: { "arrowless-carousel": ArrowlessCarousel },
+  components: { 
+    "arrowless-carousel": ArrowlessCarousel,
+    "path-route": PathRoute,
+  },
   computed: {
     productBanner() {
       const productName = this.$route.path.split("/")[2];

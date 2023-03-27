@@ -34,11 +34,11 @@ const routes = [
     component: () => import('../views/ProductoVeterinaria.vue')
   },
   {//Acá  sacar el * una vez que se pueda visualizar la sección y cambiar el import del component
-    path: '/productos/*',
+    path: '/productos/',
     name: 'ProductoCategoria',
-    component: () => import('../views/EnConstruccion.vue'),
-    // component: () => import('../views/ProductoCategoria.vue'),
-    // children: ProductsRoutes,
+    // component: () => import('../views/EnConstruccion.vue'),
+    component: () => import('../views/ProductoCategoria.vue'),
+    children: ProductsRoutes,
   },
   {
     path: '/clientes',
