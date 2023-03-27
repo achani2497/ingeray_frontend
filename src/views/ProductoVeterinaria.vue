@@ -8,7 +8,8 @@
         :product_name="this.productInfo.product_dev_name"
         product_type="vet"
         ></arrowless-carousel>
-        <div class="py-8 pr-12 flex flex-col gap-8 responive-correction">
+        <div class="py-8 pr-12 flex flex-col gap-5 responive-correction">
+          <path-route></path-route>
           <titles
             :title="this.productInfo.category_name"
             :subtitle="this.productInfo.product_name"
@@ -244,6 +245,7 @@ import PictureZoomVue from "../components/Common/PictureZoom.vue";
 import Modal from "../components/Modal/Modal.vue";
 import SimpleContactForm from "../components/Forms/SimpleContactForm.vue";
 import ContactForm from '../components/Forms/ContactForm.vue';
+import PathRoute from "../components/Common/PathRoute.vue";
 
 export default {
   mixins: [productMixin],
@@ -253,6 +255,7 @@ export default {
     "Modal": Modal,
     'simple-contact-form': SimpleContactForm,
     'form-pasos': ContactForm,
+    'path-route': PathRoute,
   },
   data() {
     return {

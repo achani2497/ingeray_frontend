@@ -24,6 +24,9 @@
             </p>
           </template>
         </banner-box>
+        <div class="px-16">
+          <path-route></path-route>
+        </div>
         <clients></clients>
       </div>
     </div>
@@ -51,12 +54,14 @@ import BannerWithBotVue from "../components/Common/BannerWithBot.vue";
 import clientsListVue from "../components/Clientes/clients-list.vue";
 import { valores } from "@/assets/js/valores.json";
 import TextList from "../components/Common/TextList.vue";
+import PathRoute from "../components/Common/PathRoute.vue";
 
 export default {
   components: {
     "banner-box": BannerWithBotVue,
     clients: clientsListVue,
     "text-checklist": TextList,
+    'path-route': PathRoute,
   },
   data() {
     return {
