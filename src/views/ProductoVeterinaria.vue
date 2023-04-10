@@ -125,15 +125,15 @@
       </div>
       <!-- CORREGIR ERROR UNA VEZ TENGA LAS IMAGENES NECESARIAS ACA ABAJO-->
       <!-- Galeria Accesorios -->
-      <!-- <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.product_galery_images">
-        <titles title="Galería" :subtitle="this.productInfo.product_galery_title"></titles>
-        <img :src="require(`@/assets/images/productos/veterinaria/galeria/${this.productInfo.product_galery_images}`)" :alt="this.productInfo.product_galery_image">
+      <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.product_accessories">
+        <titles :title="this.productInfo.product_galery_title" subtitle="Galería" :fontSize="31"></titles>
+        <img :src="require(`@/assets/images/productos/veterinaria/galeria/${this.productInfo.product_accessories}`)" :alt="this.product_accessories">
         <img
           class="img-animales"
           v-if="this.productInfo.product_animal_icons" 
           :src="require(`@/assets/images/productos/veterinaria/animales/${this.productInfo.product_animal_icons}`)" 
           :alt="this.productInfo.product_animal_icons">
-      </div> -->
+      </div>
     <!-- Menu -->
     <div id="veterinaryFooter">
       <titles
@@ -218,8 +218,8 @@
   width: 100%;
 }
 .img-animales {
-  width: 45%;
-  height: auto;
+  width: auto;
+  max-height: 60px;
   align-self: center;
 }
 @media screen and (max-width: 830px) {

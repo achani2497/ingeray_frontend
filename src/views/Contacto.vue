@@ -81,7 +81,6 @@
     <Modal
       :header="false"
       v-if="showContactMenu"
-      @close="showContactMenu = false"
       large="sm"
     >
       <!-- Titulo del modal -->
@@ -231,6 +230,11 @@ export default {
 }
 .mapa-title {
   padding: 0 4rem;
+}
+@media screen and (min-width: 1441px){
+  .banner-contacto {
+    padding: 2rem 22%;
+  }
 }
 @media screen and (max-width: 1440px) {
   .contact-button-title {
