@@ -2,7 +2,7 @@
     "productos": [
         {
             "imagePath": "carousel-productos/carousel-productos-1.jpg",
-            "url": "/productos/arco-c"
+            "url": "/productos/arcos-c-intervencionista"
         },
         {
             "imagePath": "carousel-productos/carousel-productos-2.jpg",
@@ -10,7 +10,7 @@
         },
         {
             "imagePath": "carousel-productos/carousel-productos-3.jpg",
-            "url": "/productos/equipos-moviles"
+            "url": "/productos/mamografos"
         },
         {
             "imagePath": "carousel-productos/carousel-productos-4.jpg",
@@ -18,27 +18,27 @@
         },
         {
             "imagePath": "carousel-productos/carousel-productos-5.jpg",
-            "url": "/productos/"
+            "url": "/productos/panel"
         },
         {
             "imagePath": "carousel-productos/carousel-productos-6.jpg",
-            "url": "/productos/"
+            "url": "/productos/video-digital"
         },
         {
             "imagePath": "carousel-productos/carousel-productos-7.jpg",
-            "url": "/productos/"
+            "url": "/productos/pacs"
         },
         {
             "imagePath": "carousel-productos/carousel-productos-8.jpg",
-            "url": "/productos/"
+            "url": "/productos/video-digital"
         },
         {
             "imagePath": "carousel-productos/carousel-productos-9.jpg",
-            "url": "/productos/"
+            "url": "/productos/pacs"
         },
         {
             "imagePath": "carousel-productos/carousel-productos-10.jpg",
-            "url": "/productos/"
+            "url": "/productos/video-digital"
         }
     ],
     "banner1": [
@@ -52,7 +52,7 @@
         },
         {
             "imageName": "carousel-banner1-3.jpg",
-            "url": "/"
+            "url": "/productos/pacs"
         },
         {
             "imageName": "carousel-banner1-4.jpg",

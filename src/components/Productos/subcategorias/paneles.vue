@@ -5,10 +5,8 @@
       <caracteristicas :datos="producto.caracteristicas" />
       <!-- Especificaciones -->
       <especificaciones :datos="producto.especificaciones" />
-      <!-- Documentos -->
-      <documentos :brochures="producto.brochures" />
       <!-- Banner -->
-      <div class="mb-44 mt-8">
+      <div class="mb-20 mt-8 banner-marcas">
         <titles
           :fontSize="25"
           :lineHeight="20"
@@ -21,9 +19,11 @@
           "
           alt="Banner Mamografia"
           width="100%"
-          class="bg-white absolute left-0 mt-4 mb-10"
+          class="bg-white absolute left-0 mt-4 mb-8"
         />
       </div>
+      <!-- Documentos -->
+      <documentos :brochures="producto.brochures" />
     </template>
     <!-- Formulario de contacto -->
     <modal :header="false" v-if="showModal">
@@ -70,4 +70,7 @@ export default {
 };
 </script>
 <style scoped>
+.banner-marcas{
+  min-height: 218px;
+}
 </style>

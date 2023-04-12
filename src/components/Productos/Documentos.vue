@@ -1,12 +1,12 @@
 <template>
     <div class="documentos flex flex-col gap-4 py-4">
         <div class="titulos">
-            <titles title="Brochure" subtitle="Documentos" :fontSize="25"></titles>
+            <titles title="Documentos" subtitle="Brochure" :fontSize="25"></titles>
         </div>
         <div class="links flex flex-wrap justify-between items-end gap-4">
             <div class="brochures flex flex-col gap-4">
                 <div v-for="datos in brochures" class="flex items-center gap-3">
-                    <div v-if="datos.link === '#'">
+                    <div class="flex gap-2 underline" v-if="datos.link === '#'">
                         <div class="icono-brochure"></div>
                         <button v-popover:infoBrochure.right >{{ datos.nombreLink }}</button>
                         <popover name="infoBrochure">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <router-link to="/productos" class="contact-outline">Ver todos los productos</router-link>
+            <router-link to="/productos" class="contact-outline alt-width">Volver</router-link>
         </div>
     </div>
 </template>
@@ -37,6 +37,12 @@ export default {
 .icono-brochure{
     height: 40px;
     width: 45px;
-    background-color: var(--dark-blue);
+    background-image: url("~@/assets/images/icons/libro.png");
+    background-position: center center;
+    background-size: 140%;
+}
+.alt-width {
+    min-width: 100px;
+    text-align: center;
 }
 </style>

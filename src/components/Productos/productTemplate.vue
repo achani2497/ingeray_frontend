@@ -1,31 +1,81 @@
 <template>
-  <div class="flex flex-col gap-12 pb-16">
-    <div class="carousel h-fit w-full mt-4 flex inge-shadow-down">
-      <arrowless-carousel
-        :product_name="product.nombreCategoria"
-        product_type="human"
-      ></arrowless-carousel>
-      <div class="py-8 pr-12 flex flex-col gap-5">
-        <path-route></path-route>
-        <titles
-          :title="product.nombreCategoriaGeneral"
-          :subtitle="product.nombreCompleto"
-        ></titles>
-        <p class="text-justify text-lg">
-          {{ product.descripcion }}
-        </p>
-        <img
-          v-if="product.ecoSeal"
-          :src="require('@/assets/images/sello-eco.png')"
-          alt=""
-        />
-        <button
-          class="contact-inge-button inge-shadow-down shadow-animated mt-8"
-        >
-          Quiero que me contacten
-        </button>
+  <div class="flex flex-col gap-16 pb-16">
+    <!-- Carousel -->
+    <div class="bg-white relative h-fit mt-4 flex inge-shadow-down flex-wrap">
+      <div class="carousel h-fit w-full flex">
+        <arrowless-carousel
+          :product_name="product.nombreCategoria"
+          product_type="human"
+          ></arrowless-carousel>
+        <div class="py-8 pr-12 flex flex-col gap-5 responsive-correction">
+          <path-route></path-route>
+          <titles
+            :title="product.nombreCategoriaGeneral"
+            :subtitle="product.nombreCompleto"
+            :fontSize="31"
+          ></titles>
+          <p class="text-justify text-lg">
+            {{ product.descripcion }}
+          </p>
+          <img
+            class="eco-seal"
+            v-if="product.ecoSeal"
+            :src="require('@/assets/images/sello-eco.png')"
+            alt="eco seal"
+          />
+          <button
+            class="contact-inge-button inge-shadow-down shadow-animated mt-8"
+            type="button"
+            @click="showContactMenu = true"
+          >
+            Quiero que me contacten
+          </button>
+        </div>
       </div>
-    </div>
+      <button
+          @click="showPasos = true"
+          class="banner-contacto flex items-center gap-2 mb-10 -mt-2"
+      >
+        <div class="envelope"></div>
+        <div class="text">
+          <titles
+            title="Contáctenos"
+            subtitle="sobre este producto"
+            class="banner-contacto-title"
+            :fontSize="16"
+            :lineHeight="10"
+          ></titles>
+        </div>
+      </button>
+  </div>
+    <!-- Form de Contacto -->
+    <Modal
+      :header="false"
+      v-if="showContactMenu"
+      large="sm"
+    >
+      <!-- Titulo del modal -->
+      <template #title> Datos de contacto </template>
+      <!-- Body y Footer del modal -->
+      <template #content>
+        <simple-contact-form
+          @close="showContactMenu = false"
+        ></simple-contact-form>
+      </template>
+    </Modal>
+    <!-- Modal del formulario de tres pasos -->
+    <Modal
+      :header="false"
+      v-if="showPasos"
+      large="xl"
+    >
+      <!-- Form del modal -->
+      <template #content>
+        <form-pasos
+        @close="showPasos = false"
+        ></form-pasos>
+      </template>
+    </Modal>
     <div class="px-16">
       <slot name="productInfo"></slot>
     </div>
@@ -36,6 +86,9 @@
 import { productMixin } from "../../assets/js/productMixin";
 import ArrowlessCarousel from "../Carousels/ArrowlessCarousel/ArrowlessCarousel";
 import PathRoute from "../Common/PathRoute.vue";
+import Modal from "../Modal/Modal.vue";
+import SimpleContactForm from "../Forms/SimpleContactForm.vue";
+import ContactForm from "../Forms/ContactForm.vue";
 
 export default {
   props: ["bannerName", "description"],
@@ -43,6 +96,9 @@ export default {
   components: { 
     "arrowless-carousel": ArrowlessCarousel,
     "path-route": PathRoute,
+    "Modal": Modal,
+    "simple-contact-form": SimpleContactForm,
+    "form-pasos": ContactForm,
   },
   computed: {
     productBanner() {
@@ -53,6 +109,8 @@ export default {
   data() {
     return {
       product: "",
+      showContactMenu: false,
+      showPasos: false,
     };
   },
   created() {
@@ -70,5 +128,25 @@ export default {
 .contact-inge-button {
   width: fit-content !important;
   padding: 0.7rem 1rem;
+}
+.eco-seal{
+  width:100%;
+  max-width: 400px;
+  height: auto;
+}
+.banner-contacto {
+  height: 50px;
+  background-color: #e6e6e6;
+  padding: 2rem 4rem;
+  width: 100%;
+}
+@media screen and (max-width: 950px) {
+  .carousel{
+    flex-direction: column;
+  }
+  .responsive-correction{
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+  }
 }
 </style>

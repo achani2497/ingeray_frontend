@@ -15,6 +15,9 @@
         alt="Ficha técnica"
       />
     </div>
+    <p class="font-bold text-sm">
+      *Los presentes cuadros son a título ilustrativo, por más información póngase en contacto con un Asesor Comercial.
+    </p>
   </div>
 </template>
 <script>
