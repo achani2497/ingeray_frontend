@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import footerMenuVue from "../components/Servicios/footerMenu.vue";
+import FooterParaProductos from "../components/Footer/FooterParaProductos.vue";
 export default {
-  components: { "footer-menu": footerMenuVue },
+  components: { "footer-menu": FooterParaProductos },
   data: function() {
     return {
       fondoRosa: false,

@@ -13,7 +13,7 @@
             :lineHeight="40"
             class="leading-9"
           ></titles>
-          <p class="simple-text">
+          <p class="text-xl">
             Inge Ray SRL es una empresa argentina creada en 1992 y desde
             entonces nos comprometimos y dedicamos a brindar Soluciones
             Tecnológicas para la Salud que permitan a nuestros clientes ofrecer

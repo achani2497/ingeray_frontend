@@ -8,7 +8,7 @@
         :product_name="this.productInfo.product_dev_name"
         product_type="vet"
         ></arrowless-carousel>
-        <div class="py-8 pr-12 flex flex-col gap-5 responive-correction">
+        <div class="py-8 pr-12 flex flex-col gap-5 responsive-correction">
           <path-route></path-route>
           <titles
             :title="this.productInfo.category_name"
@@ -123,7 +123,6 @@
           :src="require(`@/assets/images/productos/veterinaria/animales/${this.productInfo.product_animal_icons}`)" 
           :alt="this.productInfo.product_animal_icons">
       </div>
-      <!-- CORREGIR ERROR UNA VEZ TENGA LAS IMAGENES NECESARIAS ACA ABAJO-->
       <!-- Galeria Accesorios -->
       <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.product_accessories">
         <titles :title="this.productInfo.product_galery_title" subtitle="Galería" :fontSize="31"></titles>
@@ -222,11 +221,11 @@
   max-height: 60px;
   align-self: center;
 }
-@media screen and (max-width: 830px) {
+@media screen and (max-width: 880px) {
   .carousel {
     flex-direction: column;
   }
-  .responive-correction{
+  .responsive-correction{
     padding: 0 2rem;
     margin-bottom: 2rem;
   }

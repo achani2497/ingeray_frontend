@@ -9,8 +9,13 @@
           <!-- Header -->
           <div class="modal-header" v-if="header">
             <div class="futura t-35"><slot name="title" /></div>
-            <button type="button" @click="$emit('close')">
-              <span>&times;</span>
+            <button class="close-button" type="button" @click="$emit('close')">
+              <!-- <span>&times;</span> -->
+              <img
+              :src="require('@/assets/images/icons/Cross.svg')"
+              alt="close"
+              width="40"
+              />
             </button>
           </div>
 
@@ -84,6 +89,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 2rem;
 }
 .modal-container-sm {
   max-width: 500px;
@@ -111,7 +117,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background-color: #eeefee;
   border: none;
   z-index: 10;
 }
@@ -130,5 +136,12 @@ export default {
 }
 .t-35 {
   font-size: 35px;
+}
+.close-button {
+  background-color: #eeefee;
+  border-radius: 100%;
+}
+.close-button img {
+  transform: scale(3);
 }
 </style>
