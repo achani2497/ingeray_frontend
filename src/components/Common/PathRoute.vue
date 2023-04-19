@@ -45,7 +45,11 @@ export default {
             }
             if(ruta.includes('servicios')) {
                 this.pathArray = ['Inicio', 'Servicios']
-                this.pathArray.push(this.$router.currentRoute.name)
+                if(this.$router.currentRoute.name === "Alquiler dedicado") {
+                    this.pathArray.push("Contratos de Alquiler")
+                } else {   
+                    this.pathArray.push(this.$router.currentRoute.name)
+                }
             }
         }
     }

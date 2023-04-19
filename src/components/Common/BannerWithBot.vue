@@ -33,11 +33,13 @@
 
 <script>
 import SimpleContactForm from "../Forms/SimpleContactForm.vue";
+import Modal from "../Modal/Modal.vue";
 export default {
   name: "banner-box",
   props: ["bannerName"],
   components: {
     "simple-contact-form": SimpleContactForm,
+    'modal': Modal
   },
   data() {
     return {

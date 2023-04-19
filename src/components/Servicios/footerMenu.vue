@@ -1,20 +1,27 @@
 <template>
   <div class="padding-container py-10 flex flex-col gap-4" id="servicesFooter">
     <titles
-      title="Conozca más sobre nuestro"
-      subtitle="Prestaciones y servicios"
+      title="Conozca más sobre nuestras"
+      subtitle="Prestaciones y Servicios"
       :fontSize="31"
       class="pl-4"
     ></titles>
     <div class="grid grid-cols-4 grid-rows-2 gap-y-4 gap-8 mt-4">
       <router-link
-        :to="servicios[index - 1].url"
+        :to="servicio.url"
         class="servicio-container flex flex-col"
-        v-for="index in 9"
+        v-for="(servicio, index) in servicios"
         :key="index"
       >
-        <span class="pl-4 footer-menu-title"> {{ servicios[index - 1].nombreCorto }} </span>
-        <img class="shadow-lg" :src="servicios[index - 1].miniBanner" />
+        <span class="pl-4 footer-menu-title"> {{ servicio.nombreCorto }} </span>
+        <img class="shadow-lg" :src="servicio.miniBanner" />
+      </router-link>
+      <router-link v-if="estaEnAlquilerEspecifico" to="/contacto" class="servicio-container flex flex-col">
+        <span class="pl-4 footer-menu-title"> Atención Personalizada </span>
+        <img
+          class="shadow-lg"
+          src="@/assets/images/servicios/footer-menu/atencion.jpg"
+        />
       </router-link>
     </div>
   </div>
@@ -26,11 +33,10 @@ export default {
   data() {
     return {
       servicios: [],
-      supportIf: true,
+      estaEnAlquilerEspecifico: false,
     };
   },
   created() {
-    this.showSupport();
     this.setServices();
   },
   watch: {
@@ -40,13 +46,6 @@ export default {
     },
   },
   methods: {
-    showSupport() {
-      if(this.$route.path.split('/')[1] !== 'servicios') {
-        this.supportIf = false;
-      } else {
-        this.supportIf = true;
-      } 
-    },
     setServices() {
       if(this.$route.path.split('/')[1]==='servicios') {
         let serviceUrl = this.$route.path.split("/")[2];
@@ -62,17 +61,30 @@ export default {
               miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`),
             };
           });
-          
+
+          let alquilerException = this.$route.path.split('/')
+          if(alquilerException.length > 3 && alquilerException.includes('alquileres')) {
+            listOfServices = listOfServices.filter(
+              (servicio) => servicio.url != 'alquileres'
+            )
+            listOfServices = listOfServices.filter(
+              (servicio) => servicio.url != 'equipamiento'
+            )
+            this.estaEnAlquilerEspecifico = true;
+          } else {
+            this.estaEnAlquilerEspecifico = false;
+          }
           this.servicios = listOfServices.filter(
             (servicio) => servicio.url != exception
             );
-      }
+      } else {
         this.servicios = servicios.servicios.map((servicio) => {
-          return {
-            ...servicio,
-            miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`)
+            return {
+                ...servicio,
+                miniBanner: require(`@/assets/images/servicios/footer-menu/${servicio.url}.jpg`)
+              }
+            })
           }
-        })
     },
   },
 };
