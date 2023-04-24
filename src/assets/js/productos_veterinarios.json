@@ -39,7 +39,8 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-INGE-V6-DUO.png",
-            "product_animal_icons": "Animales-KX5600.png"
+            "product_accessories":"",
+            "product_animal_icons": "Animales-INGE-V6-DUO.png"
         },
         {
             "category_name": "Ultrasonografia",
@@ -81,6 +82,7 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-INGEV9HD.png",
+            "product_accessories":"",
             "product_animal_icons": "Animales-INGE-V9-HD.png"
         },
         {
@@ -122,6 +124,7 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-SMART-SCAN.png",
+            "product_accessories":"",
             "product_animal_icons": "Animales-SMARTSCAN.png"
         },
         {
@@ -203,6 +206,7 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-KX5600.png",
+            "product_accessories":"",
             "product_animal_icons": "Animales-KX5600.png"
         },
         {
@@ -244,6 +248,7 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-KX5200.png",
+            "product_accessories":"",
             "product_animal_icons": "Animales-KX5200.png"
         },
         {
@@ -324,6 +329,7 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-DCU30.png",
+            "product_accessories":"",
             "product_animal_icons": "Animales-DCU30-50.png"
         },
         {
@@ -356,6 +362,7 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-PALM-X6.png",
+            "product_accessories":"",
             "product_animal_icons": "Animales-PALM-X6.png"
         },
         {
@@ -396,7 +403,7 @@
             "product_galery_title": "Gafas de Video para Ultrasonografía",
             "product_galery_images": [],
             "product_accessories":"galery-gafas-1.jpg",
-            "product_animal_icons": "Animales-SMARTSCAN.png"
+            "product_animal_icons": "Animales-GAFAS.png"
         }
     ]
 }

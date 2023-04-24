@@ -180,20 +180,16 @@
             "url": "/productos/veterinaria/inge-v6"
         },
         {
+            "imagePath": "carousel-veterinaria/carousel-vet-4.jpg",
+            "url": "/productos/veterinaria/inge-v9"
+        },
+        {
             "imagePath": "carousel-veterinaria/carousel-vet-2.jpg",
             "url": "/productos/veterinaria/rku10"
         },
         {
             "imagePath": "carousel-veterinaria/carousel-vet-3.jpg",
             "url": "/productos/veterinaria/kx5600"
-        },
-        {
-            "imagePath": "carousel-veterinaria/carousel-vet-4.jpg",
-            "url": "/productos/veterinaria/inge-v9"
-        },
-        {
-            "imagePath": "carousel-veterinaria/carousel-vet-5.jpg",
-            "url": "/productos/veterinaria/gafas"
         },
         {
             "imagePath": "carousel-veterinaria/carousel-vet-6.jpg",
@@ -216,16 +212,12 @@
             "url": "/productos/veterinaria/dcu30"
         },
         {
-            "imagePath": "carousel-veterinaria/carousel-vet-11.jpg",
-            "url": "/"
-        },
-        {
-            "imagePath": "carousel-veterinaria/carousel-vet-12.jpg",
-            "url": "/"
-        },
-        {
             "imagePath": "carousel-veterinaria/carousel-vet-13.jpg",
             "url": "/productos/veterinaria/brazo-extensor"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-5.jpg",
+            "url": "/productos/veterinaria/gafas"
         }
     ]
 }

@@ -98,7 +98,7 @@
       class="flex flex-col gap-4 px-16"
       v-if="this.productInfo.product_galery_images.length !== 0"
     >
-      <titles title="Equipos de Sala" subtitle="Galería"></titles>
+      <titles title="Ecógrafo Veterinario" subtitle="Galería"></titles>
       <div class="tab-label">Imágenes Clínicas</div>
       <div class="flex justify-around gap-2">
         <picture-zoom-button
@@ -113,7 +113,7 @@
     </div>
     <!-- Especificaciones -->
     <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.especificaciones_veterinarias">
-      <titles title="Especificaciones" subtitle="Ficha Técnica"></titles>
+      <titles title="Especificaciones" subtitle="Ficha Técnica" :subtitleFontSize="20"></titles>
       <img
         :src="require(`@/assets/images/productos/veterinaria/especificaciones/${this.productInfo.especificaciones_veterinarias}`)" 
         :alt="this.productInfo.especificaciones_veterinarias">
@@ -218,7 +218,7 @@
 }
 .img-animales {
   width: auto;
-  max-height: 60px;
+  max-height: 45px;
   align-self: center;
 }
 @media screen and (max-width: 880px) {
@@ -272,9 +272,14 @@ export default {
   },
   computed: {
     menuProducts() {
-      return this.products.filter(
+      this.products = this.products.filter(
         (equipment) => equipment.category_name !== "Accesorios"
       );
+      //aca ver si el producto actual es accesorios y borrar un elemento de la lista de productos
+      if(this.productInfo.category_name === 'Accesorios') {
+        this.products.pop();
+      }
+      return this.products;
     },
   },
   watch: {

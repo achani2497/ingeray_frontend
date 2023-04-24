@@ -7,7 +7,7 @@
           :product_name="product.nombreCategoria"
           product_type="human"
           ></arrowless-carousel>
-        <div class="py-8 pr-12 flex flex-col gap-5 responsive-correction">
+        <div class="py-8 pl-4 pr-12 flex flex-col gap-5 responsive-correction">
           <path-route></path-route>
           <titles
             :title="product.nombreCategoriaGeneral"
