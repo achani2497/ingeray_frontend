@@ -40,7 +40,13 @@
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-INGE-V6-DUO.png",
             "product_accessories":"",
-            "product_animal_icons": "Animales-INGE-V6-DUO.png"
+            "product_animal_icons": "Animales-INGE-V6-DUO.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Ecógrafo Veterinario / MARCA Inge Ray / MODELO INGE V6 Lineal + Convexo"
+                }
+            ]
         },
         {
             "category_name": "Ultrasonografia",
@@ -83,7 +89,13 @@
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-INGEV9HD.png",
             "product_accessories":"",
-            "product_animal_icons": "Animales-INGE-V9-HD.png"
+            "product_animal_icons": "Animales-INGE-V9-HD.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Ecógrafo Veterinario / MARCA Inge Ray / MODELO INGE V9 HD"
+                }
+            ]
         },
         {
             "category_name": "Ultrasonografia",
@@ -125,7 +137,13 @@
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-SMART-SCAN.png",
             "product_accessories":"",
-            "product_animal_icons": "Animales-SMARTSCAN.png"
+            "product_animal_icons": "Animales-SMARTSCAN.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Ecógrafo Veterinario / MARCA Sonowin / MODELO Smart Scan"
+                }
+            ]
         },
         {
             "category_name": "Ultrasonografia",
@@ -166,7 +184,13 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-RKU10.png",
-            "product_animal_icons": "Animales-RKU10.png"
+            "product_animal_icons": "Animales-RKU10.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Ecógrafo Veterinario / MARCA KAIXIN / MODELO RKU10"
+                }
+            ]
         },
         {
             "category_name": "Ultrasonografia",
@@ -207,7 +231,13 @@
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-KX5600.png",
             "product_accessories":"",
-            "product_animal_icons": "Animales-KX5600.png"
+            "product_animal_icons": "Animales-KX5600.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Ecógrafo Veterinario / MARCA KAIXIN / MODELO KX5600"
+                }
+            ]
         },
         {
             "category_name": "Ultrasonografia",
@@ -249,7 +279,13 @@
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-KX5200.png",
             "product_accessories":"",
-            "product_animal_icons": "Animales-KX5200.png"
+            "product_animal_icons": "Animales-KX5200.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": ""
+                }
+            ]
         },
         {
             "category_name": "Ultrasonografia",
@@ -289,7 +325,13 @@
                 }
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-MSU3.png",
-            "product_animal_icons": "Animales-MSU3.png"
+            "product_animal_icons": "Animales-MSU3.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Ecógrafo Veterinario / MARCA KAIXIN / MODELO MSU3"
+                }
+            ]
         },
         {
             "category_name": "Ultrasonografia",
@@ -330,7 +372,13 @@
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-DCU30.png",
             "product_accessories":"",
-            "product_animal_icons": "Animales-DCU30-50.png"
+            "product_animal_icons": "Animales-DCU30-50.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Ecógrafo Veterinario / MARCA KAIXIN / MODELO DCU30"
+                }
+            ]
         },
         {
             "category_name": "Ultrasonografia",
@@ -363,7 +411,13 @@
             ],
             "especificaciones_veterinarias":"CUADRO_Esp-Tecnicas-PALM-X6.png",
             "product_accessories":"",
-            "product_animal_icons": "Animales-PALM-X6.png"
+            "product_animal_icons": "Animales-PALM-X6.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Ecógrafo Veterinario / MARCA / MODELO PALM X6 PLUS"
+                }
+            ]
         },
         {
             "category_name": "Accesorios",
@@ -384,7 +438,13 @@
             "product_galery_title": "Brazo Extensor para Sondas Lineales",
             "product_galery_images": [],
             "product_accessories": "galery-brazo-extensor-1.jpg",
-            "product_animal_icons": "Animales-BRAZO-EXTENSOR.png"
+            "product_animal_icons": "Animales-BRAZO-EXTENSOR.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Brazo Extensor / MARCA Kaixin-Inge Ray / MODELO RKU10-INGE V6 Lineal"
+                }
+            ]
         },
         {
             "category_name": "Accesorios",
@@ -403,7 +463,13 @@
             "product_galery_title": "Gafas de Video para Ultrasonografía",
             "product_galery_images": [],
             "product_accessories":"galery-gafas-1.jpg",
-            "product_animal_icons": "Animales-GAFAS.png"
+            "product_animal_icons": "Animales-GAFAS.png",
+            "brochures": [
+                {
+                    "link": "#",
+                    "nombreLink": "Gafas de Video para Ultrasonido / MARCA Kai Xin / MODELO Professional Goggle"
+                }
+            ]
         }
     ]
 }
