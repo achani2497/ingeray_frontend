@@ -47,7 +47,8 @@
                 <titles
                   title="Visualice la calidad de nuestras"
                   subtitle="Intervenciones"
-                  :fontSize="31"
+                  :fontSize="30"
+                  :titleFontSize="16"
                   id="x-ray-text-button"
                 ></titles>
                 <button
@@ -107,8 +108,10 @@ export default {
 
 <style>
 .x-ray {
-  height: 356px;
+  min-height: 273px;
+  height: 100%;
   background-image: url("~@/assets/images/servicios/asistencia-remota/mini-column.jpg");
+  background-size:cover;
 }
 .green-container {
   position: relative;

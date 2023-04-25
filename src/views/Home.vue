@@ -110,7 +110,6 @@
 <script>
 import PolimorficCarousel from "../components/Carousels/PolimorficCarousel/PolimorficCarousel";
 import BannerCarousel from "../components/Carousels/BannerCarousel/NewBannerCarousel.vue";
-// import BannerCarousel from "../components/Carousels/BannerCarousel/BannerCarousel.vue";
 import ClientsCarousel from "../components/Carousels/ClientsCarousel/ClientsCarousel.vue";
 import carousels from "../assets/js/home.json";
 import Modal from "../components/Modal/Modal.vue";

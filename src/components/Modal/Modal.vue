@@ -89,7 +89,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem;
 }
 .modal-container-sm {
   max-width: 500px;

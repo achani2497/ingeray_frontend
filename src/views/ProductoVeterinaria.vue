@@ -98,7 +98,7 @@
       class="flex flex-col gap-4 px-16"
       v-if="this.productInfo.product_galery_images.length !== 0"
     >
-      <titles title="Equipos de Sala" subtitle="Galería"></titles>
+      <titles title="Ecógrafo Veterinario" subtitle="Galería"></titles>
       <div class="tab-label">Imágenes Clínicas</div>
       <div class="flex justify-around gap-2">
         <picture-zoom-button
@@ -113,7 +113,7 @@
     </div>
     <!-- Especificaciones -->
     <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.especificaciones_veterinarias">
-      <titles title="Especificaciones" subtitle="Ficha Técnica"></titles>
+      <titles title="Especificaciones" subtitle="Ficha Técnica" :fontSize="31" :subtitleFontSize="20"></titles>
       <img
         :src="require(`@/assets/images/productos/veterinaria/especificaciones/${this.productInfo.especificaciones_veterinarias}`)" 
         :alt="this.productInfo.especificaciones_veterinarias">
@@ -128,11 +128,12 @@
         <titles :title="this.productInfo.product_galery_title" subtitle="Galería" :fontSize="31"></titles>
         <img :src="require(`@/assets/images/productos/veterinaria/galeria/${this.productInfo.product_accessories}`)" :alt="this.product_accessories">
         <img
-          class="img-animales"
-          v-if="this.productInfo.product_animal_icons" 
-          :src="require(`@/assets/images/productos/veterinaria/animales/${this.productInfo.product_animal_icons}`)" 
-          :alt="this.productInfo.product_animal_icons">
+        class="img-animales"
+        v-if="this.productInfo.product_animal_icons" 
+        :src="require(`@/assets/images/productos/veterinaria/animales/${this.productInfo.product_animal_icons}`)" 
+        :alt="this.productInfo.product_animal_icons">
       </div>
+      <documentos class="px-16" :brochures="productInfo.brochures"></documentos>
     <!-- Menu -->
     <div id="veterinaryFooter">
       <titles
@@ -218,7 +219,7 @@
 }
 .img-animales {
   width: auto;
-  max-height: 60px;
+  max-height: 45px;
   align-self: center;
 }
 @media screen and (max-width: 880px) {
@@ -245,6 +246,7 @@ import Modal from "../components/Modal/Modal.vue";
 import SimpleContactForm from "../components/Forms/SimpleContactForm.vue";
 import ContactForm from '../components/Forms/ContactForm.vue';
 import PathRoute from "../components/Common/PathRoute.vue";
+import Documentos from "../components/Productos/Documentos.vue";
 
 export default {
   mixins: [productMixin],
@@ -255,6 +257,7 @@ export default {
     'simple-contact-form': SimpleContactForm,
     'form-pasos': ContactForm,
     'path-route': PathRoute,
+    'documentos': Documentos,
   },
   data() {
     return {
@@ -272,9 +275,14 @@ export default {
   },
   computed: {
     menuProducts() {
-      return this.products.filter(
+      this.products = this.products.filter(
         (equipment) => equipment.category_name !== "Accesorios"
       );
+      //aca ver si el producto actual es accesorios y borrar un elemento de la lista de productos
+      if(this.productInfo.category_name === 'Accesorios') {
+        this.products.pop();
+      }
+      return this.products;
     },
   },
   watch: {

@@ -33,7 +33,7 @@
           cuidado ha dado los resultados esperados en lo que hace a nuestro
           aporte a la calidad de atención al paciente.
         </p>
-        <div class="flex flex-wrap justify-around gap-5 mt-4">
+        <div class="flex justify-evenly gap-4 mt-4">
           <div v-for="(ambientacion, index) in ambientaciones" :key="index">
             <picture-zoom-button
               sectionName="/servicios/ambientacion"

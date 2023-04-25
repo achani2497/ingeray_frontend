@@ -5,10 +5,10 @@
       active ? 'white' : esMamo() ? '#e878a0' : '#0076a5'
     }`"
   >
-    <span class="title" v-if="title"> {{ title }} </span>
+    <span class="title" v-if="title" :style="`font-size:${titleFontSize}px!important;`"> {{ title }} </span>
     <span
       class="sub-title"
-      :style="`line-height:${lineHeight}px`"
+      :style="`line-height:${lineHeight}px; font-size:${subtitleFontSize}px!important;`"
       v-if="subtitle"
     >
       {{ subtitle }}
@@ -26,6 +26,18 @@ export default {
     },
     fontSize: {
       type: Number,
+    },
+    titleFontSize: {
+      type: Number,
+      default: function() {
+        return this.fontSize;
+      },
+    },
+    subtitleFontSize: {
+      type: Number,
+      default: function() {
+        return this.fontSize;
+      }
     },
     active: {
       type: Boolean,
