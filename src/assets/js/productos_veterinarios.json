@@ -1,6 +1,22 @@
 {
     "productos_veterinarios": [
         {
+            "product_dev_name":"todos_los_productos",
+            "product_carousel_images": [
+                "smart-scan-1.png",
+                "inge-v6-1.png",
+                "inge-v9-1.png",
+                "rku10-1.png",
+                "gafas-1.png",
+                "brazo-extensor-1.png",
+                "kx5200-1.png",
+                "msu3-1.png",
+                "kx5600-1.png",
+                "dcu30-1.png",
+                "palm-x6-plus-1.png"
+            ]
+        },
+        {
             "category_name": "Ultrasonografia",
             "product_name": "INGE V6",
             "product_url": "inge-v6",

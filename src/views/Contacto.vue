@@ -128,7 +128,7 @@ export default {
       activeTeamId: 0,
       areaName: "",
       showContactMenu: false,
-      bannerContacto: `${this.$imageCDN}/banner_contacto.jpg`,
+      bannerContacto: `${this.$imageCDN}/banner_contacto_IApdTsOzd.jpg`,
     };
   },
   methods: {

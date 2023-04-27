@@ -29,6 +29,11 @@ const routes = [
     component: () => import('../views/Productos.vue'),
   },
   {
+    path: '/productos/veterinaria',
+    name: 'ProductosVeterinarios',
+    component: () => import('../views/VeterinariaTodos.vue'),
+  },
+  {
     path: '/productos/veterinaria/:categoria',
     name: 'ProductoVeterinaria',
     component: () => import('../views/ProductoVeterinaria.vue')
