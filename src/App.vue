@@ -65,6 +65,12 @@
   background-color: var(--light-gray);
 }
 /* Boton */
+.banner-contacto {
+  height: 50px;
+  background-color: #e6e6e6;
+  padding: 2rem 4rem;
+  width: 100%;
+}
 .contact-inge-button {
   background-color: var(--bluish-green);
   color: white;

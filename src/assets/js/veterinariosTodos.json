@@ -1,0 +1,54 @@
+{
+    "bannerInfo": {
+        "category_name": "Ultrasonografía",
+        "product_name": "Todos los productos",
+        "product_carousel_text":"Desde hace más de 20 años proveemos y distribuimos las mejores marcas de Equipos de Ultrasonografía para Medicina Veterinaria y  a la vez que colaboramos con Universidades Nacionales en Proyectos de Investigación en Reproducción Animal. Contamos con un equipo especializado de técnicos e ingenieros propios formados para brindar el mejor asesoramiento, apoyo y servicio técnico del país.",
+        "product_dev_name":"todos_los_productos"
+    },
+    "productsList": [
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-8.jpg",
+            "url": "/productos/veterinaria/smart-scan"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-1.jpg",
+            "url": "/productos/veterinaria/inge-v6"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-4.jpg",
+            "url": "/productos/veterinaria/inge-v9"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-2.jpg",
+            "url": "/productos/veterinaria/rku10"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-5.jpg",
+            "url": "/productos/veterinaria/gafas"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-13.jpg",
+            "url": "/productos/veterinaria/brazo-extensor"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-6.jpg",
+            "url": "/productos/veterinaria/kx5200"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-7.jpg",
+            "url": "/productos/veterinaria/msu3"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-3.jpg",
+            "url": "/productos/veterinaria/kx5600"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-10.jpg",
+            "url": "/productos/veterinaria/dcu30"
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-9.jpg",
+            "url": "/productos/veterinaria/palm-x6-plus"
+        }
+    ]
+}

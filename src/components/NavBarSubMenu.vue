@@ -69,7 +69,7 @@
                     {{ subcategoria.nombreProducto }}
                   </li>
                   <li>
-                    <router-link to="/productos" class="py-1 px-2">
+                    <router-link :to="`/productos${categoria.tipoCategoria === 'veterinaria' ? '/veterinaria' : ''}`" class="py-1 px-2">
                       <span @click="$emit('closeSubMenu')"
                         >Ver todos los productos</span
                       >
