@@ -13,8 +13,9 @@
           @click="prev()"
         ></button>
         <!-- Carousel Elements -->
-        <div class="carousel">
-          <div class="overflow-hidden flex" id="inner-wrapper">
+        <div class="carousel bg-white">
+          <img :src="require(`@/assets/images/productos/humanos/mamo/Cuadro_MAMO_VIOLA_Titulo.jpg`)" alt="carousel-title">
+          <div class="overflow-hidden flex mt-10" id="inner-wrapper">
             <div class="inner flex pb-4" ref="inner" :style="innerStyles">
               <div
                 class="card-container"
@@ -44,16 +45,25 @@
           <titles subtitle="Algunas diferencias" :fontSize="25"></titles>
           <titles :title="producto.diferencias.titulo" :fontSize="25"></titles>
         </div>
-        <div
+        <div class="flex flex-row gap-4 responsive-column">
+          <div
           class="
-            texto-caracteristica
-            text-lg
-            two-columns-text
-            text-justify
-            py-4
+          texto-caracteristica
+          text-lg
+          text-justify
+          py-4
           "
-        >
-          {{ producto.diferencias.content }}
+          v-html="producto.diferencias.content"
+          ></div>
+          <div
+          class="
+          texto-caracteristica
+          text-lg
+          text-justify
+          py-4
+          "
+          v-html="producto.diferencias.secondCol"
+          ></div>
         </div>
       </div>
       <!-- Documentos -->
@@ -177,10 +187,6 @@ export default {
   width: 100%;
   height: fit-content;
   position: relative;
-  background-image: url("https://ik.imagekit.io/ingesystem22/Cuadro_MAMO_VIOLA_CARROUSEL_0X52QjVUc.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670805072564");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 .inner {
   width: fit-content;
@@ -192,7 +198,7 @@ button {
   position: absolute;
 }
 .arrow {
-  background-image: url("~@/assets/images/icons/arrow.svg");
+  background-image: url("~@/assets/images/icons/transparentArrow.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -210,5 +216,18 @@ button {
 }
 .extended-card {
   width: 260px !important;
+}
+.texto-caracteristica{
+  width: 50%;
+}
+
+@media screen and (max-width: 650px) {
+  .responsive-column {
+    flex-direction: column;
+    gap: 0;
+  }
+  .texto-caracteristica{
+    width: 100%;
+  }
 }
 </style>

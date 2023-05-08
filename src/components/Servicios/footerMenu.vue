@@ -16,7 +16,7 @@
         <span class="pl-4 footer-menu-title"> {{ servicio.nombreCorto }} </span>
         <img class="shadow-lg" :src="servicio.miniBanner" />
       </router-link>
-      <router-link v-if="estaEnAlquilerEspecifico" to="/contacto" class="servicio-container flex flex-col">
+      <router-link v-if="estaEnAlquilerEspecifico || mostrarAtencionPers" to="/contacto" class="servicio-container flex flex-col">
         <span class="pl-4 footer-menu-title"> Atención Personalizada </span>
         <img
           class="shadow-lg"
@@ -34,6 +34,7 @@ export default {
     return {
       servicios: [],
       estaEnAlquilerEspecifico: false,
+      mostrarAtencionPers: false,
     };
   },
   created() {
@@ -49,7 +50,7 @@ export default {
     setServices() {
       if(this.$route.path.split('/')[1]==='servicios') {
         let serviceUrl = this.$route.path.split("/")[2];
-
+        this.mostrarAtencionPers = true;
         let preService = servicios.servicios.find(
           (servicio) => servicio.url === serviceUrl
           );
@@ -78,6 +79,7 @@ export default {
             (servicio) => servicio.url != exception
             );
       } else {
+        this.mostrarAtencionPers = false;
         this.servicios = servicios.servicios.map((servicio) => {
             return {
                 ...servicio,

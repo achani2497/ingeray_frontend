@@ -81,9 +81,9 @@
             :src="
               require('@/assets/images/contacto/fotosPersonal/GERENTE_Daniel_Penhos.jpg')
             "
-            width="310"
+            width="350"
           />
-          <div class="flex flex-col gap-3 px-16 py-12">
+          <div class="flex flex-col gap-3 px-16 py-7">
             <div>
               <h2 class="inge-text-bold text-3xl mb-2">Daniel Penhos</h2>
               <titles :font-size="30" subtitle="Gerente Operativo"></titles>
@@ -109,9 +109,9 @@
             :src="
               require('@/assets/images/contacto/fotosPersonal/GERENTE_Matias_Penhos.jpg')
             "
-            width="310"
+            width="350"
           />
-          <div class="flex flex-col gap-3 px-16 py-12">
+          <div class="flex flex-col gap-3 px-16 py-7">
             <div>
               <h2 class="inge-text-bold text-3xl mb-2">Matías Penhos</h2>
               <titles :font-size="30" subtitle="Gerente Operativo"></titles>

@@ -9,6 +9,7 @@
 
 <style>
 :root {
+  --mamo-pink: #E878A0;
   --light-lilac: #d2ddeb;
   --lilac: #9fb3e3;
   --dark-lilac: #7a9ac7;
@@ -42,6 +43,9 @@
   column-count: 2;
 }
 /* Colores de texto */
+.mamo-txt {
+  color: var(--mamo-pink) !important;
+}
 .blue {
   color: var(--dark-bluish-green);
 }
@@ -120,6 +124,16 @@
   padding: 0.3rem 0.8rem;
   border-radius: 5px;
   align-self: flex-end;
+}
+.mamo-btn {
+  color: #fff;
+  background-color: var(--mamo-pink);
+  border-color: var(--mamo-pink);
+}
+.mamo-btn-outline {
+  color: var(--mamo-pink);
+  border-color: var(--mamo-pink);
+  background-color: transparent;
 }
 .envelope {
   height: 40px;

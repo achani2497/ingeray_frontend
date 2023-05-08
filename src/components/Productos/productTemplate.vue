@@ -24,7 +24,7 @@
             alt="eco seal"
           />
           <button
-            class="contact-inge-button inge-shadow-down shadow-animated mt-8"
+            :class="`contact-inge-button inge-shadow-down shadow-animated mt-8 ${this.esMamo() ? 'mamo-btn font-bold' : ''}`"
             type="button"
             @click="showContactMenu = true"
           >
@@ -84,6 +84,7 @@
   
   <script>
 import { productMixin } from "../../assets/js/productMixin";
+import {mamoMixin} from '../../assets/js/mamoMixin';
 import ArrowlessCarousel from "../Carousels/ArrowlessCarousel/ArrowlessCarousel";
 import PathRoute from "../Common/PathRoute.vue";
 import Modal from "../Modal/Modal.vue";
@@ -92,7 +93,7 @@ import ContactForm from "../Forms/ContactForm.vue";
 
 export default {
   props: ["bannerName", "description"],
-  mixins: [productMixin],
+  mixins: [productMixin, mamoMixin],
   components: { 
     "arrowless-carousel": ArrowlessCarousel,
     "path-route": PathRoute,
@@ -120,7 +121,7 @@ export default {
 };
 </script>
   
-<style>
+<style scoped>
 .carousel {
   background-color: white !important;
 }

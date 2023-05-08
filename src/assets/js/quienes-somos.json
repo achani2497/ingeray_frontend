@@ -1,6 +1,12 @@
 {
     "staff": [
         {
+            "image": "nadia_medina.png",
+            "name": "Nadia Medina",
+            "position": "Tesoreria. Auditoría Contable.",
+            "title": "Atención de Cuentas Proveedores."
+        },
+        {
             "image": "pablo_micas.png",
             "name": "Pablo Micas",
             "position": "Jefe de Servicio Técnico en Planta.",
@@ -47,12 +53,6 @@
             "name": "Gabriel Fandini",
             "position": "Equipamiento para Medicina Humana y Medicina Veterinaria. Comercio Exterior.",
             "title": "Asesor Comercial."
-        },
-        {
-            "image": "nadia_medina.png",
-            "name": "Nadia Medina",
-            "position": "Tesoreria. Auditoría Contable.",
-            "title": "Atención de Cuentas Proveedores."
         }
     ],
     "contracts": [
