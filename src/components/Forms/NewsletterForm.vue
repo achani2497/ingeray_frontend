@@ -103,8 +103,8 @@ export default {
         .then((result) => {
           //hacer algo para indicar que se mandó
           submitButton.innerHTML = "Enviado!"
-          this.resetInner(submitButton);
           this.resetForm();
+          this.resetInner(submitButton);
         })
         .catch((error) => {
           submitButton.innerHTML = "No se pudo enviar"
