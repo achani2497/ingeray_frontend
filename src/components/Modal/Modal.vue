@@ -12,9 +12,9 @@
             <button class="close-button" type="button" @click="$emit('close')">
               <!-- <span>&times;</span> -->
               <img
-              :src="require('@/assets/images/icons/Cross.svg')"
+              :src="require('@/assets/images/icons/avisoLegalCross.png')"
               alt="close"
-              width="40"
+              width="30"
               />
             </button>
           </div>
@@ -89,6 +89,8 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 1.5rem;
+  text-align: justify;
 }
 .modal-container-sm {
   max-width: 500px;
@@ -137,7 +139,6 @@ export default {
   font-size: 35px;
 }
 .close-button {
-  background-color: #eeefee;
   border-radius: 100%;
 }
 .close-button img {

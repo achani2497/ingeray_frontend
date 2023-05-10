@@ -6,21 +6,24 @@
       <!-- Especificaciones -->
       <especificaciones :datos="producto.especificaciones" />
       <!-- Banner -->
-      <div class="mb-20 mt-8 banner-marcas">
+      <div class="my-6 banner-marcas">
         <titles
           :fontSize="25"
           :lineHeight="20"
           subtitle="Nuestras Marcas"
         ></titles>
         <titles :fontSize="20" title="Los mejores modelos del mercado"></titles>
-        <img
+        <div class="banner-cont" :style="bannerContStyle">
+          <img
           :src="
             require('@/assets/images/productos/humanos/mamo/mamo-banner.png')
-          "
+            "
           alt="Banner Mamografia"
           width="100%"
-          class="bg-white absolute left-0 mt-4 mb-8"
-        />
+          id="banner-nuestras-marcas"
+          class="bg-white absolute left-0 mt-4"
+          />
+        </div>
       </div>
       <!-- Documentos -->
       <documentos :brochures="producto.brochures" />
@@ -62,10 +65,28 @@ export default {
     return {
       producto: "",
       showModal: false,
+      bannerContStyle: {},
     };
   },
   beforeMount() {
     this.producto = this.getProductEquipment(this.slug);
+  },
+  created() {
+    window.addEventListener('scroll', this.ajustarBannerScroll);
+    window.addEventListener('load', this.ajustarBanner);
+    window.addEventListener('resize', this.ajustarBanner);
+  },
+  methods: {
+    ajustarBanner() {
+      const elHeight = document.getElementById('banner-nuestras-marcas').clientHeight;
+      this.bannerContStyle = {
+        height: `${elHeight}px`
+      }
+    },
+    ajustarBannerScroll() {
+      this.ajustarBanner;
+      window.removeEventListener('scroll', this.ajustarBannerScroll)
+    }
   },
 };
 </script>

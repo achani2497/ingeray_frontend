@@ -2,7 +2,7 @@
   <div class="contact-container flex flex-col gap-4">
     <!-- Banner & Buttons Container -->
     <div class="padding-container">
-      <banner-box :bannerName="bannerContacto">
+      <banner-box :bannerName="bannerContacto" :ponerSobre="false">
         <template v-slot:title>
           <p class="inge-text-bold">¿Cómo podemos ayudarlo?</p>
           <titles subtitle="Contáctenos" :fontSize="31"></titles>

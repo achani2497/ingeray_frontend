@@ -3,6 +3,7 @@
     <div class="padding-container flex flex-col gap-16">
       <banner-with-bot
         :bannerName="`${this.$imageCDN}/banner-quienes-somos.jpg`"
+        :ponerSobre="false"
       >
         <template slot="title">
           <titles

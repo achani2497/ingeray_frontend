@@ -2,7 +2,7 @@
   <div>
     <div class="padding-container">
       <div class="contact-container flex flex-col gap-12 pb-12">
-        <banner-box :bannerName="bannerCliente">
+        <banner-box :bannerName="bannerCliente" :ponerSobre="false">
           <template v-slot:title>
             <titles
               title="Conózcanos a través de"

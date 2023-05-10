@@ -179,13 +179,13 @@
         large="xl"
         class=""
       >
-        <template #title> <div class="title blue">Aviso Legal</div> </template>
+        <template #title> <div class="title blue inge-text-bold">Aviso Legal</div> </template>
         <template #content>
           <div class="legal-container overflow-y-auto">
-            <div class="simple-text p-4">
+            <div class="simple-text p-4 inge-text">
               Las propiedades intelectuales y otros derechos sobre los materiales de este sitio web pertenecen a INGE RAY S.R.L. y a sus colaboradores, con domicilio en la calle Campillo 2585, C1427DCC, Ciudad Autónoma de Buenos Aires, Argentina. No se podrá hacer ningún tipo de publicación ni uso comercial de los materiales en el Sitio web sin la expresa autorización por escrito de INGE RAY S.R.L. No podrá poner ninguna parte de este Sitio web a disposición como parte de otro sitio web. Este Sitio web y su contenido no se podrá utilizar para crear una base de datos de ningún tipo, ni se lo podrá almacenar (en su totalidad o en parte) en bases de datos para que usted o terceros accedan a él, ni para distribuir cualquier base de datos que contenga la totalidad o parte del Sitio web y su contenido.
             </div>
-            <div class="simple-text p-4">
+            <div class="simple-text p-4 inge-text">
               Contáctenos a través de las siguientes formas de comunicación: por correo electrónico a ingeraysrl@gmail.com o telefónicamente a 11-4523-5792 / 11-4523-3999.
             </div>
           </div>
@@ -199,11 +199,11 @@
         large="xl"
       >
         <template #title>
-          <div class="title blue">Políticas de Privacidad</div>
+          <div class="title blue inge-text-bold">Políticas de Privacidad</div>
         </template>
         <template #content>
           <div class="legal-container overflow-y-auto">
-            <div class="simple-text p-4">
+            <div class="simple-text p-4 inge-text">
               El sistema no registra ninguna información personal relativa a sus visitantes, a menos que éstos decidan libremente proveerla a través de sus formularios de consulta o de suscripción al Newsletter. En este último caso, la información personal sólo es usada para responder al mensaje y entregar la información que el usuario requiera.
             </div>
           </div>

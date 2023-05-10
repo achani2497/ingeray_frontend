@@ -1,7 +1,7 @@
 <template>
     <div class="documentos flex flex-col gap-4 py-4">
         <div class="titulos">
-            <titles title="Documentos" subtitle="Brochure" :fontSize="31" :subtitleFontSize="20"></titles>
+            <titles :inverted="true" title="Documentos" subtitle="Brochure" :fontSize="31" :subtitleFontSize="20"></titles>
         </div>
         <div class="links flex flex-wrap justify-between items-end gap-4">
             <div class="brochures flex flex-col gap-4">

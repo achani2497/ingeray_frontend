@@ -922,7 +922,20 @@
             "caracteristicas": {
                 "titulo": "Sistemas de Digitalización para Imágenes Dinámicas",
                 "imagen": "digitalizacion/caracteristicas-video.png",
-                "content": "Con la implementación de los Sistemas de Video Digitalización con sensores de adquisición digital de las señales obtenidas por intensificadores de imágen convencionales, no se requiere de cambiar todo su equipo de Arco en C o Equipo de Sala para estudios contrastados, cateterismo, videodeglución, etc.  obteniendo tanto  imágenes cuadro a cuadro, fijas congeladas, así como largas secuencias de video digital. El médico especialista  puede obtener, durante y después del exámen, imágenes fijas o videos de altísima calidad y resolución. La rapidez del sistema y la posibilidad de guardar los estudios en carpetas pacientes, permite acelerar el flujo de trabajo con el consiguiente aumento de la productividad. RELACIÓN COSTO BENEFICIO   Los sistemas de Video Digital combinan la alta calidad de las imágenes con la más confiable tecnología, todo ello con una inversión inicial acorde con la mayoría de los presupuestos para  emprendimientos de diagnóstico por imágenes y bajísimos costos de mantenimiento,  permitiendo extender la vida útil de sus equipos analógicos. CONECTIVIDAD DICOM 3.0   Los sistemas provistos por nuestra empresa son totalmente compatibles con la norma DICOM 3.0 para intercambio de imágenes médicas. A su vez permiten la integración con otros usos de la norma DICOM incluyendo PACS, RIS, como así también visualizadores y Servidores DICOM, Impresoras y Servidores WEB DICOM."
+                "content": [
+                    {
+                        "titulo":"",
+                        "textContent":"Con la implementación de los Sistemas de Video Digitalización con sensores de adquisición digital de las señales obtenidas por intensificadores de imágen convencionales, no se requiere de cambiar todo su equipo de Arco en C o Equipo de Sala para estudios contrastados, cateterismo, videodeglución, etc.  obteniendo tanto  imágenes cuadro a cuadro, fijas congeladas, así como largas secuencias de video digital. El médico especialista  puede obtener, durante y después del exámen, imágenes fijas o videos de altísima calidad y resolución. La rapidez del sistema y la posibilidad de guardar los estudios en carpetas pacientes, permite acelerar el flujo de trabajo con el consiguiente aumento de la productividad."
+                    },
+                    {
+                        "titulo": "RELACIÓN COSTO BENEFICIO",
+                        "textContent":"Los sistemas de Video Digital combinan la alta calidad de las imágenes con la más confiable tecnología, todo ello con una inversión inicial acorde con la mayoría de los presupuestos para  emprendimientos de diagnóstico por imágenes y bajísimos costos de mantenimiento,  permitiendo extender la vida útil de sus equipos analógicos."
+                    },
+                    {
+                        "titulo":"CONECTIVIDAD DICOM 3.0",
+                        "textContent":"Los sistemas provistos por nuestra empresa son totalmente compatibles con la norma DICOM 3.0 para intercambio de imágenes médicas. A su vez permiten la integración con otros usos de la norma DICOM incluyendo PACS, RIS, como así también visualizadores y Servidores DICOM, Impresoras y Servidores WEB DICOM."
+                    }
+                ]
             },
             "especificaciones": [
                 {

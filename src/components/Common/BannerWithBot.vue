@@ -2,12 +2,15 @@
   <div class="inge-shadow-down flex flex-col mt-4">
     <img :src="bannerName" alt="banner-contactos" />
     <div class="banner-content flex flex-col gap-6 relative">
-      <div id="banner-section-title">
-        <slot name="title"></slot>
+      <div class="banner-section-text">
+        <div id="banner-section-title">
+          <slot name="title"></slot>
+        </div>
+        <div id="banner-section-stuff">
+          <slot name="stuff"></slot>
+        </div>
       </div>
-      <div id="banner-section-stuff">
-        <slot name="stuff"></slot>
-      </div>
+      <sobrecito v-if="ponerSobre"></sobrecito>
       <button
         class="
           bot-button
@@ -34,12 +37,15 @@
 <script>
 import SimpleContactForm from "../Forms/SimpleContactForm.vue";
 import Modal from "../Modal/Modal.vue";
+import Sobrecito from "./Sobrecito.vue";
+
 export default {
   name: "banner-box",
-  props: ["bannerName"],
+  props: ["bannerName","ponerSobre"],
   components: {
     "simple-contact-form": SimpleContactForm,
-    'modal': Modal
+    'modal': Modal,
+    'sobrecito': Sobrecito,
   },
   data() {
     return {
@@ -60,8 +66,10 @@ export default {
   padding-top: calc((864 / 2872) * 100%);
 }
 .banner-content {
-  padding: 2rem 4rem 4rem;
   background-color: white;
+}
+.banner-section-text{
+  padding: 2rem 4rem 1.8rem;
 }
 .bot-button {
   background-image: url("~@/assets/images/icons/bot.svg");
