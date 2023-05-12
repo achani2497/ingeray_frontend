@@ -7,7 +7,7 @@
         <arrowless-carousel
         class="inner-carousel"
         :product_name="this.bannerInfo.product_dev_name"
-        product_type="vet"
+        product_type="todosVet"
         ></arrowless-carousel>
         <div class="py-8 pr-12 flex flex-col gap-5 responsive-correction">
           <path-route></path-route>
@@ -76,6 +76,7 @@
         title="Marcas con las que trabajamos" 
         subtitle="Representación, Distribución, Venta y Servicio Técnico Oficial"
         :titleFontSize="31" :subtitleFontSize="17"
+        :inverted="true"
         ></titles>
       </div>
       <div class="bg-white w-full">
@@ -91,6 +92,7 @@
         title="Productos" 
         subtitle="Equipamiento para Diagnóstico Veterinario"
         :titleFontSize="31" :subtitleFontSize="17"
+        :inverted="true"
       ></titles>
       <div class="px-16 flex flex-row flex-wrap gap-3">
         <div
@@ -101,7 +103,7 @@
             <mask-redirect-button
               buttonText="Ver producto"
               imageWidth="290"
-              :url="image.url"
+              :url="image.url ? image.url : ''"
               :alternateImageName="`home/${image.imagePath}`"
             ></mask-redirect-button>
           </div>

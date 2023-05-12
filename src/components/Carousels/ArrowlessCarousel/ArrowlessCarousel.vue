@@ -122,6 +122,10 @@ export default {
           this.imagesPath = "productos/humanos/carousel";
           this.carouselImages = this.getHumCarouselImages(this.product_name);
           break;
+        case 'todosVet':
+          this.imagesPath = 'productos/veterinaria/carousel';
+          this.carouselImages = this.getTodosLosProductosVetImages(this.product_name);
+          break;
         default:
           this.imagesPath = "productos/veterinaria/carousel";
           this.carouselImages = this.getVetCarouselImages(this.product_name);

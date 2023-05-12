@@ -9,7 +9,7 @@
       />
       <img v-else :src="require(`@/assets/images/${alternateImageName}`)" />
       <div class="mask w-full h-full flex justify-center items-center">
-        <router-link :to="url" class="contact-inge-button" type="button">
+        <router-link :to="url ? url : '#' " class="contact-inge-button" type="button">
           {{ buttonText }}
         </router-link>
       </div>
