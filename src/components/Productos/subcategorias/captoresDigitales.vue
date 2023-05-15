@@ -88,4 +88,7 @@ export default {
   position: absolute;
   left: 0;
 }
+.banner-cont {
+  height: 216px;
+}
 </style>

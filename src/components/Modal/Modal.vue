@@ -6,11 +6,17 @@
           :class="['modal-container', 'modal-container-' + large]"
           v-clickOutside="close"
         >
+          <button @click="$emit('close')" :class="`close-button close-par-btn`" type="button" v-if="large==='par'">
+                <img
+                :src="require('@/assets/images/icons/Cross.svg')"
+                alt="close"
+                width="30"
+                />
+          </button>
           <!-- Header -->
           <div class="modal-header" v-if="header">
             <div class="futura t-35"><slot name="title" /></div>
-            <button class="close-button" type="button" @click="$emit('close')">
-              <!-- <span>&times;</span> -->
+            <button :class="`close-button`" type="button" @click="$emit('close')">
               <img
               :src="require('@/assets/images/icons/avisoLegalCross.png')"
               alt="close"
@@ -92,6 +98,10 @@ export default {
   padding: 1.5rem;
   text-align: justify;
 }
+.modal-container-par {
+  width: 40%;
+  padding: 0;
+}
 .modal-container-sm {
   max-width: 500px;
 }
@@ -143,5 +153,10 @@ export default {
 }
 .close-button img {
   transform: scale(3);
+}
+.close-par-btn{
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
 }
 </style>
