@@ -69,17 +69,6 @@
     </div>
   </template>
   <style scoped>
-  .close-button {
-  border-radius: 100%;
-}
-.close-button img {
-  transform: scale(3);
-}
-.close-par-btn {
-  /* position: relative;
-  top: 0;
-  right:0; */
-}
   .imgParAmpliado {
     width: 50%;
   }
