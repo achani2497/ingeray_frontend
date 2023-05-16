@@ -203,7 +203,7 @@
       </h3>
     </div>
     <!-- Seguimos uniendo nuestras fuerzas -->
-    <div class="padding-container fuerzas-container -mt-8 py-16">
+    <div class="padding-container fuerzas-container -mt-8 py-16" v-if="showAllTeam">
       <colaboradores-carousel :datos="colaboradores"></colaboradores-carousel>
     </div>
     <!-- Valores -->
