@@ -47,8 +47,12 @@
             "url": "/productos/veterinaria/dcu30"
         },
         {
-            "imagePath": "carousel-veterinaria/carousel-vet-9.jpg",
-            "url": "/productos/veterinaria/palm-x6-plus"
+            "imagePath": "carousel-veterinaria/carousel-vet-12.jpg",
+            "url": ""
+        },
+        {
+            "imagePath": "carousel-veterinaria/carousel-vet-11.jpg",
+            "url": ""
         }
     ]
 }

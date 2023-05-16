@@ -2,7 +2,7 @@
   <div class="contact-container flex flex-col gap-4">
     <!-- Banner & Buttons Container -->
     <div class="padding-container">
-      <banner-box :bannerName="bannerContacto">
+      <banner-box :bannerName="bannerContacto" :ponerSobre="false">
         <template v-slot:title>
           <p class="inge-text-bold">¿Cómo podemos ayudarlo?</p>
           <titles subtitle="Contáctenos" :fontSize="31"></titles>
@@ -34,9 +34,9 @@
 
     <!-- Staff description -->
     <transition name="fade">
-      <div class="padding-container">
+      <div class="padding-container mt-8">
         <div
-          class="staff-details flex flex-col gap-4"
+          class="staff-details flex flex-col gap-4 px-16"
           v-if="teamDetailsVisible"
         >
           <titles
@@ -66,15 +66,17 @@
       type="button"
       @click="showContactMenu = true"
     >
-      <div class="envelope"></div>
-      <div class="text">
-        <titles
+      <div class="px-16 flex">
+        <div class="envelope"></div>
+        <div class="text">
+          <titles
           title="Tengo una consulta"
           subtitle="Quiero que me contacten"
           class="banner-contacto-title"
           :fontSize="16"
           :lineHeight="10"
-        ></titles>
+          ></titles>
+        </div>
       </div>
     </button>
     <!-- Form de Contacto -->
@@ -158,7 +160,7 @@ export default {
     },
   },
   mounted() {
-    fetch("/staff.json") //El archivo tiene que estar en la carpeta public
+    fetch("./staff.json") //El archivo tiene que estar en la carpeta public
       .then((r) => r.json())
       .then((json) => {
         this.areas = json.areas;
@@ -182,6 +184,7 @@ export default {
 .staff-data {
   display: flex;
   gap: 1rem;
+  justify-content: space-between;
 }
 .area-button {
   border: 1px solid rgb(199, 199, 199);
@@ -199,7 +202,7 @@ export default {
 }
 /* ChatBot */
 .chat-bot {
-  width: 50%;
+  width: 354px;
   height: 150px;
   background: #9bbdd9;
 }

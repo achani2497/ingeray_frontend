@@ -12,7 +12,6 @@
         :alt="`Foto de ${persona.nombre}`"
         width="110px"
         height="300px"
-        class="inge-shadow-down"
       />
       <div class="personal-details flex flex-col gap-2 w-1/2">
         <div class="person">

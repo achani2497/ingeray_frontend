@@ -3,6 +3,7 @@
     <div class="padding-container flex flex-col gap-16">
       <banner-with-bot
         :bannerName="`${this.$imageCDN}/banner-quienes-somos.jpg`"
+        :ponerSobre="false"
       >
         <template slot="title">
           <titles
@@ -81,9 +82,9 @@
             :src="
               require('@/assets/images/contacto/fotosPersonal/GERENTE_Daniel_Penhos.jpg')
             "
-            width="310"
+            width="350"
           />
-          <div class="flex flex-col gap-3 px-16 py-12">
+          <div class="flex flex-col gap-3 px-16 py-7">
             <div>
               <h2 class="inge-text-bold text-3xl mb-2">Daniel Penhos</h2>
               <titles :font-size="30" subtitle="Gerente Operativo"></titles>
@@ -109,9 +110,9 @@
             :src="
               require('@/assets/images/contacto/fotosPersonal/GERENTE_Matias_Penhos.jpg')
             "
-            width="310"
+            width="350"
           />
-          <div class="flex flex-col gap-3 px-16 py-12">
+          <div class="flex flex-col gap-3 px-16 py-7">
             <div>
               <h2 class="inge-text-bold text-3xl mb-2">Matías Penhos</h2>
               <titles :font-size="30" subtitle="Gerente Operativo"></titles>
@@ -201,8 +202,12 @@
         BUENO.
       </h3>
     </div>
+    <!-- Seguimos uniendo nuestras fuerzas -->
+    <div class="padding-container fuerzas-container -mt-8 py-16">
+      <colaboradores-carousel :datos="colaboradores"></colaboradores-carousel>
+    </div>
     <!-- Valores -->
-    <div class="bg-white -mt-8 py-16">
+    <div class="bg-white -mt-8 py-16" v-if="!showAllTeam">
       <text-checklist
         title="Conozca más sobre"
         subtitle="Los valores que nos mueven"
@@ -220,7 +225,7 @@
       </text-checklist>
     </div>
     <!-- Banner de Quienes Somos -->
-    <div class="ajuste-padding">
+    <div class="ajuste-padding" v-if="!showAllTeam">
       <img
       :src="`${this.$imageCDN}/banner_colaboradores.jpg`"
       alt="Banner de Colaboradores"
@@ -292,6 +297,9 @@
 .gray-text {
   color: #666666;
 }
+.fuerzas-container{
+  background-color: var(--dark-blue);
+}
 @media screen and (min-width: 1441px) {
   .ajuste-padding {
     padding: 0 22%
@@ -303,12 +311,13 @@
 import BannerWithBot from "../components/Common/BannerWithBot.vue";
 import MisionVisionValores from "../components/QuienesSomos/MisionVisionValores.vue";
 import PresentationCard from "../components/QuienesSomos/PresentationCard.vue";
-import { chiefs, staff, contracts } from "../assets/js/quienes-somos.json";
+import { chiefs, staff, contracts, colaboradores } from "../assets/js/quienes-somos.json";
 import TextList from "../components/Common/TextList.vue";
 import { valores } from "@/assets/js/valores.json";
 import StaffCarousel from "../components/Carousels/StaffCarousel/StaffCarousel.vue";
 import Modal from "../components/Modal/Modal.vue";
 import SimpleContactForm from "../components/Forms/SimpleContactForm.vue";
+import ColaboradoresCarousel from '../components/Carousels/ColaboradoresCarousel/ColaboradoresCarousel.vue'
 
 export default {
   components: {
@@ -319,6 +328,7 @@ export default {
     "staff-carousel": StaffCarousel,
     modal: Modal,
     "simple-contact-form": SimpleContactForm,
+    'colaboradores-carousel': ColaboradoresCarousel,
   },
   data() {
     return {
@@ -329,6 +339,7 @@ export default {
       staff,
       contracts,
       valores,
+      colaboradores,
     };
   },
 };

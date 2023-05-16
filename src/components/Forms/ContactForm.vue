@@ -550,6 +550,7 @@ export default {
         emailjs.send('servicio_pasos','pasos_template',datosParaMail,'pGxKgw8iNLllj7wgL')
           .then((result) => {
             submitButton.innerHTML = "Enviado!";
+            this.resetForm();
             this.resetInner(submitButton)
             console.log(result)
           })
@@ -583,6 +584,20 @@ export default {
       setTimeout(() => {
             boton.innerHTML = "Enviar"
           }, 3000);
+    },
+    resetForm: function () {
+      this.form.dudaPrincipal.val = '';
+      this.form.nombrePersona.val = '';
+      this.form.apellidoPersona.val = '';
+      this.form.emailPersona.val = '';
+      this.form.telefono.val = '';
+      this.form.nombreEmpresa.val = '';
+      this.form.nombreInstitucion.val = '';
+      this.form.area.val = '';
+      this.form.cargo.val = '';
+      this.form.informacionAtencion.val = '';
+      this.form.tiempoCompra.val = '';
+      this.form.comentarios.val = '';
     },
     generarDatosParaEnviar: function() {
       return {

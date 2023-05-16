@@ -2,7 +2,7 @@
   <div class="">
     <div class="padding-container">
       <div class="contact-container flex flex-col gap-12 pb-12">
-        <banner-box :bannerName="bannerTodosLosProductos">
+        <banner-box :bannerName="bannerTodosLosProductos" :ponerSobre="false">
           <template v-slot:title>
             <titles
             title="Gran Variedad de"
@@ -48,7 +48,7 @@
           <p class="px-16 mt-4 text-justify texto-subtitulo">
             Además de la marca propia, tanto en Argentina como en países de la región proveemos soluciones, repuestos y servicios  en equipamiento de marcas locales e internacionales:
           </p>
-          <p class="px-16 mt-4 text-justify font-bold texto-marcas">
+          <p class="px-16 mt-4 text-justify texto-marcas inge-text-bold">
             AGFA, ARIES, BIPLETT, BROWINER, CARESTREAM, CGR, CHISON, CLAYMOUNT, DEL BUENO, DIGINET, DIGIRAD, DINAN, DRGEM, DRTECH, ECORAY, EDAN, FILIPPO, FISHER, GBA, GENERAL ELECTRIC, GENERAL MEDICAL MERATE, GENERAY, HITACHI, HOLOGIC, IAE, IASA ELECTRONICA, ICRO, INSTRUMED, INSTRUMENTARIUM, INVELEC, IONORAY, JPI, KAILONG, KAIXIN, MAURIZZI, MEDITECH, MEMORAD Q, MINDRAY, MyF, ODEL, OEC, PHILIPS, PIMAX, PLANMECA, POSKOM, RAIX, REMS, SEDECAL, SHIMADZU, SIEMENS, SONOWIN, THALES, TAMATHE, THOMSON, TOSHIBA, VAREX, VARIAN, VIEWORKS, VILA, VIOLA, YUESHEN.
           </p>
     </div>

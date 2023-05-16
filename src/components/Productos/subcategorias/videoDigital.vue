@@ -2,11 +2,37 @@
   <product-template>
     <template v-slot:productInfo>
       <!-- Caracteristicas -->
-      <caracteristicas :datos="producto.caracteristicas" />
+      <div class="caracteristicas flex flex-col py-4 gap-4 w-full h-auto">
+        <titles
+          subtitle="Características Generales"
+          :fontSize="25"
+          :lineHeight="0"
+        ></titles>
+        <titles :title="producto.caracteristicas.titulo" :fontSize="25"></titles>
+        <div class="flex w-full gap-4">
+          <div class="columnaCaracteristicas flex flex-col gap-4">
+            <p class="text-justify text-lg inge-text">{{ producto.caracteristicas.content[0].textContent }}</p>
+            <div>
+              <p class="text-justify text-lg inge-text-bold">{{ producto.caracteristicas.content[1].titulo }}</p>
+              <p class="text-justify text-lg inge-text">{{ producto.caracteristicas.content[1].textContent }}</p>
+            </div>
+          </div>
+          <div class="columnaCaracteristicas flex flex-col gap-4">
+            <div>
+              <p class="text-justify text-lg inge-text-bold">{{ producto.caracteristicas.content[2].titulo }}</p>
+              <p class="text-justify text-lg inge-text">{{ producto.caracteristicas.content[2].textContent }}</p>
+            </div>
+            <img
+            :src="require(`@/assets/images/productos/humanos/${producto.caracteristicas.imagen}`)"
+            alt="img-caracteristicas"
+            />
+          </div>
+        </div>
+      </div>
       <!-- Especificaciones -->
       <especificaciones :datos="producto.especificaciones" />
       <!-- Imagenes -->
-      <div class="images mt-4">
+      <div class="flex images mt-4">
         <img
           :src="
             require(`@/assets/images/productos/humanos/${image.productImage}`)
@@ -63,9 +89,15 @@ export default {
 </script>
 <style scoped>
 .images {
-  display: grid;
-  gap: 2rem;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  width: 100%;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.images img {
+  width: 19%;
+  height: auto;
+}
+.columnaCaracteristicas{
+  width: 50%;
 }
 </style>

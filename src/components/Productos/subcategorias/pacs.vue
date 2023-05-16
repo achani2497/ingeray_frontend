@@ -11,7 +11,7 @@
           require(`@/assets/images/productos/humanos/${producto.galeria[0].productImage}`)
         "
       />
-      <div class="images mt-4">
+      <div class="flex images mt-8">
         <img
           :src="
             require(`@/assets/images/productos/humanos/${image.productImage}`)
@@ -68,9 +68,12 @@ export default {
 </script>
 <style scoped>
 .images {
-  display: grid;
+  width: 100%;
   gap: 0.5rem;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  justify-content: center;
+}
+.images img {
+  width: 30%;
+  height: auto;
 }
 </style>

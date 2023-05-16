@@ -1,6 +1,12 @@
 {
     "staff": [
         {
+            "image": "nadia_medina.png",
+            "name": "Nadia Medina",
+            "position": "Tesoreria. Auditoría Contable.",
+            "title": "Atención de Cuentas Proveedores."
+        },
+        {
             "image": "pablo_micas.png",
             "name": "Pablo Micas",
             "position": "Jefe de Servicio Técnico en Planta.",
@@ -47,12 +53,6 @@
             "name": "Gabriel Fandini",
             "position": "Equipamiento para Medicina Humana y Medicina Veterinaria. Comercio Exterior.",
             "title": "Asesor Comercial."
-        },
-        {
-            "image": "nadia_medina.png",
-            "name": "Nadia Medina",
-            "position": "Tesoreria. Auditoría Contable.",
-            "title": "Atención de Cuentas Proveedores."
         }
     ],
     "contracts": [
@@ -87,6 +87,36 @@
             "name": "Matias Penhos",
             "position": "Área Técnico Comercial. Relevamiento Tecnológico y Soluciones a Medida.",
             "title": "Gerente Operativo."
+        }
+    ],
+    "colaboradores": [
+        {
+            "imageName":"Bio Red",
+            "imagePath":"BIO_RED.png"
+        },
+        {
+            "imageName":"Foldesign",
+            "imagePath":"FOLDESIGN.png"
+        },
+        {
+            "imageName":"IASA",
+            "imagePath":"IASA.png"
+        },
+        {
+            "imageName":"Meditech",
+            "imagePath":"MEDITECH.png"
+        },
+        {
+            "imageName":"Pimax",
+            "imagePath":"PIMAX.png"
+        },
+        {
+            "imageName":"Rx Olivos",
+            "imagePath":"RX_OLIVOS.png"
+        },
+        {
+            "imageName":"Voxel",
+            "imagePath":"VOXEL.png"
         }
     ]
 }

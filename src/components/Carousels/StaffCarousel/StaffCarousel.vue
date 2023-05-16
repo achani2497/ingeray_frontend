@@ -8,7 +8,7 @@
       ></button>
       <!-- Carousel -->
       <div class="carousel px-14">
-        <div class="overflow-hidden flex">
+        <div class="overflow-hidden flex wrap-carousel">
           <div class="inner flex pb-4" ref="inner" :style="innerStyles">
             <div
               class="card-container"
@@ -45,13 +45,17 @@
   width: 100vw;
   overflow: hidden;
 }
+.wrap-carousel {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
 .inner {
   width: fit-content;
   transition: transform 0.2s;
   height: 361px;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
 }
 button {
   margin-right: 0px;

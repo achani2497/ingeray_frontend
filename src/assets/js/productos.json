@@ -922,7 +922,20 @@
             "caracteristicas": {
                 "titulo": "Sistemas de Digitalización para Imágenes Dinámicas",
                 "imagen": "digitalizacion/caracteristicas-video.png",
-                "content": "Con la implementación de los Sistemas de Video Digitalización con sensores de adquisición digital de las señales obtenidas por intensificadores de imágen convencionales, no se requiere de cambiar todo su equipo de Arco en C o Equipo de Sala para estudios contrastados, cateterismo, videodeglución, etc.  obteniendo tanto  imágenes cuadro a cuadro, fijas congeladas, así como largas secuencias de video digital. El médico especialista  puede obtener, durante y después del exámen, imágenes fijas o videos de altísima calidad y resolución. La rapidez del sistema y la posibilidad de guardar los estudios en carpetas pacientes, permite acelerar el flujo de trabajo con el consiguiente aumento de la productividad. RELACIÓN COSTO BENEFICIO   Los sistemas de Video Digital combinan la alta calidad de las imágenes con la más confiable tecnología, todo ello con una inversión inicial acorde con la mayoría de los presupuestos para  emprendimientos de diagnóstico por imágenes y bajísimos costos de mantenimiento,  permitiendo extender la vida útil de sus equipos analógicos. CONECTIVIDAD DICOM 3.0   Los sistemas provistos por nuestra empresa son totalmente compatibles con la norma DICOM 3.0 para intercambio de imágenes médicas. A su vez permiten la integración con otros usos de la norma DICOM incluyendo PACS, RIS, como así también visualizadores y Servidores DICOM, Impresoras y Servidores WEB DICOM."
+                "content": [
+                    {
+                        "titulo":"",
+                        "textContent":"Con la implementación de los Sistemas de Video Digitalización con sensores de adquisición digital de las señales obtenidas por intensificadores de imágen convencionales, no se requiere de cambiar todo su equipo de Arco en C o Equipo de Sala para estudios contrastados, cateterismo, videodeglución, etc.  obteniendo tanto  imágenes cuadro a cuadro, fijas congeladas, así como largas secuencias de video digital. El médico especialista  puede obtener, durante y después del exámen, imágenes fijas o videos de altísima calidad y resolución. La rapidez del sistema y la posibilidad de guardar los estudios en carpetas pacientes, permite acelerar el flujo de trabajo con el consiguiente aumento de la productividad."
+                    },
+                    {
+                        "titulo": "RELACIÓN COSTO BENEFICIO",
+                        "textContent":"Los sistemas de Video Digital combinan la alta calidad de las imágenes con la más confiable tecnología, todo ello con una inversión inicial acorde con la mayoría de los presupuestos para  emprendimientos de diagnóstico por imágenes y bajísimos costos de mantenimiento,  permitiendo extender la vida útil de sus equipos analógicos."
+                    },
+                    {
+                        "titulo":"CONECTIVIDAD DICOM 3.0",
+                        "textContent":"Los sistemas provistos por nuestra empresa son totalmente compatibles con la norma DICOM 3.0 para intercambio de imágenes médicas. A su vez permiten la integración con otros usos de la norma DICOM incluyendo PACS, RIS, como así también visualizadores y Servidores DICOM, Impresoras y Servidores WEB DICOM."
+                    }
+                ]
             },
             "especificaciones": [
                 {
@@ -1037,46 +1050,48 @@
             ],
             "diferencias": {
                 "titulo": "Breve explicación de las diferencias tecnológicas",
-                "content": "Los equipos analógicos operan con film y sistema de procesadora para revelado automático. Son equipos funcionales y que siguen ofreciendo imágenes de calidad pero actualmente presentan la dificultad de la reposición de los insumos  y requiere de un control de desechos de los líquidos de revelado para un adecuado cuidado del medio ambiente. Los equipos digitalizados con tecnología indirecta o CR (Computed Radiography) constituyen una tecnología intermedia dónde equipos analógicos son convertidos para que pueda obtenerse una imagen digital. Para ello se reemplazan los antiguos chasis de pantalla y film por nuevos diseñados con pantalla de fósforo fotoestimulable, cuya lectura genera una imagen digital. Los equipos con tecnología directa o DR consiste en un sensor directo Flat Panel el cual tiene tamaño de chasis y se coloca dentro del Bucky del mamógrafo existente, el mismo capta las imágenes en forma digital y las transmite automáticamente a la computadora en cuestión de segundos. Es un sistema más eficiente, rápido y sin mantenimientos respecto del sistema indirecto y una mejor solución en los casos que se posea un mamógrafo analógico de buena calidad. Los equipos digitales DR (Direct Radiography) o de digitalización directa son los más nuevos en cuanto a tecnología. Con ellos se obtienen imágenes de alta calidad y permiten mejores funciones que los modelos analógicos, aunque son equipos que requieren de una mayor inversión inicial."
+                "content": "Los <strong>equipos analógicos</strong> operan con film y sistema de procesadora para revelado automático. Son equipos funcionales y que siguen ofreciendo imágenes de calidad pero actualmente presentan la dificultad de la reposición de los insumos  y requiere de un control de desechos de los líquidos de revelado para un adecuado cuidado del medio ambiente. <br>Los <strong>equipos digitalizados con tecnología indirecta o CR</strong> (Computed Radiography) constituyen una tecnología intermedia dónde equipos analógicos son convertidos para que pueda obtenerse una imagen digital. Para ello se reemplazan los antiguos chasis de pantalla y film por nuevos diseñados con pantalla de fósforo fotoestimulable, cuya lectura genera una imagen digital.",
+                "secondCol":"Los <strong>equipos con tecnología directa o DR</strong> consiste en un sensor directo Flat Panel el cual tiene tamaño de chasis y se coloca dentro del Bucky del mamógrafo existente, el mismo capta las imágenes en forma digital y las transmite automáticamente a la computadora en cuestión de segundos. Es un sistema más eficiente, rápido y sin mantenimientos respecto del sistema indirecto y una mejor solución en los casos que se posea un mamógrafo analógico de buena calidad. <br>Los <strong>equipos digitales</strong> DR (Direct Radiography) o de digitalización directa son los más nuevos en cuanto a tecnología. Con ellos se obtienen imágenes de alta calidad y permiten mejores funciones que los modelos analógicos, aunque son equipos que requieren de una mayor inversión inicial."
             },
             "carousel": [
                 {
                     "title": "Viola D",
                     "imagePath": "MAMO-VIOLA-D.png",
-                    "url": "",
+                    "url": "Viola_D_Circular_DBT.pdf",
                     "description": "Este modelo de la Línea Viola es una  solución innovadora en mamografía que combina un diseño estético moderno con avanzadas prestaciones para obtener una excelente calidad de imagen."
                 },
                 {
                     "title": "Viola D Gantry Circular",
                     "imagePath": "MAMO-VIOLA-D-Gantry-Circular.png",
-                    "url": "",
+                    "url": "Viola_D_Circular_DBT.pdf",
                     "description": "Es el modelo digital base, super estable y con gran calidad diagnóstica y versatilidad en el posicionamiento. Este modelo está orientado a screening. El gantry circular permite el posicionamiento lateral y frontal."
                 },
                 {
                     "title": "Viola DBT Doble Columna",
                     "imagePath": "MAMO-VIOLA-DBT-Doble-Columna.png",
-                    "url": "",
+                    "url": "Viola_DBT_Doble_Columna.pdf",
                     "description": "Sistema de tomosíntesis de mama avanzado e innovador que incluye la capacidad integrada de generar imágenes de mamografía digital de campo completo (FFDM)."
                 },
                 {
                     "title": "Viola DBT Monocolumna",
                     "imagePath": "MAMO-VIOLA-DBT-monocolumna.png",
-                    "url": "",
+                    "url": "Viola_D_Circular_DBT.pdf",
                     "description": "Este modelo está orientado a screening y posee la característica de poder expandirse y realizar tomosíntesis. Es apto para incorporar el kit de biopsia 3D que desee el usuario."
                 }
             ],
             "brochures": [
                 {
-                    "link": "#",
+                    "link": "Mamografos_Linea_GENORAY.pdf",
                     "nombreLink": "Mamografía / INGE RAY / Mamógrafos LÍNEA GENORAY"
                 },
                 {
-                    "link": "#",
+                    "link": "Mamografos_LINEA_VIOLA_D_Circular_DBT.pdf",
                     "nombreLink": "Mamografía / INGE RAY / Mamógrafos LÍNEA GMM VIOLA"
                 },
                 {
-                    "link": "#",
-                    "nombreLink": "Sobre el cancer de mama / LALCEC / INFORMATE"
+                    "link": "LALCEC_info_cancer_de_mama.pdf",
+                    "nombreLink": "Sobre el cancer de mama / LALCEC / INFORMATE",
+                    "specificIcon": "lalcec-icon"
                 }
             ],
             "productos": [
@@ -1142,54 +1157,66 @@
                 }
             ],
             "galeria": [
-                {
-                    "productName": "Imagen Captores 1",
-                    "productImage": "mamo/galeria-captores-1.png"
-                },
-                {
-                    "productName": "Imagen Captores 2",
-                    "productImage": "mamo/galeria-captores-2.png"
-                },
-                {
-                    "productName": "Imagen Captores 3",
-                    "productImage": "mamo/galeria-captores-3.png"
-                },
-                {
-                    "productName": "Imagen Captores 4",
-                    "productImage": "mamo/galeria-captores-4.png"
-                },
-                {
-                    "productName": "Imagen Captores 5",
-                    "productImage": "mamo/galeria-captores-5.png"
-                },
-                {
-                    "productName": "Imagen Captores 6",
-                    "productImage": "mamo/galeria-captores-6.png"
-                },
-                {
-                    "productName": "Imagen Captores 7",
-                    "productImage": "mamo/galeria-captores-7.png"
-                },
-                {
-                    "productName": "Imagen Captores 8",
-                    "productImage": "mamo/galeria-captores-8.png"
-                },
-                {
-                    "productName": "Imagen Captores 9",
-                    "productImage": "mamo/galeria-captores-9.png"
-                },
-                {
-                    "productName": "Imagen Captores 10",
-                    "productImage": "mamo/galeria-captores-10.png"
-                },
-                {
-                    "productName": "Imagen Captores 11",
-                    "productImage": "mamo/galeria-captores-11.png"
-                },
-                {
-                    "productName": "Imagen Captores 12",
-                    "productImage": "mamo/galeria-captores-12.png"
-                }
+                [
+                    {
+                        "productName": "Imagen Captores 1",
+                        "productImage": "mamo/galeria-captores-1.png"
+                    },
+                    {
+                        "productName": "Imagen Captores 2",
+                        "productImage": "mamo/galeria-captores-2.png"
+                    }
+                ],
+                [
+                    {
+                        "productName": "Imagen Captores 3",
+                        "productImage": "mamo/galeria-captores-3.png"
+                    },
+                    {
+                        "productName": "Imagen Captores 4",
+                        "productImage": "mamo/galeria-captores-4.png"
+                    }
+                ],
+                [
+                    {
+                        "productName": "Imagen Captores 5",
+                        "productImage": "mamo/galeria-captores-5.png"
+                    },
+                    {
+                        "productName": "Imagen Captores 6",
+                        "productImage": "mamo/galeria-captores-6.png"
+                    }
+                ],
+                [
+                    {
+                        "productName": "Imagen Captores 7",
+                        "productImage": "mamo/galeria-captores-7.png"
+                    },
+                    {
+                        "productName": "Imagen Captores 8",
+                        "productImage": "mamo/galeria-captores-8.png"
+                    }
+                ],
+                [
+                    {
+                        "productName": "Imagen Captores 9",
+                        "productImage": "mamo/galeria-captores-9.png"
+                    },
+                    {
+                        "productName": "Imagen Captores 10",
+                        "productImage": "mamo/galeria-captores-10.png"
+                    }
+                ],
+                [
+                    {
+                        "productName": "Imagen Captores 11",
+                        "productImage": "mamo/galeria-captores-11.png"
+                    },
+                    {
+                        "productName": "Imagen Captores 12",
+                        "productImage": "mamo/galeria-captores-12.png"
+                    }
+                ]
             ],
             "brochures": [
                 {
@@ -1197,8 +1224,9 @@
                     "nombreLink": "Mamografía/ INGE RAY / CAPTORES DIGITALES MAMOGRÁFICOS"
                 },
                 {
-                    "link": "#",
-                    "nombreLink": "Sobre el cancer de mama / LALCEC / INFORMATE"
+                    "link": "LALCEC_info_cancer_de_mama.pdf",
+                    "nombreLink": "Sobre el cancer de mama / LALCEC / INFORMATE",
+                    "specificIcon": "lalcec-icon"
                 }
             ],
             "productos": [

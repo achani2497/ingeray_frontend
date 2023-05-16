@@ -5,9 +5,14 @@
       active ? 'white' : esMamo() ? '#e878a0' : '#0076a5'
     }`"
   >
-    <span class="title" v-if="title" :style="`font-size:${titleFontSize}px!important;`"> {{ title }} </span>
+    <span 
+      :class="`title ${inverted ? 'inge-text-bold' : 'inge-text'}`" 
+      v-if="title" :style="`font-size:${titleFontSize}px!important;`"
+    >
+      {{ title }}
+    </span>
     <span
-      class="sub-title"
+      :class="`sub-title ${inverted ? 'inge-text' : 'inge-text-bold'}`"
       :style="`line-height:${lineHeight}px; font-size:${subtitleFontSize}px!important;`"
       v-if="subtitle"
     >
@@ -42,6 +47,10 @@ export default {
     active: {
       type: Boolean,
     },
+    inverted: {
+      type:Boolean,
+      default: false,
+    },
     lineHeight: {
       type: Number,
       default: 30,
@@ -64,9 +73,6 @@ export default {
 <style scoped>
 .mamo {
   color: #e878a0;
-}
-.sub-title {
-  font-family: "IngeTextBold", Arial, Helvetica, sans-serif;
 }
 .title,
 .sub-title {

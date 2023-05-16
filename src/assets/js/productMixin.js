@@ -1,5 +1,6 @@
 import ProductosVeterinarios from '../js/productos_veterinarios.json'
 import Productos from '../js/productos.json'
+import TodosVet from '../js/todosLosProductosVeterinaria.json';
 export const productMixin = {
     methods: {
         getVetEquipmentInfo: function (name) {
@@ -11,6 +12,11 @@ export const productMixin = {
         getVetCarouselImages: function (product_name) {
             const product = this.getVetEquipmentInfo(product_name)
             return product.product_carousel_images
+        },
+        getTodosLosProductosVetImages: function (product_name) {
+            const product = TodosVet.todos_los_productos_veterinarios[0].product_carousel_images
+            return product
+
         },
         getHumCarouselImages: function (product_name) {
             const product = this.getProductEquipment(product_name)

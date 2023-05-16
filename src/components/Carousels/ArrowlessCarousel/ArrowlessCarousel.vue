@@ -16,7 +16,7 @@
     <div class="flex gap-4 justify-center mb-4" id="carousel-dots">
       <div
         class="circle rounded-full h-3 w-3 bg-gray-400 carousel-btn"
-        :class="[index === imgActual ? 'green-dot' : 'gray-dot']"
+        :class="[index === imgActual ? esMamo() ? 'pink-dot' : 'green-dot' : 'gray-dot']"
         v-for="(card, index) in carouselImages"
         :key="index"
         @click="mostrarImg(index)"
@@ -60,6 +60,9 @@ button {
 .green-dot {
   background-color: #669193;
 }
+.pink-dot {
+  background-color: var(--mamo-pink);
+}
 .inner {
   transition: transform 0.2s;
 }
@@ -84,11 +87,12 @@ button {
 <script>
 import { serviceMixin } from "../../../assets/js/serviceMixin";
 import { productMixin } from "../../../assets/js/productMixin";
+import { mamoMixin } from "../../../assets/js/mamoMixin";
 
 export default {
   name: "arrowles-carousel",
   props: ["product_name", "product_type"],
-  mixins: [serviceMixin, productMixin],
+  mixins: [serviceMixin, productMixin, mamoMixin],
   data() {
     return {
       cards: [8, 1, 2, 3, 4, 5, 6, 7],
@@ -117,6 +121,10 @@ export default {
         case "human":
           this.imagesPath = "productos/humanos/carousel";
           this.carouselImages = this.getHumCarouselImages(this.product_name);
+          break;
+        case 'todosVet':
+          this.imagesPath = 'productos/veterinaria/carousel';
+          this.carouselImages = this.getTodosLosProductosVetImages(this.product_name);
           break;
         default:
           this.imagesPath = "productos/veterinaria/carousel";

@@ -2,14 +2,15 @@
   <div class="galeria flex flex-col py-4 gap-4">
     <titles subtitle="Galería" :fontSize="25"></titles>
     <div
-      class="opcion-imagen opcion-activa"
+      :class="`opcion-imagen ${esMamo() ? 'mamo-txt opcion-activa-mamo' : 'opcion-activa'}`"
       style="font-family: 'IngeTextBold', Arial, Helvetica, sans-serif"
     >
       Imágenes Clínicas
     </div>
-    <div class="imagenes-galeria flex gap-4 flex-wrap justify-around">
-      <div v-for="(imagen, index) in datos.slice(0, 6)" :key="index">
-        <img :src="imagen.productImage" :alt="imagen.productName" width="125" />
+    <div class="imagenes-galeria flex gap-1 flex-wrap justify-center">
+      <!-- <div v-for="(imagen, index) in datos.slice(0, 6)" :key="index"> -->
+      <div v-for="(imagen, index) in datos" :key="index" class="rowElement">
+        <img :src="imagen.productImage" :alt="imagen.productName" width="120" />
       </div>
     </div>
     <small class="mb-4"
@@ -17,7 +18,7 @@
       solicite un presupuesto personalizado para recibir información e imágenes
       actualizadas</small
     >
-    <button class="contact-outline" @click="showModal = true">Ver Más</button>
+    <button :class="`contact-outline ${esMamo() ? 'mamo-btn-outline' : ''}`" @click="showModal = true">Ver Más</button>
     <Modal :header="true" @close="showModal = false" v-if="showModal">
       <template #title>
         <div class="title blue">Imágenes de los equipos</div>
@@ -47,9 +48,15 @@
   color: var(--dark-bluish-green);
   border-bottom: 3px solid var(--dark-bluish-green);
 }
+.opcion-activa-mamo {
+  border-bottom: 3px solid var(--mamo-pink);
+}
 .images-container {
   height: 80vh;
   padding: 0 2rem 2rem;
+}
+.rowElement {
+  flex-basis: 16%;
 }
 .images {
   display: grid;
@@ -64,9 +71,11 @@
 }
 </style>
 <script>
+import { mamoMixin } from "../../assets/js/mamoMixin";
 import Modal from "@/components/Modal/Modal.vue";
 export default {
   components: { Modal },
+  mixins: [mamoMixin],
   props: ["datos"],
   data() {
     return {
