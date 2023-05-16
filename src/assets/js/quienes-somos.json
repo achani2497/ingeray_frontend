@@ -88,5 +88,35 @@
             "position": "Área Técnico Comercial. Relevamiento Tecnológico y Soluciones a Medida.",
             "title": "Gerente Operativo."
         }
+    ],
+    "colaboradores": [
+        {
+            "imageName":"Bio Red",
+            "imagePath":"BIO_RED.png"
+        },
+        {
+            "imageName":"Foldesign",
+            "imagePath":"FOLDESIGN.png"
+        },
+        {
+            "imageName":"IASA",
+            "imagePath":"IASA.png"
+        },
+        {
+            "imageName":"Meditech",
+            "imagePath":"MEDITECH.png"
+        },
+        {
+            "imageName":"Pimax",
+            "imagePath":"PIMAX.png"
+        },
+        {
+            "imageName":"Rx Olivos",
+            "imagePath":"RX_OLIVOS.png"
+        },
+        {
+            "imageName":"Voxel",
+            "imagePath":"VOXEL.png"
+        }
     ]
 }

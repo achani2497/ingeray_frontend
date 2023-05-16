@@ -71,6 +71,10 @@
         {
             "nombre": "servicio penitenciario federal",
             "imagen": "servicio-penitenciario.png"
+        },
+        {
+            "nombre": "sanatorio colegiales",
+            "imagen": "sanatorio-colegiales.png"
         }
     ]
 }
