@@ -8,7 +8,7 @@
       ></titles>
       <div class="grid grid-cols-4 grid-rows-2 gap-y-4 gap-8 mt-4">
         <router-link
-          :to="servicios[index - 1].url"
+          :to="`/servicios/${servicios[index - 1].url}`"
           class="servicio-container flex flex-col"
           v-for="index in 8"
           :key="index"
