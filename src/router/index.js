@@ -68,7 +68,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   base: process.env.BASE_URL,
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
@@ -77,7 +77,6 @@ const router = new VueRouter({
       return { x: 0, y: 0 }
     }
   },
-  mode: 'history',
   routes,
 })
 
