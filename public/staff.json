@@ -37,18 +37,18 @@
         },
         {
             "first_line_name": "Encargados de",
-            "second_line_name": "Servicio Tecnico",
+            "second_line_name": "Servicio Técnico",
             "id": 2,
             "visible": false,
             "personal": [
                 {
-                    "nombre": "Juan Gonzáles",
+                    "nombre": "Juan González",
                     "imagen": "juan_gonzales.jpg",
                     "rol": "Soporte al Cliente Área Técnica",
                     "mail": [
-                        "serviciotecnico@ingeray.com.ar"
+                        "soporteclientes@ingeray.com.ar"
                     ],
-                    "whatsapp": "(+54 9) 11 4192-6164"
+                    "whatsapp": "(+54 9) 11 2285-1571"
                 },
                 {
                     "nombre": "Pablo Micas",
@@ -81,7 +81,6 @@
                     "imagen": "daniel_penhos.jpg",
                     "rol": "Relaciones Institucionales & Comercio Exterior",
                     "mail": [
-                        "danielpenhos@ingeray.com.ar",
                         "ingeraysrl@gmail.com"
                     ],
                     "whatsapp": "(+54 9) 11 4192-6163"
@@ -99,7 +98,7 @@
         },
         {
             "first_line_name": "Equipo de",
-            "second_line_name": "Administracion",
+            "second_line_name": "Administración",
             "id": 4,
             "visible": false,
             "personal": [
@@ -110,14 +109,14 @@
                     "mail": [
                         "administracion@ingeray.com.ar"
                     ],
-                    "whatsapp": "(+54 9) 11 3113-4301"
+                    "whatsapp": "(+54 9) 11 3851-0695"
                 },
                 {
                     "nombre": "Nadia Medina",
                     "imagen": "nadia_medina.jpg",
                     "rol": "Administración - Contable",
                     "mail": [
-                        "administracion@ingeray.com.ar"
+                        "tesoreria@ingeray.com.ar"
                     ],
                     "whatsapp": "(+54 9) 11 5504-4427"
                 }
