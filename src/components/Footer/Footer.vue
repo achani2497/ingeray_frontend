@@ -1,7 +1,7 @@
 <template>
   <footer>
     <!-- Medios de pago -->
-    <div class="medios-de-pago flex flex-col text-center">
+    <div class="medios-de-pago flex flex-col text-center medios-bkg">
       <span class="my-4"> Conocé nuestros medios de pago </span>
       <div class="flex flex-wrap justify-center items-center gap-1">
         <div
@@ -178,6 +178,7 @@
         @close="showAvisoLegalModal = false"
         large="xl"
         class=""
+        :modalConFondo="true"
       >
         <template #title> <div class="title blue inge-text-bold">Aviso Legal</div> </template>
         <template #content>
@@ -197,6 +198,7 @@
         v-if="showPDPrivacidad"
         @close="showPDPrivacidad = false"
         large="xl"
+        :modalConFondo="true"
       >
         <template #title>
           <div class="title blue inge-text-bold">Políticas de Privacidad</div>
@@ -232,7 +234,7 @@
 /* MEDIOS DE PAGO */
 .medios-de-pago {
   padding: 0.5rem 1.5rem;
-  background-color: var(--light-gray);
+  background-color: var(--light-lilac);
 }
 .medio-de-pago > img {
   width: 80px;

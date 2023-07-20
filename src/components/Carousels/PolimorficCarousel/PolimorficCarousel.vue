@@ -33,6 +33,7 @@
                 :description="image.description"
                 :imagePath="image.imagePath"
                 :url="image.url"
+                :imageWidth="290"
                 v-else
               >
               </extended-card>

@@ -6,16 +6,16 @@
         <div class="links flex flex-wrap justify-between items-end gap-4">
             <div class="brochures flex flex-col gap-4">
                 <div v-for="datos in brochures" class="flex items-center gap-3">
-                    <div class="flex gap-2 underline" v-if="datos.link === '#'">
+                    <div class="flex row gap-2 underline" v-if="datos.link === '#'">
                         <div :class="`${ datos.specificIcon ? datos.specificIcon :'icono-brochure'} icono-docs`"></div>
-                        <button v-popover:infoBrochure.right >{{ datos.nombreLink }}</button>
+                        <button v-popover:infoBrochure.right class="self-center">{{ datos.nombreLink }}</button>
                         <popover name="infoBrochure">
                             Para recibir más información y folleteria por favor contáctese a ventas@ingeray.com.ar
                         </popover>
                     </div>
-                    <div v-else>
+                    <div class="flex row" v-else>
                         <div :class="`${ datos.specificIcon ? datos.specificIcon :'icono-brochure'} icono-docs`"></div>
-                        <a :href="`/documentos/${datos.link}`" download>{{datos.nombreLink}}</a>
+                        <a class="self-center" :href="`/documentos/${datos.link}`" download>{{datos.nombreLink}}</a>
                     </div>
                 </div>
             </div>

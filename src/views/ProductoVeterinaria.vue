@@ -1,163 +1,165 @@
 <template>
-  <div class="padding-container flex flex-col gap-16 pb-16">
-    <!-- Carousel -->
-    <div class="bg-white relative h-fit mt-4 flex inge-shadow-down flex-wrap">
-      <div class="carousel h-fit w-full flex">
-        <arrowless-carousel
-        class="inner-carousel"
-        :product_name="this.productInfo.product_dev_name"
-        product_type="vet"
-        ></arrowless-carousel>
-        <div class="py-8 pr-12 flex flex-col gap-5 responsive-correction">
-          <path-route></path-route>
-          <titles
-            :title="this.productInfo.category_name"
-            :subtitle="this.productInfo.product_name"
-            :fontSize="31"  
-          ></titles>
-          <p class="text-justify text-lg">
-            {{ this.productInfo.product_carousel_text }}
-          </p>
-          <button
-            class="contact-inge-button inge-shadow-down shadow-animated mt-8"
-            @click="showContactMenu = true"
-          >
-            Quiero que me contacten
-          </button>
-        </div>
-    </div>
-      <!-- Boton de Contacto -->
-      <button
-          @click="showPasos = true"
-          class="banner-contacto flex items-center gap-2 mb-10 -mt-2"
-      >
-        <div class="envelope"></div>
-        <div class="text">
-          <titles
-            title="Contáctenos"
-            subtitle="sobre este producto"
-            class="banner-contacto-title"
-            :fontSize="16"
-            :lineHeight="10"
-          ></titles>
-        </div>
-      </button>
-      <a
-        v-if="this.productInfo.product_shop_url"
-        class="
-          eshop-circle
-          absolute
-          -bottom-8
-          right-8
-          h-16
-          w-16
-          rounded-full
-          bg-cover bg-no-repeat bg-center
-        "
-        :href="this.productInfo.product_shop_url"
-        :style="{
-          backgroundImage:
-            'url(' +
-            require('@/assets/images/icons/footerIcons/veterinaria/carrito.svg') +
-            ')',
-        }"
-        style="transform: scale(1.5)"
-        target="_blank"
-      >
-      </a>
-    </div>
-    <!-- Caracteristicas -->
-    <div class="flex flex-col gap-4 px-16">
-      <div class="titles">
-        <titles :fontSize="31" subtitle="Características"></titles>
-        <titles title="Destacables de este equipo" :fontSize="18"></titles>
+  <div>
+    <div class="padding-container flex flex-col gap-16 pb-16 vet-bkg">
+      <!-- Carousel -->
+      <div class="bg-white relative h-fit mt-4 flex inge-shadow-down flex-wrap">
+        <div class="carousel h-fit w-full flex">
+          <arrowless-carousel
+          class="inner-carousel"
+          :product_name="this.productInfo.product_dev_name"
+          product_type="vet"
+          ></arrowless-carousel>
+          <div class="py-8 pr-12 flex flex-col gap-5 responsive-correction">
+            <path-route></path-route>
+            <titles
+              :title="this.productInfo.category_name"
+              :subtitle="this.productInfo.product_name"
+              :fontSize="31"  
+            ></titles>
+            <p class="text-justify text-lg">
+              {{ this.productInfo.product_carousel_text }}
+            </p>
+            <button
+              class="contact-inge-button inge-shadow-down shadow-animated mt-8"
+              @click="showContactMenu = true"
+            >
+              Quiero que me contacten
+            </button>
+          </div>
       </div>
-      <div
-        class="flex gap-4 justify-around"
-        v-if="this.productInfo.products_characteristics_images"
-      >
-        <img
-          :src="
-            require(`@/assets/images/productos/veterinaria/caracteristicas/${characteristic}`)
+        <!-- Boton de Contacto -->
+        <button
+            @click="showPasos = true"
+            class="banner-contacto flex items-center gap-2 mb-10 -mt-2"
+        >
+          <div class="envelope"></div>
+          <div class="text">
+            <titles
+              title="Contáctenos"
+              subtitle="sobre este producto"
+              class="banner-contacto-title"
+              :fontSize="16"
+              :lineHeight="10"
+            ></titles>
+          </div>
+        </button>
+        <a
+          v-if="this.productInfo.product_shop_url"
+          class="
+            eshop-circle
+            absolute
+            -bottom-8
+            right-8
+            h-16
+            w-16
+            rounded-full
+            bg-cover bg-no-repeat bg-center
           "
-          v-for="(characteristic, index) in this.productInfo
-            .products_characteristics_images"
-          :key="index"
-          width="19%"
-        />
+          :href="this.productInfo.product_shop_url"
+          :style="{
+            backgroundImage:
+              'url(' +
+              require('@/assets/images/icons/footerIcons/veterinaria/carrito.svg') +
+              ')',
+          }"
+          style="transform: scale(1.5)"
+          target="_blank"
+        >
+        </a>
       </div>
-      <p class="text-justify text-lg two-columns-text altura-automatica" :style="textoCaracteristicasStyle">
-        {{ this.productInfo.product_description }}
-      </p>
-      <button @click="toggleText()" id="btn-caracts" class="contact-inge-button inge-shadow-down shadow-animated self-end">
-        Ver más
-      </button>
-    </div>
-    <!-- Galeria -->
-    <div
-      class="flex flex-col gap-4 px-16"
-      v-if="this.productInfo.product_galery_images.length !== 0"
-    >
-      <titles title="Ecógrafo Veterinario" subtitle="Galería"></titles>
-      <div class="tab-label">Imágenes Clínicas</div>
-      <div class="flex justify-around gap-2">
-        <picture-zoom-button
-          v-for="(picture, index) in this.productInfo.product_galery_images"
-          :key="index"
-          sectionName="/productos/veterinaria/galeria"
-          :imageName="`/${picture.picture_name}`"
-          :imageExtension="picture.picture_extension"
-          imageWith="300px"
-        ></picture-zoom-button>
+      <!-- Caracteristicas -->
+      <div class="flex flex-col gap-4 px-16">
+        <div class="titles">
+          <titles :fontSize="31" subtitle="Características"></titles>
+          <titles title="Destacables de este equipo" :fontSize="18"></titles>
+        </div>
+        <div
+          class="flex gap-4 justify-around"
+          v-if="this.productInfo.products_characteristics_images"
+        >
+          <img
+            :src="
+              require(`@/assets/images/productos/veterinaria/caracteristicas/${characteristic}`)
+            "
+            v-for="(characteristic, index) in this.productInfo
+              .products_characteristics_images"
+            :key="index"
+            width="19%"
+          />
+        </div>
+        <p class="text-justify text-lg two-columns-text altura-automatica" :style="textoCaracteristicasStyle" v-html="this.productInfo.product_description"></p>
+        <button @click="toggleText()" id="btn-caracts" class="contact-inge-button inge-shadow-down shadow-animated self-end">
+          Ver más
+        </button>
       </div>
-    </div>
-    <!-- Especificaciones -->
-    <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.especificaciones_veterinarias">
-      <titles title="Especificaciones" subtitle="Ficha Técnica" :fontSize="31" :subtitleFontSize="20"></titles>
-      <img
-        :src="require(`@/assets/images/productos/veterinaria/especificaciones/${this.productInfo.especificaciones_veterinarias}`)" 
-        :alt="this.productInfo.especificaciones_veterinarias">
+      <!-- Galeria -->
+      <div
+        class="flex flex-col gap-4 px-16"
+        v-if="this.productInfo.product_galery_images.length !== 0"
+      >
+        <titles title="Ecógrafo Veterinario" subtitle="Galería" :font-size="31"></titles>
+        <div class="tab-label">Imágenes Clínicas</div>
+        <div class="flex justify-around gap-2">
+          <picture-zoom-button
+            v-for="(picture, index) in this.productInfo.product_galery_images"
+            :key="index"
+            sectionName="/productos/veterinaria/galeria"
+            :imageName="`/${picture.picture_name}`"
+            :imageExtension="picture.picture_extension"
+            imageWith="300px"
+          ></picture-zoom-button>
+        </div>
+      </div>
+      <!-- Especificaciones -->
+      <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.especificaciones_veterinarias">
+        <titles :inverted="true" title="Especificaciones" subtitle="Ficha Técnica" :fontSize="31" :subtitleFontSize="20"></titles>
         <img
+          :src="require(`@/assets/images/productos/veterinaria/especificaciones/${this.productInfo.especificaciones_veterinarias}`)" 
+          :alt="this.productInfo.especificaciones_veterinarias">
+          <img
+            class="img-animales"
+            v-if="this.productInfo.product_animal_icons" 
+            :src="require(`@/assets/images/productos/veterinaria/animales/${this.productInfo.product_animal_icons}`)" 
+            :alt="this.productInfo.product_animal_icons">
+        </div>
+        <!-- Galeria Accesorios -->
+        <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.product_accessories">
+          <titles :inverted="true" :title="this.productInfo.product_galery_title" subtitle="Galería" :fontSize="31"></titles>
+          <img :src="require(`@/assets/images/productos/veterinaria/galeria/${this.productInfo.product_accessories}`)" :alt="this.product_accessories">
+          <img
           class="img-animales"
           v-if="this.productInfo.product_animal_icons" 
           :src="require(`@/assets/images/productos/veterinaria/animales/${this.productInfo.product_animal_icons}`)" 
           :alt="this.productInfo.product_animal_icons">
-      </div>
-      <!-- Galeria Accesorios -->
-      <div class="flex flex-col px-16 gap-4" v-if="this.productInfo.product_accessories">
-        <titles :title="this.productInfo.product_galery_title" subtitle="Galería" :fontSize="31"></titles>
-        <img :src="require(`@/assets/images/productos/veterinaria/galeria/${this.productInfo.product_accessories}`)" :alt="this.product_accessories">
-        <img
-        class="img-animales"
-        v-if="this.productInfo.product_animal_icons" 
-        :src="require(`@/assets/images/productos/veterinaria/animales/${this.productInfo.product_animal_icons}`)" 
-        :alt="this.productInfo.product_animal_icons">
-      </div>
-      <documentos class="px-16" :brochures="productInfo.brochures"></documentos>
-    <!-- Menu -->
-    <div id="veterinaryFooter">
-      <titles
-        title="Conozca más"
-        subtitle="Productos para Medicina Veterinaria"
-        :fontSize="31"
-      ></titles>
-      <div class="grid grid-cols-4 grid-rows-2 gap-y-4 gap-8 mt-4">
-        <router-link
-          :to="producto.product_url"
-          class="servicio-container flex flex-col"
-          v-for="(producto, index) in menuProducts"
-          :key="index"
-        >
-          <span class="pl-4 footer-menu-title">
-            {{ producto.product_name }}
-          </span>
-          <img
-            class="shadow-lg"
-            :src="
-              require(`@/assets/images/productos/veterinaria/footer-menu/${producto.product_dev_name}.png`)
-            "
-          />
-        </router-link>
+        </div>
+        <documentos class="px-16" :brochures="productInfo.brochures"></documentos>
+      <!-- Menu -->
+    </div>
+    <div class="padding-container flex flex-col gap-16 pb-16 footer-bkg">
+      <div id="veterinaryFooter">
+        <titles
+          title="Conozca más"
+          subtitle="Productos para Medicina Veterinaria"
+          :fontSize="31"
+        ></titles>
+        <div class="grid grid-cols-4 grid-rows-2 gap-y-4 gap-8 mt-4">
+          <router-link
+            :to="producto.product_url"
+            class="servicio-container flex flex-col"
+            v-for="(producto, index) in menuProducts"
+            :key="index"
+          >
+            <span class="pl-4 footer-menu-title">
+              {{ producto.product_name }}
+            </span>
+            <img
+              class="shadow-lg"
+              :src="
+                require(`@/assets/images/productos/veterinaria/footer-menu/${producto.product_dev_name}.png`)
+              "
+            />
+          </router-link>
+        </div>
       </div>
     </div>
     <!-- Modal de form de Contacto -->
@@ -192,6 +194,12 @@
   </div>
 </template>
 <style scoped>
+.vet-bkg {
+  background-color: var(--light-gray);
+}
+.footer-bkg {
+  background-color: var(--light-lilac);
+}
 .altura-automatica {
   max-height: 270px;
   overflow: hidden;

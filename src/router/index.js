@@ -61,6 +61,11 @@ const routes = [
     component: () => import('../views/QuienesSomos.vue')
   },
   {
+    path: '/ingeapp/*',
+    name: '404',
+    component: () => import('../views/404.vue')
+  },
+  {
     path: '*',
     name: '404',
     component: () => import('../views/404.vue')

@@ -17,7 +17,7 @@
         </button>
       </div>
     </div>
-    <modal large="md" @close="showModal = false" v-if="showModal">
+    <modal large="md" @close="showModal = false" v-if="showModal" :esRadio="cambiarFondo">
       <template #content class="relative">
         <button
           type="button"
@@ -52,6 +52,10 @@ export default {
     imageWith: {
       type: String,
     },
+    cambiarFondo: {
+      type: Boolean,
+      default: false,
+    }
   },
   name: "picture-zoom-button",
   data: function () {

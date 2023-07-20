@@ -771,11 +771,11 @@
             "productos": [
                 {
                     "productName": "Flat Panel 1",
-                    "productImage": "carrousel-flatpanel-1.png"
+                    "productImage": "carrousel-flatpanel-1.jpg"
                 },
                 {
                     "productName": "Flat Panel 2",
-                    "productImage": "carrousel-flatpanel-2.png"
+                    "productImage": "carrousel-flatpanel-2.jpg"
                 },
                 {
                     "productName": "Flat Panel 3",
@@ -831,7 +831,7 @@
                 },
                 {
                     "productName": "Flat Panel 16",
-                    "productImage": "carrousel-flatpanel-16.png"
+                    "productImage": "carrousel-flatpanel-16b.jpg"
                 },
                 {
                     "productName": "Flat Panel 17",

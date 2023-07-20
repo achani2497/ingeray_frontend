@@ -3,7 +3,7 @@
     <div class="modal-mask">
       <div class="modal-wrapper">
         <div
-          :class="['modal-container', 'modal-container-' + large]"
+          :class="['modal-container', 'modal-container-' + large, esRadio ? 'fondo-negro' : '', modalConFondo?'modal-con-fondo':'']"
           v-clickOutside="close"
         >
           <button @click="$emit('close')" :class="`close-button close-par-btn`" type="button" v-if="large==='par'">
@@ -34,7 +34,7 @@
 </template>
 <script>
 export default {
-  props: ["header", "large"],
+  props: ["header", "large","esRadio","modalConFondo"],
   data: function () {
     return {};
   },
@@ -87,16 +87,18 @@ export default {
   width: 90%;
   height: auto;
   margin: 0px auto;
-  background: var(--lilac);
   border-radius: 2px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
   transition: all 0.3s ease;
   color: black;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 1.5rem;
   text-align: justify;
+}
+.modal-con-fondo {
+  background: var(--lilac);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  padding: 1.5rem;
 }
 .modal-container-par {
   width: 40%;
@@ -158,5 +160,8 @@ export default {
   position: absolute;
   bottom: 5%;
   right: 3%;
+}
+.fondo-negro {
+  background: black;
 }
 </style>

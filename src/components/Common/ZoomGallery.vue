@@ -15,6 +15,7 @@
         imageWith="240px"
         v-for="(img, index) in producto.zoomGallery.slice(0, imagesToShow)"
         :key="index"
+        :cambiarFondo="true"
       >
       </picture-zoom-button>
     </div>

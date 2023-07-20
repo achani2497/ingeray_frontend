@@ -1,6 +1,6 @@
 <template>
     <div class="galeria flex flex-col py-4 gap-4">
-      <titles subtitle="Galería" :fontSize="25"></titles>
+      <titles title="Imágenes clínicas" subtitle="Galería" :fontSize="25"></titles>
       <div
         :class="`opcion-imagen ${esMamo() ? 'mamo-txt opcion-activa-mamo' : 'opcion-activa'}`"
         style="font-family: 'IngeTextBold', Arial, Helvetica, sans-serif"

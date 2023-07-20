@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col gap-4 justify-between extended-card">
     <div class="flex flex-col gap-4">
-      <img :src="image" alt="" class="self-center" width="290" />
+      <img :src="image" alt="" class="self-center" :width="imageWidth" />
       <div class="flex flex-col">
         <titles :subtitle="title" :fontSize="18"></titles>
         <div :class="`flex flex-col flex-wrap ${this.esMamo() ? 'black' : 'blue'}`">
@@ -37,7 +37,7 @@
 import {mamoMixin} from '../../assets/js/mamoMixin'
 import {downloadsMixin} from '../../assets/js/downloadsMixin'
 export default {
-  props: ["title", "description", "imagePath", "url"],
+  props: ["title", "description", "imagePath", "url","imageWidth"],
   mixins: [mamoMixin, downloadsMixin],
   data: function () {
     return {

@@ -63,7 +63,7 @@
           </div>
         </div>
       </div>
-      <modal large="lg" @close="showModal = false" v-if="showModal">
+      <modal large="lg" @close="showModal = false" v-if="showModal" :esRadio="true">
         <template #content class="relative">
           <button
             type="button"

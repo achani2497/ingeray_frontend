@@ -6,7 +6,7 @@
       <!-- Especificaciones -->
       <especificaciones :datos="producto.especificaciones" />
       <!-- Carousel -->
-      <div class="carousel-container flex items-center pt-52 mb-8">
+      <div class="carousel-container flex items-center pt-2 mb-8">
         <!-- Control button Left -->
         <button
           class="h-6 w-6 -ml-16 arrow left rounded-full"
@@ -27,6 +27,7 @@
                   :description="image.description"
                   :imagePath="image.imagePath"
                   :url="image.url"
+                  :imageWidth="imgSizeWidth"
                 >
                 </extended-card>
               </div>
@@ -112,11 +113,12 @@ export default {
       stepSize: "",
       transitioning: false,
       carouselElements: [],
+      imgSizeWidth: 245,
     };
   },
   methods: {
     setStep() {
-      this.stepSize = "290px";
+      this.stepSize = `${this.imgSizeWidth}px`;
     },
     next() {
       if (this.transitioning) return;
@@ -188,10 +190,21 @@ export default {
   height: fit-content;
   position: relative;
 }
+.carousel {
+  width: 100vw;
+  overflow: hidden;
+}
 .inner {
   width: fit-content;
   transition: transform 0.2s;
   gap: 2.25rem;
+  height: 650px;
+}
+.extended-card {
+  width: 220px !important;
+}
+.texto-caracteristica{
+  width: 50%;
 }
 button {
   margin-top: 10px;
@@ -208,17 +221,6 @@ button {
 .left {
   transform: rotate(-180deg) scale(3);
   left: 0;
-}
-.carousel {
-  width: 100vw;
-  overflow: hidden;
-  align-items: center;
-}
-.extended-card {
-  width: 260px !important;
-}
-.texto-caracteristica{
-  width: 50%;
 }
 
 @media screen and (max-width: 650px) {

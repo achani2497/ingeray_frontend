@@ -7,11 +7,12 @@
       <especificaciones :datos="producto.especificaciones" />
       <!-- Imagenes -->
       <img
+        class="pt-12"
         :src="
           require(`@/assets/images/productos/humanos/${producto.galeria[0].productImage}`)
         "
       />
-      <div class="flex images mt-8">
+      <div class="flex images my-8">
         <img
           :src="
             require(`@/assets/images/productos/humanos/${image.productImage}`)

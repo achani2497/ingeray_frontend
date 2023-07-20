@@ -36,12 +36,16 @@
         :fontSize="20"
         title="Variedad de opciones para Equipamiento de alta Frecuencia"
       ></titles>
-      <div class="generadores-images mt-4">
-        <img
-          v-for="(img, index) in producto.generadoresConsolas.imagenes"
-          :key="index"
+      <div class="flex flex-row flex-wrap gap-2 mt-4">
+        <div
+         class="generadores-images"
+         v-for="(img, index) in producto.generadoresConsolas.imagenes"
+         :key="index"
+         >
+          <img
           :src="require(`@/assets/images/productos/humanos/${img.imagen}`)"
-        />
+          />
+        </div>
       </div>
       <!-- Documentos -->
       <documentos :brochures="producto.brochures" />
@@ -92,13 +96,6 @@ export default {
 </script>
 <style scoped>
 .generadores-images {
-  display: grid;
-  row-gap: 2rem;
-  column-gap: 5px;
-  justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-}
-.generadores-images img {
-  max-height: 270px;
+  width: calc(100% / 4.2);
 }
 </style>

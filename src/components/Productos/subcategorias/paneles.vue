@@ -10,9 +10,10 @@
         <titles
           :fontSize="25"
           :lineHeight="20"
-          subtitle="Nuestras Marcas"
+          title="Nuestras Marcas"
+          subtitle="Los mejores modelos del mercado"
+          :inverted="true"
         ></titles>
-        <titles :fontSize="20" title="Los mejores modelos del mercado"></titles>
         <div class="banner-cont" :style="bannerContStyle">
           <img
           :src="
@@ -91,7 +92,7 @@ export default {
 };
 </script>
 <style scoped>
-.banner-marcas{
+.banner-cont{
   min-height: 218px;
 }
 </style>

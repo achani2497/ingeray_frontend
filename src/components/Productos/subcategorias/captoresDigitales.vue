@@ -10,7 +10,7 @@
         :src="require('@/assets/images/productos/humanos/mamo/mamo-banner.png')"
         alt="Banner Mamografia"
         width="100%"
-        class="bg-white banner-mamo"
+        class="bg-white absolute left-0 mt-4"
         id="img-banner"
         />
       </div>
@@ -84,11 +84,7 @@ export default {
 };
 </script>
 <style scoped>
-.banner-mamo {
-  position: absolute;
-  left: 0;
-}
 .banner-cont {
-  height: 216px;
+  min-height: 218px;
 }
 </style>

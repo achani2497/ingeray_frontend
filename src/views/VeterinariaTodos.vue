@@ -118,7 +118,7 @@
   padding: 0.7rem 1rem;
 }
 .card-container {
-  width: 240px;
+  width: calc(100% / 3.3);
   display: flex;
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }

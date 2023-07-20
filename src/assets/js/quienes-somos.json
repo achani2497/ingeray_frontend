@@ -25,6 +25,12 @@
             "title": "Ingeniería en Electrónica."
         },
         {
+            "image":"leo_micas.jpg",
+            "name":"Leonardo Micas",
+            "position":"Técnico en Planta.",
+            "title": "Técnico Electromecánico."
+        },
+        {
             "image": "alejandro_chani.png",
             "name": "Alejandro Chañi",
             "position": "Desarrollador. Sistemas.",

@@ -10,16 +10,21 @@
           :alt="img"
           class="hidden"
           :id="`car-img-${index}`"
+          @mouseover="toggleSign(index)"
+          @mouseleave="toggleSign(index)"
         />
+      </div>
+      <div :class="`img-sign inge-text ${esMamo() ? 'cartel-mamo' : ''}`" :style="msgStyle">
+        Hacer click sobre los circulos para ver más imágenes
       </div>
     </div>
     <div class="flex gap-4 justify-center mb-4" id="carousel-dots">
       <div
-        class="circle rounded-full h-3 w-3 bg-gray-400 carousel-btn"
-        :class="[index === imgActual ? esMamo() ? 'pink-dot' : 'green-dot' : 'gray-dot']"
-        v-for="(card, index) in carouselImages"
-        :key="index"
-        @click="mostrarImg(index)"
+      class="circle rounded-full h-3 w-3 bg-gray-400 carousel-btn"
+      :class="[index === imgActual ? esMamo() ? 'pink-dot' : 'green-dot' : 'gray-dot']"
+      v-for="(card, index) in carouselImages"
+      :key="index"
+      @click="mostrarImg(index)"
       ></div>
     </div>
   </div>
@@ -83,6 +88,25 @@ button {
 .active-img {
   display: block;
 }
+.img-sign{
+  display: block;
+  position: absolute;
+  background-color: var(--lilac);
+  color: var(--dark-blue);
+  font-weight: bold;
+  font-size: 120% !important;
+  overflow-wrap: break-word;
+  width: 280px;
+  margin-left: 24px;
+  opacity: 0;
+  z-index: 10;
+  transition: all 0.4s;
+  bottom:10%;
+  padding: 0.7rem;
+}
+.cartel-mamo {
+  background-color: #f6eced;
+}
 </style>
 <script>
 import { serviceMixin } from "../../../assets/js/serviceMixin";
@@ -99,6 +123,8 @@ export default {
       carouselImages: [],
       imagesPath: "",
       imgActual: 0,
+      msgStyle: {},
+      opacityLevel: 0,
     };
   },
   mounted() {
@@ -144,7 +170,32 @@ export default {
     getImgUrl(indice) {
       // console.log(`@/assets/images/${this.imagesPath}/${this.carouselImages[indice]}`)
       return require(`@/assets/images/${this.imagesPath}/${this.carouselImages[indice]}`);
-    }
+    },
+    async toggleSign(ind) {
+      if(ind === 0) {
+        this.opacityLevel === 0 ? this.opacityLevel = 1 : this.opacityLevel = 0;
+        this.msgStyle = {
+          opacity: this.opacityLevel,
+        }
+      }
+    },
+    async hideSign(ind) {
+      if(ind === 0) {
+        this.msgStyle = {
+          opacity: 0,
+        }
+      }
+    },
+    esMamo: function() {
+      var urlActual = window.location.href;
+      urlActual = urlActual.split('/');
+      urlActual = urlActual[urlActual.length - 1];
+      if(urlActual === 'mamografos' || urlActual === 'captores-digitales') {
+        return true
+      } else {
+        return false
+      }
+    },
   },
   created() {
     this.setCarouselImages();

@@ -89,6 +89,7 @@
           :imageName="`/${picture.basic_image}`"
           :imageExtension="picture.extension"
           imageWith="300px"
+          :cambiarFondo="true"
         ></picture-zoom-button>
       </div>
     </div>
