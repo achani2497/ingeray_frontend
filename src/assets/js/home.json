@@ -87,13 +87,13 @@
         {
             "title": "Ambientación",
             "description": "Ambientación de equipos y salas de Imagenología. Intervenciones gráficas, pinturas especiales y ploteos en muros y equipos.",
-            "imagePath": "carousel-servicios/carousel-servicios-5.jpg",
+            "imagePath": "carousel-servicios/carousel-servicios-4.jpg",
             "url": "/servicios/ambientacion"
         },
         {
             "title": "Digitalización",
             "description": "Proveemos Flat Panel, Software, Redes y Servidores PACS para la centralización de todas la imágenes en formato DICOM.",
-            "imagePath": "carousel-servicios/carousel-servicios-4.jpg",
+            "imagePath": "carousel-servicios/carousel-servicios-5.jpg",
             "url": "/servicios/digitalizacion"
         }
     ],
