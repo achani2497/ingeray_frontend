@@ -75,6 +75,10 @@
         {
             "nombre": "sanatorio colegiales",
             "imagen": "sanatorio-colegiales.png"
+        },
+        {
+            "nombre": "Hospital Privado Ntra. Sra. de la Merced.png",
+            "imagen": "htal-priv-ntra-sra-de-la-merced.png"
         }
     ]
 }
